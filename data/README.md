@@ -1,0 +1,10 @@
+# Shared small inputs
+
+| file | content | origin |
+|---|---|---|
+| `ecumetric_scaler.npz` | `mean` (512,) and scalar `scale` of the global scaling that defines the ecumetric metric: distances are Euclidean on `(features - mean) / scale`. Identical to the pickle below (checked 2026-10-16) and to the `scaler` group of the record feature files | aa002 release root, 2026-07-25 |
+| `scaler_madunion_phaceatomic_meanstd.pkl` | the same scaler as fitted by `workflows/fps/fit_scaler_union.py` on the 856,012 MAD-NEXT structures (skmatter `StandardFlexibleScaler`, one global scale), the file read by the accretion, Voronoi and release-build runs | aa002 `mad_union/`, 2026-07-01 |
+| `scaler_mad15_phaceatomic_meanstd.pkl` | the earlier scaler fitted on MAD-1.5 only, used by the per-family 10 M FPS pre-selection (`workflows/fps/submit_fps_family.sh`). A global shift and scale does not change FPS picks, so the pre-selections are the same under either scaler; every distance quoted in the paper is in the MAD-NEXT-scaled metric | aa002 `models/`, 2026-06-29 |
+| `models/ecumetric_sketchmap_projector_p20d8_rec_silu.pt` | the sketch-map projector of Fig. 8 (MLP 512-512-256-128-8, SiLU) with its feature and projection scalers, fitted on the first 2^20 MAD-CORE structures; also packaged inside the Hugging Face explorer model | aa002 release root, 2026-10-11 |
+| `models/ecumetric_sketchmap_projector_p20d8_rec_silu.json` | validation record of that projector (held-out R^2 and distance correlation) | development repository |
+| `voronoi_population_record_level24.npy` | not in the repository: the level-24 Voronoi populations of the 2^24 MAD-CORE structures after dropping the 67,975 rows with non-finite descriptors (int64, sum 1,694,434,380). Needed by `figures/fig08_sketchmap/prepare_data.py` (level 2). Shipped in the supporting-results archive (`results_archive/data/` after unpacking, the default path of the script), see README.md; equal to the `voronoi_population` field of the MAD-CORE record | development tree, 2026-10-11 |

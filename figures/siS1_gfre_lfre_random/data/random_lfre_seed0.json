@@ -1,0 +1,170 @@
+{
+  "pet-mad__pet-mad": {
+    "A": "pet-mad",
+    "B": "pet-mad",
+    "A_to_B": 0.0008489327101167281,
+    "B_to_A": 0.0008489327101167281
+  },
+  "pet-mad__uma-omat": {
+    "A": "pet-mad",
+    "B": "uma-omat",
+    "A_to_B": 0.5084922691073601,
+    "B_to_A": 0.673491819004087
+  },
+  "mace-omat__mace-omat": {
+    "A": "mace-omat",
+    "B": "mace-omat",
+    "A_to_B": 0.001173465926374298,
+    "B_to_A": 0.001173465926374298
+  },
+  "pet-mad__mace-omat": {
+    "A": "pet-mad",
+    "B": "mace-omat",
+    "A_to_B": 0.4460746353111437,
+    "B_to_A": 0.5865238255177055
+  },
+  "pet-mad__dpa-omat": {
+    "A": "pet-mad",
+    "B": "dpa-omat",
+    "A_to_B": 0.5077438114472032,
+    "B_to_A": 0.5689766486985988
+  },
+  "pet-mad__orb-v3-omat": {
+    "A": "pet-mad",
+    "B": "orb-v3-omat",
+    "A_to_B": 0.5935043935106009,
+    "B_to_A": 0.6012496331577438
+  },
+  "pet-mad__dpa-omol": {
+    "A": "pet-mad",
+    "B": "dpa-omol",
+    "A_to_B": 0.45890463163696404,
+    "B_to_A": 0.7362016497864521
+  },
+  "pet-mad__phace-atomic": {
+    "A": "pet-mad",
+    "B": "phace-atomic",
+    "A_to_B": 0.4414443511235874,
+    "B_to_A": 0.4369271555701798
+  },
+  "uma-omat__uma-omat": {
+    "A": "uma-omat",
+    "B": "uma-omat",
+    "A_to_B": 0.0007178261521288044,
+    "B_to_A": 0.0007178261521288044
+  },
+  "mace-omat__uma-omat": {
+    "A": "mace-omat",
+    "B": "uma-omat",
+    "A_to_B": 0.4131578181444297,
+    "B_to_A": 0.5701257773268449
+  },
+  "mace-omat__dpa-omat": {
+    "A": "mace-omat",
+    "B": "dpa-omat",
+    "A_to_B": 0.3819983602517239,
+    "B_to_A": 0.3485639581930952
+  },
+  "mace-omat__dpa-omol": {
+    "A": "mace-omat",
+    "B": "dpa-omol",
+    "A_to_B": 0.40042659841119776,
+    "B_to_A": 0.5596089552659866
+  },
+  "mace-omat__orb-v3-omat": {
+    "A": "mace-omat",
+    "B": "orb-v3-omat",
+    "A_to_B": 0.5126250944158033,
+    "B_to_A": 0.35081487410829393
+  },
+  "uma-omat__dpa-omat": {
+    "A": "uma-omat",
+    "B": "dpa-omat",
+    "A_to_B": 0.4687037539824603,
+    "B_to_A": 0.257454613431559
+  },
+  "mace-omat__phace-atomic": {
+    "A": "mace-omat",
+    "B": "phace-atomic",
+    "A_to_B": 0.3631172157738159,
+    "B_to_A": 0.319412657818786
+  },
+  "dpa-omat__dpa-omat": {
+    "A": "dpa-omat",
+    "B": "dpa-omat",
+    "A_to_B": 0.0026137452264559415,
+    "B_to_A": 0.0026137452264559415
+  },
+  "uma-omat__dpa-omol": {
+    "A": "uma-omat",
+    "B": "dpa-omol",
+    "A_to_B": 0.5222593305879356,
+    "B_to_A": 0.5674181184610698
+  },
+  "uma-omat__orb-v3-omat": {
+    "A": "uma-omat",
+    "B": "orb-v3-omat",
+    "A_to_B": 0.603399006551465,
+    "B_to_A": 0.3779895289480638
+  },
+  "uma-omat__phace-atomic": {
+    "A": "uma-omat",
+    "B": "phace-atomic",
+    "A_to_B": 0.5714648833300905,
+    "B_to_A": 0.33876000133959816
+  },
+  "dpa-omol__dpa-omol": {
+    "A": "dpa-omol",
+    "B": "dpa-omol",
+    "A_to_B": 0.002193226390569441,
+    "B_to_A": 0.002193226390569441
+  },
+  "dpa-omat__dpa-omol": {
+    "A": "dpa-omat",
+    "B": "dpa-omol",
+    "A_to_B": 0.3983854380828336,
+    "B_to_A": 0.5099791292751961
+  },
+  "dpa-omat__orb-v3-omat": {
+    "A": "dpa-omat",
+    "B": "orb-v3-omat",
+    "A_to_B": 0.5231157363422281,
+    "B_to_A": 0.3813402751284437
+  },
+  "dpa-omat__phace-atomic": {
+    "A": "dpa-omat",
+    "B": "phace-atomic",
+    "A_to_B": 0.3680482492201034,
+    "B_to_A": 0.3245714386982833
+  },
+  "orb-v3-omat__orb-v3-omat": {
+    "A": "orb-v3-omat",
+    "B": "orb-v3-omat",
+    "A_to_B": 9.284631219403265e-06,
+    "B_to_A": 9.284631219403265e-06
+  },
+  "dpa-omol__orb-v3-omat": {
+    "A": "dpa-omol",
+    "B": "orb-v3-omat",
+    "A_to_B": 0.5930772844060979,
+    "B_to_A": 0.409398247582941
+  },
+  "phace-atomic__phace-atomic": {
+    "A": "phace-atomic",
+    "B": "phace-atomic",
+    "A_to_B": 0.007367231503022745,
+    "B_to_A": 0.007367231503022745
+  },
+  "dpa-omol__phace-atomic": {
+    "A": "dpa-omol",
+    "B": "phace-atomic",
+    "A_to_B": 0.5475093465909339,
+    "B_to_A": 0.35534614653006774
+  },
+  "orb-v3-omat__phace-atomic": {
+    "A": "orb-v3-omat",
+    "B": "phace-atomic",
+    "A_to_B": 0.3831951900222602,
+    "B_to_A": 0.48841763324982745
+  }
+}

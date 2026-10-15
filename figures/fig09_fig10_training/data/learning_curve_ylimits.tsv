@@ -1,0 +1,9 @@
+quantity	metric	data_min	data_max	source
+energy	MAE	138.559655	2085.574591	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k
+energy	RMSE	211.639398	3976.665634	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k
+energy	p8	992.443713	12465.851509	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k
+energy	SUP	3007.156547	34386.900123	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k
+force	MAE	0.224303	0.953382	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k
+force	RMSE	0.996183	3.875053	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k
+force	p8	4.780485	58.748137	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k
+force	SUP	22.172867	253.252357	union_7847 (commit a19d3d4) and balanced_4000, sizes 5k-20k

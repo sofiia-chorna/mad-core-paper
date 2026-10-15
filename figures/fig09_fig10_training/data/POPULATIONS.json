@@ -1,0 +1,130 @@
+{
+ "seed": 20261008,
+ "draw": "numpy default_rng(20261008).choice(5847, size=2000, replace=False) over test_random rows in rank order, indices sorted; selection by id only",
+ "frozen_tests": {
+  "test_random": {
+   "manifest": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/voronoi_weighted/pbe_20k/manifests/test_random.tsv",
+   "sha256": "3e3290a671939699e31117b4a76fb71f86983ba1e85fb5e256e4a76f767f1a77"
+  },
+  "test_madcore": {
+   "manifest": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/voronoi_weighted/pbe_20k/manifests/test_madcore.tsv",
+   "sha256": "0dc1b2c4729fee780bfc62055776ead3aff987315bfa728f09e0cd8c9530466a"
+  }
+ },
+ "manifests": {
+  "union_7847": {
+   "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v3/reports/populations/manifests/union_7847.tsv",
+   "sha256": "61eceb5c67156ad98825fe6c1aa5c21edb5f7876b710cb1f33264f7cbb6b393b",
+   "status": "verified"
+  },
+  "balanced_4000": {
+   "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v3/reports/populations/manifests/balanced_4000.tsv",
+   "sha256": "a9b0a1356e8c6ac98ce11477f989df320753af48c220d9418b6d11011db3f2c1",
+   "status": "verified"
+  }
+ },
+ "balanced_random_rank_range": [
+  5,
+  5842
+ ],
+ "populations": {
+  "union_7847": {
+   "total": {
+    "structures": 7847,
+    "atoms": 225959,
+    "force_components": 677877
+   },
+   "parts": {
+    "test_random": {
+     "structures": 5847,
+     "atoms": 214002,
+     "force_components": 642006,
+     "share_of_structures": 0.7451,
+     "share_of_atoms": 0.9471,
+     "share_of_force_components": 0.9471,
+     "mean_atoms_per_structure": 36.6
+    },
+    "test_madcore": {
+     "structures": 2000,
+     "atoms": 11957,
+     "force_components": 35871,
+     "share_of_structures": 0.2549,
+     "share_of_atoms": 0.0529,
+     "share_of_force_components": 0.0529,
+     "mean_atoms_per_structure": 5.98
+    }
+   },
+   "checks": {
+    "test_random_x_test_madcore": {
+     "configuration_id": 0,
+     "frozen_configuration_id": 0,
+     "geom_hash": 0,
+     "invariant_fp": 0
+    },
+    "unique_configuration_id": true,
+    "unique_geom_hash": true,
+    "x_round3_training_union": {
+     "configuration_id": 0,
+     "frozen_configuration_id": 0,
+     "geom_hash": 0,
+     "invariant_fp": 0
+    },
+    "x_round3_validation": {
+     "configuration_id": 0,
+     "frozen_configuration_id": 0,
+     "geom_hash": 0,
+     "invariant_fp": 0
+    }
+   }
+  },
+  "balanced_4000": {
+   "total": {
+    "structures": 4000,
+    "atoms": 85166,
+    "force_components": 255498
+   },
+   "parts": {
+    "test_random": {
+     "structures": 2000,
+     "atoms": 73209,
+     "force_components": 219627,
+     "share_of_structures": 0.5,
+     "share_of_atoms": 0.8596,
+     "share_of_force_components": 0.8596,
+     "mean_atoms_per_structure": 36.6
+    },
+    "test_madcore": {
+     "structures": 2000,
+     "atoms": 11957,
+     "force_components": 35871,
+     "share_of_structures": 0.5,
+     "share_of_atoms": 0.1404,
+     "share_of_force_components": 0.1404,
+     "mean_atoms_per_structure": 5.98
+    }
+   },
+   "checks": {
+    "test_random_x_test_madcore": {
+     "configuration_id": 0,
+     "frozen_configuration_id": 0,
+     "geom_hash": 0,
+     "invariant_fp": 0
+    },
+    "unique_configuration_id": true,
+    "unique_geom_hash": true,
+    "x_round3_training_union": {
+     "configuration_id": 0,
+     "frozen_configuration_id": 0,
+     "geom_hash": 0,
+     "invariant_fp": 0
+    },
+    "x_round3_validation": {
+     "configuration_id": 0,
+     "frozen_configuration_id": 0,
+     "geom_hash": 0,
+     "invariant_fp": 0
+    }
+   }
+  }
+ }
+}

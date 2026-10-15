@@ -1,0 +1,49 @@
+{
+ "colour_limits_meV": {
+  "energy": [
+   35.66632093069372,
+   9495.905709297123
+  ],
+  "force": [
+   112.23322120286778,
+   10893.581603156501
+  ]
+ },
+ "colour_limits_from": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling/reports/maps/panels_scaling_selected.npz",
+ "count_limits": [
+  1.5087164041085621,
+  770.3048038695948
+ ],
+ "populations": {
+  "union_7847": {
+   "supported_bins": 559,
+   "structures_inside_grid": 7847,
+   "structures_in_supported_bins": 7624,
+   "energy": {
+    "bins_below": 42,
+    "bins_above": 40,
+    "bins_shown": 3354
+   },
+   "force": {
+    "bins_below": 70,
+    "bins_above": 34,
+    "bins_shown": 3354
+   }
+  },
+  "balanced_4000": {
+   "supported_bins": 544,
+   "structures_inside_grid": 4000,
+   "structures_in_supported_bins": 3768,
+   "energy": {
+    "bins_below": 24,
+    "bins_above": 40,
+    "bins_shown": 3264
+   },
+   "force": {
+    "bins_below": 53,
+    "bins_above": 34,
+    "bins_shown": 3264
+   }
+  }
+ }
+}
