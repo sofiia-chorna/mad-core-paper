@@ -1,0 +1,13 @@
+FIX: coresets/src/coresets/cuda/multi/_shared.py  (rebuild_selected_state_sharded, ~line 250)
+Branch: fix-sharded-rebuild-chunk-desync (off accelerate-bisect). git commit blocked by a
+PRE-EXISTING repo corruption (invalid object for cuda/multi/__init__.py) — change lives in the
+working tree, which the editable venv imports directly.
+
+--- BEFORE (per-rank CHUNK -> NCCL deadlock on uneven shards) ---
+    CHUNK = max(16, min(1024, (6 * 1024 ** 3) // max(n_local * 4, 1)))
+
+--- AFTER (global CHUNK via max(layout.sizes); byte-identical result) ---
+    n_max = max(int(s) for s in layout.sizes)
+    CHUNK = max(16, min(1024, (6 * 1024 ** 3) // max(n_max * 4, 1)))
+
+To revert: restore the BEFORE line.

@@ -1,0 +1,306 @@
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=0 subset=monomers energy=-12.5159625384056 free_energy=-12.5159625384056 pbc="F F F"
+H        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=1 subset=monomers energy=-78.7257441152258 free_energy=-78.7257441152258 pbc="F F F"
+He       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=2 subset=monomers energy=-202.802385633226 free_energy=-202.802385633226 pbc="F F F"
+Li       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=3 subset=monomers energy=-398.208273079359 free_energy=-398.208273079359 pbc="F F F"
+Be       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=4 subset=monomers energy=-669.636240249055 free_energy=-669.636240249055 pbc="F F F"
+B        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=5 subset=monomers energy=-1027.94110295784 free_energy=-1027.94110295784 pbc="F F F"
+C        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=6 subset=monomers energy=-1482.28153145408 free_energy=-1482.28153145408 pbc="F F F"
+N        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=7 subset=monomers energy=-2041.78542016739 free_energy=-2041.78542016739 pbc="F F F"
+O        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=8 subset=monomers energy=-2715.59091550562 free_energy=-2715.59091550562 pbc="F F F"
+F        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=9 subset=monomers energy=-3512.70042825374 free_energy=-3512.70042825374 pbc="F F F"
+Ne       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=10 subset=monomers energy=-4421.92416704835 free_energy=-4421.92416704835 pbc="F F F"
+Na       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=11 subset=monomers energy=-5454.50196290893 free_energy=-5454.50196290893 pbc="F F F"
+Mg       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=12 subset=monomers energy=-6610.35382257304 free_energy=-6610.35382257304 pbc="F F F"
+Al       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=13 subset=monomers energy=-7896.00238766527 free_energy=-7896.00238766527 pbc="F F F"
+Si       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=14 subset=monomers energy=-9315.98759170715 free_energy=-9315.98759170715 pbc="F F F"
+P        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=15 subset=monomers energy=-10874.9252141694 free_energy=-10874.9252141694 pbc="F F F"
+S        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=16 subset=monomers energy=-12577.4370004593 free_energy=-12577.4370004593 pbc="F F F"
+Cl       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=17 subset=monomers energy=-14428.1478427303 free_energy=-14428.1478427303 pbc="F F F"
+Ar       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=18 subset=monomers energy=-16417.9427124507 free_energy=-16417.9427124507 pbc="F F F"
+K        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=19 subset=monomers energy=-18555.5283998591 free_energy=-18555.5283998591 pbc="F F F"
+Ca       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=20 subset=monomers energy=-20844.0718326362 free_energy=-20844.0718326362 pbc="F F F"
+Sc       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=21 subset=monomers energy=-23291.5726624227 free_energy=-23291.5726624227 pbc="F F F"
+Ti       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=22 subset=monomers energy=-25902.4211551423 free_energy=-25902.4211551423 pbc="F F F"
+V        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=23 subset=monomers energy=-28681.0545630142 free_energy=-28681.0545630142 pbc="F F F"
+Cr       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=24 subset=monomers energy=-31631.7893063704 free_energy=-31631.7893063704 pbc="F F F"
+Mn       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=25 subset=monomers energy=-34758.9539633593 free_energy=-34758.9539633593 pbc="F F F"
+Fe       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=26 subset=monomers energy=-38066.8828310004 free_energy=-38066.8828310004 pbc="F F F"
+Co       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=27 subset=monomers energy=-41559.9720215485 free_energy=-41559.9720215485 pbc="F F F"
+Ni       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=28 subset=monomers energy=-45242.4271603317 free_energy=-45242.4271603317 pbc="F F F"
+Cu       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=29 subset=monomers energy=-49117.0525530087 free_energy=-49117.0525530087 pbc="F F F"
+Zn       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=30 subset=monomers energy=-53179.4137567104 free_energy=-53179.4137567104 pbc="F F F"
+Ga       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=31 subset=monomers energy=-57435.8971879192 free_energy=-57435.8971879192 pbc="F F F"
+Ge       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=32 subset=monomers energy=-61889.5337920978 free_energy=-61889.5337920978 pbc="F F F"
+As       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=33 subset=monomers energy=-66543.5410036792 free_energy=-66543.5410036792 pbc="F F F"
+Se       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=34 subset=monomers energy=-71401.2412069156 free_energy=-71401.2412069156 pbc="F F F"
+Br       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=35 subset=monomers energy=-76466.0212609188 free_energy=-76466.0212609188 pbc="F F F"
+Kr       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=36 subset=monomers energy=-81730.0849042707 free_energy=-81730.0849042707 pbc="F F F"
+Rb       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=37 subset=monomers energy=-87201.1481960911 free_energy=-87201.1481960911 pbc="F F F"
+Sr       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=38 subset=monomers energy=-92880.4183485755 free_energy=-92880.4183485755 pbc="F F F"
+Y        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=39 subset=monomers energy=-98775.0898432133 free_energy=-98775.0898432133 pbc="F F F"
+Zr       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=40 subset=monomers energy=-104888.521203088 free_energy=-104888.521203088 pbc="F F F"
+Nb       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=41 subset=monomers energy=-111225.268450981 free_energy=-111225.268450981 pbc="F F F"
+Mo       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=42 subset=monomers energy=-117788.982267015 free_energy=-117788.982267015 pbc="F F F"
+Tc       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=43 subset=monomers energy=-124583.322859328 free_energy=-124583.322859328 pbc="F F F"
+Ru       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=44 subset=monomers energy=-131612.011328563 free_energy=-131612.011328563 pbc="F F F"
+Rh       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=45 subset=monomers energy=-138878.715738443 free_energy=-138878.715738443 pbc="F F F"
+Pd       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=46 subset=monomers energy=-146385.326014319 free_energy=-146385.326014319 pbc="F F F"
+Ag       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=47 subset=monomers energy=-154135.010483349 free_energy=-154135.010483349 pbc="F F F"
+Cd       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=48 subset=monomers energy=-162125.279072419 free_energy=-162125.279072419 pbc="F F F"
+In       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=49 subset=monomers energy=-170362.627842836 free_energy=-170362.627842836 pbc="F F F"
+Sn       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=50 subset=monomers energy=-178850.369467518 free_energy=-178850.369467518 pbc="F F F"
+Sb       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=51 subset=monomers energy=-187592.00001836 free_energy=-187592.00001836 pbc="F F F"
+Te       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=52 subset=monomers energy=-196591.099252007 free_energy=-196591.099252007 pbc="F F F"
+I        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=53 subset=monomers energy=-205851.346734602 free_energy=-205851.346734602 pbc="F F F"
+Xe       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=54 subset=monomers energy=-215367.631063699 free_energy=-215367.631063699 pbc="F F F"
+Cs       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=55 subset=monomers energy=-225147.502774519 free_energy=-225147.502774519 pbc="F F F"
+Ba       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=56 subset=monomers energy=-235193.575523372 free_energy=-235193.575523372 pbc="F F F"
+La       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=57 subset=monomers energy=-245516.152798198 free_energy=-245516.152798198 pbc="F F F"
+Ce       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=58 subset=monomers energy=-256120.652283825 free_energy=-256120.652283825 pbc="F F F"
+Pr       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=59 subset=monomers energy=-267015.767251238 free_energy=-267015.767251238 pbc="F F F"
+Nd       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=60 subset=monomers energy=-278204.269767157 free_energy=-278204.269767157 pbc="F F F"
+Pm       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=61 subset=monomers energy=-289691.048529036 free_energy=-289691.048529036 pbc="F F F"
+Sm       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=62 subset=monomers energy=-301481.108420997 free_energy=-301481.108420997 pbc="F F F"
+Eu       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=63 subset=monomers energy=-313581.250782449 free_energy=-313581.250782449 pbc="F F F"
+Gd       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=64 subset=monomers energy=-325991.496944611 free_energy=-325991.496944611 pbc="F F F"
+Tb       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=65 subset=monomers energy=-338722.349812325 free_energy=-338722.349812325 pbc="F F F"
+Dy       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=66 subset=monomers energy=-351777.504668919 free_energy=-351777.504668919 pbc="F F F"
+Ho       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=67 subset=monomers energy=-365162.537604803 free_energy=-365162.537604803 pbc="F F F"
+Er       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=68 subset=monomers energy=-378883.162290146 free_energy=-378883.162290146 pbc="F F F"
+Tm       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=69 subset=monomers energy=-392945.209842731 free_energy=-392945.209842731 pbc="F F F"
+Yb       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=70 subset=monomers energy=-407352.592218252 free_energy=-407352.592218252 pbc="F F F"
+Lu       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=71 subset=monomers energy=-422108.206085434 free_energy=-422108.206085434 pbc="F F F"
+Hf       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=72 subset=monomers energy=-437217.613010075 free_energy=-437217.613010075 pbc="F F F"
+Ta       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=73 subset=monomers energy=-452686.709200454 free_energy=-452686.709200454 pbc="F F F"
+W        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=74 subset=monomers energy=-468521.635702881 free_energy=-468521.635702881 pbc="F F F"
+Re       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=75 subset=monomers energy=-484728.772486708 free_energy=-484728.772486708 pbc="F F F"
+Os       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=76 subset=monomers energy=-501315.049933671 free_energy=-501315.049933671 pbc="F F F"
+Ir       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=77 subset=monomers energy=-518286.006467255 free_energy=-518286.006467255 pbc="F F F"
+Pt       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=78 subset=monomers energy=-535650.911228495 free_energy=-535650.911228495 pbc="F F F"
+Au       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=79 subset=monomers energy=-553415.54501064 free_energy=-553415.54501064 pbc="F F F"
+Hg       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=80 subset=monomers energy=-571580.00495558 free_energy=-571580.00495558 pbc="F F F"
+Tl       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=81 subset=monomers energy=-590155.416417346 free_energy=-590155.416417346 pbc="F F F"
+Pb       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=82 subset=monomers energy=-609149.524373312 free_energy=-609149.524373312 pbc="F F F"
+Bi       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=83 subset=monomers energy=-628570.567051039 free_energy=-628570.567051039 pbc="F F F"
+Po       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=84 subset=monomers energy=-648427.183107392 free_energy=-648427.183107392 pbc="F F F"
+At       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=85 subset=monomers energy=-668728.415224696 free_energy=-668728.415224696 pbc="F F F"
+Rn       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=86 subset=monomers energy=-689477.849449196 free_energy=-689477.849449196 pbc="F F F"
+Fr       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=87 subset=monomers energy=-710687.179203568 free_energy=-710687.179203568 pbc="F F F"
+Ra       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=88 subset=monomers energy=-732364.195411114 free_energy=-732364.195411114 pbc="F F F"
+Ac       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=89 subset=monomers energy=-754522.415348757 free_energy=-754522.415348757 pbc="F F F"
+Th       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=90 subset=monomers energy=-777171.052883328 free_energy=-777171.052883328 pbc="F F F"
+Pa       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=91 subset=monomers energy=-800332.788546629 free_energy=-800332.788546629 pbc="F F F"
+U        0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=92 subset=monomers energy=-824017.529089897 free_energy=-824017.529089897 pbc="F F F"
+Np       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=93 subset=monomers energy=-848235.616209969 free_energy=-848235.616209969 pbc="F F F"
+Pu       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=94 subset=monomers energy=-873007.548461368 free_energy=-873007.548461368 pbc="F F F"
+Am       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=95 subset=monomers energy=-898349.414560209 free_energy=-898349.414560209 pbc="F F F"
+Cm       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=96 subset=monomers energy=-924265.408709722 free_energy=-924265.408709722 pbc="F F F"
+Bk       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=97 subset=monomers energy=-950784.302043035 free_energy=-950784.302043035 pbc="F F F"
+Cf       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=98 subset=monomers energy=-977920.164745012 free_energy=-977920.164745012 pbc="F F F"
+Es       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=99 subset=monomers energy=-1005692.08507208 free_energy=-1005692.08507208 pbc="F F F"
+Fm       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=100 subset=monomers energy=-1034120.42121792 free_energy=-1034120.42121792 pbc="F F F"
+Md       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=101 subset=monomers energy=-1063226.4553198 free_energy=-1063226.4553198 pbc="F F F"
+No       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000       0.00000000

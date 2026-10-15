@@ -1,0 +1,1 @@
+OC20-NEB (oc20neb) features. 932 passed .traj (desorption 263 + dissociations 293 + transfers 376), ~1.33M structs, periodic, geometry-only (no DFT E/F), minted oc20neb:<hash> ids. Grouped 10 traj/shard = 94 groups. metatomic/vesin 0.5.8, lean cols.

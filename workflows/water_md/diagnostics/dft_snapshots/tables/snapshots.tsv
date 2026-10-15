@@ -1,0 +1,10 @@
+snapshot	role	run	step	time_ps	min_oo_A	oxygens_with_other_than_two_h	max_md_force_eV_A
+late_baseline_seed1_step140000	late	baseline_seed1	140000	35.0000	2.5268	0	3.4300
+late_baseline_seed3_step200000	late	baseline_seed3	200000	50.0000	2.5640	0	3.3014
+late_lda_corrected_seed1_step140000	late	lda_corrected_seed1	140000	35.0000	2.4379	0	2.6149
+late_lda_corrected_seed3_step200000	late	lda_corrected_seed3	200000	50.0000	2.3801	0	3.0597
+late_pbe_corrected_seed1_step140000	late	pbe_corrected_seed1	140000	35.0000	2.4943	0	2.8114
+late_pbe_corrected_seed3_step200000	late	pbe_corrected_seed3	200000	50.0000	2.5250	0	3.1288
+event_before	before	lda_corrected_seed3	110150	27.5375	2.5731	0	3.8628
+event_during	during	lda_corrected_seed3	112150	28.0375	2.3980	2	2.6193
+event_after	after	lda_corrected_seed3	114150	28.5375	2.6320	2	2.9097

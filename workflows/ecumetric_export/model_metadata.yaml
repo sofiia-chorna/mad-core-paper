@@ -1,0 +1,9 @@
+name: ecumetric
+authors:
+  - Sofiia Chorna
+  - Cesare Malosso
+  - Jonathan Schmidt
+  - Michele Ceriotti
+references:
+  architecture:
+    - https://arxiv.org/abs/2610.10830

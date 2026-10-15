@@ -1,0 +1,51 @@
+{
+ "descriptors": {
+  "pet-mad": "e2500127dca37d54a2978d4b22b14e99d8e2c8f3dd2ac46f9ca0ee59de596e53",
+  "mace-omat": "80571f75462832ad6175eec007a62da353575f55824e630b1385e1ed733d71ff",
+  "uma-omat": "370308ab040f5b12e810756641c62cea425846a1276cf4fdd1fd868a0313bfeb",
+  "dpa-omat": "b878494ca8809d13b55a14cfe84eeda2e3477e85a4c7bca7846e60df7a9d16ff",
+  "dpa-omol": "f2c89c2bc89009abb7d4be50f60f55fb398272b90d48b71c304979f0149f8ed8",
+  "orb-v3-omat": "c9aad89fe3d0e79701fea0e9ec92614c20351f80ded116d818dcfb26eeaf6c6f",
+  "phace-atomic": "8f018ebd1a3b01f64915937126273e99eaaf522173b42d512a9b1f235efb6343"
+ },
+ "kept": "3952c92d2fc3f0a25e824c1de34aa7dead8b1cf39644530e04992b5a434f7905",
+ "test_idx": "6e062465f06c483e88485eb83075073ab98c20a645addeec00e1b34c1598579c",
+ "settings": {
+  "max_norm_ratio": 50.0,
+  "test_fraction": 0.26666666666666666,
+  "seed": 0,
+  "lfre_neighbours": "larger of the two descriptor dimensions"
+ },
+ "estimator": {
+  "alphas": [
+   1e-05,
+   1.8228444309622587e-05,
+   3.322761819490121e-05,
+   6.0568778780715894e-05,
+   0.000110407461090613,
+   0.00020125562558570619,
+   0.00036685769629872967,
+   0.000668724508653783,
+   0.0012189807464475211,
+   0.0022220122651120814,
+   0.0040503826829893915,
+   0.007383217516953184,
+   0.013458456933361096,
+   0.024532673270322672,
+   0.04471924684742435,
+   0.08151623007265403,
+   0.1485914060209756,
+   0.27085901695418724,
+   0.49373385063085223,
+   0.9
+  ],
+  "alpha_type": "relative",
+  "regularization_method": "cutoff",
+  "random_state": 1597463007,
+  "shuffle": true,
+  "scoring": "neg_root_mean_squared_error",
+  "n_jobs": 1
+ },
+ "code": "54fc0de6407a9dfd83886f10ae1d5ff69b373146eb98e002eb725fcbdf049ea3",
+ "skmatter_version": "0.1.dev448+gef56135ff"
+}

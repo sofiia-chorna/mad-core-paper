@@ -1,0 +1,11 @@
+{
+ "same_gids_as_original": true,
+ "same_test_idx_as_original": true,
+ "subset_of_main_selection": true,
+ "n": 5905,
+ "n_fit": 4330,
+ "n_test": 1575,
+ "main_test_idx_overlap_with_subsample_test": 1053,
+ "gfre_max_difference_to_original": 0.0,
+ "lfre_max_difference_to_original": 0.0
+}

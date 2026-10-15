@@ -1,0 +1,32 @@
+{
+ "sources": {
+  "mad16_r2scan_train": {
+   "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/dft/sources/mad-1.6/record_2026.167_v4/mad-1.6-r2scan-train.xyz",
+   "sha256": "772f7154f17bc8d5ce4930b733fda4e302b6753ca106c9144de5af169e3463d3"
+  },
+  "mad16_r2scan_val": {
+   "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/dft/sources/mad-1.6/record_2026.167_v4/mad-1.6-r2scan-val.xyz",
+   "sha256": "034e128efdfec6b51d39836ba6e73d9700c85db915aeaf158163eebf00720ff8"
+  },
+  "mad16_r2scan_test": {
+   "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/dft/sources/mad-1.6/record_2026.167_v4/mad-1.6-r2scan-test.xyz",
+   "sha256": "586ca0d2cf7fa4a3d74b25c0835b5c3a4c10584d499ba9cf453e21e99c1122d1"
+  },
+  "botr_r2scan": {
+   "path": "${DEV_ROOT}/phace-atomic/mad/madcore-r2scan/madcore_r2scan_fps_ordered.xyz",
+   "sha256": "b5166884bd6a070490b4d9f7effe5c3158459c6fe06206d728e6e6dac032a62b"
+  }
+ },
+ "index_files": {
+  "mad16_r2scan_train": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/delta_experiment/manifests/index/mad16_r2scan_train.tsv",
+  "mad16_r2scan_val": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/delta_experiment/manifests/index/mad16_r2scan_val.tsv",
+  "mad16_r2scan_test": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/delta_experiment/manifests/index/mad16_r2scan_test.tsv",
+  "botr_r2scan": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/delta_experiment/manifests/index/botr_r2scan.tsv"
+ },
+ "match_rule": "identical delta_experiment soft_hash (species order + positions and cell rounded to 1e-4 A); positions re-read and compared",
+ "existing": 0,
+ "required": 1000,
+ "existing_by_source": {},
+ "hits": 0,
+ "hit_ids": []
+}

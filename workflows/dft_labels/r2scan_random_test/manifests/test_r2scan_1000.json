@@ -1,0 +1,51 @@
+{
+ "set": "test_r2scan_1000",
+ "n_structures": 973,
+ "total_atoms": 34009,
+ "natoms_mean": 34.95,
+ "natoms_median": 27.0,
+ "natoms_max": 232,
+ "unique_hashes": 973,
+ "elements": 77,
+ "pbc": {
+  "FFF": 729,
+  "TTT": 244
+ },
+ "dataset_groups": {
+  "ANI-1": 18,
+  "ANI-2x": 14,
+  "Alexandria": 47,
+  "JARVIS_MEGNet": 1,
+  "JARVIS_Materials_Project": 1,
+  "JARVIS_QE_TB": 2,
+  "Materials_Project": 4,
+  "OC20-IS2RES": 16,
+  "OC20_S2EF_train_all": 77,
+  "OC22-IS2RE": 9,
+  "OC25": 2,
+  "ODAC": 19,
+  "OMat24": 42,
+  "OMol25": 81,
+  "OPoly26": 3,
+  "Open_Molecular_Crystals_2025_OMC25": 16,
+  "OrbNet_Denali": 1,
+  "gdb13": 608,
+  "mcloudarchive__jk-9v": 4,
+  "mcloudarchive__nsp7v-2dk91": 1,
+  "nomad": 4,
+  "oc20neb": 1,
+  "solvated_protein_fragments_JCTC_2019": 1,
+  "tmQM_wB97MV": 1
+ },
+ "pbc_taken_from_r2scan_where_pbe_differs": 0,
+ "structures_over_force_cut": [],
+ "overlap_with_delta_sets": {
+  "madcore_10k": 0,
+  "mad16_10k": 0,
+  "val": 0,
+  "test_mad16": 0,
+  "holdout_madcore": 0
+ },
+ "fmax_r2scan_max": 62.78,
+ "fmax_pbe_max": 63.1142
+}

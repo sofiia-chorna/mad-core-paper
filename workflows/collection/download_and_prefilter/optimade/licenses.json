@@ -1,0 +1,279 @@
+[
+  {
+    "base_url": "https://optimade.matterverse.ai",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "matterverse",
+    "db_id": "matterverse"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/2dtopo",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "2dtopo"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/autowannier",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "autowannier"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/curated-cofs",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "curated-cofs"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/mc2d",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "mc2d"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/mc3d-pbe-v1",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "mc3d-pbe-v1"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/mc3d-pbesol-v1",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "mc3d-pbesol-v1"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/mc3d-pbesol-v2",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "mc3d-pbesol-v2"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/pyrene-mofs",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "pyrene-mofs"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/stoceriaitf",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "stoceriaitf"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/main/tin-antimony-sulfoiodide",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloud",
+    "db_id": "tin-antimony-sulfoiodide"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/archive/1z-pd",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloudarchive",
+    "db_id": "1z-pd"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/archive/ed-g2",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloudarchive",
+    "db_id": "ed-g2"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/archive/jk-9v",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloudarchive",
+    "db_id": "jk-9v"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/archive/m0-zg",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloudarchive",
+    "db_id": "m0-zg"
+  },
+  {
+    "base_url": "https://optimade.materialscloud.org/archive/zt-z4",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mcloudarchive",
+    "db_id": "zt-z4"
+  },
+  {
+    "base_url": "http://mpddoptimade.phaseslab.org",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "mpdd",
+    "db_id": "mpdd"
+  },
+  {
+    "base_url": "https://nomad-lab.eu/prod/v1/optimade",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "nmd",
+    "db_id": "nmd"
+  },
+  {
+    "base_url": "https://optimade-gnome.odbx.science",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "odbx",
+    "db_id": "gnome"
+  },
+  {
+    "base_url": "https://optimade.odbx.science",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "odbx",
+    "db_id": "odbx_main"
+  },
+  {
+    "base_url": "https://optimade-misc.odbx.science",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "odbx",
+    "db_id": "odbx_misc"
+  },
+  {
+    "base_url": "http://optimade.openmaterialsdb.se",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "omdb",
+    "db_id": "omdb_production"
+  },
+  {
+    "base_url": "https://oqmd.org/optimade",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": false,
+    "structures_reachable": false,
+    "provider_id": "oqmd",
+    "db_id": "oqmd"
+  },
+  {
+    "base_url": "https://pchprop-optimade.psdi.ac.uk",
+    "info_license": "https://spdx.org/licenses/CC-BY-4.0",
+    "info_available_licenses": [
+      "CC-BY-4.0"
+    ],
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": true,
+    "structures_reachable": true,
+    "provider_id": "psdi",
+    "db_id": "pchprop"
+  },
+  {
+    "base_url": "http://optimade.2dmatpedia.org",
+    "info_license": null,
+    "info_available_licenses": null,
+    "info_available_licenses_for_entries": null,
+    "meta_license": null,
+    "info_reachable": false,
+    "structures_reachable": false,
+    "provider_id": "twodmatpedia",
+    "db_id": "twodmatpedia"
+  }
+]

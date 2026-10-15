@@ -1,0 +1,3 @@
+ODAC_val filtered ${STORE_ROOT}/dataset_collection/odac/odac_val_passed/gcmc/part_00000.aselmdb gcmc__part_00000
+ODAC_val filtered ${STORE_ROOT}/dataset_collection/odac/odac_val_passed/mof/part_00000.aselmdb mof__part_00000
+ODAC_val filtered ${STORE_ROOT}/dataset_collection/odac/odac_val_passed/mof_plus_adsorbate/part_00000.aselmdb mof_plus_adsorbate__part_00000

@@ -1,0 +1,10 @@
+run	hydrogen	oxygen_a	oxygen_b	crossings	span_start_ps	span_end_ps	fraction_nearer_a	median_abs_difference_A	mean_oo_A
+lda_corrected_seed0	1	0	21	153	11.1	29.8625	0.884154	0.287795	2.46463
+lda_corrected_seed0	13	12	9	126	10.475	33.5875	0.61027	0.436591	2.54016
+lda_corrected_seed0	16	15	9	183	10.375	46.8125	0.662551	0.457231	2.53569
+lda_corrected_seed0	67	69	66	221	0.8625	40.7875	0.664476	0.472313	2.55146
+lda_corrected_seed0	71	15	69	483	10.0625	48.4375	0.626506	0.317563	2.47877
+lda_corrected_seed0	86	84	36	212	33.2875	49.875	0.654367	0.280125	2.49504
+lda_corrected_seed4	8	81	6	139	6.85	50	0.64958	0.405714	2.51977
+lda_corrected_seed4	68	81	66	114	8.4375	22.4625	0.891362	0.322606	2.48718
+lda_corrected_seed4	94	66	93	176	4.8	22.45	0.690021	0.318111	2.48666

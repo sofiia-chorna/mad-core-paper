@@ -1,0 +1,12 @@
+Alexandria_pbesol filtered ${STORE_ROOT}/dataset_collection/alexandria/pbesol_filtered/alexandria_ps_000_passed.json.bz2
+Alexandria_pbesol filtered ${STORE_ROOT}/dataset_collection/alexandria/pbesol_filtered/alexandria_ps_001_passed.json.bz2
+Alexandria_pbesol filtered ${STORE_ROOT}/dataset_collection/alexandria/pbesol_filtered/alexandria_ps_002_passed.json.bz2
+Alexandria_pbesol filtered ${STORE_ROOT}/dataset_collection/alexandria/pbesol_filtered/alexandria_ps_003_passed.json.bz2
+Alexandria_pbesol filtered ${STORE_ROOT}/dataset_collection/alexandria/pbesol_filtered/alexandria_ps_004_passed.json.bz2
+Alexandria_pressure filtered ${STORE_ROOT}/dataset_collection/alexandria/pressure_filtered/P000_passed.json.bz2
+Alexandria_pressure filtered ${STORE_ROOT}/dataset_collection/alexandria/pressure_filtered/P025_passed.json.bz2
+Alexandria_pressure filtered ${STORE_ROOT}/dataset_collection/alexandria/pressure_filtered/P050_passed.json.bz2
+Alexandria_pressure filtered ${STORE_ROOT}/dataset_collection/alexandria/pressure_filtered/P075_passed.json.bz2
+Alexandria_pressure filtered ${STORE_ROOT}/dataset_collection/alexandria/pressure_filtered/P100_passed.json.bz2
+Alexandria_pressure filtered ${STORE_ROOT}/dataset_collection/alexandria/pressure_filtered/P125_passed.json.bz2
+Alexandria_pressure filtered ${STORE_ROOT}/dataset_collection/alexandria/pressure_filtered/P150_passed.json.bz2

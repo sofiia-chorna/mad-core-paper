@@ -1,0 +1,306 @@
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=0 subset=monomers energy=-12.1549903298712 free_energy=-12.1549903298712 scf=converged pbc="F F F"
+H 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=1 subset=monomers energy=-77.1341469162083 free_energy=-77.1341469162083 scf=converged pbc="F F F"
+He 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=2 subset=monomers energy=-199.623360831775 free_energy=-199.623360831775 scf=converged pbc="F F F"
+Li 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=3 subset=monomers energy=-393.211740805652 free_energy=-393.211740805652 scf=converged pbc="F F F"
+Be 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=4 subset=monomers energy=-662.761276271108 free_energy=-662.761276271108 scf=converged pbc="F F F"
+B 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=5 subset=monomers energy=-1019.11357877393 free_energy=-1019.11357877393 scf=converged pbc="F F F"
+C 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=6 subset=monomers energy=-1471.42935967326 free_energy=-1471.42935967326 scf=converged pbc="F F F"
+N 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=7 subset=monomers energy=-2028.83165921976 free_energy=-2028.83165921976 scf=converged pbc="F F F"
+O 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=8 subset=monomers energy=-2700.42333256124 free_energy=-2700.42333256124 scf=converged pbc="F F F"
+F 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=9 subset=monomers energy=-3495.29246746192 free_energy=-3495.29246746192 scf=converged pbc="F F F"
+Ne 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=10 subset=monomers energy=-4401.98560672743 free_energy=-4401.98560672743 scf=converged pbc="F F F"
+Na 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=11 subset=monomers energy=-5432.03446180178 free_energy=-5432.03446180178 scf=converged pbc="F F F"
+Mg 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=12 subset=monomers energy=-6585.28453408566 free_energy=-6585.28453408566 scf=converged pbc="F F F"
+Al 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=13 subset=monomers energy=-7868.28207442203 free_energy=-7868.28207442203 scf=converged pbc="F F F"
+Si 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=14 subset=monomers energy=-9285.56546869444 free_energy=-9285.56546869444 scf=converged pbc="F F F"
+P 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=15 subset=monomers energy=-10841.7464502201 free_energy=-10841.7464502201 scf=converged pbc="F F F"
+S 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=16 subset=monomers energy=-12541.4418965855 free_energy=-12541.4418965855 scf=converged pbc="F F F"
+Cl 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=17 subset=monomers energy=-14389.2720179908 free_energy=-14389.2720179908 scf=converged pbc="F F F"
+Ar 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=18 subset=monomers energy=-16376.1043269325 free_energy=-16376.1043269325 scf=converged pbc="F F F"
+K 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=19 subset=monomers energy=-18510.7670625965 free_energy=-18510.7670625965 scf=converged pbc="F F F"
+Ca 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=20 subset=monomers energy=-20796.4627183273 free_energy=-20796.4627183273 scf=converged pbc="F F F"
+Sc 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=21 subset=monomers energy=-23241.0909849199 free_energy=-23241.0909849199 scf=converged pbc="F F F"
+Ti 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=22 subset=monomers energy=-25849.0591338889 free_energy=-25849.0591338889 scf=converged pbc="F F F"
+V 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=23 subset=monomers energy=-28624.7812462391 free_energy=-28624.7812462391 scf=converged pbc="F F F"
+Cr 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=24 subset=monomers energy=-31572.5702115674 free_energy=-31572.5702115674 scf=converged pbc="F F F"
+Mn 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=25 subset=monomers energy=-34696.7506438258 free_energy=-34696.7506438258 scf=converged pbc="F F F"
+Fe 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=26 subset=monomers energy=-38001.6595633059 free_energy=-38001.6595633059 scf=converged pbc="F F F"
+Co 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=27 subset=monomers energy=-41491.6894804007 free_energy=-41491.6894804007 scf=converged pbc="F F F"
+Ni 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=28 subset=monomers energy=-45171.0292090306 free_energy=-45171.0292090306 scf=converged pbc="F F F"
+Cu 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=29 subset=monomers energy=-49042.4598224583 free_energy=-49042.4598224583 scf=converged pbc="F F F"
+Zn 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=30 subset=monomers energy=-53101.5018576893 free_energy=-53101.5018576893 scf=converged pbc="F F F"
+Ga 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=31 subset=monomers energy=-57354.6318486644 free_energy=-57354.6318486644 scf=converged pbc="F F F"
+Ge 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=32 subset=monomers energy=-61804.8646465975 free_energy=-61804.8646465975 scf=converged pbc="F F F"
+As 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=33 subset=monomers energy=-66455.4117552529 free_energy=-66455.4117552529 scf=converged pbc="F F F"
+Se 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=34 subset=monomers energy=-71309.5876655883 free_energy=-71309.5876655883 scf=converged pbc="F F F"
+Br 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=35 subset=monomers energy=-76370.7756305426 free_energy=-76370.7756305426 scf=converged pbc="F F F"
+Kr 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=36 subset=monomers energy=-81631.1505488082 free_energy=-81631.1505488082 scf=converged pbc="F F F"
+Rb 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=37 subset=monomers energy=-87098.5486737303 free_energy=-87098.5486737303 scf=converged pbc="F F F"
+Sr 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=38 subset=monomers energy=-92774.1329395367 free_energy=-92774.1329395367 scf=converged pbc="F F F"
+Y 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=39 subset=monomers energy=-98665.0424924157 free_energy=-98665.0424924157 scf=converged pbc="F F F"
+Zr 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=40 subset=monomers energy=-104774.644245868 free_energy=-104774.644245868 scf=converged pbc="F F F"
+Nb 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=41 subset=monomers energy=-111107.447897409 free_energy=-111107.447897409 scf=converged pbc="F F F"
+Mo 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=42 subset=monomers energy=-117667.131299146 free_energy=-117667.131299146 scf=converged pbc="F F F"
+Tc 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=43 subset=monomers energy=-124457.374102429 free_energy=-124457.374102429 scf=converged pbc="F F F"
+Ru 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=44 subset=monomers energy=-131481.902095928 free_energy=-131481.902095928 scf=converged pbc="F F F"
+Rh 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=45 subset=monomers energy=-138744.379420691 free_energy=-138744.379420691 scf=converged pbc="F F F"
+Pd 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=46 subset=monomers energy=-146246.763697618 free_energy=-146246.763697618 scf=converged pbc="F F F"
+Ag 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=47 subset=monomers energy=-153992.181607918 free_energy=-153992.181607918 scf=converged pbc="F F F"
+Cd 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=48 subset=monomers energy=-161978.050427706 free_energy=-161978.050427706 scf=converged pbc="F F F"
+In 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=49 subset=monomers energy=-170210.957446617 free_energy=-170210.957446617 scf=converged pbc="F F F"
+Sn 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=50 subset=monomers energy=-178694.202636126 free_energy=-178694.202636126 scf=converged pbc="F F F"
+Sb 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=51 subset=monomers energy=-187431.258521101 free_energy=-187431.258521101 scf=converged pbc="F F F"
+Te 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=52 subset=monomers energy=-196425.705677717 free_energy=-196425.705677717 scf=converged pbc="F F F"
+I 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=53 subset=monomers energy=-205681.209937237 free_energy=-205681.209937237 scf=converged pbc="F F F"
+Xe 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=54 subset=monomers energy=-215192.624127629 free_energy=-215192.624127629 scf=converged pbc="F F F"
+Cs 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=55 subset=monomers energy=-224967.606886819 free_energy=-224967.606886819 scf=converged pbc="F F F"
+Ba 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=56 subset=monomers energy=-235008.76216848 free_energy=-235008.76216848 scf=converged pbc="F F F"
+La 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=57 subset=monomers energy=-245326.387017868 free_energy=-245326.387017868 scf=converged pbc="F F F"
+Ce 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=58 subset=monomers energy=-255925.902551828 free_energy=-255925.902551828 scf=converged pbc="F F F"
+Pr 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=59 subset=monomers energy=-266815.895400768 free_energy=-266815.895400768 scf=converged pbc="F F F"
+Nd 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=60 subset=monomers energy=-277999.174245233 free_energy=-277999.174245233 scf=converged pbc="F F F"
+Pm 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=61 subset=monomers energy=-289480.637347631 free_energy=-289480.637347631 scf=converged pbc="F F F"
+Sm 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=62 subset=monomers energy=-301265.270045513 free_energy=-301265.270045513 scf=converged pbc="F F F"
+Eu 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=63 subset=monomers energy=-313359.887814521 free_energy=-313359.887814521 scf=converged pbc="F F F"
+Gd 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=64 subset=monomers energy=-325764.484331654 free_energy=-325764.484331654 scf=converged pbc="F F F"
+Tb 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=65 subset=monomers energy=-338489.565273051 free_energy=-338489.565273051 scf=converged pbc="F F F"
+Dy 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=66 subset=monomers energy=-351538.829440939 free_energy=-351538.829440939 scf=converged pbc="F F F"
+Ho 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=67 subset=monomers energy=-364917.840208492 free_energy=-364917.840208492 scf=converged pbc="F F F"
+Er 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=68 subset=monomers energy=-378632.297940532 free_energy=-378632.297940532 scf=converged pbc="F F F"
+Tm 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=69 subset=monomers energy=-392688.041570072 free_energy=-392688.041570072 scf=converged pbc="F F F"
+Yb 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=70 subset=monomers energy=-407088.914202826 free_energy=-407088.914202826 scf=converged pbc="F F F"
+Lu 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=71 subset=monomers energy=-421837.883528505 free_energy=-421837.883528505 scf=converged pbc="F F F"
+Hf 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=72 subset=monomers energy=-436940.49304397 free_energy=-436940.49304397 scf=converged pbc="F F F"
+Ta 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=73 subset=monomers energy=-452402.611128512 free_energy=-452402.611128512 scf=converged pbc="F F F"
+W 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=74 subset=monomers energy=-468230.35804547 free_energy=-468230.35804547 scf=converged pbc="F F F"
+Re 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=75 subset=monomers energy=-484430.111351906 free_energy=-484430.111351906 scf=converged pbc="F F F"
+Os 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=76 subset=monomers energy=-501008.759095913 free_energy=-501008.759095913 scf=converged pbc="F F F"
+Ir 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=77 subset=monomers energy=-517971.863630054 free_energy=-517971.863630054 scf=converged pbc="F F F"
+Pt 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=78 subset=monomers energy=-535328.719578729 free_energy=-535328.719578729 scf=converged pbc="F F F"
+Au 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=79 subset=monomers energy=-553085.111792143 free_energy=-553085.111792143 scf=converged pbc="F F F"
+Hg 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=80 subset=monomers energy=-571241.019404936 free_energy=-571241.019404936 scf=converged pbc="F F F"
+Tl 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=81 subset=monomers energy=-589807.663790428 free_energy=-589807.663790428 scf=converged pbc="F F F"
+Pb 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=82 subset=monomers energy=-608792.767181579 free_energy=-608792.767181579 scf=converged pbc="F F F"
+Bi 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=83 subset=monomers energy=-628204.539191714 free_energy=-628204.539191714 scf=converged pbc="F F F"
+Po 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=84 subset=monomers energy=-648051.597246433 free_energy=-648051.597246433 scf=converged pbc="F F F"
+At 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=85 subset=monomers energy=-668342.953854898 free_energy=-668342.953854898 scf=converged pbc="F F F"
+Rn 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=86 subset=monomers energy=-689082.145969619 free_energy=-689082.145969619 scf=converged pbc="F F F"
+Fr 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=87 subset=monomers energy=-710280.949249136 free_energy=-710280.949249136 scf=converged pbc="F F F"
+Ra 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=88 subset=monomers energy=-731947.090604657 free_energy=-731947.090604657 scf=converged pbc="F F F"
+Ac 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=89 subset=monomers energy=-754094.101266753 free_energy=-754094.101266753 scf=converged pbc="F F F"
+Th 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=90 subset=monomers energy=-776731.13818736 free_energy=-776731.13818736 scf=converged pbc="F F F"
+Pa 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=91 subset=monomers energy=-799880.84800692 free_energy=-799880.84800692 scf=converged pbc="F F F"
+U 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=92 subset=monomers energy=-823553.080818532 free_energy=-823553.080818532 scf=converged pbc="F F F"
+Np 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=93 subset=monomers energy=-847758.212503388 free_energy=-847758.212503388 scf=converged pbc="F F F"
+Pu 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=94 subset=monomers energy=-872516.660331281 free_energy=-872516.660331281 scf=converged pbc="F F F"
+Am 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=95 subset=monomers energy=-897844.456536396 free_energy=-897844.456536396 scf=converged pbc="F F F"
+Cm 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=96 subset=monomers energy=-923745.85043359 free_energy=-923745.85043359 scf=converged pbc="F F F"
+Bk 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=97 subset=monomers energy=-950249.504435286 free_energy=-950249.504435286 scf=converged pbc="F F F"
+Cf 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=98 subset=monomers energy=-977369.462284215 free_energy=-977369.462284215 scf=converged pbc="F F F"
+Es 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=99 subset=monomers energy=-1005124.76769186 free_energy=-1005124.76769186 scf=converged pbc="F F F"
+Fm 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=100 subset=monomers energy=-1033535.68112185 free_energy=-1033535.68112185 scf=converged pbc="F F F"
+Md 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00
+1
+Properties=species:S:1:pos:R:3:forces:R:3 frame_id=101 subset=monomers energy=-1062623.52537874 free_energy=-1062623.52537874 scf=converged pbc="F F F"
+No 0.0 0.0 0.0 0.000000000000000E+00 0.000000000000000E+00 0.000000000000000E+00

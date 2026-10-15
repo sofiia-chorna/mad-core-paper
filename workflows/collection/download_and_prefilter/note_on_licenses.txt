@@ -1,0 +1,18 @@
+only use
+cc-by-4.0 — Same license, trivially fine
+cc0-1.0 — Public domain, no restrictions at all
+cc-by-3.0 — Just requires attribution, compatible with CC BY 4.0
+mit — Permissive, requires attribution only
+bsd-3-clause — Permissive, requires attribution
+apache-2.0 — Permissive
++
+Jarvis
+
+do not use dbs in colabfit_data_restricted/
+
+cc-by-sa-4.0
+cc-by-nc-nd-4.0
+gpl3/2.0
+lgpl-3.0
+
+

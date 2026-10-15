@@ -1,0 +1,52 @@
+seed: {seed}
+device: cuda
+base_precision: 32
+
+architecture:
+  name: pet
+  training:
+    finetune:
+      read_from: {ckpt}
+      method: full
+    batch_size: {batch}
+    num_epochs: {epochs}
+    learning_rate: 1e-4
+    warmup_fraction: 0.01
+    log_mae: true
+    log_interval: 1
+    checkpoint_interval: {ckpt_interval}
+    best_model_metric: mae_prod
+
+training_set:
+  systems:
+    read_from: {train}
+    length_unit: angstrom
+  targets:
+    "mtt::delta_energy":
+      quantity: energy
+      key: delta_energy
+      unit: eV
+      forces:
+        key: delta_forces
+      stress: false
+
+validation_set:
+  systems:
+    read_from: {val}
+    length_unit: angstrom
+  targets:
+    "mtt::delta_energy":
+      quantity: energy
+      key: delta_energy
+      unit: eV
+      forces:
+        key: delta_forces
+      stress: false
+
+test_set: 0.0
+
+wandb:
+  project: mad-core-valid
+  name: {name}
+  group: {group}
+  tags: [{arm}, {model}, delta-r2scan-pbe, full, delta-experiment]

@@ -1,0 +1,11 @@
+\begin{tabular}{l rrrr rrrr}
+\toprule
+ & \multicolumn{4}{c}{energy (meV/atom)} & \multicolumn{4}{c}{force (meV/\AA{})} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-9}
+model & MAE & RMSE & $p_8$ & max & MAE & RMSE & $p_8$ & max \\
+\midrule
+PET-S, trained from scratch & 176.7 & 262.8 & 1080 & 3007 & 583 & 1008 & 5253 & 22173 \\
+PET-OMat-S, fine-tuned, previous & 95.3 & 141.0 & 602 & 1521 & 194 & 374 & 6257 & 27779 \\
+PET-OMat-S, fine-tuned, aligned & 90.0 & 143.7 & 586 & 1465 & 191 & 360 & 5717 & 24924 \\
+\bottomrule
+\end{tabular}

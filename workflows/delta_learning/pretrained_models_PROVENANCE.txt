@@ -1,0 +1,27 @@
+source repo: https://huggingface.co/lab-cosmo/upet (files under models/, downloaded via /resolve/main/)
+
+pet-omat-xs-v1.0.0.ckpt  downloaded 2026-08-13  18017273 bytes
+  sha256 64235c15f9351577db36068a833c36ba2bc0682f77121345926668c58c582299
+
+pet-omat-s-v1.0.0.ckpt   downloaded 2026-08-13  103774114 bytes
+  sha256 7fc9c9158a6d39c4b272f6c4c45c6313eb902aefdef8014113884e434d14a589
+
+pet-omat-m-v1.0.0.ckpt   downloaded 2026-08-21  434618843 bytes
+  sha256 78363306076ddfc0dfad69f2905cfd7536fc7bcf337b255a72ab988533209b1a
+
+pet-omat-l-v1.0.0.ckpt   downloaded 2026-08-21  1021854222 bytes
+  sha256 57d26df422a19affc21921d8c41d547590c8402729b3756ede0074224b18412f
+
+pet-omat-xl-v1.0.0.ckpt  downloaded 2026-08-21  2920690613 bytes
+  sha256 61139743a01c89b6943c5412a2de2dfe3ec0065b2a300f223395844731e5387f
+
+pet-oam-l-v0.1.0.ckpt    downloaded 2026-08-21  771693151 bytes
+  sha256 e15045ffc469238eebc1ac879747b5457b2016b8d4988a554cc23ec242583d70
+  note: v0.1.0 is the only l version published; xl is v1.0.0 (version mismatch raised with group)
+
+pet-oam-xl-v1.0.0.ckpt   downloaded 2026-08-21  2920687712 bytes
+  sha256 c3a67cd019969dfd4dcabe9574682fe035f861d3f1c10190989b36c983699409
+
+2026-08-21: the first pet-oam download attempt saved the HF blob PAGE (92 KB of HTML)
+instead of the checkpoint; both files re-downloaded with the /resolve/ URL and
+size-verified against the HF x-linked-size headers.

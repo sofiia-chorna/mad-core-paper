@@ -1,0 +1,173 @@
+{
+ "tolerance_angstrom": 0.01,
+ "usable": {
+  "n_structures": 5905,
+  "id_in_mad_next_tier": 3,
+  "geometry_match_space": 3,
+  "exact_geometry_match_space": 3,
+  "geometry_match_space_test": 0,
+  "geometry_match_space_train": 3,
+  "geometry_match_space_val": 0,
+  "geometry_match_mad_next_tier": 4,
+  "exact_geometry_match_mad_next_tier": 4,
+  "geometry_match_mad_next_tier_none": 1,
+  "geometry_match_mad_next_tier_test": 0,
+  "geometry_match_mad_next_tier_train": 3,
+  "geometry_match_mad_next_tier_val": 0
+ },
+ "reconstruction_test": {
+  "n_structures": 1575,
+  "id_in_mad_next_tier": 0,
+  "geometry_match_space": 0,
+  "exact_geometry_match_space": 0,
+  "geometry_match_space_test": 0,
+  "geometry_match_space_train": 0,
+  "geometry_match_space_val": 0,
+  "geometry_match_mad_next_tier": 0,
+  "exact_geometry_match_mad_next_tier": 0,
+  "geometry_match_mad_next_tier_none": 0,
+  "geometry_match_mad_next_tier_test": 0,
+  "geometry_match_mad_next_tier_train": 0,
+  "geometry_match_mad_next_tier_val": 0
+ },
+ "id_hits": [
+  "mad_next:8871ac878c01fe9ce0f2a2aedfb43747",
+  "MAD-1.5:a365c7a7497e4c32f60f99d795ae7f58",
+  "MAD-1.5:0991706dcb7afa531be3dda83008babe"
+ ],
+ "details": [
+  {
+   "reference": "space",
+   "frame": 4439,
+   "configuration_id": "MAD-1.5:a365c7a7497e4c32f60f99d795ae7f58",
+   "dataset_group": "mad-next-coreset",
+   "in_reconstruction_test": false,
+   "matches": [
+    {
+     "reference_index": 42803,
+     "reference_split": "train",
+     "reference_id": null,
+     "max_distance_difference": 1.633387203270331e-08,
+     "exact": true,
+     "same_periodicity": true,
+     "same_cell_lengths": true
+    }
+   ],
+   "n_matches": 1
+  },
+  {
+   "reference": "space",
+   "frame": 4829,
+   "configuration_id": "MAD-1.5:0991706dcb7afa531be3dda83008babe",
+   "dataset_group": "mad-next-coreset",
+   "in_reconstruction_test": false,
+   "matches": [
+    {
+     "reference_index": 172572,
+     "reference_split": "train",
+     "reference_id": null,
+     "max_distance_difference": 1.3532217568723581e-08,
+     "exact": true,
+     "same_periodicity": true,
+     "same_cell_lengths": true
+    }
+   ],
+   "n_matches": 1
+  },
+  {
+   "reference": "space",
+   "frame": 4879,
+   "configuration_id": "mcloudarchive__7v6p9-92t31:data/Training_data/train.xyz:12866",
+   "dataset_group": "mcloudarchive__7v6p9-92t31",
+   "in_reconstruction_test": false,
+   "matches": [
+    {
+     "reference_index": 173665,
+     "reference_split": "train",
+     "reference_id": null,
+     "max_distance_difference": 4.262417025557852e-06,
+     "exact": true,
+     "same_periodicity": true,
+     "same_cell_lengths": true
+    }
+   ],
+   "n_matches": 1
+  },
+  {
+   "reference": "mad_next_tier",
+   "frame": 3579,
+   "configuration_id": "mad_next:8871ac878c01fe9ce0f2a2aedfb43747",
+   "dataset_group": "mad-next-coreset",
+   "in_reconstruction_test": false,
+   "matches": [
+    {
+     "reference_index": 726469,
+     "reference_split": "none",
+     "reference_id": "mad_next:8871ac878c01fe9ce0f2a2aedfb43747",
+     "max_distance_difference": 1.1833625634949385e-08,
+     "exact": true,
+     "same_periodicity": true,
+     "same_cell_lengths": true
+    }
+   ],
+   "n_matches": 1
+  },
+  {
+   "reference": "mad_next_tier",
+   "frame": 4439,
+   "configuration_id": "MAD-1.5:a365c7a7497e4c32f60f99d795ae7f58",
+   "dataset_group": "mad-next-coreset",
+   "in_reconstruction_test": false,
+   "matches": [
+    {
+     "reference_index": 542738,
+     "reference_split": "train",
+     "reference_id": "MAD-1.5:a365c7a7497e4c32f60f99d795ae7f58",
+     "max_distance_difference": 1.633387203270331e-08,
+     "exact": true,
+     "same_periodicity": true,
+     "same_cell_lengths": true
+    }
+   ],
+   "n_matches": 1
+  },
+  {
+   "reference": "mad_next_tier",
+   "frame": 4829,
+   "configuration_id": "MAD-1.5:0991706dcb7afa531be3dda83008babe",
+   "dataset_group": "mad-next-coreset",
+   "in_reconstruction_test": false,
+   "matches": [
+    {
+     "reference_index": 473773,
+     "reference_split": "train",
+     "reference_id": "MAD-1.5:0991706dcb7afa531be3dda83008babe",
+     "max_distance_difference": 1.3532217568723581e-08,
+     "exact": true,
+     "same_periodicity": true,
+     "same_cell_lengths": true
+    }
+   ],
+   "n_matches": 1
+  },
+  {
+   "reference": "mad_next_tier",
+   "frame": 4879,
+   "configuration_id": "mcloudarchive__7v6p9-92t31:data/Training_data/train.xyz:12866",
+   "dataset_group": "mcloudarchive__7v6p9-92t31",
+   "in_reconstruction_test": false,
+   "matches": [
+    {
+     "reference_index": 516294,
+     "reference_split": "train",
+     "reference_id": "MAD-1.5:7b9b79732da7268ef0be30e14a0c92a4",
+     "max_distance_difference": 4.262417025557852e-06,
+     "exact": true,
+     "same_periodicity": true,
+     "same_cell_lengths": true
+    }
+   ],
+   "n_matches": 1
+  }
+ ]
+}

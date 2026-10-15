@@ -1,0 +1,62 @@
+{
+ "rules": {
+  "late": "seed 1 at step 140,000 (35.0 ps) and seed 3 at step 200,000 (50.0 ps) of every potential, chosen before any comparison",
+  "event": "lasting proton transfer in an approximate LDA run after 20 ps with one crossing, largest settled stay on both sides, earliest on ties; during is the frame of smallest donor H minus acceptor H distance difference within 0.1 ps of the crossing, before and after are 0.5 ps away"
+ },
+ "event": {
+  "run": "lda_corrected_seed3",
+  "donor": 39,
+  "acceptor": 54,
+  "outcome": "transferred",
+  "first_crossing_ps": 28.05,
+  "last_crossing_ps": 28.05,
+  "duration_ps": 0.0,
+  "crossings": 1,
+  "settled_before_frames": 2244,
+  "settled_after_frames": 1757,
+  "min_oo_A": 2.397998276460071,
+  "min_nearest_minus_second_A": 0.01136981638513701,
+  "frames_without_oxygen_within_1p3A": 0,
+  "hydrogen": 41,
+  "oxygens_visited": 2,
+  "frame_of_crossing": 2244,
+  "frames": {
+   "before": 2203,
+   "during": 2243,
+   "after": 2283
+  },
+  "times_ps": {
+   "before": 27.5375,
+   "during": 28.0375,
+   "after": 28.5375
+  },
+  "donor_h_A": {
+   "before": 1.0508367917363717,
+   "during": 1.1954508754025874,
+   "after": 1.65301101391167
+  },
+  "acceptor_h_A": {
+   "before": 1.5445633934608087,
+   "during": 1.2068206917877244,
+   "after": 0.989338923487433
+  },
+  "donor_acceptor_oo_A": {
+   "before": 2.5731415097830985,
+   "during": 2.397998276460071,
+   "after": 2.631989636638111
+  },
+  "owner_at_frames": {
+   "before": 39,
+   "during": 39,
+   "after": 54
+  },
+  "owner_constant_before_window": true,
+  "owner_constant_after_window": true,
+  "during_oo_short": true,
+  "oxygens_with_other_than_two_h": {
+   "before": 0,
+   "during": 2,
+   "after": 2
+  }
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "delta_lda--omat-s--madcore_shared18000--s42": [
+  {
+   "check": "allocation 2 starts one epoch after its checkpoint (100 then 101)",
+   "passed": true
+  },
+  {
+   "check": "allocation 2: scheduler restored, learning rates of the redone epochs identical",
+   "passed": true
+  },
+  {
+   "check": "allocation 2: training loss continues (ratio within 0.8 to 1.25)",
+   "passed": true
+  },
+  {
+   "check": "allocation 2: no warmup after the restart, learning rate non increasing",
+   "passed": true
+  },
+  {
+   "check": "lineage covers epochs 0 to 149 without gaps",
+   "passed": true
+  },
+  {
+   "check": "model.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 42150",
+   "passed": true
+  },
+  {
+   "check": "model.ckpt (final): optimizer and scheduler step counts equal (epoch + 1) x 281 = 42150",
+   "passed": true
+  },
+  {
+   "check": "model_0.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 281",
+   "passed": true
+  },
+  {
+   "check": "model_100.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 28381",
+   "passed": true
+  },
+  {
+   "check": "model_125.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 35406",
+   "passed": true
+  },
+  {
+   "check": "model_25.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 7306",
+   "passed": true
+  },
+  {
+   "check": "model_50.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 14331",
+   "passed": true
+  },
+  {
+   "check": "model_75.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 21356",
+   "passed": true
+  },
+  {
+   "check": "normalization unchanged across all checkpoints",
+   "passed": true
+  },
+  {
+   "check": "final best epoch (102) is the lineage minimum of validation mae_prod (94, recorded epoch within 9.3e-06 relative of the log minimum, below the log rounding)",
+   "passed": true
+  },
+  {
+   "check": "model_0.ckpt: recorded best epoch (0) is the lineage minimum up to its epoch (0)",
+   "passed": true
+  },
+  {
+   "check": "model_100.ckpt: recorded best epoch (94) is the lineage minimum up to its epoch (94)",
+   "passed": true
+  },
+  {
+   "check": "model_125.ckpt: recorded best epoch (102) is the lineage minimum up to its epoch (94, within 9.3e-06 relative, below the log rounding)",
+   "passed": true
+  },
+  {
+   "check": "model_25.ckpt: recorded best epoch (25) is the lineage minimum up to its epoch (25)",
+   "passed": true
+  },
+  {
+   "check": "model_50.ckpt: recorded best epoch (45) is the lineage minimum up to its epoch (45)",
+   "passed": true
+  },
+  {
+   "check": "model_75.ckpt: recorded best epoch (70) is the lineage minimum up to its epoch (70)",
+   "passed": true
+  },
+  {
+   "check": "best_metric never increases from one checkpoint to the next",
+   "passed": true
+  }
+ ],
+ "delta_pbe--omat-s--madcore_shared18000--s42": [
+  {
+   "check": "allocation 2 starts one epoch after its checkpoint (75 then 76)",
+   "passed": true
+  },
+  {
+   "check": "allocation 2: scheduler restored, learning rates of the redone epochs identical",
+   "passed": true
+  },
+  {
+   "check": "allocation 2: training loss continues (ratio within 0.8 to 1.25)",
+   "passed": true
+  },
+  {
+   "check": "allocation 2: no warmup after the restart, learning rate non increasing",
+   "passed": true
+  },
+  {
+   "check": "lineage covers epochs 0 to 149 without gaps",
+   "passed": true
+  },
+  {
+   "check": "model.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 42150",
+   "passed": true
+  },
+  {
+   "check": "model.ckpt (final): optimizer and scheduler step counts equal (epoch + 1) x 281 = 42150",
+   "passed": true
+  },
+  {
+   "check": "model_0.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 281",
+   "passed": true
+  },
+  {
+   "check": "model_100.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 28381",
+   "passed": true
+  },
+  {
+   "check": "model_125.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 35406",
+   "passed": true
+  },
+  {
+   "check": "model_25.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 7306",
+   "passed": true
+  },
+  {
+   "check": "model_50.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 14331",
+   "passed": true
+  },
+  {
+   "check": "model_75.ckpt: optimizer and scheduler step counts equal (epoch + 1) x 281 = 21356",
+   "passed": true
+  },
+  {
+   "check": "normalization unchanged across all checkpoints",
+   "passed": true
+  },
+  {
+   "check": "final best epoch (101) is the lineage minimum of validation mae_prod (101)",
+   "passed": true
+  },
+  {
+   "check": "model_0.ckpt: recorded best epoch (0) is the lineage minimum up to its epoch (0)",
+   "passed": true
+  },
+  {
+   "check": "model_100.ckpt: recorded best epoch (98) is the lineage minimum up to its epoch (98)",
+   "passed": true
+  },
+  {
+   "check": "model_125.ckpt: recorded best epoch (101) is the lineage minimum up to its epoch (101)",
+   "passed": true
+  },
+  {
+   "check": "model_25.ckpt: recorded best epoch (20) is the lineage minimum up to its epoch (20)",
+   "passed": true
+  },
+  {
+   "check": "model_50.ckpt: recorded best epoch (50) is the lineage minimum up to its epoch (50)",
+   "passed": true
+  },
+  {
+   "check": "model_75.ckpt: recorded best epoch (67) is the lineage minimum up to its epoch (67)",
+   "passed": true
+  },
+  {
+   "check": "best_metric never increases from one checkpoint to the next",
+   "passed": true
+  }
+ ]
+}

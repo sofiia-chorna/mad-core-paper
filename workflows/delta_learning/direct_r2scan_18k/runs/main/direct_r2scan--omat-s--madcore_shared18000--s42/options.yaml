@@ -1,0 +1,52 @@
+seed: 42
+device: cuda
+base_precision: 32
+
+architecture:
+  name: pet
+  training:
+    finetune:
+      read_from: ${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/models/pet-omat-s-v1.0.0.ckpt
+      method: full
+    batch_size: 64
+    num_epochs: 150
+    learning_rate: 1e-4
+    warmup_fraction: 0.01
+    log_mae: true
+    log_interval: 1
+    checkpoint_interval: 25
+    best_model_metric: mae_prod
+
+training_set:
+  systems:
+    read_from: ${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/delta_lda_pbe_shared/manifests/xyz/train.xyz
+    length_unit: angstrom
+  targets:
+    "mtt::r2scan_energy":
+      quantity: energy
+      key: atomization_energy
+      unit: eV
+      forces:
+        key: forces
+      stress: false
+
+validation_set:
+  systems:
+    read_from: ${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/delta_lda_pbe_shared/manifests/xyz/val.xyz
+    length_unit: angstrom
+  targets:
+    "mtt::r2scan_energy":
+      quantity: energy
+      key: atomization_energy
+      unit: eV
+      forces:
+        key: forces
+      stress: false
+
+test_set: 0.0
+
+wandb:
+  project: mad-core-valid
+  name: direct_r2scan_shared18k-main-direct_r2scan--omat-s--madcore_shared18000--s42
+  group: direct_r2scan_shared18k-main
+  tags: [madcore_shared18000, omat-s, direct-r2scan, full, direct-shared-split, fresh-head, corrected-attention-mask]

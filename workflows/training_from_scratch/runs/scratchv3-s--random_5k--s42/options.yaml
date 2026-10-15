@@ -1,0 +1,65 @@
+seed: 42
+device: cuda
+base_precision: 32
+
+architecture:
+  name: pet
+  atomic_types: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102]
+  model:
+    cutoff: 8.0
+    cutoff_width: 0.5
+    d_pet: 256
+    d_head: 256
+    d_node: 1024
+    d_feedforward: 512
+    num_heads: 8
+    num_attention_layers: 1
+    num_gnn_layers: 3
+    normalization: "RMSNorm"
+    activation: "SwiGLU"
+    transformer_type: "PreLN"
+    featurizer_type: "feedforward"
+    zbl: false
+    cutoff_function: "Bump"
+    num_neighbors_adaptive: 16
+  training:
+    batch_size: 64
+    num_epochs: 2370
+    learning_rate: 3e-4
+    warmup_fraction: 0.01
+    log_mae: true
+    log_interval: 1
+    checkpoint_interval: 5
+    best_model_metric: mae_prod
+
+training_set:
+  systems:
+    read_from: ${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v3/manifests/xyz/random_5k_aug.xyz
+    length_unit: angstrom
+  targets:
+    energy:
+      key: atomization_energy
+      unit: eV
+      forces:
+        key: forces
+      stress: false
+
+validation_set:
+  systems:
+    read_from: ${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v2/manifests/xyz/val_combined_1250.xyz
+    length_unit: angstrom
+  targets:
+    energy:
+      key: atomization_energy
+      unit: eV
+      forces:
+        key: forces
+      stress: false
+
+test_set: 0.0
+
+wandb:
+  project: mad-core-valid
+  name: scratch_scaling_v3-scratchv3-s--random_5k--s42
+  group: scratch_scaling_v3
+  tags: [random_5k, scratch, mse, pet-s, pbe, corrected-attention-mask, val-random1000-madcore250, isolated-atom-references]

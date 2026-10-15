@@ -1,0 +1,828 @@
+{
+ "release": {
+  "0": {
+   "n_candidates": 1,
+   "cov_exact_direct": 24.04885966620106,
+   "witness": {
+    "folder": "big__OMat24",
+    "row": 25257857,
+    "assigned_ub": 24.048859666201057,
+    "nearest_center": 0
+   },
+   "global_assigned_ub": 24.048859666201057,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 24.000761946868653,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "1": {
+   "n_candidates": 1,
+   "cov_exact_direct": 23.07975836823828,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 436024,
+    "assigned_ub": 23.079758368238277,
+    "nearest_center": 0
+   },
+   "global_assigned_ub": 23.079758368238277,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 23.0335988515018,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "2": {
+   "n_candidates": 1,
+   "cov_exact_direct": 14.613422853282275,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 107319335,
+    "assigned_ub": 14.613422853282273,
+    "nearest_center": 0
+   },
+   "global_assigned_ub": 14.613422853282273,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 14.58419600757571,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "3": {
+   "n_candidates": 1,
+   "cov_exact_direct": 12.232701845342984,
+   "witness": {
+    "folder": "big__OMat24",
+    "row": 25257617,
+    "assigned_ub": 12.23270184534298,
+    "nearest_center": 7
+   },
+   "global_assigned_ub": 12.23270184534298,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 12.208236441652295,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "4": {
+   "n_candidates": 1,
+   "cov_exact_direct": 9.18560611432024,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 14046489,
+    "assigned_ub": 9.18560611432024,
+    "nearest_center": 5
+   },
+   "global_assigned_ub": 9.18560611432024,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 9.1672349020916,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 0.0
+  },
+  "5": {
+   "n_candidates": 1,
+   "cov_exact_direct": 6.959689272818252,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 56583811,
+    "assigned_ub": 6.959689272818253,
+    "nearest_center": 23
+   },
+   "global_assigned_ub": 6.959689272818253,
+   "candidates_with_ub_above_cov": 1,
+   "truncated_folders": [],
+   "band_threshold": 6.945769894272617,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": -2.220446049250313e-16
+  },
+  "6": {
+   "n_candidates": 3,
+   "cov_exact_direct": 5.508021366894953,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 25070036,
+    "assigned_ub": 5.508021366894951,
+    "nearest_center": 19
+   },
+   "global_assigned_ub": 5.508021366894951,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 5.497005324161162,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "7": {
+   "n_candidates": 4,
+   "cov_exact_direct": 4.613167229847452,
+   "witness": {
+    "folder": "small__Materials_Project",
+    "row": 1310355,
+    "assigned_ub": 4.613167229847451,
+    "nearest_center": 74
+   },
+   "global_assigned_ub": 4.613167229847451,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 4.6039408953877565,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "8": {
+   "n_candidates": 2,
+   "cov_exact_direct": 3.833334514387799,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 98158652,
+    "assigned_ub": 3.8333345143877984,
+    "nearest_center": 32
+   },
+   "global_assigned_ub": 3.8333345143877984,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 3.825667845359023,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "9": {
+   "n_candidates": 6,
+   "cov_exact_direct": 3.2273165675212327,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 7854615,
+    "assigned_ub": 3.227316567521232,
+    "nearest_center": 218
+   },
+   "global_assigned_ub": 3.227316567521232,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 3.2208619343861895,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "10": {
+   "n_candidates": 8,
+   "cov_exact_direct": 2.7330997536262345,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 68161861,
+    "assigned_ub": 2.7330997536262323,
+    "nearest_center": 23
+   },
+   "global_assigned_ub": 2.7330997536262323,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 2.7276335541189796,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 8.881784197001252e-16
+  },
+  "11": {
+   "n_candidates": 22,
+   "cov_exact_direct": 2.3184508921441482,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 75881614,
+    "assigned_ub": 2.3184508921441473,
+    "nearest_center": 623
+   },
+   "global_assigned_ub": 2.3184508921441473,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 2.313813990359859,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "12": {
+   "n_candidates": 38,
+   "cov_exact_direct": 1.9385296444665803,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 353320,
+    "assigned_ub": 1.9385296444665798,
+    "nearest_center": 2779
+   },
+   "global_assigned_ub": 1.9385296444665798,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.9346525851776466,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "13": {
+   "n_candidates": 70,
+   "cov_exact_direct": 1.6028357349836033,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 94243438,
+    "assigned_ub": 1.6028357349836027,
+    "nearest_center": 3887
+   },
+   "global_assigned_ub": 1.6028357349836027,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.5996300635136353,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "14": {
+   "n_candidates": 147,
+   "cov_exact_direct": 1.3189538712269389,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 80732255,
+    "assigned_ub": 1.3189538712269382,
+    "nearest_center": 13148
+   },
+   "global_assigned_ub": 1.3189538712269382,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.3163159634844843,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "15": {
+   "n_candidates": 292,
+   "cov_exact_direct": 1.1026860129898273,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 108049959,
+    "assigned_ub": 1.1026860129898268,
+    "nearest_center": 8786
+   },
+   "global_assigned_ub": 1.1026860129898268,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.1004806409638472,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "16": {
+   "n_candidates": 649,
+   "cov_exact_direct": 0.9412745349779075,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 207752,
+    "assigned_ub": 0.9412745349779071,
+    "nearest_center": 39372
+   },
+   "global_assigned_ub": 0.9412745349779071,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.9393919859079514,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "17": {
+   "n_candidates": 1502,
+   "cov_exact_direct": 0.8147455929496383,
+   "witness": {
+    "folder": "small__MP-ALOE",
+    "row": 624014,
+    "assigned_ub": 0.8147455929496382,
+    "nearest_center": 82190
+   },
+   "global_assigned_ub": 0.8147455929496382,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.8131161017637389,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "18": {
+   "n_candidates": 2964,
+   "cov_exact_direct": 0.7095679101781908,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 801144,
+    "assigned_ub": 0.7095679101781904,
+    "nearest_center": 30801
+   },
+   "global_assigned_ub": 0.7095679101781904,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.7081487743578341,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "19": {
+   "n_candidates": 5460,
+   "cov_exact_direct": 0.6167405564586236,
+   "witness": {
+    "folder": "anchor__mad-next-coreset",
+    "row": 66614,
+    "assigned_ub": 0.6167405564586232,
+    "nearest_center": 137637
+   },
+   "global_assigned_ub": 0.6167405564586232,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.615507075345706,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "20": {
+   "n_candidates": 10111,
+   "cov_exact_direct": 0.5313134632668226,
+   "witness": {
+    "folder": "big__OMat24",
+    "row": 97856985,
+    "assigned_ub": 0.5313134632668224,
+    "nearest_center": 377811
+   },
+   "global_assigned_ub": 0.5313134632668224,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.5302508363402887,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "21": {
+   "n_candidates": 14519,
+   "cov_exact_direct": 0.4508163718259874,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 13465177,
+    "assigned_ub": 0.4508163718259872,
+    "nearest_center": 520892
+   },
+   "global_assigned_ub": 0.4508163718259872,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria",
+    "big__OMat24"
+   ],
+   "band_threshold": 0.44991473908233526,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "22": {
+   "n_candidates": 16661,
+   "cov_exact_direct": 0.37495551782343683,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 109521258,
+    "assigned_ub": 0.3749555178234367,
+    "nearest_center": 704850
+   },
+   "global_assigned_ub": 0.3749555178234367,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria",
+    "big__OMat24"
+   ],
+   "band_threshold": 0.37420560678778986,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "23": {
+   "n_candidates": 18341,
+   "cov_exact_direct": 0.3045596175225411,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 90755617,
+    "assigned_ub": 0.30455961752254107,
+    "nearest_center": 254327
+   },
+   "global_assigned_ub": 0.30455961752254107,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria",
+    "big__OMat24"
+   ],
+   "band_threshold": 0.303950498287496,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "24": {
+   "n_candidates": 20115,
+   "cov_exact_direct": 0.2179152404598418,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 62220999,
+    "assigned_ub": 0.21791524045984179,
+    "nearest_center": 3881499
+   },
+   "global_assigned_ub": 0.21791524045984179,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria"
+   ],
+   "band_threshold": 0.2174794099789221,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  }
+ },
+ "selection": {
+  "0": {
+   "n_candidates": 1,
+   "cov_exact_direct": 24.04885966620106,
+   "witness": {
+    "folder": "big__OMat24",
+    "row": 25257857,
+    "assigned_ub": 24.048859666201057,
+    "nearest_center": 0
+   },
+   "global_assigned_ub": 24.048859666201057,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 24.000761946868653,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "1": {
+   "n_candidates": 1,
+   "cov_exact_direct": 23.07975836823828,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 436024,
+    "assigned_ub": 23.079758368238277,
+    "nearest_center": 0
+   },
+   "global_assigned_ub": 23.079758368238277,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 23.0335988515018,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "2": {
+   "n_candidates": 1,
+   "cov_exact_direct": 14.613422853282275,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 107319335,
+    "assigned_ub": 14.613422853282273,
+    "nearest_center": 0
+   },
+   "global_assigned_ub": 14.613422853282273,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 14.58419600757571,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "3": {
+   "n_candidates": 1,
+   "cov_exact_direct": 12.232701845342984,
+   "witness": {
+    "folder": "big__OMat24",
+    "row": 25257617,
+    "assigned_ub": 12.23270184534298,
+    "nearest_center": 7
+   },
+   "global_assigned_ub": 12.23270184534298,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 12.208236441652295,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "4": {
+   "n_candidates": 1,
+   "cov_exact_direct": 9.18560611432024,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 14046489,
+    "assigned_ub": 9.18560611432024,
+    "nearest_center": 5
+   },
+   "global_assigned_ub": 9.18560611432024,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 9.1672349020916,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 0.0
+  },
+  "5": {
+   "n_candidates": 1,
+   "cov_exact_direct": 6.959689272818252,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 56583811,
+    "assigned_ub": 6.959689272818253,
+    "nearest_center": 23
+   },
+   "global_assigned_ub": 6.959689272818253,
+   "candidates_with_ub_above_cov": 1,
+   "truncated_folders": [],
+   "band_threshold": 6.945769894272617,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": -2.220446049250313e-16
+  },
+  "6": {
+   "n_candidates": 3,
+   "cov_exact_direct": 5.508021366894953,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 25070036,
+    "assigned_ub": 5.508021366894951,
+    "nearest_center": 19
+   },
+   "global_assigned_ub": 5.508021366894951,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 5.497005324161162,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "7": {
+   "n_candidates": 4,
+   "cov_exact_direct": 4.613167229847452,
+   "witness": {
+    "folder": "small__Materials_Project",
+    "row": 1310355,
+    "assigned_ub": 4.613167229847451,
+    "nearest_center": 74
+   },
+   "global_assigned_ub": 4.613167229847451,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 4.6039408953877565,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "8": {
+   "n_candidates": 2,
+   "cov_exact_direct": 3.833334596639389,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 98158652,
+    "assigned_ub": 3.833334596639389,
+    "nearest_center": 32
+   },
+   "global_assigned_ub": 3.833334596639389,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 3.82566792744611,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 0.0
+  },
+  "9": {
+   "n_candidates": 6,
+   "cov_exact_direct": 3.2273165675212327,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 7854615,
+    "assigned_ub": 3.227316567521232,
+    "nearest_center": 218
+   },
+   "global_assigned_ub": 3.227316567521232,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 3.2208619343861895,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "10": {
+   "n_candidates": 8,
+   "cov_exact_direct": 2.7330997536262345,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 68161861,
+    "assigned_ub": 2.7330997536262323,
+    "nearest_center": 23
+   },
+   "global_assigned_ub": 2.7330997536262323,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 2.7276335541189796,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 8.881784197001252e-16
+  },
+  "11": {
+   "n_candidates": 22,
+   "cov_exact_direct": 2.3184508921441482,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 75881614,
+    "assigned_ub": 2.3184508921441473,
+    "nearest_center": 623
+   },
+   "global_assigned_ub": 2.3184508921441473,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 2.313813990359859,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "12": {
+   "n_candidates": 38,
+   "cov_exact_direct": 1.9385296444665803,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 353320,
+    "assigned_ub": 1.9385296444665798,
+    "nearest_center": 2779
+   },
+   "global_assigned_ub": 1.9385296444665798,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.9346525851776466,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "13": {
+   "n_candidates": 70,
+   "cov_exact_direct": 1.6028357349836033,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 94243438,
+    "assigned_ub": 1.6028357349836027,
+    "nearest_center": 3887
+   },
+   "global_assigned_ub": 1.6028357349836027,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.5996300635136353,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "14": {
+   "n_candidates": 147,
+   "cov_exact_direct": 1.3189538712269389,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 80732255,
+    "assigned_ub": 1.3189538712269382,
+    "nearest_center": 13148
+   },
+   "global_assigned_ub": 1.3189538712269382,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.3163159634844843,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "15": {
+   "n_candidates": 292,
+   "cov_exact_direct": 1.1026860198164699,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 108049959,
+    "assigned_ub": 1.1026860198164696,
+    "nearest_center": 8786
+   },
+   "global_assigned_ub": 1.1026860198164696,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 1.1004806477768367,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "16": {
+   "n_candidates": 649,
+   "cov_exact_direct": 0.9412745349779075,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 207752,
+    "assigned_ub": 0.9412745349779071,
+    "nearest_center": 39372
+   },
+   "global_assigned_ub": 0.9412745349779071,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.9393919859079514,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "17": {
+   "n_candidates": 1502,
+   "cov_exact_direct": 0.8147455929496383,
+   "witness": {
+    "folder": "small__MP-ALOE",
+    "row": 624014,
+    "assigned_ub": 0.8147455929496382,
+    "nearest_center": 82190
+   },
+   "global_assigned_ub": 0.8147455929496382,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.8131161017637389,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "18": {
+   "n_candidates": 2964,
+   "cov_exact_direct": 0.7095679101781908,
+   "witness": {
+    "folder": "small__JARVIS_QE_TB",
+    "row": 801144,
+    "assigned_ub": 0.7095679101781904,
+    "nearest_center": 30801
+   },
+   "global_assigned_ub": 0.7095679101781904,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.7081487743578341,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "19": {
+   "n_candidates": 5460,
+   "cov_exact_direct": 0.616740046784791,
+   "witness": {
+    "folder": "big__OMat24",
+    "row": 43708610,
+    "assigned_ub": 0.6167400467847907,
+    "nearest_center": 342169
+   },
+   "global_assigned_ub": 0.6167405564586232,
+   "candidates_with_ub_above_cov": 1,
+   "truncated_folders": [],
+   "band_threshold": 0.615507075345706,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": -8.263990861623327e-07
+  },
+  "20": {
+   "n_candidates": 10111,
+   "cov_exact_direct": 0.5313134632668226,
+   "witness": {
+    "folder": "big__OMat24",
+    "row": 97856985,
+    "assigned_ub": 0.5313134632668224,
+    "nearest_center": 377811
+   },
+   "global_assigned_ub": 0.5313134632668224,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [],
+   "band_threshold": 0.5302508363402887,
+   "closure_ok": true,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "21": {
+   "n_candidates": 14519,
+   "cov_exact_direct": 0.4508163718259874,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 13465177,
+    "assigned_ub": 0.4508163718259872,
+    "nearest_center": 520892
+   },
+   "global_assigned_ub": 0.4508163718259872,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria",
+    "big__OMat24"
+   ],
+   "band_threshold": 0.44991473908233526,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 4.440892098500626e-16
+  },
+  "22": {
+   "n_candidates": 16661,
+   "cov_exact_direct": 0.37495551782343683,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 109521258,
+    "assigned_ub": 0.3749555178234367,
+    "nearest_center": 704850
+   },
+   "global_assigned_ub": 0.3749555178234367,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria",
+    "big__OMat24"
+   ],
+   "band_threshold": 0.37420560678778986,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "23": {
+   "n_candidates": 18341,
+   "cov_exact_direct": 0.3045596175225411,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 90755617,
+    "assigned_ub": 0.30455961752254107,
+    "nearest_center": 254327
+   },
+   "global_assigned_ub": 0.30455961752254107,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria",
+    "big__OMat24"
+   ],
+   "band_threshold": 0.303950498287496,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  },
+  "24": {
+   "n_candidates": 20115,
+   "cov_exact_direct": 0.2179152404598418,
+   "witness": {
+    "folder": "big__Alexandria",
+    "row": 62220999,
+    "assigned_ub": 0.21791524045984179,
+    "nearest_center": 3881499
+   },
+   "global_assigned_ub": 0.21791524045984179,
+   "candidates_with_ub_above_cov": 0,
+   "truncated_folders": [
+    "big__Alexandria"
+   ],
+   "band_threshold": 0.2174794099789221,
+   "closure_ok": false,
+   "cov_minus_global_ub_rel": 2.220446049250313e-16
+  }
+ }
+}

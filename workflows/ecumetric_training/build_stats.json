@@ -1,0 +1,46 @@
+{
+ "order": [
+  "mad15",
+  "mad_next",
+  "mad_sol"
+ ],
+ "ns": [
+  216803,
+  421640,
+  39011
+ ],
+ "total_atoms": 17960928,
+ "total_ns": 677454,
+ "teachers": {
+  "pet": {
+   "dim": 512,
+   "scale": 13.143182633340421,
+   "n_valid": 17960928,
+   "n_nan_atoms": 0
+  },
+  "mace": {
+   "dim": 144,
+   "scale": 3.3791315950729905,
+   "n_valid": 17040595,
+   "n_nan_atoms": 920333
+  },
+  "uma": {
+   "dim": 128,
+   "scale": 0.7853647808071987,
+   "n_valid": 13806415,
+   "n_nan_atoms": 4154513
+  },
+  "dpa_omat": {
+   "dim": 240,
+   "scale": 3.3262480000814945,
+   "n_valid": 17960928,
+   "n_nan_atoms": 0
+  },
+  "dpa_omol": {
+   "dim": 240,
+   "scale": 22.518889804836927,
+   "n_valid": 16466270,
+   "n_nan_atoms": 1494658
+  }
+ }
+}

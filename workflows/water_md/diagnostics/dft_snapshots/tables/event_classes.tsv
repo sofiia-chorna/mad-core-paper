@@ -1,0 +1,6 @@
+run	frames	episodes	transient_returns_within_0p1ps	returns_longer_than_0p1ps	lasting_transfers_settled_0p5ps_both_sides	transfers_settled_less	open_at_trajectory_ends	hydrogens_not_on_initial_oxygen_at_end	defect_stretches	defect_frames	defect_frame_fraction	defect_frame_fraction_after_20ps	stretches_single_frame	stretches_0p1_to_0p5ps	stretches_0p5_to_1ps	stretches_over_1ps	longest_defect_ps	max_oxygens_with_other_than_two_h_in_one_frame	min_transfer_oo_A
+lda_corrected_seed0	4001	310	151	81	77	0	1	32	350	2221	0.5551112221944514	0.5460224906289046	206	32	6	3	4.1375	6	2.284616538850905
+lda_corrected_seed1	4001	124	90	12	21	0	1	5	109	358	0.0894776305923519	0.03581840899625156	83	2	0	1	2.1625	4	2.318534297788886
+lda_corrected_seed2	4001	118	78	23	11	0	6	9	172	245	0.06123469132716821	0.0558100791336943	152	3	0	0	0.225	4	2.3260160886106203
+lda_corrected_seed3	4001	176	98	26	51	0	1	18	180	345	0.08622844288927768	0.10787172011661808	132	8	0	0	0.2625	4	2.2992320398845063
+lda_corrected_seed4	4001	217	124	50	40	0	3	24	277	643	0.16070982254436392	0.07580174927113703	192	8	1	0	0.6625000000000001	6	2.281434754244609

@@ -1,0 +1,114 @@
+{
+ "manifest": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v3/reports/populations/manifests/balanced_4000.tsv",
+ "manifest_sha256": "a9b0a1356e8c6ac98ce11477f989df320753af48c220d9418b6d11011db3f2c1",
+ "models": {
+  "scratch": {
+   "run": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v3/runs/scratchv3-s--madcore_20k--s42",
+   "checkpoint_sha256": "c7a2291a050de2db7b59571e27a1ce4ee0f60d423a6d701418d499197d9f348f",
+   "exported_sha256": "53da72624f236a589deb82971990339111f66eed486ec36314f2168866e094b5",
+   "epochs": 596,
+   "best_epoch_index": 216,
+   "predictions": {
+    "test_random": "ffca797bfeaf938b51512f0665d9701535180549ceab347812105f22f4ccd4bc",
+    "test_madcore": "1518903c20044f1043023a1682868fc9bcd8972dda732414cfd68beb5d395462"
+   },
+   "exported_equals_selected_state": "111/111",
+   "steps_per_epoch": 314,
+   "updates": 187144
+  },
+  "finetune_previous": {
+   "run": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/voronoi_weighted/pbe_20k/runs/pbe/corrected_20k/omat-s--madcore_20k--s42",
+   "checkpoint_sha256": "bbb56526c1603ccca5667cb71d4e4df4cffac7b074345be9a23941e838885a4e",
+   "exported_sha256": "d952f9889a5fba3c500309c33f1b50c0152666a8b5e01f96956badf44a93b8c6",
+   "epochs": 150,
+   "best_epoch_index": 71,
+   "predictions": {
+    "test_random": "15b96d27d0cd474ce722def70d40abc6ada7167e9b7949697f28e04a411d2932",
+    "test_madcore": "b7aba3d91f79277df31d5cf14f41f18ffc1a346cabc17672be0ae122382b2878"
+   },
+   "exported_equals_selected_state": "111/111",
+   "steps_per_epoch": 312,
+   "updates": 46800
+  },
+  "finetune_aligned": {
+   "run": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/finetune_aligned_20k/runs/omat-s--madcore_20k_aligned--s42",
+   "checkpoint_sha256": "6d1b0e2f16f13acc1f58b603477653a55a15cd76d7a91a6bdf50872a645bc7b8",
+   "exported_sha256": "9bfebb311b2988923562698cf6e659ac4bdf67ea95dc66b8d1e74a7e9f120f81",
+   "epochs": 150,
+   "best_epoch_index": 83,
+   "predictions": {
+    "test_random": "c540b7ff3c4cc24b33a6a132ae59deb4341f83a912ea01afb209f5435a2fc2aa",
+    "test_madcore": "56954d2ae7835da2f50eddb7f91643129e9dd65a8a42d139781deb3300824a72"
+   },
+   "exported_equals_selected_state": "111/111",
+   "steps_per_epoch": 314,
+   "updates": 47100
+  }
+ },
+ "checks": [
+  {
+   "check": "balanced_4000 manifest matches its frozen checksum",
+   "passed": true
+  },
+  {
+   "check": "scratch: exported model carries the selected checkpoint state (111/111)",
+   "passed": true
+  },
+  {
+   "check": "scratch test_random: checkpoint and exported model match eval_provenance.tsv",
+   "passed": true
+  },
+  {
+   "check": "scratch test_madcore: checkpoint and exported model match eval_provenance.tsv",
+   "passed": true
+  },
+  {
+   "check": "finetune_previous: exported model carries the selected checkpoint state (111/111)",
+   "passed": true
+  },
+  {
+   "check": "finetune_previous test_random: predictions, exported model and test file match the provenance record",
+   "passed": true
+  },
+  {
+   "check": "finetune_previous test_madcore: predictions, exported model and test file match the provenance record",
+   "passed": true
+  },
+  {
+   "check": "finetune_aligned: exported model carries the selected checkpoint state (111/111)",
+   "passed": true
+  },
+  {
+   "check": "finetune_aligned test_random: predictions, exported model and test file match the provenance record",
+   "passed": true
+  },
+  {
+   "check": "finetune_aligned test_madcore: predictions, exported model and test file match the provenance record",
+   "passed": true
+  },
+  {
+   "check": "test_random: all 2000 population rows found with matching atom counts",
+   "passed": true
+  },
+  {
+   "check": "test_madcore: all 2000 population rows found with matching atom counts",
+   "passed": true
+  },
+  {
+   "check": "scratch: predictions aligned with both test files",
+   "passed": true
+  },
+  {
+   "check": "finetune_previous: predictions aligned with both test files",
+   "passed": true
+  },
+  {
+   "check": "finetune_aligned: predictions aligned with both test files",
+   "passed": true
+  },
+  {
+   "check": "scratch and previous fine-tune reproduce finetune_vs_scratch/metrics.tsv (largest gap 5.0e-04)",
+   "passed": true
+  }
+ ]
+}

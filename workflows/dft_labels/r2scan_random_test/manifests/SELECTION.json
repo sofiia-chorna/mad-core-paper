@@ -1,0 +1,81 @@
+{
+ "parent_manifest": {
+  "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/prod_experiment/manifests/test.tsv",
+  "sha256": "e9dd8a547fe860bc6f0559fec95d5cf1fc18eb8ad81a14f219f0696648d43fba",
+  "rows": 5847,
+  "definition": "prod_experiment test set: random_test_6k structures with converged PBE and LDA labels and max per-atom force <= 100 eV/A at both functionals (5,847 of 6,000 selected)"
+ },
+ "geometry_source": {
+  "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/dft/lda_pbe/labelled/random_test_6k/pbe.xyz",
+  "sha256": "88b495132cde788bd2af0d7939293d5b02152bea09495ca31a27dadafa3f5f2d",
+  "labelled_manifest_sha256": "27f8250798b9d5545ae9bbe76fa2033573d5e65926e36ccb3869351c41da7ff1"
+ },
+ "geometry_hash": "blake2b-16 of species order + positions and cell rounded to 1e-4 A (delta_experiment soft_hash, pbc excluded)",
+ "exclusions": {
+  "exact_duplicate_groups": {},
+  "invariant_fp_duplicate_groups": {},
+  "counts": {},
+  "distinct_structures_excluded": 0
+ },
+ "eligible_after_exclusions": 5847,
+ "procedure": "sort eligible by configuration_id (python string order); numpy.random.default_rng(20260908).choice(n, size=1000, replace=False); output sorted by configuration_id",
+ "seed": 20260908,
+ "sample_size": 1000,
+ "numpy_version": "2.4.1",
+ "python_version": "3.12.12",
+ "sample_manifest": {
+  "path": "${DEV_ROOT}/phace-atomic/mad-core-valid/dft/r2scan_random_test/manifests/test_1000.tsv",
+  "sha256": "423a656375e3ff89fd953602bebc6a0788fccd29eb9c300660e132b3fe7bb4e6"
+ },
+ "sample_summary": {
+  "dataset_groups": {
+   "ANI-1": 18,
+   "ANI-2x": 14,
+   "Alexandria": 51,
+   "JARVIS_MEGNet": 1,
+   "JARVIS_Materials_Project": 1,
+   "JARVIS_QE_TB": 2,
+   "Materials_Project": 4,
+   "OC20-IS2RES": 16,
+   "OC20_S2EF_train_all": 78,
+   "OC22-IS2RE": 9,
+   "OC25": 2,
+   "ODAC": 21,
+   "OMat24": 44,
+   "OMol25": 96,
+   "OPoly26": 5,
+   "Open_Molecular_Crystals_2025_OMC25": 16,
+   "OrbNet_Denali": 2,
+   "gdb13": 608,
+   "mcloudarchive__jk-9v": 4,
+   "mcloudarchive__nsp7v-2dk91": 1,
+   "nomad": 4,
+   "oc20neb": 1,
+   "solvated_protein_fragments_JCTC_2019": 1,
+   "tmQM_wB97MV": 1
+  },
+  "dft_bucket": {
+   "isolated_fff": 747,
+   "periodic_ttt": 253
+  },
+  "pbc": {
+   "FFF": 747,
+   "TTT": 253
+  },
+  "total_atoms": 36086,
+  "natoms_max": 232,
+  "elements": 80
+ },
+ "report_only_overlap": {
+  "test_mad16": {
+   "rows": 9777,
+   "overlap_with_test_1000": 0,
+   "ids": []
+  },
+  "holdout_madcore": {
+   "rows": 6707,
+   "overlap_with_test_1000": 0,
+   "ids": []
+  }
+ }
+}

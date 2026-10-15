@@ -1,0 +1,3 @@
+${DEV_ROOT}/phace-atomic/fps/features/mad15_phaceatomic_meanstd.parquet
+${DEV_ROOT}/phace-atomic/fps/features/mad_next_phaceatomic_meanstd.parquet
+${DEV_ROOT}/phace-atomic/fps/features/mad_sol_phaceatomic_meanstd.parquet

@@ -1,0 +1,9 @@
+{
+  "molecules": "#1f77b4",
+  "3D bulk": "#7f7f7f",
+  "surfaces/2D": "#ff7f0e",
+  "molecular crystals": "#9467bd",
+  "solvated": "#2ca02c",
+  "atom": "#d62728",
+  "clusters": "#17becf"
+}

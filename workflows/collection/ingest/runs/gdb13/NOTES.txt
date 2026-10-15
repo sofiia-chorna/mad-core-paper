@@ -1,0 +1,26 @@
+GDB-13: 977,468,301 SMILES (gdb.unibe.ch), split by heavy-atom count into raw/1.smi..13.smi.
+counts: 13.smi=854.3M  12.smi=107.1M  11.smi=13.9M  10.smi=1.9M  1-9=~0.3M.
+raw + provenance: ${STORE_USER_ROOT}/dataset_collection/gdb13/
+
+Pipeline (same as other non-colabfit): SMILES -> 3D (RDKit ETKDGv3+MMFF, preprocess/smiles2extxyz.py)
+-> convert(gdb13, variant=filtered) -> lean phace features -> ZBL<200 -> FPS 10M.
+RDKit lives in venv-phace. Front-end CPU, featurize GPU; fused per chunk in submit.sh, .xyz transient.
+SMILES kept as source_id (in names), joinable by configuration_id.
+
+Outputs (standard trees):
+  structures : nc_sources/filtered/gdb13/nc_passed/<stem>.parquet
+  features   : model_292/filtered/gdb13/<stem>_with_phace.parquet
+
+Run a tranche (build a chunk manifest on scratch, then submit). Example for tranche 11:
+  RAW=${STORE_USER_ROOT}/dataset_collection/gdb13/raw
+  W=${DEV_ROOT}/mad-core/work/gdb13
+  T=11; CH=2000000
+  mkdir -p $W/smi
+  split -d -a4 -l $CH $RAW/$T.smi $W/smi/t${T}_c --additional-suffix=.smi
+  for f in $W/smi/t${T}_c*.smi; do echo "$f $(basename $f .smi)"; done > $W/t${T}.manifest
+  N=$(wc -l < $W/t${T}.manifest)
+  sbatch --array=0-$(( (N+3)/4 - 1 ))%16 submit.sh $W/t${T}.manifest
+
+Staging (recommended): validate end-to-end on tranches 1-11 (~16M) first, then 12 (107M), then 13
+(854M). Tune CH (chunk lines) so each task is ~20-40 min; use smaller CH for 13.smi -> more, shorter
+tasks. The .xyz files are ~10x the .smi, so do 13.smi in waves (the %M array cap bounds peak scratch).

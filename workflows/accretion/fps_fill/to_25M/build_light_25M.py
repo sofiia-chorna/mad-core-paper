@@ -1,0 +1,156 @@
+import os
+from collections import defaultdict
+from multiprocessing import Pool
+
+import numpy as np
+import pyarrow as pa
+import pyarrow.parquet as pq
+
+base_dir = "${DEV_ROOT}/phace-atomic/accrete/runs"
+run_dir = f"{base_dir}/madcore_25M"
+prod_dir = f"{base_dir}/madcore_production"
+coreset_path = f"{base_dir}/madcore_10M/out/coreset_25M.parquet"
+output_path = f"{run_dir}/out/coreset_25M_light.parquet"
+num_processes = int(os.environ.get("GATHER_NPROC", "96"))
+chunk_size = int(os.environ.get("GATHER_CHUNK", "20000"))
+
+output_schema = pa.schema([
+    ("fps_order", pa.int64()), ("epsilon_sq", pa.float64()), ("k_set", pa.int32()),
+    ("source_block", pa.string()),
+    ("configuration_id", pa.string()), ("dataset_id", pa.string()), ("family", pa.string()),
+    ("n_sites", pa.int32()), ("periodicity", pa.int8()), ("elements", pa.list_(pa.int16())),
+])
+
+
+def is_mad_family(family):
+    return family.startswith("mad-") or family == "mad-coreset"
+
+
+def compute_k_set(fps_order):
+    return 1 if fps_order == 0 else int(np.floor(np.log2(fps_order)) + 1)
+
+
+def read_rows(parquet_file, row_indices, columns):
+    row_indices = sorted(row_indices)
+    row_group_tables, kept_rows, row_group_start = [], [], 0
+    for row_group_index in range(parquet_file.num_row_groups):
+        row_group_num_rows = parquet_file.metadata.row_group(row_group_index).num_rows
+        local_row_indices = [row_index - row_group_start for row_index in row_indices
+                             if row_group_start <= row_index < row_group_start + row_group_num_rows]
+        if local_row_indices:
+            row_group_tables.append(parquet_file.read_row_group(row_group_index, columns=columns).take(local_row_indices))
+            kept_rows += [row_index for row_index in row_indices
+                          if row_group_start <= row_index < row_group_start + row_group_num_rows]
+        row_group_start += row_group_num_rows
+    return (pa.concat_tables(row_group_tables) if row_group_tables else None), kept_rows
+
+
+def read_task(shard_and_row_metadata):
+    shard, row_metadata_list = shard_and_row_metadata
+    parquet_file = pq.ParquetFile(shard)
+    table, kept_rows = read_rows(parquet_file, [row_index for row_index, _, _ in row_metadata_list],
+                                 ["atomic_numbers", "pbc"])
+    row_to_meta = {row_index: (configuration_id, meta) for row_index, configuration_id, meta in row_metadata_list}
+
+    output_rows = []
+    for row_position, row_index in enumerate(kept_rows):
+        configuration_id, (fps_order, epsilon_sq, k_set, source_block, dataset_id, family) = row_to_meta[row_index]
+        atomic_numbers_array = np.asarray(table.column("atomic_numbers")[row_position].as_py(), dtype=np.int16)
+        pbc_flags = table.column("pbc")[row_position].as_py()
+        output_rows.append({
+            "fps_order": fps_order, "epsilon_sq": epsilon_sq, "k_set": k_set, "source_block": source_block,
+            "configuration_id": configuration_id, "dataset_id": dataset_id, "family": family,
+            "n_sites": int(len(atomic_numbers_array)),
+            "periodicity": int(sum(bool(flag) for flag in pbc_flags)),
+            "elements": np.unique(atomic_numbers_array).tolist(),
+        })
+    return output_rows
+
+
+def main():
+    coreset_table = pq.read_table(coreset_path, columns=["fps_order", "epsilon_sq", "configuration_id", "dataset_id"])
+    fps_order_array = coreset_table.column("fps_order").to_numpy()
+    epsilon_sq_array = coreset_table.column("epsilon_sq").to_numpy()
+    dataset_id_list = coreset_table.column("dataset_id").to_pylist()
+    pick_info = {
+        configuration_id: (int(fps_order_array[index]), float(epsilon_sq_array[index]), dataset_id_list[index])
+        for index, configuration_id in enumerate(coreset_table.column("configuration_id").to_pylist())
+    }
+    del coreset_table, fps_order_array, epsilon_sq_array, dataset_id_list
+    num_picks = len(pick_info)
+
+    accrete_table = pq.read_table(f"{prod_dir}/out/accrete.parquet", columns=["fps_order", "configuration_id"])
+    anchor_order = {configuration_id: int(fps_order) for fps_order, configuration_id in zip(
+        accrete_table.column("fps_order").to_numpy(), accrete_table.column("configuration_id").to_pylist())}
+    del accrete_table
+    print(f"accrete anchor cids: {len(anchor_order):,}", flush=True)
+
+    cid_index_table = pq.read_table(f"{run_dir}/out/cid_index_25M.parquet")
+    seen_ids, shard_row_pairs, external_families = set(), defaultdict(list), defaultdict(set)
+    for configuration_id, family, shard_path, row_index in zip(
+            cid_index_table.column("configuration_id").to_pylist(),
+            cid_index_table.column("family").to_pylist(),
+            cid_index_table.column("shard").to_pylist(),
+            cid_index_table.column("row").to_numpy()):
+        if configuration_id not in seen_ids:
+            seen_ids.add(configuration_id)
+            shard_row_pairs[shard_path].append((int(row_index), configuration_id))
+        if not is_mad_family(family):
+            external_families[configuration_id].add(family)
+    del cid_index_table
+
+    family_of_cid = {}
+    for configuration_id in seen_ids:
+        external = external_families.get(configuration_id)
+        family_of_cid[configuration_id] = sorted(external)[0] if external else "mad-union"
+    del external_families
+
+    # Anchor picks are walked in ACCRETE-hierarchy order (accrete.parquet fps_order),
+    # not the raw coreset seed order (which is arbitrary pool-row order). Fill picks keep
+    # their FPS-continuation fps_order. This matches build_full_10M and is what makes the
+    # decomposition-vs-K plots meaningful (otherwise the anchor's pool-row order fakes a wall).
+    pick_metadata = {}
+    unresolved = 0
+    for configuration_id, (fps_order, epsilon_sq, dataset_id) in pick_info.items():
+        if configuration_id not in family_of_cid:
+            unresolved += 1
+            continue
+        if configuration_id in anchor_order:
+            resolved_fps_order = anchor_order[configuration_id]
+            source_block = "accrete_anchor"
+        else:
+            resolved_fps_order = fps_order
+            source_block = "fps_fill"
+        pick_metadata[configuration_id] = (
+            resolved_fps_order, epsilon_sq, compute_k_set(resolved_fps_order),
+            source_block, dataset_id, family_of_cid[configuration_id],
+        )
+    if unresolved:
+        print(f"WARNING: {unresolved:,} pick cids not in cid_index (dropped)", flush=True)
+    del pick_info, anchor_order, family_of_cid
+
+    num_tasks = sum((len(row_pairs) + chunk_size - 1) // chunk_size for row_pairs in shard_row_pairs.values())
+    print(f"{num_picks:,} picks -> {num_tasks:,} bounded tasks on {num_processes} workers -> {output_path}", flush=True)
+
+    def generate_tasks():
+        for shard, row_pairs in shard_row_pairs.items():
+            for chunk_start in range(0, len(row_pairs), chunk_size):
+                chunk = row_pairs[chunk_start:chunk_start + chunk_size]
+                yield (shard, [(row_index, configuration_id, pick_metadata[configuration_id])
+                               for row_index, configuration_id in chunk if configuration_id in pick_metadata])
+
+    parquet_writer = pq.ParquetWriter(output_path, output_schema, compression="zstd")
+    rows_written = 0
+    with Pool(num_processes) as pool:
+        for task_rows in pool.imap_unordered(read_task, generate_tasks(), chunksize=1):
+            if task_rows:
+                parquet_writer.write_table(pa.Table.from_pylist(task_rows, schema=output_schema))
+                rows_written += len(task_rows)
+                if rows_written % 2_000_000 < len(task_rows):
+                    print(f"  written {rows_written:,}/{num_picks:,}", flush=True)
+    parquet_writer.close()
+    print(f"wrote {rows_written:,} rows -> {output_path}  DONE", flush=True)
+
+
+if __name__ == "__main__":
+    main()

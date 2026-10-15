@@ -1,0 +1,66 @@
+{
+ "nan_pattern": {
+  "pet-mad": {
+   "rows": 230200,
+   "frames_all_finite": 6000,
+   "frames_all_nan": 0,
+   "frames_partially_nan": 0
+  },
+  "mace-omat": {
+   "rows": 230200,
+   "frames_all_finite": 6000,
+   "frames_all_nan": 0,
+   "frames_partially_nan": 0
+  },
+  "uma-omat": {
+   "rows": 230200,
+   "frames_all_finite": 6000,
+   "frames_all_nan": 0,
+   "frames_partially_nan": 0
+  },
+  "dpa-omat": {
+   "rows": 230200,
+   "frames_all_finite": 6000,
+   "frames_all_nan": 0,
+   "frames_partially_nan": 0
+  },
+  "dpa-omol": {
+   "rows": 230200,
+   "frames_all_finite": 5905,
+   "frames_all_nan": 95,
+   "frames_partially_nan": 0
+  },
+  "orb-v3-omat": {
+   "rows": 230200,
+   "frames_all_finite": 6000,
+   "frames_all_nan": 0,
+   "frames_partially_nan": 0
+  },
+  "phace-atomic": {
+   "rows": 230200,
+   "frames_all_finite": 6000,
+   "frames_all_nan": 0,
+   "frames_partially_nan": 0
+  }
+ },
+ "dpa_omol_exclusions": {
+  "excluded": 95,
+  "frames_with_element_beyond_83": 95,
+  "identical_sets": true,
+  "elements_beyond_83": [
+   "Ac",
+   "Th",
+   "Pa",
+   "U",
+   "Np",
+   "Pu"
+  ]
+ },
+ "ecumetric_vs_release": {
+  "compared": 5905,
+  "release_row_id_mismatch": 0,
+  "max_relative_difference": 7.245683853211349e-07,
+  "median_relative_difference": 9.143955554007916e-08,
+  "above_1e-3": 0
+ }
+}
