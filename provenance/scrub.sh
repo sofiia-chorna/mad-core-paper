@@ -3,6 +3,7 @@
 # usage: DRAFT_MADCORE=... DRAFT_MADCOSMO=... bash provenance/scrub.sh
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd $root
+: "${DRAFT_MADCORE:?}" "${DRAFT_MADCOSMO:?}"
 
 grep -rlI -e /capstor/ -e /users/schorna -e schorna -e /home/chorna -e /work/cosmo/chorna -e $DRAFT_MADCORE -e $DRAFT_MADCOSMO \
     --exclude-dir=.git --exclude-dir=docs --exclude-dir=build --exclude-dir=dist --exclude-dir=provenance \
