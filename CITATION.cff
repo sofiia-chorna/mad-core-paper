@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper and the data records below."
+title: "Code and supporting results for 'Hierarchical universal open structure dataset for atomistic modeling'"
+type: software
+version: 1.0.0
+date-released: 2026-10-16
+license: BSD-3-Clause
+# FLAG: ORCID identifiers are not recorded in the source repositories; fill in before deposit
+authors:
+  - family-names: Chorna
+    given-names: Sofiia
+    affiliation: "Laboratory of Computational Science and Modeling, Institut des Matériaux, École Polytechnique Fédérale de Lausanne, 1015 Lausanne, Switzerland"
+  - family-names: Malosso
+    given-names: Cesare
+    affiliation: "Laboratory of Computational Science and Modeling, Institut des Matériaux, École Polytechnique Fédérale de Lausanne, 1015 Lausanne, Switzerland"
+  - family-names: Schmidt
+    given-names: Jonathan
+    affiliation: "Laboratory of Computational Science and Modeling, Institut des Matériaux, École Polytechnique Fédérale de Lausanne, 1015 Lausanne, Switzerland"
+  - family-names: Ceriotti
+    given-names: Michele
+    affiliation: "Laboratory of Computational Science and Modeling, Institut des Matériaux, École Polytechnique Fédérale de Lausanne, 1015 Lausanne, Switzerland"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23266878
+    description: "Zenodo DOI reserved for this release (confirmed by the author, not yet published)"
+repository-code: "https://github.com/sofiia-chorna/mad-core-paper"
+keywords:
+  - atomistic machine learning
+  - universal interatomic potentials
+  - farthest point sampling
+  - coresets
+  - datasets
+references:
+  - type: article
+    title: "Hierarchical universal open structure dataset for atomistic modeling"
+    authors:
+      - family-names: Chorna
+        given-names: Sofiia
+      - family-names: Malosso
+        given-names: Cesare
+      - family-names: Schmidt
+        given-names: Jonathan
+      - family-names: Ceriotti
+        given-names: Michele
+    year: 2026
+    notes: "submitted; FLAG: add the journal or preprint identifier when available"
+  - type: data
+    title: "MAD-CORE"
+    doi: 10.24435/materialscloud:rs-tt
+    notes: "Materials Cloud Archive record; FLAG: the DOI did not resolve on 2026-10-16 (unpublished draft)"
+  - type: data
+    title: "MAD-COSMO"
+    doi: 10.24435/materialscloud:58-wq
+    notes: "Materials Cloud Archive record; FLAG: the DOI did not resolve on 2026-10-16 (unpublished draft)"
+  - type: software
+    title: "ecumetric model and sketch-map explorer"
+    url: "https://huggingface.co/lab-cosmo/ecumetric"
+    version: v1.0.0
+  - type: software
+    title: "coresets: multi-GPU farthest point sampling and accretion"
+    url: "https://github.com/sofiia-chorna/coresets"

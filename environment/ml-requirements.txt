@@ -1,0 +1,18 @@
+# environment of the level-2 and level-3 workflows as recorded in the sources (2026-10-16);
+# these commands were not rerun for the release, see REPRODUCTION.md and workflows/README.md.
+# torch 2.9.1 came from the CSCS uenv image pytorch/v2.9.1:v2 on GH200 nodes.
+torch==2.9.1
+metatrain==2026.4
+metatomic-torch==0.1.17
+metatensor-torch==0.10.3
+vesin==0.6.1
+ase==3.29.0
+ipi==3.3.0
+chemiscope==1.0.3
+scikit-learn==1.8.0
+h5py==3.16.0
+# the FPS and accretion runs need the coresets package from its git repository (CUDA extension)
+# pip install git+https://github.com/sofiia-chorna/coresets.git
+# the GFRE/LFRE and sketch-map steps need scikit-matter (sketch-map fit: the torch implementation
+# of the author's fork, see workflows/README.md)
+scikit-matter>=0.4.0

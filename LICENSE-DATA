@@ -1,0 +1,10 @@
+The non-code content of this release (the reference figures in reference_figures/, the
+numerical inputs in figures/*/data/, tables/data/ and data/, the claim outputs in claims/out/
+and the supporting-results and model archives listed in README.md) is made available under
+the Creative Commons Attribution 4.0 International license (CC BY 4.0),
+https://creativecommons.org/licenses/by/4.0/, following the PET-MAD release
+(Materials Cloud Archive 2025.145). The code is under the BSD 3-Clause license in LICENSE.
+
+The MAD-CORE and MAD-COSMO structures themselves are not part of this release; they are
+distributed in the Materials Cloud Archive records cited in CITATION.cff, whose LICENSES.md
+list the share-alike, GDB-13 and NIST terms that apply to parts of the structures.

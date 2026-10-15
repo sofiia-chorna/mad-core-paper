@@ -1,0 +1,21 @@
+GFRE matrix:
+              pet-mad  mace-omat  uma-omat  dpa-omat  dpa-omol  orb-v3-omat  phace-atomic
+pet-mad         0.000      0.499     0.386     0.605     0.561        0.693         0.493
+mace-omat       0.633      0.000     0.519     0.652     0.546        0.682         0.493
+uma-omat        0.524      0.548     0.000     0.522     0.695        0.729         0.630
+dpa-omat        0.373      0.464     0.185     0.000     0.545        0.643         0.491
+dpa-omol        0.710      0.689     0.631     0.735     0.000        0.768         0.675
+orb-v3-omat     0.466      0.492     0.345     0.545     0.561        0.000         0.495
+phace-atomic    0.361      0.428     0.343     0.517     0.487        0.630         0.000
+
+LFRE matrix:
+              pet-mad  mace-omat  uma-omat  dpa-omat  dpa-omol  orb-v3-omat  phace-atomic
+pet-mad         0.000      0.465     0.348     0.562     0.554        0.662         0.456
+mace-omat       0.517      0.001     0.412     0.541     0.497        0.596         0.405
+uma-omat        0.459      0.495     0.000     0.485     0.631        0.701         0.566
+dpa-omat        0.292      0.353     0.133     0.003     0.487        0.574         0.394
+dpa-omol        0.572      0.561     0.484     0.596     0.001        0.680         0.571
+orb-v3-omat     0.385      0.400     0.242     0.417     0.520        0.000         0.414
+phace-atomic    0.264      0.315     0.237     0.391     0.435        0.538         0.008
+
+saved => /tmp/claude-31366/-capstor-scratch-cscs-schorna-merge-datasets-mad-core-paper/2d9a1a4e-a06b-4345-9174-e96dd7c3f5fc/scratchpad/figcheck/gfre_lfre_heatmap_union.pdf
