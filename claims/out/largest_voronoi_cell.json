@@ -1,0 +1,91 @@
+{
+ "released_rows": 1694502355,
+ "cells": 16777216,
+ "cells_holding_half_of_the_records": 117,
+ "records_in_those_cells": 847355096,
+ "records_in_the_first_116_cells": 846006035,
+ "largest_cell": {
+  "cell": 16531443,
+  "records": 114996700,
+  "centre": {
+   "folder": "collection/gdb13",
+   "row": 178742884,
+   "configuration_id": "gdb13:332a58b9aad3548bec96be48be4c96df",
+   "dataset_id": "gdb13",
+   "natoms": 26,
+   "formula": "C10H13N3",
+   "elements": [
+    "C",
+    "H",
+    "N"
+   ],
+   "organic_elements_only": true,
+   "pbc": [
+    false,
+    false,
+    false
+   ],
+   "source_reference": "gdb13__t13_c0076.xyz__frame896882",
+   "mad_core_row": 16531443,
+   "mad_core_dataset_group": "gdb13",
+   "mad_core_configuration_id": "gdb13:332a58b9aad3548bec96be48be4c96df",
+   "k_set": 24,
+   "inside_mad_next_anchor_block": false
+  },
+  "within_cell_fps": {
+   "rows": 114996700,
+   "rows_without_ordering": 0,
+   "distinct_structures_ordered": 114974135,
+   "rows_repeating_a_twin_rank": 22565,
+   "centre_has_rank_0": true
+  },
+  "members_by_release_folder": {
+   "collection/gdb13": 114947612,
+   "collection/OMol25": 27202,
+   "collection/ANI-2x": 7202,
+   "collection/nomad": 4243,
+   "collection/COMP6v2": 3135,
+   "collection/OrbNet_Denali": 1842,
+   "collection/mcloudarchive__sqrdx-ebj42": 1205,
+   "collection/ANI-1": 652,
+   "collection/Hessian_QM9": 573,
+   "collection/rQM9": 569,
+   "collection/GDB_9_nature_2014": 568,
+   "collection/JARVIS-QM9-DGL": 568,
+   "collection/JARVIS_QM9_STD_JCTC": 567,
+   "mad-next-coreset": 461,
+   "collection/mcloudarchive__6xm49-rz892": 88,
+   "collection/OPoly26": 84,
+   "collection/QM9x": 55,
+   "collection/PropMolFlow_QM9_CNOFH_2025": 50,
+   "collection/CHON_JCP_2020": 11,
+   "collection/mcloudarchive__ann3c-0qq90": 6,
+   "collection/mcloudarchive__1herw-7m923": 5,
+   "collection/Massive_Atomic_Diversity_bench": 2
+  },
+  "share_of_members_in_centre_folder": 0.999573135576934
+ },
+ "centre_groups_of_the_half_cells": {
+  "gdb13": 67,
+  "OMol25": 18,
+  "ANI-2x": 8,
+  "nomad": 7,
+  "ODAC": 4,
+  "mad-next": 2,
+  "mcloudarchive__6xm49-rz892": 2,
+  "ANI-1": 2,
+  "tmQM_wB97MV": 2,
+  "QM9x": 1,
+  "mcloud__curated-cofs": 1,
+  "OrbNet_Denali": 1,
+  "mcloudarchive__ann3c-0qq90": 1,
+  "QM7b_AlphaML": 1
+ },
+ "text_claim": {
+  "half_cells_is_117": true,
+  "largest_rounds_to_115_million": true,
+  "centre_has_26_atoms": true,
+  "centre_is_gdb13": true,
+  "centre_is_organic": true
+ }
+}

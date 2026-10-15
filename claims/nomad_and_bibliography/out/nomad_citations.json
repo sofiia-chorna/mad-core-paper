@@ -1,0 +1,5351 @@
+{
+ "released_rows": 5408927,
+ "released_entry_ids": 5402932,
+ "rows_resolved_from_source_files": 1204,
+ "doi_candidates_from_download": 597,
+ "bib_entries": 526,
+ "dois_with_released_entries": 556,
+ "rows_in_some_cited_dataset": 1000483,
+ "cited_without_released_entries": [],
+ "uncited_with_released_entries": [
+  "10.17172/NOMAD/2016.02.21-1",
+  "10.17172/NOMAD/2016.06.16-1",
+  "10.17172/NOMAD/2016.06.18-1",
+  "10.17172/NOMAD/2017.05.16-2",
+  "10.17172/NOMAD/2017.05.16-3",
+  "10.17172/NOMAD/2017.12.14-1",
+  "10.17172/NOMAD/2018.01.03-1",
+  "10.17172/NOMAD/2018.02.14-1",
+  "10.17172/NOMAD/2018.05.15-1",
+  "10.17172/NOMAD/2018.05.15-2",
+  "10.17172/NOMAD/2018.05.16-1",
+  "10.17172/NOMAD/2018.05.28-1",
+  "10.17172/NOMAD/2018.06.02-1",
+  "10.17172/NOMAD/2018.06.22-1",
+  "10.17172/NOMAD/2018.06.22-2",
+  "10.17172/NOMAD/2018.06.22-3",
+  "10.17172/NOMAD/2018.07.25-1",
+  "10.17172/NOMAD/2018.08.23-1",
+  "10.17172/NOMAD/2019.02.27-1",
+  "10.17172/NOMAD/2019.08.16-2",
+  "10.17172/NOMAD/2019.09.13-1",
+  "10.17172/NOMAD/2019.12.05-1",
+  "10.17172/NOMAD/2020.02.11-1",
+  "10.17172/NOMAD/2021.05.25-1",
+  "10.17172/NOMAD/2021.10.11-1",
+  "10.17172/NOMAD/2021.10.11-2",
+  "10.17172/NOMAD/2021.10.11-4",
+  "10.17172/NOMAD/2021.10.11-5",
+  "10.17172/NOMAD/2022.08.11-1",
+  "10.17172/NOMAD/2023.03.31-1"
+ ],
+ "covered_by_other_doi": {
+  "10.17172/NOMAD/2015.08.27-1": {
+   "released_entries": 1,
+   "also_in": [
+    "10.17172/NOMAD/2018.08.22-4"
+   ],
+   "bib_keys": [
+    "0"
+   ]
+  },
+  "10.17172/NOMAD/2015.08.27-2": {
+   "released_entries": 1,
+   "also_in": [
+    "10.17172/NOMAD/2018.08.22-4"
+   ],
+   "bib_keys": [
+    "1"
+   ]
+  },
+  "10.17172/NOMAD/2016.02.21-1": {
+   "released_entries": 10,
+   "also_in": [
+    "10.17172/NOMAD/2016.02.21-3"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2016.06.16-1": {
+   "released_entries": 7,
+   "also_in": [
+    "10.17172/NOMAD/2016.06.28-1",
+    "10.17172/NOMAD/2016.06.18-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2016.06.18-1": {
+   "released_entries": 45,
+   "also_in": [
+    "10.17172/NOMAD/2016.06.28-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2017.04.25-2": {
+   "released_entries": 3,
+   "also_in": [
+    "10.17172/NOMAD/2018.05.16-1"
+   ],
+   "bib_keys": [
+    "52"
+   ]
+  },
+  "10.17172/NOMAD/2017.05.16-2": {
+   "released_entries": 654,
+   "also_in": [
+    "10.17172/NOMAD/2017.05.30-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2017.05.16-3": {
+   "released_entries": 599,
+   "also_in": [
+    "10.17172/NOMAD/2017.05.30-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2017.12.14-1": {
+   "released_entries": 10,
+   "also_in": [
+    "10.17172/NOMAD/2018.01.17-1",
+    "10.17172/NOMAD/2018.01.03-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.01.03-1": {
+   "released_entries": 10,
+   "also_in": [
+    "10.17172/NOMAD/2018.01.17-1",
+    "10.17172/NOMAD/2017.12.14-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.02.14-1": {
+   "released_entries": 214,
+   "also_in": [
+    "10.17172/NOMAD/2018.02.16-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.05.15-1": {
+   "released_entries": 18,
+   "also_in": [
+    "10.17172/NOMAD/2017.03.31-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.05.15-2": {
+   "released_entries": 9,
+   "also_in": [
+    "10.17172/NOMAD/2018.05.16-2",
+    "10.17172/NOMAD/2018.06.22-2",
+    "10.17172/NOMAD/2018.06.22-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.05.16-1": {
+   "released_entries": 3,
+   "also_in": [
+    "10.17172/NOMAD/2017.04.25-2"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.05.28-1": {
+   "released_entries": 245,
+   "also_in": [
+    "10.17172/NOMAD/2018.06.12-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.06.02-1": {
+   "released_entries": 388,
+   "also_in": [
+    "10.17172/NOMAD/2018.06.04-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.06.04-1": {
+   "released_entries": 388,
+   "also_in": [
+    "10.17172/NOMAD/2018.06.02-1"
+   ],
+   "bib_keys": [
+    "96"
+   ]
+  },
+  "10.17172/NOMAD/2018.06.22-1": {
+   "released_entries": 11,
+   "also_in": [
+    "10.17172/NOMAD/2018.05.16-2"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.06.22-2": {
+   "released_entries": 19,
+   "also_in": [
+    "10.17172/NOMAD/2018.05.16-2"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.06.22-3": {
+   "released_entries": 157,
+   "also_in": [
+    "10.17172/NOMAD/2018.02.16-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.07.25-1": {
+   "released_entries": 731,
+   "also_in": [
+    "10.17172/NOMAD/2018.07.17-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2018.08.23-1": {
+   "released_entries": 153,
+   "also_in": [
+    "10.17172/NOMAD/2018.08.27-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2019.02.27-1": {
+   "released_entries": 467,
+   "also_in": [
+    "10.17172/NOMAD/2019.02.27-2"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2019.08.16-2": {
+   "released_entries": 10,
+   "also_in": [
+    "10.17172/NOMAD/2019.08.16-3"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2019.09.13-1": {
+   "released_entries": 3417,
+   "also_in": [
+    "10.17172/NOMAD/2019.09.15-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2019.09.15-1": {
+   "released_entries": 3417,
+   "also_in": [
+    "10.17172/NOMAD/2019.09.13-1"
+   ],
+   "bib_keys": [
+    "157"
+   ]
+  },
+  "10.17172/NOMAD/2019.12.05-1": {
+   "released_entries": 5027,
+   "also_in": [
+    "10.17172/NOMAD/2019.12.10-10"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2019.12.10-10": {
+   "released_entries": 5027,
+   "also_in": [
+    "10.17172/NOMAD/2019.12.05-1"
+   ],
+   "bib_keys": [
+    "175"
+   ]
+  },
+  "10.17172/NOMAD/2020.02.11-1": {
+   "released_entries": 8,
+   "also_in": [
+    "10.17172/NOMAD/2020.02.03-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2021.05.25-1": {
+   "released_entries": 2282,
+   "also_in": [
+    "10.17172/NOMAD/2021.05.24-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2021.10.11-1": {
+   "released_entries": 19,
+   "also_in": [
+    "10.17172/NOMAD/2021.11.08-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2021.10.11-2": {
+   "released_entries": 55,
+   "also_in": [
+    "10.17172/NOMAD/2021.11.08-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2021.10.11-4": {
+   "released_entries": 26,
+   "also_in": [
+    "10.17172/NOMAD/2021.11.08-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2021.10.11-5": {
+   "released_entries": 32,
+   "also_in": [
+    "10.17172/NOMAD/2021.11.08-1"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2022.08.11-1": {
+   "released_entries": 213,
+   "also_in": [
+    "10.17172/NOMAD/2022.08.11-2"
+   ],
+   "bib_keys": []
+  },
+  "10.17172/NOMAD/2022.08.11-2": {
+   "released_entries": 213,
+   "also_in": [
+    "10.17172/NOMAD/2022.08.11-1"
+   ],
+   "bib_keys": [
+    "462"
+   ]
+  },
+  "10.17172/NOMAD/2023.03.31-1": {
+   "released_entries": 220,
+   "also_in": [
+    "10.17172/NOMAD/2023.03.13-1"
+   ],
+   "bib_keys": []
+  }
+ },
+ "identical_released_sets": [
+  [
+   "10.17172/NOMAD/2017.04.25-2",
+   "10.17172/NOMAD/2018.05.16-1"
+  ],
+  [
+   "10.17172/NOMAD/2017.12.14-1",
+   "10.17172/NOMAD/2018.01.03-1"
+  ],
+  [
+   "10.17172/NOMAD/2018.06.02-1",
+   "10.17172/NOMAD/2018.06.04-1"
+  ],
+  [
+   "10.17172/NOMAD/2019.09.13-1",
+   "10.17172/NOMAD/2019.09.15-1"
+  ],
+  [
+   "10.17172/NOMAD/2019.12.05-1",
+   "10.17172/NOMAD/2019.12.10-10"
+  ],
+  [
+   "10.17172/NOMAD/2022.08.11-1",
+   "10.17172/NOMAD/2022.08.11-2"
+  ]
+ ],
+ "dataset_names_with_several_dois": {},
+ "bib_same_title_and_authors": [
+  [
+   "158",
+   "159"
+  ],
+  [
+   "171",
+   "172"
+  ]
+ ],
+ "minimal_citation_set": 526,
+ "bib_equals_minimal_set": true,
+ "redundant_dois": {
+  "10.17172/NOMAD/2016.02.21-1": {
+   "bib_key": "13",
+   "released_entries": 10,
+   "contained_in": "10.17172/NOMAD/2016.02.21-3",
+   "contained_in_bib_key": "14",
+   "identical": false
+  },
+  "10.17172/NOMAD/2016.06.16-1": {
+   "bib_key": "17",
+   "released_entries": 7,
+   "contained_in": "10.17172/NOMAD/2016.06.28-1",
+   "contained_in_bib_key": "19",
+   "identical": false
+  },
+  "10.17172/NOMAD/2016.06.18-1": {
+   "bib_key": "18",
+   "released_entries": 45,
+   "contained_in": "10.17172/NOMAD/2016.06.28-1",
+   "contained_in_bib_key": "19",
+   "identical": false
+  },
+  "10.17172/NOMAD/2017.05.16-2": {
+   "bib_key": "57",
+   "released_entries": 654,
+   "contained_in": "10.17172/NOMAD/2017.05.30-1",
+   "contained_in_bib_key": "59",
+   "identical": false
+  },
+  "10.17172/NOMAD/2017.05.16-3": {
+   "bib_key": "58",
+   "released_entries": 599,
+   "contained_in": "10.17172/NOMAD/2017.05.30-1",
+   "contained_in_bib_key": "59",
+   "identical": false
+  },
+  "10.17172/NOMAD/2017.12.14-1": {
+   "bib_key": "74",
+   "released_entries": 10,
+   "contained_in": "10.17172/NOMAD/2018.01.17-1",
+   "contained_in_bib_key": "77",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.01.03-1": {
+   "bib_key": "75",
+   "released_entries": 10,
+   "contained_in": "10.17172/NOMAD/2018.01.17-1",
+   "contained_in_bib_key": "77",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.02.14-1": {
+   "bib_key": "79",
+   "released_entries": 214,
+   "contained_in": "10.17172/NOMAD/2018.02.16-1",
+   "contained_in_bib_key": "80",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.05.15-1": {
+   "bib_key": "89",
+   "released_entries": 18,
+   "contained_in": "10.17172/NOMAD/2017.03.31-1",
+   "contained_in_bib_key": "48",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.05.15-2": {
+   "bib_key": "90",
+   "released_entries": 9,
+   "contained_in": "10.17172/NOMAD/2018.05.16-2",
+   "contained_in_bib_key": "92",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.05.16-1": {
+   "bib_key": "91",
+   "released_entries": 3,
+   "contained_in": "10.17172/NOMAD/2017.04.25-2",
+   "contained_in_bib_key": "52",
+   "identical": true
+  },
+  "10.17172/NOMAD/2018.05.28-1": {
+   "bib_key": "93",
+   "released_entries": 245,
+   "contained_in": "10.17172/NOMAD/2018.06.12-1",
+   "contained_in_bib_key": "100",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.06.02-1": {
+   "bib_key": "94",
+   "released_entries": 388,
+   "contained_in": "10.17172/NOMAD/2018.06.04-1",
+   "contained_in_bib_key": "96",
+   "identical": true
+  },
+  "10.17172/NOMAD/2018.06.22-1": {
+   "bib_key": "102",
+   "released_entries": 11,
+   "contained_in": "10.17172/NOMAD/2018.05.16-2",
+   "contained_in_bib_key": "92",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.06.22-2": {
+   "bib_key": "103",
+   "released_entries": 19,
+   "contained_in": "10.17172/NOMAD/2018.05.16-2",
+   "contained_in_bib_key": "92",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.06.22-3": {
+   "bib_key": "104",
+   "released_entries": 157,
+   "contained_in": "10.17172/NOMAD/2018.02.16-1",
+   "contained_in_bib_key": "80",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.07.25-1": {
+   "bib_key": "108",
+   "released_entries": 731,
+   "contained_in": "10.17172/NOMAD/2018.07.17-1",
+   "contained_in_bib_key": "107",
+   "identical": false
+  },
+  "10.17172/NOMAD/2018.08.23-1": {
+   "bib_key": "113",
+   "released_entries": 153,
+   "contained_in": "10.17172/NOMAD/2018.08.27-1",
+   "contained_in_bib_key": "114",
+   "identical": false
+  },
+  "10.17172/NOMAD/2019.02.27-1": {
+   "bib_key": "135",
+   "released_entries": 467,
+   "contained_in": "10.17172/NOMAD/2019.02.27-2",
+   "contained_in_bib_key": "136",
+   "identical": false
+  },
+  "10.17172/NOMAD/2019.08.16-2": {
+   "bib_key": "153",
+   "released_entries": 10,
+   "contained_in": "10.17172/NOMAD/2019.08.16-3",
+   "contained_in_bib_key": "154",
+   "identical": false
+  },
+  "10.17172/NOMAD/2019.09.13-1": {
+   "bib_key": "156",
+   "released_entries": 3417,
+   "contained_in": "10.17172/NOMAD/2019.09.15-1",
+   "contained_in_bib_key": "157",
+   "identical": true
+  },
+  "10.17172/NOMAD/2019.12.05-1": {
+   "bib_key": "173",
+   "released_entries": 5027,
+   "contained_in": "10.17172/NOMAD/2019.12.10-10",
+   "contained_in_bib_key": "175",
+   "identical": true
+  },
+  "10.17172/NOMAD/2020.02.11-1": {
+   "bib_key": "182",
+   "released_entries": 8,
+   "contained_in": "10.17172/NOMAD/2020.02.03-1",
+   "contained_in_bib_key": "181",
+   "identical": false
+  },
+  "10.17172/NOMAD/2021.05.25-1": {
+   "bib_key": "297",
+   "released_entries": 2282,
+   "contained_in": "10.17172/NOMAD/2021.05.24-1",
+   "contained_in_bib_key": "296",
+   "identical": false
+  },
+  "10.17172/NOMAD/2021.10.11-1": {
+   "bib_key": "354",
+   "released_entries": 19,
+   "contained_in": "10.17172/NOMAD/2021.11.08-1",
+   "contained_in_bib_key": "375",
+   "identical": false
+  },
+  "10.17172/NOMAD/2021.10.11-2": {
+   "bib_key": "355",
+   "released_entries": 55,
+   "contained_in": "10.17172/NOMAD/2021.11.08-1",
+   "contained_in_bib_key": "375",
+   "identical": false
+  },
+  "10.17172/NOMAD/2021.10.11-4": {
+   "bib_key": "356",
+   "released_entries": 26,
+   "contained_in": "10.17172/NOMAD/2021.11.08-1",
+   "contained_in_bib_key": "375",
+   "identical": false
+  },
+  "10.17172/NOMAD/2021.10.11-5": {
+   "bib_key": "357",
+   "released_entries": 32,
+   "contained_in": "10.17172/NOMAD/2021.11.08-1",
+   "contained_in_bib_key": "375",
+   "identical": false
+  },
+  "10.17172/NOMAD/2022.08.11-1": {
+   "bib_key": "461",
+   "released_entries": 213,
+   "contained_in": "10.17172/NOMAD/2022.08.11-2",
+   "contained_in_bib_key": "462",
+   "identical": true
+  },
+  "10.17172/NOMAD/2023.03.31-1": {
+   "bib_key": "492",
+   "released_entries": 220,
+   "contained_in": "10.17172/NOMAD/2023.03.13-1",
+   "contained_in_bib_key": "485",
+   "identical": false
+  }
+ },
+ "per_doi": {
+  "10.17172/NOMAD/2015.08.27-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2015.08.27-2": {
+   "entries_now": 2,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2015.08.27-3": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2015.11.03-1": {
+   "entries_now": 1770,
+   "released_entries": 1605,
+   "released_rows": 1605,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2015.11.19-1": {
+   "entries_now": 204,
+   "released_entries": 196,
+   "released_rows": 196,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/20150305010405": {
+   "entries_now": 21,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/20150306181240": {
+   "entries_now": 152,
+   "released_entries": 144,
+   "released_rows": 144,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/20150505091549": {
+   "entries_now": 102,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/20150526220502": {
+   "entries_now": 40013,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/20150716095246": {
+   "entries_now": 53,
+   "released_entries": 53,
+   "released_rows": 53,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/20150812202508": {
+   "entries_now": 85,
+   "released_entries": 83,
+   "released_rows": 83,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.01.05-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.01.27-1": {
+   "entries_now": 8645,
+   "released_entries": 8103,
+   "released_rows": 8103,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.02.21-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.02.21-3": {
+   "entries_now": 172,
+   "released_entries": 165,
+   "released_rows": 165,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.04.10-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.05.17-1": {
+   "entries_now": 73,
+   "released_entries": 70,
+   "released_rows": 70,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.06.16-1": {
+   "entries_now": 7,
+   "released_entries": 7,
+   "released_rows": 7,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.06.18-1": {
+   "entries_now": 47,
+   "released_entries": 45,
+   "released_rows": 45,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.06.28-1": {
+   "entries_now": 869,
+   "released_entries": 830,
+   "released_rows": 830,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.08.06-1": {
+   "entries_now": 3,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.09.20-1": {
+   "entries_now": 1491,
+   "released_entries": 1427,
+   "released_rows": 1427,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.09.29-1": {
+   "entries_now": 102,
+   "released_entries": 99,
+   "released_rows": 99,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.10.01-1": {
+   "entries_now": 1775,
+   "released_entries": 1693,
+   "released_rows": 1693,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.10.14-1": {
+   "entries_now": 302,
+   "released_entries": 262,
+   "released_rows": 262,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.10.19-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.10.26-1": {
+   "entries_now": 284,
+   "released_entries": 276,
+   "released_rows": 276,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.11.02-1": {
+   "entries_now": 332,
+   "released_entries": 291,
+   "released_rows": 291,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.11.03-1": {
+   "entries_now": 2,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.11.07-1": {
+   "entries_now": 12,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.11.23-1": {
+   "entries_now": 4,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.12.01-1": {
+   "entries_now": 369,
+   "released_entries": 352,
+   "released_rows": 352,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.12.06-1": {
+   "entries_now": 5,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.12.07-1": {
+   "entries_now": 4,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2016.12.22-1": {
+   "entries_now": 171,
+   "released_entries": 125,
+   "released_rows": 125,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.01.24-1": {
+   "entries_now": 2957,
+   "released_entries": 2817,
+   "released_rows": 2817,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.02.16-1": {
+   "entries_now": 720,
+   "released_entries": 274,
+   "released_rows": 274,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.02.19-1": {
+   "entries_now": 39,
+   "released_entries": 35,
+   "released_rows": 35,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.02.27-1": {
+   "entries_now": 597,
+   "released_entries": 571,
+   "released_rows": 574,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.13-1": {
+   "entries_now": 7,
+   "released_entries": 7,
+   "released_rows": 7,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.13-2": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.13-3": {
+   "entries_now": 6,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.13-4": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.15-1": {
+   "entries_now": 8076,
+   "released_entries": 7762,
+   "released_rows": 7762,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.16-1": {
+   "entries_now": 2,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.17-1": {
+   "entries_now": 14,
+   "released_entries": 11,
+   "released_rows": 11,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.17-2": {
+   "entries_now": 235,
+   "released_entries": 222,
+   "released_rows": 222,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.29-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.03.31-1": {
+   "entries_now": 25,
+   "released_entries": 23,
+   "released_rows": 23,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.04.13-1": {
+   "entries_now": 2708,
+   "released_entries": 2476,
+   "released_rows": 2476,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.04.20-1": {
+   "entries_now": 17,
+   "released_entries": 15,
+   "released_rows": 15,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.04.25-1": {
+   "entries_now": 2,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.04.25-2": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.04.27-1": {
+   "entries_now": 311,
+   "released_entries": 299,
+   "released_rows": 299,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.04.27-2": {
+   "entries_now": 103,
+   "released_entries": 96,
+   "released_rows": 96,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.04.27-3": {
+   "entries_now": 202,
+   "released_entries": 193,
+   "released_rows": 193,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.05.16-1": {
+   "entries_now": 6,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.05.16-2": {
+   "entries_now": 693,
+   "released_entries": 654,
+   "released_rows": 654,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.05.16-3": {
+   "entries_now": 627,
+   "released_entries": 599,
+   "released_rows": 599,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.05.30-1": {
+   "entries_now": 17356,
+   "released_entries": 16523,
+   "released_rows": 16524,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.06.23-1": {
+   "entries_now": 31,
+   "released_entries": 29,
+   "released_rows": 29,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.06.30-1": {
+   "entries_now": 14,
+   "released_entries": 11,
+   "released_rows": 11,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.08.10-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.09.05-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.09.05-2": {
+   "entries_now": 205,
+   "released_entries": 193,
+   "released_rows": 193,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.09.06-1": {
+   "entries_now": 1,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.09.19-1": {
+   "entries_now": 40,
+   "released_entries": 37,
+   "released_rows": 37,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.09.21-1": {
+   "entries_now": 91,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.09.22-1": {
+   "entries_now": 18,
+   "released_entries": 17,
+   "released_rows": 17,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.10.16-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.10.17-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.10.17-2": {
+   "entries_now": 16,
+   "released_entries": 16,
+   "released_rows": 16,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.10.23-1": {
+   "entries_now": 233,
+   "released_entries": 224,
+   "released_rows": 224,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.11.10-1": {
+   "entries_now": 10,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2017.12.14-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.01.03-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.01.16-1": {
+   "entries_now": 5,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.01.17-1": {
+   "entries_now": 59,
+   "released_entries": 55,
+   "released_rows": 55,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.01.26-1": {
+   "entries_now": 18,
+   "released_entries": 17,
+   "released_rows": 17,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.02.14-1": {
+   "entries_now": 306,
+   "released_entries": 214,
+   "released_rows": 214,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.02.16-1": {
+   "entries_now": 321,
+   "released_entries": 228,
+   "released_rows": 228,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.03.09-1": {
+   "entries_now": 136,
+   "released_entries": 75,
+   "released_rows": 75,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.03.22-1": {
+   "entries_now": 1892,
+   "released_entries": 1788,
+   "released_rows": 1788,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.03.28-1": {
+   "entries_now": 6,
+   "released_entries": 6,
+   "released_rows": 6,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.04.25-1": {
+   "entries_now": 49,
+   "released_entries": 48,
+   "released_rows": 48,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.05-1": {
+   "entries_now": 38,
+   "released_entries": 36,
+   "released_rows": 36,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.06-1": {
+   "entries_now": 8,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.06-2": {
+   "entries_now": 10,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.06-3": {
+   "entries_now": 10,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.15-1": {
+   "entries_now": 20,
+   "released_entries": 18,
+   "released_rows": 18,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.15-2": {
+   "entries_now": 10,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.16-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.16-2": {
+   "entries_now": 82,
+   "released_entries": 76,
+   "released_rows": 76,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.05.28-1": {
+   "entries_now": 303,
+   "released_entries": 245,
+   "released_rows": 245,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.02-1": {
+   "entries_now": 404,
+   "released_entries": 388,
+   "released_rows": 388,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.03-1": {
+   "entries_now": 761,
+   "released_entries": 712,
+   "released_rows": 712,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.04-1": {
+   "entries_now": 404,
+   "released_entries": 388,
+   "released_rows": 388,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.05-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.05-2": {
+   "entries_now": 52,
+   "released_entries": 45,
+   "released_rows": 45,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.08-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.12-1": {
+   "entries_now": 305,
+   "released_entries": 246,
+   "released_rows": 246,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.12-2": {
+   "entries_now": 1309,
+   "released_entries": 406,
+   "released_rows": 406,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.22-1": {
+   "entries_now": 12,
+   "released_entries": 11,
+   "released_rows": 11,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.22-2": {
+   "entries_now": 20,
+   "released_entries": 19,
+   "released_rows": 19,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.06.22-3": {
+   "entries_now": 244,
+   "released_entries": 157,
+   "released_rows": 157,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.07.11-1": {
+   "entries_now": 155,
+   "released_entries": 149,
+   "released_rows": 149,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.07.11-2": {
+   "entries_now": 1002,
+   "released_entries": 953,
+   "released_rows": 953,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.07.17-1": {
+   "entries_now": 1002,
+   "released_entries": 962,
+   "released_rows": 962,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.07.25-1": {
+   "entries_now": 760,
+   "released_entries": 731,
+   "released_rows": 731,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.07.28-1": {
+   "entries_now": 36,
+   "released_entries": 33,
+   "released_rows": 33,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.08.07-2": {
+   "entries_now": 38,
+   "released_entries": 24,
+   "released_rows": 24,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.08.10-1": {
+   "entries_now": 1363,
+   "released_entries": 1277,
+   "released_rows": 1277,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.08.22-4": {
+   "entries_now": 9,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.08.23-1": {
+   "entries_now": 160,
+   "released_entries": 153,
+   "released_rows": 153,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.08.27-1": {
+   "entries_now": 179,
+   "released_entries": 172,
+   "released_rows": 172,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.09.21-1": {
+   "entries_now": 85,
+   "released_entries": 83,
+   "released_rows": 83,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.10.03-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.10.05-1": {
+   "entries_now": 1130,
+   "released_entries": 1080,
+   "released_rows": 1080,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.10.10-1": {
+   "entries_now": 10,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.10.12-1": {
+   "entries_now": 504,
+   "released_entries": 481,
+   "released_rows": 481,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.10.12-2": {
+   "entries_now": 13,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.10.19-1": {
+   "entries_now": 6,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.10.25-1": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.11.05-1": {
+   "entries_now": 48,
+   "released_entries": 46,
+   "released_rows": 46,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.12.04-1": {
+   "entries_now": 4,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.12.10-1": {
+   "entries_now": 11,
+   "released_entries": 11,
+   "released_rows": 11,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2018.12.18-1": {
+   "entries_now": 49,
+   "released_entries": 44,
+   "released_rows": 44,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.01.05-1": {
+   "entries_now": 232,
+   "released_entries": 225,
+   "released_rows": 225,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.01.25-1": {
+   "entries_now": 46,
+   "released_entries": 44,
+   "released_rows": 44,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.01.31-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.02.13-1": {
+   "entries_now": 1220,
+   "released_entries": 1177,
+   "released_rows": 1177,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.02.15-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.02.19-1": {
+   "entries_now": 4,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.02.22-1": {
+   "entries_now": 2840,
+   "released_entries": 2635,
+   "released_rows": 2635,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.02.25-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.02.27-1": {
+   "entries_now": 486,
+   "released_entries": 467,
+   "released_rows": 467,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.02.27-2": {
+   "entries_now": 487,
+   "released_entries": 468,
+   "released_rows": 468,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.03.04-1": {
+   "entries_now": 30,
+   "released_entries": 29,
+   "released_rows": 29,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.03.18-1": {
+   "entries_now": 17,
+   "released_entries": 14,
+   "released_rows": 14,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.04.08-1": {
+   "entries_now": 9,
+   "released_entries": 7,
+   "released_rows": 7,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.05.22-1": {
+   "entries_now": 144,
+   "released_entries": 136,
+   "released_rows": 136,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.05.30-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.06.03-1": {
+   "entries_now": 135,
+   "released_entries": 132,
+   "released_rows": 132,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.06.12-1": {
+   "entries_now": 706,
+   "released_entries": 673,
+   "released_rows": 673,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.06.14-1": {
+   "entries_now": 2999,
+   "released_entries": 2871,
+   "released_rows": 2871,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.06.27-1": {
+   "entries_now": 13,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.07.01-1": {
+   "entries_now": 16,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.07.01-2": {
+   "entries_now": 8,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.07.02-1": {
+   "entries_now": 12,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.07.12-1": {
+   "entries_now": 6,
+   "released_entries": 6,
+   "released_rows": 6,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.07.31-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.08.05-1": {
+   "entries_now": 1898,
+   "released_entries": 1810,
+   "released_rows": 1810,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.08.06-1": {
+   "entries_now": 89,
+   "released_entries": 84,
+   "released_rows": 84,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.08.16-2": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.08.16-3": {
+   "entries_now": 64,
+   "released_entries": 62,
+   "released_rows": 62,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.08.28-1": {
+   "entries_now": 9,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.09.13-1": {
+   "entries_now": 3569,
+   "released_entries": 3417,
+   "released_rows": 3417,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.09.15-1": {
+   "entries_now": 3569,
+   "released_entries": 3417,
+   "released_rows": 3417,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.09.18-1": {
+   "entries_now": 26,
+   "released_entries": 24,
+   "released_rows": 24,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.09.18-2": {
+   "entries_now": 27,
+   "released_entries": 24,
+   "released_rows": 24,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.10.16-1": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.10.16-2": {
+   "entries_now": 71,
+   "released_entries": 67,
+   "released_rows": 67,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.10.18-1": {
+   "entries_now": 11,
+   "released_entries": 11,
+   "released_rows": 11,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.10.19-1": {
+   "entries_now": 2119,
+   "released_entries": 2039,
+   "released_rows": 2040,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.10.21-1": {
+   "entries_now": 12,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.10.23-1": {
+   "entries_now": 30,
+   "released_entries": 27,
+   "released_rows": 27,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.10.29-1": {
+   "entries_now": 44,
+   "released_entries": 42,
+   "released_rows": 42,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.11.18-1": {
+   "entries_now": 707,
+   "released_entries": 679,
+   "released_rows": 679,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.11.18-2": {
+   "entries_now": 419,
+   "released_entries": 402,
+   "released_rows": 403,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.11.18-3": {
+   "entries_now": 419,
+   "released_entries": 397,
+   "released_rows": 397,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.11.20-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.11.27-1": {
+   "entries_now": 25,
+   "released_entries": 23,
+   "released_rows": 23,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.11.27-2": {
+   "entries_now": 24,
+   "released_entries": 22,
+   "released_rows": 22,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.12.05-1": {
+   "entries_now": 5239,
+   "released_entries": 5027,
+   "released_rows": 5027,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.12.05-2": {
+   "entries_now": 9999,
+   "released_entries": 9553,
+   "released_rows": 9553,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.12.10-10": {
+   "entries_now": 5239,
+   "released_entries": 5027,
+   "released_rows": 5027,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.12.10-11": {
+   "entries_now": 5239,
+   "released_entries": 5017,
+   "released_rows": 5017,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.12.12-1": {
+   "entries_now": 48,
+   "released_entries": 47,
+   "released_rows": 47,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2019.12.12-2": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.01.08-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.01.22-1": {
+   "entries_now": 29,
+   "released_entries": 27,
+   "released_rows": 27,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.02.03-1": {
+   "entries_now": 14,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.02.11-1": {
+   "entries_now": 9,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.02.14-1": {
+   "entries_now": 1765,
+   "released_entries": 1700,
+   "released_rows": 1700,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.02.16-1": {
+   "entries_now": 106,
+   "released_entries": 104,
+   "released_rows": 104,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.02.18-3": {
+   "entries_now": 61,
+   "released_entries": 57,
+   "released_rows": 57,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.03.07-1": {
+   "entries_now": 1581,
+   "released_entries": 1513,
+   "released_rows": 1513,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.03.18-1": {
+   "entries_now": 5570,
+   "released_entries": 5240,
+   "released_rows": 5240,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.03.24-1": {
+   "entries_now": 4046,
+   "released_entries": 3862,
+   "released_rows": 3862,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.03.25-1": {
+   "entries_now": 14,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.03.27-1": {
+   "entries_now": 30,
+   "released_entries": 30,
+   "released_rows": 30,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.03.28-1": {
+   "entries_now": 9,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.04.03-1": {
+   "entries_now": 14,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.04.05-1": {
+   "entries_now": 17,
+   "released_entries": 16,
+   "released_rows": 16,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.04.30-1": {
+   "entries_now": 17132,
+   "released_entries": 512,
+   "released_rows": 512,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.05.06-1": {
+   "entries_now": 120,
+   "released_entries": 115,
+   "released_rows": 115,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.05.12-1": {
+   "entries_now": 7,
+   "released_entries": 7,
+   "released_rows": 7,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.05.14-1": {
+   "entries_now": 139,
+   "released_entries": 132,
+   "released_rows": 132,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.05.20-1": {
+   "entries_now": 66,
+   "released_entries": 64,
+   "released_rows": 64,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.05.22-1": {
+   "entries_now": 67,
+   "released_entries": 62,
+   "released_rows": 62,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.05.26-1": {
+   "entries_now": 171,
+   "released_entries": 161,
+   "released_rows": 161,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.05.26-2": {
+   "entries_now": 7,
+   "released_entries": 7,
+   "released_rows": 7,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.06.23-1": {
+   "entries_now": 66,
+   "released_entries": 51,
+   "released_rows": 51,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.06.25-1": {
+   "entries_now": 6211,
+   "released_entries": 5955,
+   "released_rows": 5955,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.06.30-1": {
+   "entries_now": 384,
+   "released_entries": 365,
+   "released_rows": 365,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.06-1": {
+   "entries_now": 833,
+   "released_entries": 747,
+   "released_rows": 747,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.14-1": {
+   "entries_now": 5,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.14-2": {
+   "entries_now": 5,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.14-3": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.14-4": {
+   "entries_now": 10,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.14-5": {
+   "entries_now": 3,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.14-6": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.15-1": {
+   "entries_now": 2076,
+   "released_entries": 1988,
+   "released_rows": 1988,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.17-1": {
+   "entries_now": 30,
+   "released_entries": 30,
+   "released_rows": 30,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.17-2": {
+   "entries_now": 77,
+   "released_entries": 48,
+   "released_rows": 48,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.21-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.24-1": {
+   "entries_now": 69,
+   "released_entries": 61,
+   "released_rows": 61,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.27-1": {
+   "entries_now": 48115,
+   "released_entries": 46042,
+   "released_rows": 46043,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.29-1": {
+   "entries_now": 21802,
+   "released_entries": 20869,
+   "released_rows": 20870,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.07.30-1": {
+   "entries_now": 262,
+   "released_entries": 245,
+   "released_rows": 245,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.08.05-1": {
+   "entries_now": 279,
+   "released_entries": 187,
+   "released_rows": 187,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.08.07-1": {
+   "entries_now": 859,
+   "released_entries": 815,
+   "released_rows": 815,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.08.11-1": {
+   "entries_now": 25,
+   "released_entries": 25,
+   "released_rows": 25,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.08.13-1": {
+   "entries_now": 41,
+   "released_entries": 38,
+   "released_rows": 38,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.08.16-1": {
+   "entries_now": 784,
+   "released_entries": 751,
+   "released_rows": 751,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.08.20-1": {
+   "entries_now": 9404,
+   "released_entries": 8982,
+   "released_rows": 8982,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.08.23-2": {
+   "entries_now": 157,
+   "released_entries": 151,
+   "released_rows": 151,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.09.06-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.09.07-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.09.08-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.09.08-2": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.09.08-3": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.09.08-4": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.09.16-1": {
+   "entries_now": 3649,
+   "released_entries": 1946,
+   "released_rows": 1946,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.10.06-1": {
+   "entries_now": 2706,
+   "released_entries": 2580,
+   "released_rows": 2580,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.10.14-1": {
+   "entries_now": 1177,
+   "released_entries": 1119,
+   "released_rows": 1119,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.10.15-1": {
+   "entries_now": 2018,
+   "released_entries": 1930,
+   "released_rows": 1930,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.10.16-1": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.10.21-1": {
+   "entries_now": 28,
+   "released_entries": 24,
+   "released_rows": 24,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.11.09-1": {
+   "entries_now": 714,
+   "released_entries": 687,
+   "released_rows": 687,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.11.19-1": {
+   "entries_now": 42,
+   "released_entries": 32,
+   "released_rows": 32,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.11.24-1": {
+   "entries_now": 50,
+   "released_entries": 46,
+   "released_rows": 46,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.11.24-2": {
+   "entries_now": 2,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.11.25-1": {
+   "entries_now": 983,
+   "released_entries": 943,
+   "released_rows": 943,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.06-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-1": {
+   "entries_now": 36,
+   "released_entries": 33,
+   "released_rows": 33,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-2": {
+   "entries_now": 44,
+   "released_entries": 42,
+   "released_rows": 42,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-4": {
+   "entries_now": 5,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-5": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-6": {
+   "entries_now": 1008,
+   "released_entries": 820,
+   "released_rows": 820,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-7": {
+   "entries_now": 225,
+   "released_entries": 216,
+   "released_rows": 216,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-8": {
+   "entries_now": 527,
+   "released_entries": 488,
+   "released_rows": 488,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.07-9": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.10-1": {
+   "entries_now": 9,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.11-1": {
+   "entries_now": 9,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.11-2": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2020.12.22-1": {
+   "entries_now": 3914,
+   "released_entries": 3743,
+   "released_rows": 3743,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.01.02-1": {
+   "entries_now": 103,
+   "released_entries": 101,
+   "released_rows": 101,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.01.07-1": {
+   "entries_now": 121,
+   "released_entries": 88,
+   "released_rows": 88,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.01.10-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.01.15-1": {
+   "entries_now": 163,
+   "released_entries": 132,
+   "released_rows": 132,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.01.20-1": {
+   "entries_now": 164,
+   "released_entries": 154,
+   "released_rows": 154,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.01.28-1": {
+   "entries_now": 110,
+   "released_entries": 104,
+   "released_rows": 104,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.02.03-1": {
+   "entries_now": 1199,
+   "released_entries": 1148,
+   "released_rows": 1148,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.02.03-2": {
+   "entries_now": 59,
+   "released_entries": 58,
+   "released_rows": 58,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.02.10-1": {
+   "entries_now": 23243,
+   "released_entries": 22202,
+   "released_rows": 22203,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.02.12-1": {
+   "entries_now": 402,
+   "released_entries": 127,
+   "released_rows": 127,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.02.13-1": {
+   "entries_now": 8393,
+   "released_entries": 8038,
+   "released_rows": 8059,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.02.15-1": {
+   "entries_now": 1229,
+   "released_entries": 1175,
+   "released_rows": 1175,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.02.25-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.01-1": {
+   "entries_now": 270,
+   "released_entries": 257,
+   "released_rows": 257,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.02-1": {
+   "entries_now": 2887,
+   "released_entries": 2754,
+   "released_rows": 2754,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.09-1": {
+   "entries_now": 1270,
+   "released_entries": 1220,
+   "released_rows": 1220,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.09-2": {
+   "entries_now": 2183,
+   "released_entries": 2075,
+   "released_rows": 2075,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.09-3": {
+   "entries_now": 3237,
+   "released_entries": 3089,
+   "released_rows": 3089,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.09-4": {
+   "entries_now": 568,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.10-1": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.13-1": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.13-2": {
+   "entries_now": 9,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.16-1": {
+   "entries_now": 5,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.23-1": {
+   "entries_now": 2344,
+   "released_entries": 2234,
+   "released_rows": 2234,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.03.29-1": {
+   "entries_now": 92,
+   "released_entries": 63,
+   "released_rows": 63,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.02-1": {
+   "entries_now": 1485,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.10-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.11-1": {
+   "entries_now": 4,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.12-1": {
+   "entries_now": 609,
+   "released_entries": 576,
+   "released_rows": 576,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.15-1": {
+   "entries_now": 1,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.20-1": {
+   "entries_now": 5,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.21-1": {
+   "entries_now": 66,
+   "released_entries": 65,
+   "released_rows": 65,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.26-1": {
+   "entries_now": 26,
+   "released_entries": 25,
+   "released_rows": 25,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.28-1": {
+   "entries_now": 66,
+   "released_entries": 64,
+   "released_rows": 64,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.04.29-1": {
+   "entries_now": 9,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.05.10-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.05.17-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.05.18-1": {
+   "entries_now": 156,
+   "released_entries": 152,
+   "released_rows": 152,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.05.21-1": {
+   "entries_now": 60,
+   "released_entries": 58,
+   "released_rows": 58,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.05.24-1": {
+   "entries_now": 11162,
+   "released_entries": 6519,
+   "released_rows": 6520,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.05.25-1": {
+   "entries_now": 2524,
+   "released_entries": 2282,
+   "released_rows": 2282,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.01-1": {
+   "entries_now": 444,
+   "released_entries": 435,
+   "released_rows": 435,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.01-2": {
+   "entries_now": 6038,
+   "released_entries": 5764,
+   "released_rows": 5764,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.01-3": {
+   "entries_now": 6907,
+   "released_entries": 6578,
+   "released_rows": 6578,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.01-4": {
+   "entries_now": 32,
+   "released_entries": 31,
+   "released_rows": 31,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.05-1": {
+   "entries_now": 9,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.07-1": {
+   "entries_now": 1004,
+   "released_entries": 895,
+   "released_rows": 895,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.12-1": {
+   "entries_now": 120,
+   "released_entries": 109,
+   "released_rows": 109,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.14-1": {
+   "entries_now": 453,
+   "released_entries": 433,
+   "released_rows": 433,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.22-1": {
+   "entries_now": 1892,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.27-1": {
+   "entries_now": 12,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.30-1": {
+   "entries_now": 451,
+   "released_entries": 429,
+   "released_rows": 429,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.06.30-2": {
+   "entries_now": 606,
+   "released_entries": 582,
+   "released_rows": 582,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.03-1": {
+   "entries_now": 18,
+   "released_entries": 17,
+   "released_rows": 17,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.08-1": {
+   "entries_now": 90,
+   "released_entries": 88,
+   "released_rows": 88,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.08-2": {
+   "entries_now": 7153,
+   "released_entries": 6839,
+   "released_rows": 6839,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.08-3": {
+   "entries_now": 1128,
+   "released_entries": 1079,
+   "released_rows": 1079,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.09-1": {
+   "entries_now": 58,
+   "released_entries": 58,
+   "released_rows": 58,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.11-1": {
+   "entries_now": 7,
+   "released_entries": 6,
+   "released_rows": 6,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.17-1": {
+   "entries_now": 24,
+   "released_entries": 24,
+   "released_rows": 24,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.18-1": {
+   "entries_now": 96,
+   "released_entries": 95,
+   "released_rows": 95,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.07.28-1": {
+   "entries_now": 14,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.03-1": {
+   "entries_now": 11,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.06-1": {
+   "entries_now": 18,
+   "released_entries": 14,
+   "released_rows": 14,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.11-1": {
+   "entries_now": 7,
+   "released_entries": 7,
+   "released_rows": 7,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.16-1": {
+   "entries_now": 92,
+   "released_entries": 89,
+   "released_rows": 89,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.22-1": {
+   "entries_now": 1255,
+   "released_entries": 1167,
+   "released_rows": 1167,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.23-1": {
+   "entries_now": 20,
+   "released_entries": 20,
+   "released_rows": 20,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.26-1": {
+   "entries_now": 36,
+   "released_entries": 36,
+   "released_rows": 36,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.27-1": {
+   "entries_now": 4,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.30-4": {
+   "entries_now": 5,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.30-5": {
+   "entries_now": 48,
+   "released_entries": 45,
+   "released_rows": 45,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.08.30-6": {
+   "entries_now": 29,
+   "released_entries": 25,
+   "released_rows": 25,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.01-1": {
+   "entries_now": 6,
+   "released_entries": 6,
+   "released_rows": 6,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.01-2": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.01-3": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.01-4": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.01-5": {
+   "entries_now": 3,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.01-6": {
+   "entries_now": 6,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.01-7": {
+   "entries_now": 12,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.09-1": {
+   "entries_now": 7,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.14-1": {
+   "entries_now": 50,
+   "released_entries": 48,
+   "released_rows": 48,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.15-1": {
+   "entries_now": 408,
+   "released_entries": 383,
+   "released_rows": 383,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.15-2": {
+   "entries_now": 431,
+   "released_entries": 321,
+   "released_rows": 324,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.15-3": {
+   "entries_now": 21,
+   "released_entries": 20,
+   "released_rows": 20,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.17-1": {
+   "entries_now": 48,
+   "released_entries": 41,
+   "released_rows": 41,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.20-1": {
+   "entries_now": 6,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.20-2": {
+   "entries_now": 1308,
+   "released_entries": 1253,
+   "released_rows": 1253,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.25-1": {
+   "entries_now": 1439,
+   "released_entries": 1370,
+   "released_rows": 1370,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.28-1": {
+   "entries_now": 12,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.28-2": {
+   "entries_now": 1040,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.30-1": {
+   "entries_now": 103040,
+   "released_entries": 98638,
+   "released_rows": 98640,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.09.30-2": {
+   "entries_now": 4250,
+   "released_entries": 3976,
+   "released_rows": 3976,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.04-1": {
+   "entries_now": 24,
+   "released_entries": 20,
+   "released_rows": 20,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.07-1": {
+   "entries_now": 41726,
+   "released_entries": 39854,
+   "released_rows": 39855,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.08-1": {
+   "entries_now": 98,
+   "released_entries": 88,
+   "released_rows": 88,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.10-1": {
+   "entries_now": 20425,
+   "released_entries": 19560,
+   "released_rows": 19560,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.11-1": {
+   "entries_now": 20,
+   "released_entries": 19,
+   "released_rows": 19,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.11-2": {
+   "entries_now": 63,
+   "released_entries": 55,
+   "released_rows": 55,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.11-4": {
+   "entries_now": 28,
+   "released_entries": 26,
+   "released_rows": 26,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.11-5": {
+   "entries_now": 35,
+   "released_entries": 32,
+   "released_rows": 32,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.15-1": {
+   "entries_now": 28,
+   "released_entries": 26,
+   "released_rows": 26,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.16-1": {
+   "entries_now": 130829,
+   "released_entries": 125325,
+   "released_rows": 125326,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.18-1": {
+   "entries_now": 43,
+   "released_entries": 41,
+   "released_rows": 41,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.18-2": {
+   "entries_now": 54186,
+   "released_entries": 51929,
+   "released_rows": 51930,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.18-3": {
+   "entries_now": 50209,
+   "released_entries": 48001,
+   "released_rows": 48001,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.21-1": {
+   "entries_now": 76,
+   "released_entries": 73,
+   "released_rows": 73,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.22-1": {
+   "entries_now": 1086,
+   "released_entries": 1039,
+   "released_rows": 1039,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.26-1": {
+   "entries_now": 115,
+   "released_entries": 108,
+   "released_rows": 108,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.27-1": {
+   "entries_now": 818,
+   "released_entries": 795,
+   "released_rows": 795,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.27-2": {
+   "entries_now": 12,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.28-1": {
+   "entries_now": 88,
+   "released_entries": 85,
+   "released_rows": 85,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.29-1": {
+   "entries_now": 100,
+   "released_entries": 97,
+   "released_rows": 97,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.10.29-2": {
+   "entries_now": 681,
+   "released_entries": 639,
+   "released_rows": 639,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.01-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.02-1": {
+   "entries_now": 85,
+   "released_entries": 82,
+   "released_rows": 82,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.02-2": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.02-4": {
+   "entries_now": 5,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.08-1": {
+   "entries_now": 146,
+   "released_entries": 132,
+   "released_rows": 132,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.09-1": {
+   "entries_now": 103,
+   "released_entries": 53,
+   "released_rows": 53,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.10-1": {
+   "entries_now": 54,
+   "released_entries": 54,
+   "released_rows": 54,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.11-1": {
+   "entries_now": 50765,
+   "released_entries": 48601,
+   "released_rows": 48604,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.14-1": {
+   "entries_now": 6,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.17-1": {
+   "entries_now": 10811,
+   "released_entries": 10361,
+   "released_rows": 10361,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.17-2": {
+   "entries_now": 10812,
+   "released_entries": 10346,
+   "released_rows": 10346,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.17-3": {
+   "entries_now": 10757,
+   "released_entries": 10254,
+   "released_rows": 10254,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.18-1": {
+   "entries_now": 1234,
+   "released_entries": 795,
+   "released_rows": 795,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.19-1": {
+   "entries_now": 156,
+   "released_entries": 149,
+   "released_rows": 149,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.11.30-1": {
+   "entries_now": 61712,
+   "released_entries": 58993,
+   "released_rows": 58994,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.12.02-1": {
+   "entries_now": 3402,
+   "released_entries": 3241,
+   "released_rows": 3241,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.12.06-1": {
+   "entries_now": 1048,
+   "released_entries": 1006,
+   "released_rows": 1006,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.12.14-1": {
+   "entries_now": 30,
+   "released_entries": 28,
+   "released_rows": 28,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.12.16-1": {
+   "entries_now": 949,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.12.28-1": {
+   "entries_now": 23,
+   "released_entries": 17,
+   "released_rows": 19,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2021.12.31-1": {
+   "entries_now": 6,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.02-1": {
+   "entries_now": 9,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.05-1": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.06-1": {
+   "entries_now": 29,
+   "released_entries": 25,
+   "released_rows": 25,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.07-1": {
+   "entries_now": 87,
+   "released_entries": 80,
+   "released_rows": 80,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.11-1": {
+   "entries_now": 5,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.11-2": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.12-1": {
+   "entries_now": 32,
+   "released_entries": 29,
+   "released_rows": 29,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.12-2": {
+   "entries_now": 8,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.12-3": {
+   "entries_now": 20,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.12-4": {
+   "entries_now": 6,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.12-5": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.12-6": {
+   "entries_now": 11,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.12-7": {
+   "entries_now": 7,
+   "released_entries": 6,
+   "released_rows": 6,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.13-1": {
+   "entries_now": 769,
+   "released_entries": 476,
+   "released_rows": 476,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.13-2": {
+   "entries_now": 11,
+   "released_entries": 11,
+   "released_rows": 11,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.13-3": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.13-4": {
+   "entries_now": 5,
+   "released_entries": 5,
+   "released_rows": 5,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.13-5": {
+   "entries_now": 9,
+   "released_entries": 9,
+   "released_rows": 9,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.13-6": {
+   "entries_now": 16,
+   "released_entries": 16,
+   "released_rows": 16,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.14-1": {
+   "entries_now": 1230,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.20-1": {
+   "entries_now": 138,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.23-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.28-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.01.31-1": {
+   "entries_now": 6,
+   "released_entries": 6,
+   "released_rows": 6,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.19-1": {
+   "entries_now": 67,
+   "released_entries": 62,
+   "released_rows": 62,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.20-1": {
+   "entries_now": 62,
+   "released_entries": 61,
+   "released_rows": 61,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.20-2": {
+   "entries_now": 143,
+   "released_entries": 137,
+   "released_rows": 137,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.21-1": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.21-2": {
+   "entries_now": 46,
+   "released_entries": 44,
+   "released_rows": 44,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.21-3": {
+   "entries_now": 2016,
+   "released_entries": 1920,
+   "released_rows": 1920,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.21-4": {
+   "entries_now": 50,
+   "released_entries": 48,
+   "released_rows": 48,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.22-1": {
+   "entries_now": 114,
+   "released_entries": 109,
+   "released_rows": 109,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.22-2": {
+   "entries_now": 1424,
+   "released_entries": 1358,
+   "released_rows": 1358,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.02.24-1": {
+   "entries_now": 136,
+   "released_entries": 130,
+   "released_rows": 130,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.01-1": {
+   "entries_now": 12,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.01-2": {
+   "entries_now": 1895,
+   "released_entries": 1765,
+   "released_rows": 1765,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.03-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.06-1": {
+   "entries_now": 3,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.07-1": {
+   "entries_now": 9,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.09-1": {
+   "entries_now": 22,
+   "released_entries": 21,
+   "released_rows": 21,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.18-1": {
+   "entries_now": 39,
+   "released_entries": 38,
+   "released_rows": 38,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.21-1": {
+   "entries_now": 2252,
+   "released_entries": 2012,
+   "released_rows": 2012,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.22-1": {
+   "entries_now": 7,
+   "released_entries": 6,
+   "released_rows": 6,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.25-1": {
+   "entries_now": 60,
+   "released_entries": 54,
+   "released_rows": 54,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.31-2": {
+   "entries_now": 264,
+   "released_entries": 249,
+   "released_rows": 249,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.31-3": {
+   "entries_now": 59,
+   "released_entries": 57,
+   "released_rows": 57,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.03.31-4": {
+   "entries_now": 75,
+   "released_entries": 70,
+   "released_rows": 70,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.01-1": {
+   "entries_now": 469,
+   "released_entries": 452,
+   "released_rows": 452,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.07-1": {
+   "entries_now": 1022,
+   "released_entries": 14,
+   "released_rows": 14,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.11-1": {
+   "entries_now": 1623,
+   "released_entries": 1549,
+   "released_rows": 1549,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.13-1": {
+   "entries_now": 16,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.13-2": {
+   "entries_now": 13,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.13-3": {
+   "entries_now": 21,
+   "released_entries": 21,
+   "released_rows": 21,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.22-1": {
+   "entries_now": 255,
+   "released_entries": 249,
+   "released_rows": 249,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.22-2": {
+   "entries_now": 35,
+   "released_entries": 33,
+   "released_rows": 33,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.22-3": {
+   "entries_now": 64,
+   "released_entries": 52,
+   "released_rows": 52,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.25-1": {
+   "entries_now": 5344,
+   "released_entries": 5125,
+   "released_rows": 5125,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.26-1": {
+   "entries_now": 39,
+   "released_entries": 38,
+   "released_rows": 38,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.04.27-1": {
+   "entries_now": 10239,
+   "released_entries": 9747,
+   "released_rows": 9752,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.05.21-1": {
+   "entries_now": 38,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.05.30-1": {
+   "entries_now": 96,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.06.03-2": {
+   "entries_now": 5579,
+   "released_entries": 5339,
+   "released_rows": 5339,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.06.07-1": {
+   "entries_now": 220,
+   "released_entries": 199,
+   "released_rows": 199,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.07.15-1": {
+   "entries_now": 203,
+   "released_entries": 182,
+   "released_rows": 182,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.07.15-2": {
+   "entries_now": 104,
+   "released_entries": 102,
+   "released_rows": 102,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.07.20-1": {
+   "entries_now": 14,
+   "released_entries": 14,
+   "released_rows": 14,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.07.27-1": {
+   "entries_now": 2128,
+   "released_entries": 2031,
+   "released_rows": 2031,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.08.04-1": {
+   "entries_now": 23,
+   "released_entries": 22,
+   "released_rows": 22,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.08.06-1": {
+   "entries_now": 292,
+   "released_entries": 54,
+   "released_rows": 54,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.08.11-1": {
+   "entries_now": 262,
+   "released_entries": 213,
+   "released_rows": 213,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.08.11-2": {
+   "entries_now": 262,
+   "released_entries": 213,
+   "released_rows": 213,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.08.14-1": {
+   "entries_now": 430,
+   "released_entries": 401,
+   "released_rows": 401,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.08.20-2": {
+   "entries_now": 1502,
+   "released_entries": 1426,
+   "released_rows": 1426,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.09.02-1": {
+   "entries_now": 301,
+   "released_entries": 289,
+   "released_rows": 289,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.09.02-2": {
+   "entries_now": 14,
+   "released_entries": 13,
+   "released_rows": 13,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.09.15-1": {
+   "entries_now": 1942,
+   "released_entries": 1741,
+   "released_rows": 1741,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.09.23-1": {
+   "entries_now": 16,
+   "released_entries": 15,
+   "released_rows": 15,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.09.30-1": {
+   "entries_now": 4,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.10.06-1": {
+   "entries_now": 11012,
+   "released_entries": 10542,
+   "released_rows": 10542,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.10.28-1": {
+   "entries_now": 29058,
+   "released_entries": 337,
+   "released_rows": 337,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.11.15-1": {
+   "entries_now": 54,
+   "released_entries": 54,
+   "released_rows": 54,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.11.30-1": {
+   "entries_now": 9,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.11.30-2": {
+   "entries_now": 318,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.12.19-1": {
+   "entries_now": 2774,
+   "released_entries": 2568,
+   "released_rows": 2568,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2022.12.28-1": {
+   "entries_now": 729,
+   "released_entries": 667,
+   "released_rows": 674,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.01.17-1": {
+   "entries_now": 112,
+   "released_entries": 105,
+   "released_rows": 105,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.01.18-1": {
+   "entries_now": 1038,
+   "released_entries": 783,
+   "released_rows": 783,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.01.20-1": {
+   "entries_now": 88,
+   "released_entries": 53,
+   "released_rows": 53,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.01.26-2": {
+   "entries_now": 757,
+   "released_entries": 348,
+   "released_rows": 348,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.01.31-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.02.03-1": {
+   "entries_now": 2055,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.02.27-1": {
+   "entries_now": 9671,
+   "released_entries": 9233,
+   "released_rows": 9233,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.06-1": {
+   "entries_now": 2,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.13-1": {
+   "entries_now": 1021,
+   "released_entries": 919,
+   "released_rows": 919,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.16-1": {
+   "entries_now": 20496,
+   "released_entries": 19650,
+   "released_rows": 19650,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.18-1": {
+   "entries_now": 64,
+   "released_entries": 61,
+   "released_rows": 61,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.23-19": {
+   "entries_now": 83,
+   "released_entries": 74,
+   "released_rows": 74,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.24-1": {
+   "entries_now": 1882,
+   "released_entries": 1583,
+   "released_rows": 1583,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.24-2": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.30-1": {
+   "entries_now": 5076,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.03.31-1": {
+   "entries_now": 229,
+   "released_entries": 220,
+   "released_rows": 220,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.04.12-1": {
+   "entries_now": 316,
+   "released_entries": 305,
+   "released_rows": 305,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.05.03-1": {
+   "entries_now": 1950,
+   "released_entries": 1874,
+   "released_rows": 1874,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.05.04-1": {
+   "entries_now": 268,
+   "released_entries": 252,
+   "released_rows": 252,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.05.19-4": {
+   "entries_now": 136,
+   "released_entries": 127,
+   "released_rows": 127,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.05.31-1": {
+   "entries_now": 137,
+   "released_entries": 121,
+   "released_rows": 121,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.06.14-1": {
+   "entries_now": 3,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.06.16-1": {
+   "entries_now": 53,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.06.30-1": {
+   "entries_now": 10,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.07.06-1": {
+   "entries_now": 375,
+   "released_entries": 365,
+   "released_rows": 365,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.08.04-1": {
+   "entries_now": 2871,
+   "released_entries": 2616,
+   "released_rows": 2616,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.08.24-1": {
+   "entries_now": 243,
+   "released_entries": 239,
+   "released_rows": 239,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.08.31-2": {
+   "entries_now": 83,
+   "released_entries": 71,
+   "released_rows": 71,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.09.04-1": {
+   "entries_now": 430,
+   "released_entries": 390,
+   "released_rows": 390,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.09.16-1": {
+   "entries_now": 89,
+   "released_entries": 68,
+   "released_rows": 68,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.10.02-1": {
+   "entries_now": 243,
+   "released_entries": 239,
+   "released_rows": 239,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.10.11-1": {
+   "entries_now": 1416,
+   "released_entries": 1257,
+   "released_rows": 1257,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.10.14-1": {
+   "entries_now": 276,
+   "released_entries": 256,
+   "released_rows": 256,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.10.24-1": {
+   "entries_now": 40,
+   "released_entries": 38,
+   "released_rows": 38,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.10.24-2": {
+   "entries_now": 8716,
+   "released_entries": 7921,
+   "released_rows": 7921,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.11.17-2": {
+   "entries_now": 16417,
+   "released_entries": 15553,
+   "released_rows": 15554,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.11.26-1": {
+   "entries_now": 64,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.12.04-2": {
+   "entries_now": 1436,
+   "released_entries": 1060,
+   "released_rows": 1060,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.12.19-2": {
+   "entries_now": 631,
+   "released_entries": 507,
+   "released_rows": 507,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2023.12.22-2": {
+   "entries_now": 60,
+   "released_entries": 42,
+   "released_rows": 42,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.01.09-2": {
+   "entries_now": 57,
+   "released_entries": 43,
+   "released_rows": 43,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.01.17-1": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.01.28-1": {
+   "entries_now": 288,
+   "released_entries": 275,
+   "released_rows": 275,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.02.07-1": {
+   "entries_now": 2421,
+   "released_entries": 1552,
+   "released_rows": 1552,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.02.23-1": {
+   "entries_now": 10016,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.02.28-1": {
+   "entries_now": 95,
+   "released_entries": 34,
+   "released_rows": 34,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.03.02-1": {
+   "entries_now": 400,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.03.04-1": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.03.04-2": {
+   "entries_now": 312,
+   "released_entries": 305,
+   "released_rows": 305,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.03.13-9": {
+   "entries_now": 11,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.03.25-1": {
+   "entries_now": 72,
+   "released_entries": 67,
+   "released_rows": 67,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.03.25-2": {
+   "entries_now": 24,
+   "released_entries": 24,
+   "released_rows": 24,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.03.28-1": {
+   "entries_now": 752,
+   "released_entries": 712,
+   "released_rows": 712,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.04.06-1": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.04.18-1": {
+   "entries_now": 83,
+   "released_entries": 55,
+   "released_rows": 55,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.04.24-1": {
+   "entries_now": 5,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.04.25-1": {
+   "entries_now": 140,
+   "released_entries": 135,
+   "released_rows": 135,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.05.02-1": {
+   "entries_now": 1,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.05.10-1": {
+   "entries_now": 1977,
+   "released_entries": 1900,
+   "released_rows": 1900,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.05.21-2": {
+   "entries_now": 1023,
+   "released_entries": 871,
+   "released_rows": 871,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.05.27-1": {
+   "entries_now": 90,
+   "released_entries": 86,
+   "released_rows": 86,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.05.31-1": {
+   "entries_now": 1,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.06.02-1": {
+   "entries_now": 560,
+   "released_entries": 541,
+   "released_rows": 541,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.06.13-2": {
+   "entries_now": 2,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.06.20-1": {
+   "entries_now": 203,
+   "released_entries": 190,
+   "released_rows": 190,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.06.29-1": {
+   "entries_now": 250,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.07.18-1": {
+   "entries_now": 1246,
+   "released_entries": 1197,
+   "released_rows": 1197,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.07.23-1": {
+   "entries_now": 39,
+   "released_entries": 36,
+   "released_rows": 36,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.07.29-1": {
+   "entries_now": 11,
+   "released_entries": 11,
+   "released_rows": 11,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.08.14-1": {
+   "entries_now": 6,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.09.06-1": {
+   "entries_now": 4,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.09.19-2": {
+   "entries_now": 16,
+   "released_entries": 15,
+   "released_rows": 15,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.09.19-3": {
+   "entries_now": 18,
+   "released_entries": 18,
+   "released_rows": 18,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.09.24-1": {
+   "entries_now": 660,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.10.10-2": {
+   "entries_now": 646,
+   "released_entries": 610,
+   "released_rows": 610,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.10.11-1": {
+   "entries_now": 65,
+   "released_entries": 22,
+   "released_rows": 22,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.10.22-2": {
+   "entries_now": 27,
+   "released_entries": 26,
+   "released_rows": 26,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.11.03-1": {
+   "entries_now": 1,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.11.07-1": {
+   "entries_now": 14,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.11.08-1": {
+   "entries_now": 25723,
+   "released_entries": 24586,
+   "released_rows": 24586,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.11.12-1": {
+   "entries_now": 1595,
+   "released_entries": 1492,
+   "released_rows": 1492,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.11.18-1": {
+   "entries_now": 5,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.11.29-1": {
+   "entries_now": 9,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2024.12.05-1": {
+   "entries_now": 16,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.01.09-2": {
+   "entries_now": 82,
+   "released_entries": 79,
+   "released_rows": 79,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.01.14-1": {
+   "entries_now": 70,
+   "released_entries": 67,
+   "released_rows": 67,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.01.14-2": {
+   "entries_now": 4,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.13-1": {
+   "entries_now": 27,
+   "released_entries": 26,
+   "released_rows": 26,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.16-1": {
+   "entries_now": 398,
+   "released_entries": 389,
+   "released_rows": 391,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.19-5": {
+   "entries_now": 4,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.21-1": {
+   "entries_now": 250,
+   "released_entries": 236,
+   "released_rows": 236,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.25-2": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.25-3": {
+   "entries_now": 5,
+   "released_entries": 4,
+   "released_rows": 4,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.25-4": {
+   "entries_now": 12,
+   "released_entries": 10,
+   "released_rows": 10,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.25-6": {
+   "entries_now": 3,
+   "released_entries": 3,
+   "released_rows": 3,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.02.27-1": {
+   "entries_now": 4066,
+   "released_entries": 2871,
+   "released_rows": 2871,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.03.03-1": {
+   "entries_now": 16282,
+   "released_entries": 4053,
+   "released_rows": 4054,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.03.09-1": {
+   "entries_now": 102,
+   "released_entries": 102,
+   "released_rows": 102,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.03.10-3": {
+   "entries_now": 8,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.03.11-2": {
+   "entries_now": 52,
+   "released_entries": 46,
+   "released_rows": 46,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.03.12-1": {
+   "entries_now": 88,
+   "released_entries": 84,
+   "released_rows": 84,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.03.20-2": {
+   "entries_now": 3134,
+   "released_entries": 2986,
+   "released_rows": 2987,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.04.16-1": {
+   "entries_now": 451,
+   "released_entries": 8,
+   "released_rows": 8,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.05.27-1": {
+   "entries_now": 756,
+   "released_entries": 135,
+   "released_rows": 135,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.07.10-1": {
+   "entries_now": 4,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.07.16-3": {
+   "entries_now": 1,
+   "released_entries": 1,
+   "released_rows": 1,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.07.18-1": {
+   "entries_now": 64,
+   "released_entries": 60,
+   "released_rows": 60,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.07.24-1": {
+   "entries_now": 12,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.08.11-2": {
+   "entries_now": 10133,
+   "released_entries": 8652,
+   "released_rows": 8652,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.08.22-1": {
+   "entries_now": 8,
+   "released_entries": 7,
+   "released_rows": 7,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.08.22-2": {
+   "entries_now": 91,
+   "released_entries": 86,
+   "released_rows": 86,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.09.30-1": {
+   "entries_now": 2,
+   "released_entries": 2,
+   "released_rows": 2,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.11.14-1": {
+   "entries_now": 21,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.11.25-1": {
+   "entries_now": 559,
+   "released_entries": 542,
+   "released_rows": 542,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2025.12.19-1": {
+   "entries_now": 415,
+   "released_entries": 402,
+   "released_rows": 402,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2026.01.09-1": {
+   "entries_now": 12,
+   "released_entries": 12,
+   "released_rows": 12,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2026.01.22-2": {
+   "entries_now": 846,
+   "released_entries": 805,
+   "released_rows": 805,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2026.01.23-2": {
+   "entries_now": 40,
+   "released_entries": 39,
+   "released_rows": 39,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2026.02.12-2": {
+   "entries_now": 1,
+   "released_entries": 0,
+   "released_rows": 0,
+   "datasets": {},
+   "in_bib": false,
+   "in_download_list": true
+  },
+  "10.17172/NOMAD/2026.02.19-4": {
+   "entries_now": 18,
+   "released_entries": 18,
+   "released_rows": 18,
+   "datasets": {},
+   "in_bib": true,
+   "in_download_list": true
+  }
+ }
+}

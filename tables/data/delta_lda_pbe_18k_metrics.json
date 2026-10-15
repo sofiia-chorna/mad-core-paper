@@ -1,0 +1,776 @@
+{
+ "results": {
+  "test_madcore": {
+   "LDA, no correction": {
+    "E": {
+     "mae": 944.9693931828058,
+     "rmse": 1090.7387654597812,
+     "p8": 1561.8095032187873,
+     "sup": 2601.484981365502,
+     "bias": -936.5327092539941
+    },
+    "F": {
+     "mae": 217.1630330251079,
+     "rmse": 460.26082067932947,
+     "p8": 1926.46426654567,
+     "sup": 6346.45836
+    }
+   },
+   "LDA + learned delta_LDA": {
+    "E": {
+     "mae": 28.526890302892003,
+     "rmse": 58.811069107716314,
+     "p8": 479.5412383947216,
+     "sup": 1227.8192947269417,
+     "bias": 1.0474750009605824
+    },
+    "F": {
+     "mae": 61.64069280882982,
+     "rmse": 153.46844465912167,
+     "p8": 1307.6564569473715,
+     "sup": 4280.577822966919
+    }
+   },
+   "PBE, no correction": {
+    "E": {
+     "mae": 633.3417830840489,
+     "rmse": 693.9395981091395,
+     "p8": 927.8736229692637,
+     "sup": 1845.4776215949096,
+     "bias": 630.5507338711872
+    },
+    "F": {
+     "mae": 110.73134108274058,
+     "rmse": 244.9455706445468,
+     "p8": 1282.952651047479,
+     "sup": 4097.605349999995
+    }
+   },
+   "PBE + learned delta_PBE": {
+    "E": {
+     "mae": 24.033674898495438,
+     "rmse": 56.7177298635139,
+     "p8": 464.81346145627646,
+     "sup": 1176.2972283759154,
+     "bias": -0.8236720177835335
+    },
+    "F": {
+     "mae": 50.533182882272364,
+     "rmse": 132.90865788045787,
+     "p8": 1221.3086070689442,
+     "sup": 3958.4260457578607
+    }
+   }
+  },
+  "test_madcore, nonperiodic": {
+   "LDA, no correction": {
+    "E": {
+     "mae": 397.2038872740751,
+     "rmse": 462.1954846636288,
+     "p8": 667.7790791079605,
+     "sup": 994.5921200560406,
+     "bias": -329.5366199093541
+    },
+    "F": {
+     "mae": 757.7450942394016,
+     "rmse": 1069.0260599201583,
+     "p8": 2877.7146303628056,
+     "sup": 6346.45836
+    }
+   },
+   "LDA + learned delta_LDA": {
+    "E": {
+     "mae": 72.35435183825672,
+     "rmse": 112.02245882609718,
+     "p8": 372.5143119116963,
+     "sup": 687.2939366148785,
+     "bias": 4.910124247649726
+    },
+    "F": {
+     "mae": 216.63704402737395,
+     "rmse": 397.44377244604146,
+     "p8": 1930.979698249633,
+     "sup": 4280.577822966919
+    }
+   },
+   "PBE, no correction": {
+    "E": {
+     "mae": 375.26879304951615,
+     "rmse": 459.9902208030032,
+     "p8": 767.3647539235913,
+     "sup": 1179.2891770601273,
+     "bias": 346.46573315402054
+    },
+    "F": {
+     "mae": 295.1979056525354,
+     "rmse": 479.4583269796307,
+     "p8": 1846.1151466253693,
+     "sup": 4097.605349999995
+    }
+   },
+   "PBE + learned delta_PBE": {
+    "E": {
+     "mae": 65.10830630585559,
+     "rmse": 109.90159267701617,
+     "p8": 440.3162825401423,
+     "sup": 814.0911608934402,
+     "bias": 11.688861271548047
+    },
+    "F": {
+     "mae": 180.4967331698438,
+     "rmse": 361.4201182790451,
+     "p8": 1788.819826240591,
+     "sup": 3958.4260457578607
+    }
+   }
+  },
+  "test_madcore, periodic": {
+   "LDA, no correction": {
+    "E": {
+     "mae": 987.9991376263243,
+     "rmse": 1125.3388669617293,
+     "p8": 1576.6269065246543,
+     "sup": 2601.484981365502,
+     "bias": -984.2153148963196
+    },
+    "F": {
+     "mae": 196.64496330935478,
+     "rmse": 420.12417759081967,
+     "p8": 1439.1548548705453,
+     "sup": 3867.7544200000007
+    }
+   },
+   "LDA + learned delta_LDA": {
+    "E": {
+     "mae": 25.08402205154741,
+     "rmse": 52.38944308052616,
+     "p8": 483.50884503927017,
+     "sup": 1227.8192947269417,
+     "bias": 0.744044412201171
+    },
+    "F": {
+     "mae": 55.75772670957414,
+     "rmse": 135.8344629344411,
+     "p8": 1055.2456418238125,
+     "sup": 3279.7701063847358
+    }
+   },
+   "PBE, no correction": {
+    "E": {
+     "mae": 653.6147186544221,
+     "rmse": 709.0549889357172,
+     "p8": 934.8069269452797,
+     "sup": 1845.4776215949096,
+     "bias": 652.8670441339461
+    },
+    "F": {
+     "mae": 103.72981790313929,
+     "rmse": 231.40954119095107,
+     "p8": 1121.2139124064354,
+     "sup": 3113.395949999999
+    }
+   },
+   "PBE + learned delta_PBE": {
+    "E": {
+     "mae": 20.807055344132856,
+     "rmse": 50.20745509929965,
+     "p8": 466.398861975654,
+     "sup": 1176.2972283759154,
+     "bias": -1.8065946442963936
+    },
+    "F": {
+     "mae": 45.60034959639294,
+     "rmse": 115.66012487238102,
+     "p8": 1018.5662706386805,
+     "sup": 3174.982237918701
+    }
+   }
+  },
+  "test_random": {
+   "LDA, no correction": {
+    "E": {
+     "mae": 57.461204194519155,
+     "rmse": 120.78083484643797,
+     "p8": 406.11861476233497,
+     "sup": 919.3466855329461,
+     "bias": -42.86969552727788
+    },
+    "F": {
+     "mae": 193.17984405566324,
+     "rmse": 262.7384452604258,
+     "p8": 509.2548153360552,
+     "sup": 1361.0004543564996
+    }
+   },
+   "LDA + learned delta_LDA": {
+    "E": {
+     "mae": 20.27924132753219,
+     "rmse": 24.09027533948729,
+     "p8": 80.57326637020344,
+     "sup": 174.0317614749074,
+     "bias": 17.200450811384446
+    },
+    "F": {
+     "mae": 41.388836945725004,
+     "rmse": 59.81213583446015,
+     "p8": 252.40879444308223,
+     "sup": 1027.7688650292941
+    }
+   },
+   "PBE, no correction": {
+    "E": {
+     "mae": 437.152939742513,
+     "rmse": 448.5009689728824,
+     "p8": 566.1064157357314,
+     "sup": 976.7656835805004,
+     "bias": 436.9703825570262
+    },
+    "F": {
+     "mae": 110.62306442558445,
+     "rmse": 158.2319049012158,
+     "p8": 428.8932815056068,
+     "sup": 1305.0921324063002
+    }
+   },
+   "PBE + learned delta_PBE": {
+    "E": {
+     "mae": 6.150332769929838,
+     "rmse": 12.89491371837397,
+     "p8": 70.59328091875246,
+     "sup": 159.4268997917728,
+     "bias": -2.8537244420701366
+    },
+    "F": {
+     "mae": 24.093027697214165,
+     "rmse": 35.85457137962651,
+     "p8": 219.77680341659698,
+     "sup": 889.3164325898813
+    }
+   }
+  },
+  "test_random, nonperiodic": {
+   "LDA, no correction": {
+    "E": {
+     "mae": 16.822755029328945,
+     "rmse": 23.42284114067461,
+     "p8": 64.51987286179782,
+     "sup": 137.0714685705631,
+     "bias": -3.3612229080731737
+    },
+    "F": {
+     "mae": 233.22335315655334,
+     "rmse": 296.6163500413245,
+     "p8": 525.1130385973337,
+     "sup": 1194.2215280808898
+    }
+   },
+   "LDA + learned delta_LDA": {
+    "E": {
+     "mae": 18.888622131154147,
+     "rmse": 19.863366348357832,
+     "p8": 56.26915474435682,
+     "sup": 128.25297596494542,
+     "bias": 18.534702193831382
+    },
+    "F": {
+     "mae": 43.04281803644251,
+     "rmse": 61.081784909535294,
+     "p8": 165.78275128879775,
+     "sup": 608.263618634965
+    }
+   },
+   "PBE, no correction": {
+    "E": {
+     "mae": 408.090053368069,
+     "rmse": 409.0507973642328,
+     "p8": 415.2377066421937,
+     "sup": 515.6577180671527,
+     "bias": 408.090053368069
+    },
+    "F": {
+     "mae": 124.22593651300853,
+     "rmse": 165.84364330956225,
+     "p8": 428.87687846655496,
+     "sup": 1134.44818950718
+    }
+   },
+   "PBE + learned delta_PBE": {
+    "E": {
+     "mae": 3.083014394072183,
+     "rmse": 3.938980421296707,
+     "p8": 9.555136534487527,
+     "sup": 18.785144360865363,
+     "bias": -1.419421905031269
+    },
+    "F": {
+     "mae": 22.419276938602955,
+     "rmse": 31.688786890696083,
+     "p8": 136.5194801745095,
+     "sup": 503.7014889907048
+    }
+   }
+  },
+  "test_random, periodic": {
+   "LDA, no correction": {
+    "E": {
+     "mae": 178.87689862658337,
+     "rmse": 237.76782050672315,
+     "p8": 482.77331464456887,
+     "sup": 919.3466855329461,
+     "bias": -160.90935347563948
+    },
+    "F": {
+     "mae": 132.12166785498155,
+     "rmse": 200.34211339549842,
+     "p8": 475.32823679345506,
+     "sup": 1361.0004543564996
+    }
+   },
+   "LDA + learned delta_LDA": {
+    "E": {
+     "mae": 24.434001139661667,
+     "rmse": 33.69601187739896,
+     "p8": 95.26426139936055,
+     "sup": 174.0317614749074,
+     "bias": 13.214101394155682
+    },
+    "F": {
+     "mae": 38.86685345483807,
+     "rmse": 57.82254168083072,
+     "p8": 282.6410893442694,
+     "sup": 1027.7688650292941
+    }
+   },
+   "PBE, no correction": {
+    "E": {
+     "mae": 523.9842682956676,
+     "rmse": 549.7534562364217,
+     "p8": 667.5269269003935,
+     "sup": 976.7656835805004,
+     "bias": 523.2562841092797
+    },
+    "F": {
+     "mae": 89.88146161908085,
+     "rmse": 145.86295772387686,
+     "p8": 428.91828434157554,
+     "sup": 1305.0921324063002
+    }
+   },
+   "PBE + learned delta_PBE": {
+    "E": {
+     "mae": 15.314574966652094,
+     "rmse": 24.83374423302356,
+     "p8": 83.91773220339483,
+     "sup": 159.4268997917728,
+     "bias": -7.138997185928062
+    },
+    "F": {
+     "mae": 26.64515589551525,
+     "rmse": 41.40753232212703,
+     "p8": 246.33633888039648,
+     "sup": 889.3164325898813
+    }
+   }
+  }
+ },
+ "init_records": {
+  "delta_lda--omat-s--madcore_shared18000--s42": {
+   "epoch": 149,
+   "best_epoch": 102,
+   "best_metric_mae_prod": 0.0017774490880440611,
+   "steps_per_epoch": [
+    281
+   ],
+   "epochs_logged": 155,
+   "epochs_redone_after_restart": 5,
+   "optimizer_updates": 42150,
+   "optimizer_updates_logged_including_redone": 43555,
+   "head": "fresh delta head, pretrained energy head pruned",
+   "composition_baseline": "least squares on this training set",
+   "composition_weights_eV": {
+    "H": -0.09872494496727104,
+    "He": -0.01835178339784789,
+    "Li": 0.2998590831065771,
+    "Be": 0.8809829113116701,
+    "B": 0.39519868847570877,
+    "C": 0.336791508895736,
+    "N": 0.4734715568182222,
+    "O": 0.41035286157176815,
+    "F": 0.2937336668728025,
+    "Ne": 0.0382760430651147,
+    "Na": 0.7145101379678607,
+    "Mg": 0.715837566085587,
+    "Al": 0.6126532374937327,
+    "Si": 0.26267688903304015,
+    "P": 0.8238765174493926,
+    "S": 1.149446315862327,
+    "Cl": 0.9809366917659513,
+    "Ar": 0.34411303782481834,
+    "K": 0.9114711772028417,
+    "Ca": 1.5890108706256838,
+    "Sc": 1.7379264998778352,
+    "Ti": 1.4254783920036458,
+    "V": 1.0059571005816816,
+    "Cr": 0.39503723915370614,
+    "Mn": 0.5547881262140392,
+    "Fe": 1.5682691514218046,
+    "Co": 0.5840790307465765,
+    "Ni": 0.7588179006395983,
+    "Cu": 0.9325733073327552,
+    "Zn": 1.0220531970235147,
+    "Ga": 1.1154860344043445,
+    "Ge": 0.9888260246477668,
+    "As": 1.3443512356620926,
+    "Se": 1.5413382537516669,
+    "Br": 1.2564316354293157,
+    "Kr": 0.6945314563151587,
+    "Rb": 1.0132354388840215,
+    "Sr": 1.4910055771002242,
+    "Y": 1.802516097578652,
+    "Zr": 1.4687523650058734,
+    "Nb": 1.1718307897462774,
+    "Mo": 0.665169575290937,
+    "Tc": 0.7872224693288951,
+    "Ru": 1.4381087297884927,
+    "Rh": 1.662199526234586,
+    "Pd": 1.8866745922768602,
+    "Ag": 1.5593705841360295,
+    "Cd": 1.2487536368886398,
+    "In": 1.381906747976255,
+    "Sn": 1.5092875722508652,
+    "Sb": 1.8072622586668954,
+    "Te": 2.1594088536098597,
+    "I": 1.783043914998704,
+    "Xe": 1.163471755816865,
+    "Cs": 0.5370226479619321,
+    "Ba": 1.284720031700574,
+    "La": 1.9199642566142707,
+    "Ce": 1.3632696585193549,
+    "Pr": 1.1917117941783963,
+    "Nd": 1.364498414729803,
+    "Pm": 1.4246805161773681,
+    "Sm": 1.3864564090239953,
+    "Eu": 0.4397897125324904,
+    "Gd": 0.5884481172776544,
+    "Tb": 1.4723994729415282,
+    "Dy": 1.8847041291107682,
+    "Ho": 1.6960911921282136,
+    "Er": 1.5002077220021035,
+    "Tm": 1.6316502711771388,
+    "Yb": 0.7775163290176279,
+    "Lu": 0.6134878998378842,
+    "Hf": 0.6677028035618773,
+    "Ta": 0.2606027473035739,
+    "W": 0.2669460351635122,
+    "Re": 0.2867984657837935,
+    "Os": 0.34755213494957543,
+    "Ir": 0.9421875834505093,
+    "Pt": 1.4785733031276644,
+    "Au": 1.6708339631294082,
+    "Hg": 1.7060829376207718,
+    "Tl": 1.7671475505850975,
+    "Pb": 1.7280713826175809,
+    "Bi": 2.0327836918265616,
+    "Po": 0.0591005433418425,
+    "At": 0.39695258810153244,
+    "Rn": 0.3913772187314828,
+    "Fr": 0.27679913938584233,
+    "Ra": 0.1653851614167964,
+    "Ac": 2.142161478694283,
+    "Th": 1.6715453516813759,
+    "Pa": 1.382936562378746,
+    "U": 0.3856589620027508,
+    "Np": 0.6358925524871785,
+    "Pu": 0.5374419106463224,
+    "Am": 0.03322435012918148,
+    "Cm": -0.3024097070695911,
+    "Bk": 0.17451091731761564,
+    "Cf": 0.3268638000219621,
+    "Es": 0.23248221001701067,
+    "Fm": 0.24946840665388934,
+    "Md": -0.022031510395283487,
+    "No": 0.14233374140748944
+   },
+   "scale_eV": 0.45985479300194837,
+   "max_baseline_gap_eV_per_atom": 3.9968028886505635e-15
+  },
+  "delta_pbe--omat-s--madcore_shared18000--s42": {
+   "epoch": 149,
+   "best_epoch": 101,
+   "best_metric_mae_prod": 0.0011357587569855382,
+   "steps_per_epoch": [
+    281
+   ],
+   "epochs_logged": 174,
+   "epochs_redone_after_restart": 24,
+   "optimizer_updates": 42150,
+   "optimizer_updates_logged_including_redone": 48894,
+   "head": "fresh delta head, pretrained energy head pruned",
+   "composition_baseline": "least squares on this training set",
+   "composition_weights_eV": {
+    "H": -0.19277396622832016,
+    "He": 0.10395396134878059,
+    "Li": -0.06756562718203497,
+    "Be": 0.035775804757695484,
+    "B": -0.20724926129450896,
+    "C": -0.5503019839408096,
+    "N": -0.7224391694142939,
+    "O": -0.8900188378716959,
+    "F": -0.7459011586322856,
+    "Ne": -0.030709286335391606,
+    "Na": -0.3612705142557785,
+    "Mg": -0.35614124653441526,
+    "Al": -0.47511918682089593,
+    "Si": -0.48081725149722493,
+    "P": -0.4716730175706074,
+    "S": -0.4131154248263264,
+    "Cl": -0.19578690749746527,
+    "Ar": 0.14717927181436183,
+    "K": -0.18120420831468886,
+    "Ca": -0.017962648848892943,
+    "Sc": -0.40527956415786004,
+    "Ti": -0.697903411438596,
+    "V": -0.9727560375688418,
+    "Cr": -0.9521155309506267,
+    "Mn": -1.1868109370086946,
+    "Fe": -0.2823142582967568,
+    "Co": -1.1970200171713115,
+    "Ni": -1.2918766837542197,
+    "Cu": -1.043950774221745,
+    "Zn": -0.8035125377649694,
+    "Ga": -0.8704392211231821,
+    "Ge": -0.7480842905225394,
+    "As": -0.5515322520438258,
+    "Se": -0.39332821268266605,
+    "Br": -0.201474867868363,
+    "Kr": 0.15044420997654598,
+    "Rb": -0.05672107989659731,
+    "Sr": 0.016608584984343356,
+    "Y": -0.24708708187447442,
+    "Zr": -0.6417380736125652,
+    "Nb": -0.830976909724826,
+    "Mo": -1.1313877860131,
+    "Tc": -1.069613942265523,
+    "Ru": -0.9627664241713361,
+    "Rh": -0.9374964368094625,
+    "Pd": -0.7367697576709847,
+    "Ag": -0.7129947940034171,
+    "Cd": -0.5346668367035455,
+    "In": -0.5910543844523417,
+    "Sn": -0.5587713110803182,
+    "Sb": -0.33975418201176755,
+    "Te": -0.08751015654295588,
+    "I": 0.10928997021313198,
+    "Xe": 0.26584174581625264,
+    "Cs": 0.04955669743093897,
+    "Ba": 0.011831747349298587,
+    "La": -0.13556235863346125,
+    "Ce": -0.5219774453437428,
+    "Pr": -0.8490574014407607,
+    "Nd": -0.9359456117840634,
+    "Pm": -1.0541396489535857,
+    "Sm": -1.125147428866798,
+    "Eu": -1.0971627004474513,
+    "Gd": -1.0821021882524053,
+    "Tb": -1.274735408396159,
+    "Dy": -0.8598019658930993,
+    "Ho": -1.1753331846342951,
+    "Er": -1.06999607747828,
+    "Tm": -1.0209245666512579,
+    "Yb": -0.4519232086875134,
+    "Lu": -0.7916375512518923,
+    "Hf": -1.118545129310297,
+    "Ta": -1.1870098130161693,
+    "W": -1.1819004399501358,
+    "Re": -1.1592099505389604,
+    "Os": -1.1026905263621216,
+    "Ir": -1.2120649624007087,
+    "Pt": -0.9004665550739281,
+    "Au": -0.7433995196160029,
+    "Hg": -0.4284503171212718,
+    "Tl": -0.48053484640207406,
+    "Pb": -0.4356472957647945,
+    "Bi": -0.27318709400547964,
+    "Po": -0.21264384663278726,
+    "At": 0.015468935652361376,
+    "Rn": 0.3035608677158926,
+    "Fr": 0.13984389544702452,
+    "Ra": 0.147160245069148,
+    "Ac": -0.043479365274623316,
+    "Th": -0.30379822255474287,
+    "Pa": -0.7190115033384537,
+    "U": -1.1258550658576056,
+    "Np": -1.3643610759643434,
+    "Pu": -1.3475820024624845,
+    "Am": -1.2108025463469922,
+    "Cm": -1.2241959704813854,
+    "Bk": -1.0025096802256663,
+    "Cf": -0.9875004606592241,
+    "Es": -0.8599145174027663,
+    "Fm": -0.6640388802302408,
+    "Md": -0.6265556021410739,
+    "No": -0.4088444562853633
+   },
+   "scale_eV": 0.14190655501469665,
+   "max_baseline_gap_eV_per_atom": 3.3306690738754696e-15
+  }
+ },
+ "checks": [
+  {
+   "check": "train: lda + delta target reproduces r2scan (E 0.0e+00 eV, F 4.4e-16 eV/A)",
+   "passed": true
+  },
+  {
+   "check": "train: pbe + delta target reproduces r2scan (E 0.0e+00 eV, F 2.2e-16 eV/A)",
+   "passed": true
+  },
+  {
+   "check": "test_madcore: lda + delta target reproduces r2scan (E 0.0e+00 eV, F 2.2e-16 eV/A)",
+   "passed": true
+  },
+  {
+   "check": "test_madcore: pbe + delta target reproduces r2scan (E 0.0e+00 eV, F 1.1e-16 eV/A)",
+   "passed": true
+  },
+  {
+   "check": "test_random: lda + delta target reproduces r2scan (E 0.0e+00 eV, F 2.2e-16 eV/A)",
+   "passed": true
+  },
+  {
+   "check": "test_random: pbe + delta target reproduces r2scan (E 0.0e+00 eV, F 1.1e-16 eV/A)",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: corrected package",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: training finished",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: 150 epochs in the final model as configured (150), 155 logged",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: constant steps per epoch [281]",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: heads belong to the delta target only",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: delta head freshly initialised",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: composition baseline equals an independent least-squares fit on every training structure (max 4.0e-15 eV/atom)",
+   "passed": true
+  },
+  {
+   "check": "delta_lda--omat-s--madcore_shared18000--s42: scale 0.45985 eV equals the RMS residual per atom 0.45985 or per structure 3.07526",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: corrected package",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: training finished",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: 150 epochs in the final model as configured (150), 174 logged",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: constant steps per epoch [281]",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: heads belong to the delta target only",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: delta head freshly initialised",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: composition baseline equals an independent least-squares fit on every training structure (max 3.3e-15 eV/atom)",
+   "passed": true
+  },
+  {
+   "check": "delta_pbe--omat-s--madcore_shared18000--s42: scale 0.14191 eV equals the RMS residual per atom 0.14191 or per structure 0.84485",
+   "passed": true
+  },
+  {
+   "check": "both runs read the same training and validation files",
+   "passed": true
+  },
+  {
+   "check": "test_madcore delta_lda--omat-s--madcore_shared18000--s42: predictions in the order of the test file (positions within 7.9e-07 A), finite",
+   "passed": true
+  },
+  {
+   "check": "test_madcore delta_pbe--omat-s--madcore_shared18000--s42: predictions in the order of the test file (positions within 7.9e-07 A), finite",
+   "passed": true
+  },
+  {
+   "check": "test_madcore delta_lda--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_madcore delta_pbe--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_madcore, nonperiodic delta_lda--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 2.8e-14)",
+   "passed": true
+  },
+  {
+   "check": "test_madcore, nonperiodic delta_pbe--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_madcore, periodic delta_lda--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_madcore, periodic delta_pbe--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_random delta_lda--omat-s--madcore_shared18000--s42: predictions in the order of the test file (positions within 0.0e+00 A), finite",
+   "passed": true
+  },
+  {
+   "check": "test_random delta_pbe--omat-s--madcore_shared18000--s42: predictions in the order of the test file (positions within 0.0e+00 A), finite",
+   "passed": true
+  },
+  {
+   "check": "test_random delta_lda--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_random delta_pbe--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_random, nonperiodic delta_lda--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 7.1e-15)",
+   "passed": true
+  },
+  {
+   "check": "test_random, nonperiodic delta_pbe--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_random, periodic delta_lda--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  },
+  {
+   "check": "test_random, periodic delta_pbe--omat-s--madcore_shared18000--s42: reconstructed r2SCAN error equals the delta target error (gap 0.0e+00)",
+   "passed": true
+  }
+ ]
+}

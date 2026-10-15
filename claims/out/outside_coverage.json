@@ -1,0 +1,1003 @@
+{
+ "radius": 0.2179152404598418,
+ "radius_source": "coverage_exact.json release level 24 cov_exact_direct",
+ "totals": {
+  "rows": 1694502355,
+  "within": 1680369825,
+  "within_percent": 99.16597755333305,
+  "not_within": 14132530,
+  "not_within_percent": 0.8340224466669449,
+  "outside_finite_distance": 14064555,
+  "outside_finite_distance_percent": 0.8300109444226769,
+  "nonfinite_distance": 67975,
+  "sensitivity_construction_log_radius": {
+   "radius": 0.2179064154624939,
+   "within": 1680363071,
+   "within_percent": 99.16557897023401
+  },
+  "record_without_nonfinite": {
+   "rows": 1694434380,
+   "within_percent": 99.16995575833394,
+   "outside_percent": 0.8300442416660597
+  }
+ },
+ "folders_top": [
+  {
+   "folder": "OMat24",
+   "rows": 105797716,
+   "outside_finite": 13523917,
+   "nonfinite": 0,
+   "not_within": 13523917,
+   "share_of_all_not_within_percent": 95.69353116533274,
+   "share_of_all_outside_finite_percent": 96.1560248440139,
+   "folder_not_within_percent": 12.782806199710398,
+   "cumulative_share_percent": 95.69353116533274,
+   "ratio": {
+    "n": 13523917,
+    "p50": 1.0515043412288347,
+    "p90": 1.1203013158409936,
+    "p99": 1.235790709390195,
+    "max": 134.5800743146076
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_OMat24_train_rattled_1000",
+     "rows": 11388501,
+     "not_within": 2827494,
+     "share_of_folder_not_within_percent": 20.90735990172078,
+     "dataset_not_within_percent": 24.827622177844127
+    },
+    {
+     "dataset_id": "colabfit_OMat24_train_rattled_500",
+     "rows": 7611162,
+     "not_within": 1803033,
+     "share_of_folder_not_within_percent": 13.332180314327573,
+     "dataset_not_within_percent": 23.68932628158486
+    },
+    {
+     "dataset_id": "colabfit_OMat24_train_rattled_300",
+     "rows": 6319107,
+     "not_within": 1464403,
+     "share_of_folder_not_within_percent": 10.828245988200017,
+     "dataset_not_within_percent": 23.17420800122549
+    },
+    {
+     "dataset_id": "colabfit_OMat24_train_rattled_1000_subsampled",
+     "rows": 5279224,
+     "not_within": 1279431,
+     "share_of_folder_not_within_percent": 9.46050615365356,
+     "dataset_not_within_percent": 24.235209568679032
+    },
+    {
+     "dataset_id": "colabfit_OMat24_train_rattled_300_subsampled",
+     "rows": 5363721,
+     "not_within": 1279160,
+     "share_of_folder_not_within_percent": 9.458502296339145,
+     "dataset_not_within_percent": 23.848369443526238
+    }
+   ]
+  },
+  {
+   "folder": "nomad",
+   "rows": 5408927,
+   "outside_finite": 243779,
+   "nonfinite": 67927,
+   "not_within": 311706,
+   "share_of_all_not_within_percent": 2.2055923461687326,
+   "share_of_all_outside_finite_percent": 1.7332862646560805,
+   "folder_not_within_percent": 5.762806560339971,
+   "cumulative_share_percent": 97.89912351150149,
+   "ratio": {
+    "n": 243779,
+    "p50": 2.0662950353056084,
+    "p90": 13.380115544534492,
+    "p99": 548.5203182209916,
+    "max": 55203.94189985253
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "nomad",
+     "rows": 5408927,
+     "not_within": 311706,
+     "share_of_folder_not_within_percent": 100.0,
+     "dataset_not_within_percent": 5.762806560339971
+    }
+   ]
+  },
+  {
+   "folder": "Alexandria",
+   "rows": 118317580,
+   "outside_finite": 216541,
+   "nonfinite": 0,
+   "not_within": 216541,
+   "share_of_all_not_within_percent": 1.5322168076062814,
+   "share_of_all_outside_finite_percent": 1.539622120998496,
+   "folder_not_within_percent": 0.1830167587944243,
+   "cumulative_share_percent": 99.43134031910776,
+   "ratio": {
+    "n": 216541,
+    "p50": 1.0131540059203046,
+    "p90": 1.0878226121151469,
+    "p99": 78.02365370493803,
+    "max": 675.5307005969682
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_Alexandria_geometry_optimization_paths_PBE_3D",
+     "rows": 99866252,
+     "not_within": 186089,
+     "share_of_folder_not_within_percent": 85.9370742723087,
+     "dataset_not_within_percent": 0.18633822364736388
+    },
+    {
+     "dataset_id": "colabfit_sAlex_train",
+     "rows": 10445077,
+     "not_within": 15654,
+     "share_of_folder_not_within_percent": 7.229115964182303,
+     "dataset_not_within_percent": 0.14986964672448083
+    },
+    {
+     "dataset_id": "colabfit_Alexandria_geometry_optimization_paths_PBE_2D",
+     "rows": 6308484,
+     "not_within": 13013,
+     "share_of_folder_not_within_percent": 6.009485501590922,
+     "dataset_not_within_percent": 0.2062777681610986
+    },
+    {
+     "dataset_id": "colabfit_Alexandria_geometry_optimization_paths_PBE_1D",
+     "rows": 665152,
+     "not_within": 940,
+     "share_of_folder_not_within_percent": 0.4340979306459285,
+     "dataset_not_within_percent": 0.14132108149716155
+    },
+    {
+     "dataset_id": "colabfit_sAlex_validation",
+     "rows": 553111,
+     "not_within": 796,
+     "share_of_folder_not_within_percent": 0.3675978221214458,
+     "dataset_not_within_percent": 0.14391324706975633
+    }
+   ]
+  },
+  {
+   "folder": "OMol25",
+   "rows": 142083110,
+   "outside_finite": 20337,
+   "nonfinite": 0,
+   "not_within": 20337,
+   "share_of_all_not_within_percent": 0.14390204726259204,
+   "share_of_all_outside_finite_percent": 0.14459753614671775,
+   "folder_not_within_percent": 0.014313453583610325,
+   "cumulative_share_percent": 99.57524236637035,
+   "ratio": {
+    "n": 20337,
+    "p50": 1.009702498308114,
+    "p90": 1.0366501055262392,
+    "p99": 1.0913883863401213,
+    "max": 1.2155465146085367
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "OMol25_train",
+     "rows": 139321089,
+     "not_within": 20130,
+     "share_of_folder_not_within_percent": 98.98215075969907,
+     "dataset_not_within_percent": 0.014448638138336687
+    },
+    {
+     "dataset_id": "OMol25_val",
+     "rows": 2762021,
+     "not_within": 207,
+     "share_of_folder_not_within_percent": 1.0178492403009294,
+     "dataset_not_within_percent": 0.007494512170617095
+    }
+   ]
+  },
+  {
+   "folder": "OC20_S2EF_train_all",
+   "rows": 133914016,
+   "outside_finite": 19629,
+   "nonfinite": 0,
+   "not_within": 19629,
+   "share_of_all_not_within_percent": 0.1388923285498067,
+   "share_of_all_outside_finite_percent": 0.13956360510517396,
+   "folder_not_within_percent": 0.014657913029805634,
+   "cumulative_share_percent": 99.71413469492016,
+   "ratio": {
+    "n": 19629,
+    "p50": 1.4369568131448038,
+    "p90": 2.6477740477480265,
+    "p99": 4.582611477412195,
+    "max": 12.092577207209708
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "OC20_S2EF_train_all",
+     "rows": 133914016,
+     "not_within": 19629,
+     "share_of_folder_not_within_percent": 100.0,
+     "dataset_not_within_percent": 0.014657913029805634
+    }
+   ]
+  },
+  {
+   "folder": "ANI-1",
+   "rows": 24894775,
+   "outside_finite": 18813,
+   "nonfinite": 0,
+   "not_within": 18813,
+   "share_of_all_not_within_percent": 0.13311841545710498,
+   "share_of_all_outside_finite_percent": 0.13376178627763197,
+   "folder_not_within_percent": 0.07557007444333198,
+   "cumulative_share_percent": 99.84725311037727,
+   "ratio": {
+    "n": 18813,
+    "p50": 1.7925351959946259,
+    "p90": 4.032735722766009,
+    "p99": 6.026274068960018,
+    "max": 14.255809175771725
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_ANI-1",
+     "rows": 24389594,
+     "not_within": 18760,
+     "share_of_folder_not_within_percent": 99.71827991282623,
+     "dataset_not_within_percent": 0.07691804955834854
+    },
+    {
+     "dataset_id": "colabfit_ANI-1xnr",
+     "rows": 196536,
+     "not_within": 53,
+     "share_of_folder_not_within_percent": 0.28172008717376285,
+     "dataset_not_within_percent": 0.026967069646273455
+    },
+    {
+     "dataset_id": "colabfit_ANI-1x",
+     "rows": 308645,
+     "not_within": 0,
+     "share_of_folder_not_within_percent": 0.0,
+     "dataset_not_within_percent": 0.0
+    }
+   ]
+  },
+  {
+   "folder": "OC22-S2EF",
+   "rows": 9232409,
+   "outside_finite": 6256,
+   "nonfinite": 0,
+   "not_within": 6256,
+   "share_of_all_not_within_percent": 0.04426666704404661,
+   "share_of_all_outside_finite_percent": 0.04448061101115535,
+   "folder_not_within_percent": 0.06776129610375797,
+   "cumulative_share_percent": 99.89151977742131,
+   "ratio": {
+    "n": 6256,
+    "p50": 2.8236639150494174,
+    "p90": 11.326891339494516,
+    "p99": 24.11857146483878,
+    "max": 63.780091538072654
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_OC22-S2EF-Train",
+     "rows": 8368018,
+     "not_within": 5592,
+     "share_of_folder_not_within_percent": 89.38618925831202,
+     "dataset_not_within_percent": 0.06682586007821685
+    },
+    {
+     "dataset_id": "colabfit_OC22-S2EF-Validation-in-domain",
+     "rows": 406144,
+     "not_within": 351,
+     "share_of_folder_not_within_percent": 5.610613810741688,
+     "dataset_not_within_percent": 0.08642254963756697
+    },
+    {
+     "dataset_id": "colabfit_OC22-S2EF-Validation-out-of-domain",
+     "rows": 458247,
+     "not_within": 313,
+     "share_of_folder_not_within_percent": 5.003196930946292,
+     "dataset_not_within_percent": 0.06830377503835268
+    }
+   ]
+  },
+  {
+   "folder": "OC22-IS2RE",
+   "rows": 8830240,
+   "outside_finite": 3202,
+   "nonfinite": 0,
+   "not_within": 3202,
+   "share_of_all_not_within_percent": 0.022656948189743804,
+   "share_of_all_outside_finite_percent": 0.022766450840428297,
+   "folder_not_within_percent": 0.036261755059885124,
+   "cumulative_share_percent": 99.91417672561106,
+   "ratio": {
+    "n": 3202,
+    "p50": 2.660583035260843,
+    "p90": 7.635325810119504,
+    "p99": 22.661502480582968,
+    "max": 63.780043398174506
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_OC22-IS2RE-Train",
+     "rows": 7866781,
+     "not_within": 2914,
+     "share_of_folder_not_within_percent": 91.00562148657089,
+     "dataset_not_within_percent": 0.037041834519099995
+    },
+    {
+     "dataset_id": "colabfit_OC22-IS2RE-Validation-in-domain",
+     "rows": 442161,
+     "not_within": 167,
+     "share_of_folder_not_within_percent": 5.215490318550906,
+     "dataset_not_within_percent": 0.037769047925981715
+    },
+    {
+     "dataset_id": "colabfit_OC22-IS2RE-Validation-out-of-domain",
+     "rows": 521298,
+     "not_within": 121,
+     "share_of_folder_not_within_percent": 3.778888194878201,
+     "dataset_not_within_percent": 0.023211291813895314
+    }
+   ]
+  },
+  {
+   "folder": "OC20-IS2RES",
+   "rows": 18723399,
+   "outside_finite": 2887,
+   "nonfinite": 0,
+   "not_within": 2887,
+   "share_of_all_not_within_percent": 0.02042804791498762,
+   "share_of_all_outside_finite_percent": 0.02052677813126686,
+   "folder_not_within_percent": 0.015419208873346127,
+   "cumulative_share_percent": 99.93460477352605,
+   "ratio": {
+    "n": 2887,
+    "p50": 2.635709478114741,
+    "p90": 6.924317129311093,
+    "p99": 18.540370395006647,
+    "max": 27.65838460860453
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_OC20_IS2RES_val_ood_cat",
+     "rows": 5150903,
+     "not_within": 999,
+     "share_of_folder_not_within_percent": 34.60339452719086,
+     "dataset_not_within_percent": 0.01939465759693009
+    },
+    {
+     "dataset_id": "colabfit_OC20_IS2RES_val_id",
+     "rows": 5024120,
+     "not_within": 949,
+     "share_of_folder_not_within_percent": 32.871492899203325,
+     "dataset_not_within_percent": 0.01888888004267414
+    },
+    {
+     "dataset_id": "colabfit_OC20_IS2RES_val_ood_ads",
+     "rows": 4883187,
+     "not_within": 588,
+     "share_of_folder_not_within_percent": 20.367163145133357,
+     "dataset_not_within_percent": 0.012041316459926683
+    },
+    {
+     "dataset_id": "colabfit_OC20_IS2RES_val_ood_both",
+     "rows": 3665189,
+     "not_within": 351,
+     "share_of_folder_not_within_percent": 12.157949428472463,
+     "dataset_not_within_percent": 0.00957658663714204
+    }
+   ]
+  },
+  {
+   "folder": "Si_Al_Ti_Seko_PRB_2019",
+   "rows": 39727,
+   "outside_finite": 1491,
+   "nonfinite": 0,
+   "not_within": 1491,
+   "share_of_all_not_within_percent": 0.010550127967179267,
+   "share_of_all_outside_finite_percent": 0.01060111749003079,
+   "folder_not_within_percent": 3.75311500994286,
+   "cumulative_share_percent": 99.94515490149323,
+   "ratio": {
+    "n": 1491,
+    "p50": 3.5576060330519526,
+    "p90": 19.491232070205903,
+    "p99": 35.9943565488208,
+    "max": 48.27088681010164
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_Si_Al_Ti_Seko_PRB_2019_train",
+     "rows": 35783,
+     "not_within": 1351,
+     "share_of_folder_not_within_percent": 90.61032863849765,
+     "dataset_not_within_percent": 3.775535868988067
+    },
+    {
+     "dataset_id": "colabfit_Si_Al_Ti_Seko_PRB_2019_test",
+     "rows": 3944,
+     "not_within": 140,
+     "share_of_folder_not_within_percent": 9.389671361502348,
+     "dataset_not_within_percent": 3.5496957403651117
+    }
+   ]
+  },
+  {
+   "folder": "Materials_Project",
+   "rows": 6343366,
+   "outside_finite": 1356,
+   "nonfinite": 0,
+   "not_within": 1356,
+   "share_of_all_not_within_percent": 0.00959488499228376,
+   "share_of_all_outside_finite_percent": 0.009641257757533033,
+   "folder_not_within_percent": 0.021376663430740083,
+   "cumulative_share_percent": 99.95474978648551,
+   "ratio": {
+    "n": 1356,
+    "p50": 4.259053309521876,
+    "p90": 11.653472408525413,
+    "p99": 31.26824316412516,
+    "max": 128.3716904682765
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_Materials_Project",
+     "rows": 6343366,
+     "not_within": 1356,
+     "share_of_folder_not_within_percent": 100.0,
+     "dataset_not_within_percent": 0.021376663430740083
+    }
+   ]
+  },
+  {
+   "folder": "mcloudarchive__zne6q-a4h48",
+   "rows": 1507,
+   "outside_finite": 1091,
+   "nonfinite": 20,
+   "not_within": 1111,
+   "share_of_all_not_within_percent": 0.007861295889695617,
+   "share_of_all_outside_finite_percent": 0.007757088653000397,
+   "folder_not_within_percent": 73.72262773722628,
+   "cumulative_share_percent": 99.9626110823752,
+   "ratio": {
+    "n": 1091,
+    "p50": 30.784068808115624,
+    "p90": 147.063380099218,
+    "p99": 869.0471112982635,
+    "max": 1938.9484981915293
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "mcloudarchive__zne6q-a4h48",
+     "rows": 1507,
+     "not_within": 1111,
+     "share_of_folder_not_within_percent": 100.0,
+     "dataset_not_within_percent": 73.72262773722628
+    }
+   ]
+  },
+  {
+   "folder": "JARVIS_CFID_OQMD",
+   "rows": 459907,
+   "outside_finite": 771,
+   "nonfinite": 0,
+   "not_within": 771,
+   "share_of_all_not_within_percent": 0.005455498767736562,
+   "share_of_all_outside_finite_percent": 0.0054818655833760825,
+   "folder_not_within_percent": 0.167642588610306,
+   "cumulative_share_percent": 99.96806658114293,
+   "ratio": {
+    "n": 771,
+    "p50": 4.870387346536686,
+    "p90": 15.724907576594271,
+    "p99": 61.62042411015071,
+    "max": 240.8472189545657
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_JARVIS_CFID_OQMD",
+     "rows": 459907,
+     "not_within": 771,
+     "share_of_folder_not_within_percent": 100.0,
+     "dataset_not_within_percent": 0.167642588610306
+    }
+   ]
+  },
+  {
+   "folder": "QM-22",
+   "rows": 952896,
+   "outside_finite": 590,
+   "nonfinite": 0,
+   "not_within": 590,
+   "share_of_all_not_within_percent": 0.004174765593987772,
+   "share_of_all_outside_finite_percent": 0.004194942534619829,
+   "folder_not_within_percent": 0.06191651554839143,
+   "cumulative_share_percent": 99.97224134673692,
+   "ratio": {
+    "n": 590,
+    "p50": 3.4124947378575796,
+    "p90": 24.464140879058444,
+    "p99": 48.543526335514834,
+    "max": 67.42145032653701
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "colabfit_QM-22_Malonaldehyde",
+     "rows": 11142,
+     "not_within": 313,
+     "share_of_folder_not_within_percent": 53.05084745762712,
+     "dataset_not_within_percent": 2.809190450547478
+    },
+    {
+     "dataset_id": "colabfit_QM-22_Acetaldehyde_singlet",
+     "rows": 202518,
+     "not_within": 264,
+     "share_of_folder_not_within_percent": 44.74576271186441,
+     "dataset_not_within_percent": 0.13035878292299943
+    },
+    {
+     "dataset_id": "colabfit_QM-22_Acetaldehyde_triplet",
+     "rows": 51530,
+     "not_within": 13,
+     "share_of_folder_not_within_percent": 2.2033898305084745,
+     "dataset_not_within_percent": 0.02522802251115855
+    },
+    {
+     "dataset_id": "colabfit_QM-22",
+     "rows": 6762,
+     "not_within": 0,
+     "share_of_folder_not_within_percent": 0.0,
+     "dataset_not_within_percent": 0.0
+    },
+    {
+     "dataset_id": "colabfit_QM-22_Ethanol",
+     "rows": 11011,
+     "not_within": 0,
+     "share_of_folder_not_within_percent": 0.0,
+     "dataset_not_within_percent": 0.0
+    }
+   ]
+  },
+  {
+   "folder": "mcloudarchive__7p3z3-t3q91",
+   "rows": 38672,
+   "outside_finite": 507,
+   "nonfinite": 0,
+   "not_within": 507,
+   "share_of_all_not_within_percent": 0.0035874680612742373,
+   "share_of_all_outside_finite_percent": 0.0036048065509360233,
+   "folder_not_within_percent": 1.3110260653702936,
+   "cumulative_share_percent": 99.9758288147982,
+   "ratio": {
+    "n": 507,
+    "p50": 8.639296624452248,
+    "p90": 104.26513231502038,
+    "p99": 277.40540578912635,
+    "max": 399.7880948546917
+   },
+   "dataset_ids": [
+    {
+     "dataset_id": "mcloudarchive__7p3z3-t3q91",
+     "rows": 38672,
+     "not_within": 507,
+     "share_of_folder_not_within_percent": 100.0,
+     "dataset_not_within_percent": 1.3110260653702936
+    }
+   ]
+  }
+ ],
+ "folders_with_any_not_within": 78,
+ "folders_total": 455,
+ "ratio": {
+  "n": 14064555,
+  "p50": 1.0520580868186025,
+  "p90": 1.1254874325388389,
+  "p99": 2.737964152397327,
+  "max": 55203.94189985253
+ },
+ "ratio_without_image_flag_rows": {
+  "n": 14063759,
+  "p50": 1.052054462650134,
+  "p90": 1.125472935864965,
+  "p99": 2.7359612427009257,
+  "max": 55203.94189985253
+ },
+ "ratio_nonfinite_as_infinite": {
+  "p50": 1.0523700388290396,
+  "p90": 1.1268148355258194,
+  "p99": 6.184483480989566
+ },
+ "ratio_bins": {
+  "(1.0, 1.001]": {
+   "count": 166538,
+   "percent": 1.184097186153419
+  },
+  "(1.001, 1.01]": {
+   "count": 1414643,
+   "percent": 10.058213715257965
+  },
+  "(1.01, 1.05]": {
+   "count": 5223710,
+   "percent": 37.14095469071009
+  },
+  "(1.05, 1.1]": {
+   "count": 4421904,
+   "percent": 31.440056226450107
+  },
+  "(1.1, 1.25]": {
+   "count": 2434092,
+   "percent": 17.306569599962458
+  },
+  "(1.25, 1.5]": {
+   "count": 121301,
+   "percent": 0.8624588549015593
+  },
+  "(1.5, 2.0]": {
+   "count": 81076,
+   "percent": 0.5764562049776903
+  },
+  "(2.0, 5.0]": {
+   "count": 116365,
+   "percent": 0.8273635390526042
+  },
+  "(5.0, inf]": {
+   "count": 84926,
+   "percent": 0.6038299825341079
+  }
+ },
+ "categories": {
+  "passed|unique|not_in_pool": {
+   "rows": 1470015801,
+   "outside_finite": 12693217,
+   "nonfinite": 0,
+   "outside_finite_percent_of_category": 0.8634748681861277,
+   "ratio": {
+    "n": 12693217,
+    "p50": 1.0504330233534471,
+    "p90": 1.119537505241129,
+    "p99": 1.2164054726230005,
+    "max": 1.8355238515179653
+   }
+  },
+  "passed|unique|in_pool": {
+   "rows": 171959793,
+   "outside_finite": 1,
+   "nonfinite": 0,
+   "outside_finite_percent_of_category": 5.815312885378968e-07,
+   "ratio": {
+    "n": 1,
+    "p50": 1.0000021720703702,
+    "p90": 1.0000021720703702,
+    "p99": 1.0000021720703702,
+    "max": 1.0000021720703702
+   }
+  },
+  "passed|duplicate|not_in_pool": {
+   "rows": 39819557,
+   "outside_finite": 1007586,
+   "nonfinite": 0,
+   "outside_finite_percent_of_category": 2.5303797327529285,
+   "ratio": {
+    "n": 1007586,
+    "p50": 1.0509628357552154,
+    "p90": 1.115001140407197,
+    "p99": 1.1395893831811053,
+    "max": 1.468860436553295
+   }
+  },
+  "passed|duplicate|in_pool": {
+   "rows": 12220865,
+   "outside_finite": 0,
+   "nonfinite": 0,
+   "outside_finite_percent_of_category": 0.0,
+   "ratio": {
+    "n": 0
+   }
+  },
+  "zbl_rejected|unique|not_in_pool": {
+   "rows": 202439,
+   "outside_finite": 130714,
+   "nonfinite": 56944,
+   "outside_finite_percent_of_category": 64.56957404452699,
+   "ratio": {
+    "n": 130714,
+    "p50": 2.856439663828604,
+    "p90": 40.40606377295362,
+    "p99": 897.9162343014425,
+    "max": 55203.91949291812
+   }
+  },
+  "zbl_rejected|duplicate|not_in_pool": {
+   "rows": 12869,
+   "outside_finite": 9989,
+   "nonfinite": 2478,
+   "outside_finite_percent_of_category": 77.62063874426917,
+   "ratio": {
+    "n": 9989,
+    "p50": 3.8434090525642026,
+    "p90": 885.4682992632377,
+    "p99": 33288.25586472369,
+    "max": 55203.94189985253
+   }
+  },
+  "nan_features|unique|not_in_pool": {
+   "rows": 8553,
+   "outside_finite": 0,
+   "nonfinite": 8553,
+   "outside_finite_percent_of_category": 0.0,
+   "ratio": {
+    "n": 0
+   }
+  },
+  "nomad_excluded|unique|not_in_pool": {
+   "rows": 262424,
+   "outside_finite": 222994,
+   "nonfinite": 0,
+   "outside_finite_percent_of_category": 84.9746974362101,
+   "ratio": {
+    "n": 222994,
+    "p50": 1.9613175765894768,
+    "p90": 6.985438498038037,
+    "p99": 20.10888672267505,
+    "max": 60.15160798418549
+   }
+  },
+  "nomad_excluded|duplicate|not_in_pool": {
+   "rows": 54,
+   "outside_finite": 54,
+   "nonfinite": 0,
+   "outside_finite_percent_of_category": 100.0,
+   "ratio": {
+    "n": 54,
+    "p50": 50.489068284221545,
+    "p90": 51.82674476310212,
+    "p99": 51.83032466474607,
+    "max": 51.83121302092106
+   }
+  }
+ },
+ "flags": {
+  "outside_flagged": 363751,
+  "outside_flagged_percent": 2.586295833746606,
+  "outside_by_filter_code": {
+   "passed": 13700804,
+   "zbl_rejected": 140703,
+   "nan_features": 0,
+   "nomad_excluded": 223048
+  },
+  "outside_duplicate": 1017629,
+  "outside_in_pool": 1,
+  "outside_passed_unique_not_in_pool": 12693217,
+  "outside_image_flag": 796,
+  "nonfinite_image_flag": 67930,
+  "ratio_flagged": {
+   "n": 363751,
+   "p50": 2.1741098076493306,
+   "p90": 15.0681798038038,
+   "p99": 419.40063946822863,
+   "max": 55203.94189985253
+  },
+  "ratio_passed": {
+   "n": 13700804,
+   "p50": 1.0504718634985433,
+   "p90": 1.1191613439063164,
+   "p99": 1.2109409486710179,
+   "max": 1.8355238515179653
+  }
+ },
+ "atoms": {
+  "all_rows_percentiles": {
+   "p50": 27,
+   "p90": 86,
+   "p99": 315
+  },
+  "all_rows_max": 1000,
+  "outside_percentiles": {
+   "p50": 14.0,
+   "p90": 60.0,
+   "p99": 88.0
+  },
+  "outside_max": 996,
+  "large_threshold_atoms": 315,
+  "large_definition": "more atoms than the p99 of all release rows",
+  "all_rows_large_percent": 0.9969309248909247,
+  "outside_large_percent": 0.0038181087137133026,
+  "ratio_large": {
+   "n": 537,
+   "p50": 9.475143111451262,
+   "p90": 119.20446218034976,
+   "p99": 883.2287709827916,
+   "max": 2325.428624548222
+  },
+  "ratio_not_large": {
+   "n": 14064018,
+   "p50": 1.0520556934998024,
+   "p90": 1.1254779276441764,
+   "p99": 2.7309650160195,
+   "max": 55203.94189985253
+  }
+ },
+ "tail": {
+  "ratio_above_1.1": {
+   "count": 2837760,
+   "percent_of_outside": 20.17667818142842,
+   "flagged_percent": 12.304141294542173,
+   "large_percent": 0.018641463689670727,
+   "flagged_or_large_percent": 12.304141294542173,
+   "image_flag": 796,
+   "top_folders": {
+    "OMat24": 2527666,
+    "nomad": 233986,
+    "Alexandria": 20455,
+    "ANI-1": 17750,
+    "OC20_S2EF_train_all": 16781
+   }
+  },
+  "ratio_above_1.5": {
+   "count": 282367,
+   "percent_of_outside": 2.0076497265644027,
+   "flagged_percent": 99.28497310238095,
+   "large_percent": 0.16928323777211926,
+   "flagged_or_large_percent": 99.28497310238095,
+   "image_flag": 773,
+   "top_folders": {
+    "nomad": 188655,
+    "OMat24": 35996,
+    "Alexandria": 18392,
+    "ANI-1": 12390,
+    "OC20_S2EF_train_all": 8121
+   }
+  },
+  "ratio_above_2.0": {
+   "count": 201291,
+   "percent_of_outside": 1.4311935215867122,
+   "flagged_percent": 100.0,
+   "large_percent": 0.21113710995523893,
+   "flagged_or_large_percent": 100.0,
+   "image_flag": 594,
+   "top_folders": {
+    "nomad": 128106,
+    "OMat24": 26243,
+    "Alexandria": 18365,
+    "ANI-1": 7840,
+    "OC22-S2EF": 4568
+   }
+  },
+  "ratio_above_5.0": {
+   "count": 84926,
+   "percent_of_outside": 0.6038299825341079,
+   "flagged_percent": 100.0,
+   "large_percent": 0.3850410946000047,
+   "flagged_or_large_percent": 100.0,
+   "image_flag": 2,
+   "top_folders": {
+    "nomad": 52718,
+    "Alexandria": 17550,
+    "OMat24": 6820,
+    "OC22-S2EF": 1312,
+    "mcloudarchive__zne6q-a4h48": 1091
+   }
+  }
+ },
+ "family_fps_bound": {
+  "ANI-1": {
+   "picks": 10000000,
+   "fps_input_rows": 24874950,
+   "fps_input_dropped": 19825,
+   "radius_family_scaler": 0.0634070411324501,
+   "radius_release_scaler": 0.06801695712443272,
+   "ratio_bound": 1.3121257466017715,
+   "outside_passed_not_in_pool": 122,
+   "ratio_max": 1.0985132252917662,
+   "above_bound": 0
+  },
+  "ANI-2x": {
+   "picks": 10000000,
+   "fps_input_rows": 46699359,
+   "fps_input_dropped": 3,
+   "radius_family_scaler": 0.0006905339541845024,
+   "radius_release_scaler": 0.0007407382132312628,
+   "ratio_bound": 1.0033992033401067,
+   "outside_passed_not_in_pool": 0,
+   "ratio_max": null,
+   "above_bound": 0
+  },
+  "Alexandria": {
+   "picks": 10000000,
+   "fps_input_rows": 118299169,
+   "fps_input_dropped": 18411,
+   "radius_family_scaler": 0.05961832031607628,
+   "radius_release_scaler": 0.06395278291410418,
+   "ratio_bound": 1.2934754943213327,
+   "outside_passed_not_in_pool": 198139,
+   "ratio_max": 1.2546712595001883,
+   "above_bound": 0
+  },
+  "OC20-IS2RES": {
+   "picks": 10000000,
+   "fps_input_rows": 18720024,
+   "fps_input_dropped": 3375,
+   "radius_family_scaler": 0.0006905339541845024,
+   "radius_release_scaler": 0.0007407382132312628,
+   "ratio_bound": 1.0033992033401067,
+   "outside_passed_not_in_pool": 0,
+   "ratio_max": null,
+   "above_bound": 0
+  },
+  "OC20_S2EF_train_all": {
+   "picks": 10000000,
+   "fps_input_rows": 133884908,
+   "fps_input_dropped": 29108,
+   "radius_family_scaler": 0.01025390625,
+   "radius_release_scaler": 0.010999401475103227,
+   "ratio_bound": 1.0504755952447036,
+   "outside_passed_not_in_pool": 858,
+   "ratio_max": 1.0128181891024053,
+   "above_bound": 0
+  },
+  "ODAC": {
+   "picks": 10000000,
+   "fps_input_rows": 57888368,
+   "fps_input_dropped": 0,
+   "radius_family_scaler": 0.0011451210593804717,
+   "radius_release_scaler": 0.001228375407637585,
+   "ratio_bound": 1.0056369412485584,
+   "outside_passed_not_in_pool": 0,
+   "ratio_max": null,
+   "above_bound": 0
+  },
+  "OMat24": {
+   "picks": 10000000,
+   "fps_input_rows": 105753345,
+   "fps_input_dropped": 44371,
+   "radius_family_scaler": 0.23210211098194122,
+   "radius_release_scaler": 0.24897675477668202,
+   "ratio_bound": 2.142539430703858,
+   "outside_passed_not_in_pool": 13481237,
+   "ratio_max": 1.8355238515179653,
+   "above_bound": 0
+  },
+  "OMol25": {
+   "picks": 10000000,
+   "fps_input_rows": 142083110,
+   "fps_input_dropped": 0,
+   "radius_family_scaler": 0.09145405143499374,
+   "radius_release_scaler": 0.09810308420346993,
+   "ratio_bound": 1.450189183631462,
+   "outside_passed_not_in_pool": 20337,
+   "ratio_max": 1.2155465146085367,
+   "above_bound": 0
+  },
+  "Open_Molecular_Crystals_2025_OMC25": {
+   "picks": 10000000,
+   "fps_input_rows": 25903652,
+   "fps_input_dropped": 0,
+   "radius_family_scaler": 0.0034526698291301727,
+   "radius_release_scaler": 0.003703691128595878,
+   "ratio_bound": 1.0169960169870653,
+   "outside_passed_not_in_pool": 4,
+   "ratio_max": 1.0012308335617193,
+   "above_bound": 0
+  },
+  "gdb13": {
+   "picks": 10000000,
+   "fps_input_rows": 933762293,
+   "fps_input_dropped": 26,
+   "radius_family_scaler": 0.08025136590003967,
+   "radius_release_scaler": 0.0860859238360937,
+   "ratio_bound": 1.3950431537254409,
+   "outside_passed_not_in_pool": 106,
+   "ratio_max": 1.0354013401569706,
+   "above_bound": 0
+  }
+ },
+ "big_family_share": {
+  "outside_finite": 13802263,
+  "percent_of_outside": 98.13508497069407,
+  "passed_not_in_pool": 13700803,
+  "passed_not_in_pool_percent_of_outside": 97.4136970561813
+ }
+}

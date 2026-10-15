@@ -1,0 +1,12 @@
+{
+ "mad-core": {
+  "source": "coreset_224_light.parquet",
+  "rows": 16777216,
+  "first_prefix_with_all_102_elements": 2158
+ },
+ "mad-next": {
+  "source": "mad_union_full.parquet",
+  "rows": 856012,
+  "first_prefix_with_all_102_elements": 480
+ }
+}

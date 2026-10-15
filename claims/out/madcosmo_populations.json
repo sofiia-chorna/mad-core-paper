@@ -1,0 +1,7007 @@
+{
+ "claim": "populations behind the MAD-COSMO counts, filters, duplicates, coverage and cell statistics",
+ "release": "/capstor/store/cscs/swissai/aa002/mad-core/release",
+ "folders": {
+  "collection": 454,
+  "with_anchor": 455
+ },
+ "rows": {
+  "released": 1694502355,
+  "collection": 1693646343,
+  "anchor": 856012
+ },
+ "level24_radius_certified": 0.2179152404598418,
+ "by_category": {
+  "rows": {
+   "passed": 1641119582,
+   "passed_duplicate": 52040422,
+   "zbl_rejected": 202439,
+   "zbl_rejected_duplicate": 12869,
+   "nan_features": 8553,
+   "nan_features_duplicate": 0,
+   "nomad_excluded": 262424,
+   "nomad_excluded_duplicate": 54,
+   "anchor": 856012
+  },
+  "natoms_below_300": {
+   "passed": 1622248192,
+   "passed_duplicate": 51912353,
+   "zbl_rejected": 201730,
+   "zbl_rejected_duplicate": 12864,
+   "nan_features": 8553,
+   "nan_features_duplicate": 0,
+   "nomad_excluded": 262424,
+   "nomad_excluded_duplicate": 54,
+   "anchor": 856008
+  },
+  "natoms_above_1000": {
+   "passed": 0,
+   "passed_duplicate": 0,
+   "zbl_rejected": 0,
+   "zbl_rejected_duplicate": 0,
+   "nan_features": 0,
+   "nan_features_duplicate": 0,
+   "nomad_excluded": 0,
+   "nomad_excluded_duplicate": 0,
+   "anchor": 0
+  },
+  "zbl_rule": {
+   "passed": 0,
+   "passed_duplicate": 0,
+   "zbl_rejected": 202439,
+   "zbl_rejected_duplicate": 12869,
+   "nan_features": 0,
+   "nan_features_duplicate": 0,
+   "nomad_excluded": 0,
+   "nomad_excluded_duplicate": 0,
+   "anchor": 0
+  },
+  "nonfinite_d24": {
+   "passed": 0,
+   "passed_duplicate": 0,
+   "zbl_rejected": 56944,
+   "zbl_rejected_duplicate": 2478,
+   "nan_features": 8553,
+   "nan_features_duplicate": 0,
+   "nomad_excluded": 0,
+   "nomad_excluded_duplicate": 0,
+   "anchor": 0
+  },
+  "within_radius_d24": {
+   "passed": 1628426364,
+   "passed_duplicate": 51032836,
+   "zbl_rejected": 14781,
+   "zbl_rejected_duplicate": 402,
+   "nan_features": 0,
+   "nan_features_duplicate": 0,
+   "nomad_excluded": 39430,
+   "nomad_excluded_duplicate": 0,
+   "anchor": 856012
+  }
+ },
+ "eligible_passed_not_duplicate": 1641119582,
+ "eligible_plus_anchor": 1641975594,
+ "random_draw_population": 1623104204,
+ "collection_folders_without_passed_rows": [],
+ "duplicate_scope": {
+  "duplicates": 52053345,
+  "same_folder_same_dataset_id": 13588752,
+  "same_folder_other_dataset_id": 25904238,
+  "other_folder": 12560355,
+  "high_collisions_among_originals": 0,
+  "other_folder_original_found": 12560338,
+  "no_original_in_collection": 17,
+  "folders_with_duplicates": 120,
+  "folder_pairs": 45,
+  "top_pairs": [
+   {
+    "duplicate_folder": "collection/OC22-S2EF",
+    "original_folder": "collection/OC22-IS2RE",
+    "rows": 8655499
+   },
+   {
+    "duplicate_folder": "collection/Chig-AIMD_scaffold",
+    "original_folder": "collection/Chig-AIMD_random",
+    "rows": 1990462
+   },
+   {
+    "duplicate_folder": "collection/OC20-S2EF",
+    "original_folder": "collection/OC20-IS2RES",
+    "rows": 1144028
+   },
+   {
+    "duplicate_folder": "collection/ANI-2x",
+    "original_folder": "collection/ANI-1",
+    "rows": 308696
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_DFT",
+    "original_folder": "collection/JARVIS_CFID_3D_8_18_2022",
+    "rows": 113245
+   },
+   {
+    "duplicate_folder": "collection/xxMD-DFT",
+    "original_folder": "collection/xxMD-CASSCF",
+    "rows": 86658
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_Materials_Project",
+    "original_folder": "collection/JARVIS_MEGNet",
+    "rows": 67470
+   },
+   {
+    "duplicate_folder": "collection/Matbench",
+    "original_folder": "collection/JARVIS_MEGNet",
+    "rows": 30685
+   },
+   {
+    "duplicate_folder": "collection/NequIP_NC_2022",
+    "original_folder": "collection/Forces_are_not_enough",
+    "rows": 24998
+   },
+   {
+    "duplicate_folder": "collection/CA-9_BR",
+    "original_folder": "collection/CA-9",
+    "rows": 24012
+   },
+   {
+    "duplicate_folder": "collection/CA-9_RR",
+    "original_folder": "collection/CA-9",
+    "rows": 24011
+   },
+   {
+    "duplicate_folder": "collection/CA-9_BB",
+    "original_folder": "collection/CA-9",
+    "rows": 24006
+   },
+   {
+    "duplicate_folder": "collection/Carbon_GAP_JCP_2020",
+    "original_folder": "collection/CGM-MLP_natcomm2023",
+    "rows": 12290
+   },
+   {
+    "duplicate_folder": "collection/QM9x",
+    "original_folder": "collection/GDB_9_nature_2014",
+    "rows": 12046
+   },
+   {
+    "duplicate_folder": "collection/HEA25_high_entropy_transition-metal_alloys",
+    "original_folder": "collection/HEA25S_high_entropy_alloys",
+    "rows": 10199
+   },
+   {
+    "duplicate_folder": "collection/WBe_PRB2019",
+    "original_folder": "collection/W-14",
+    "rows": 9512
+   },
+   {
+    "duplicate_folder": "collection/Matbench",
+    "original_folder": "collection/JARVIS_Materials_Project",
+    "rows": 8109
+   },
+   {
+    "duplicate_folder": "collection/CGM-MLP_natcomm2023_screening_amorphous_carbon",
+    "original_folder": "collection/CGM-MLP_natcomm2023",
+    "rows": 3052
+   },
+   {
+    "duplicate_folder": "collection/Carbon_allotrope_multilayer_graphene_graphite_PRB2019",
+    "original_folder": "collection/C_NPJ2020",
+    "rows": 2838
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_OQMD_no_CFID",
+    "original_folder": "collection/JARVIS_CFID_OQMD",
+    "rows": 1900
+   },
+   {
+    "duplicate_folder": "collection/MatPES-2025.1",
+    "original_folder": "collection/MP-ALOE",
+    "rows": 1870
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_Materials_Project",
+    "original_folder": "collection/JARVIS_ALIGNN_FF",
+    "rows": 1171
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_MEGNet",
+    "original_folder": "collection/JARVIS_ALIGNN_FF",
+    "rows": 1139
+   },
+   {
+    "duplicate_folder": "collection/Matbench",
+    "original_folder": "collection/JARVIS_ALIGNN_FF",
+    "rows": 801
+   },
+   {
+    "duplicate_folder": "collection/CGM-MLP_natcomm2023_screening_carbon-cluster_Cu",
+    "original_folder": "collection/CGM-MLP_natcomm2023",
+    "rows": 781
+   },
+   {
+    "duplicate_folder": "collection/Nb_PRM2019",
+    "original_folder": "collection/MoNbTaVW_PRB2021",
+    "rows": 140
+   },
+   {
+    "duplicate_folder": "collection/V_PRM2019",
+    "original_folder": "collection/MoNbTaVW_PRB2021",
+    "rows": 138
+   },
+   {
+    "duplicate_folder": "collection/Mo_PRM2019",
+    "original_folder": "collection/MoNbTaVW_PRB2021",
+    "rows": 135
+   },
+   {
+    "duplicate_folder": "collection/Ta_PRM2019",
+    "original_folder": "collection/MoNbTaVW_PRB2021",
+    "rows": 130
+   },
+   {
+    "duplicate_folder": "collection/W_PRB2019",
+    "original_folder": "collection/MoNbTaVW_PRB2021",
+    "rows": 108
+   },
+   {
+    "duplicate_folder": "collection/OMat24",
+    "original_folder": "collection/Alexandria",
+    "rows": 74
+   },
+   {
+    "duplicate_folder": "collection/mlearn_Si",
+    "original_folder": "collection/discrepencies_and_error_metrics_NPJ_2023",
+    "rows": 48
+   },
+   {
+    "duplicate_folder": "collection/MISPR",
+    "original_folder": "collection/ComBat",
+    "rows": 34
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_OQMD_no_CFID",
+    "original_folder": "collection/JARVIS_ALIGNN_FF",
+    "rows": 23
+   },
+   {
+    "duplicate_folder": "collection/Massive_Atomic_Diversity_bench",
+    "original_folder": null,
+    "rows": 17
+   },
+   {
+    "duplicate_folder": "collection/Materials_Project",
+    "original_folder": "collection/GST_GAP_22",
+    "rows": 7
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_ALIGNN_FF",
+    "original_folder": "collection/JARVIS_2DMatPedia",
+    "rows": 6
+   },
+   {
+    "duplicate_folder": "collection/JARVIS_DFT",
+    "original_folder": "collection/JARVIS_ALIGNN_FF",
+    "rows": 5
+   },
+   {
+    "duplicate_folder": "collection/CA-9_BR",
+    "original_folder": "collection/CA-9_BB",
+    "rows": 3
+   },
+   {
+    "duplicate_folder": "collection/BOTnet_ACAC_2022",
+    "original_folder": "collection/3BPA",
+    "rows": 3
+   }
+  ],
+  "per_folder": {
+   "collection/nomad": {
+    "folder": "collection/nomad",
+    "rows": 5408927,
+    "dataset_ids": 1,
+    "duplicates": 5995,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 5995,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/OPoly26": {
+    "folder": "collection/OPoly26",
+    "rows": 6318456,
+    "dataset_ids": 2,
+    "duplicates": 3278,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 3278,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Materials_Project": {
+    "folder": "collection/Materials_Project",
+    "rows": 6343366,
+    "dataset_ids": 1,
+    "duplicates": 218749,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 218742,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 7
+   },
+   "collection/OrbNet_Denali": {
+    "folder": "collection/OrbNet_Denali",
+    "rows": 2338014,
+    "dataset_ids": 1,
+    "duplicates": 785,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 784,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 1
+   },
+   "collection/OC20-S2EF": {
+    "folder": "collection/OC20-S2EF",
+    "rows": 3999457,
+    "dataset_ids": 4,
+    "duplicates": 1144028,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 1144028
+   },
+   "collection/mcloudarchive__jk-9v": {
+    "folder": "collection/mcloudarchive__jk-9v",
+    "rows": 3595900,
+    "dataset_ids": 1,
+    "duplicates": 8300,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 8300,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Chig-AIMD_scaffold": {
+    "folder": "collection/Chig-AIMD_scaffold",
+    "rows": 1990617,
+    "dataset_ids": 3,
+    "duplicates": 1990462,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 1990462
+   },
+   "collection/Vector-QM24": {
+    "folder": "collection/Vector-QM24",
+    "rows": 1104982,
+    "dataset_ids": 4,
+    "duplicates": 268726,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 37,
+    "same_folder_other_dataset_id": 268689,
+    "other_folder": 0
+   },
+   "collection/ZIF-4_Amorphous_Zeolitic_Imidazolate_Frameworks_2023": {
+    "folder": "collection/ZIF-4_Amorphous_Zeolitic_Imidazolate_Frameworks_2023",
+    "rows": 1189734,
+    "dataset_ids": 1,
+    "duplicates": 2,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 2,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/JARVIS_OQMD_no_CFID": {
+    "folder": "collection/JARVIS_OQMD_no_CFID",
+    "rows": 811669,
+    "dataset_ids": 1,
+    "duplicates": 2264,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 339,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 1925
+   },
+   "collection/MatPES-2025.1": {
+    "folder": "collection/MatPES-2025.1",
+    "rows": 822607,
+    "dataset_ids": 2,
+    "duplicates": 388866,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 38,
+    "same_folder_other_dataset_id": 386958,
+    "other_folder": 1870
+   },
+   "collection/Transition1x": {
+    "folder": "collection/Transition1x",
+    "rows": 518227,
+    "dataset_ids": 3,
+    "duplicates": 6,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 6,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/COMP6v2": {
+    "folder": "collection/COMP6v2",
+    "rows": 626726,
+    "dataset_ids": 4,
+    "duplicates": 156302,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 156302,
+    "other_folder": 0
+   },
+   "collection/JARVIS_Open_Catalyst": {
+    "folder": "collection/JARVIS_Open_Catalyst",
+    "rows": 645108,
+    "dataset_ids": 3,
+    "duplicates": 159866,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 3,
+    "same_folder_other_dataset_id": 159863,
+    "other_folder": 0
+   },
+   "collection/JARVIS_CFID_OQMD": {
+    "folder": "collection/JARVIS_CFID_OQMD",
+    "rows": 459907,
+    "dataset_ids": 1,
+    "duplicates": 9,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 9,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/OC22-IS2RE": {
+    "folder": "collection/OC22-IS2RE",
+    "rows": 8830240,
+    "dataset_ids": 3,
+    "duplicates": 10715,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 6870,
+    "same_folder_other_dataset_id": 3845,
+    "other_folder": 0
+   },
+   "collection/H_nature_2022": {
+    "folder": "collection/H_nature_2022",
+    "rows": 343665,
+    "dataset_ids": 1,
+    "duplicates": 27722,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 27722,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/JARVIS_ALIGNN_FF": {
+    "folder": "collection/JARVIS_ALIGNN_FF",
+    "rows": 306376,
+    "dataset_ids": 1,
+    "duplicates": 2236,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 2230,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 6
+   },
+   "collection/xxMD-CASSCF": {
+    "folder": "collection/xxMD-CASSCF",
+    "rows": 260102,
+    "dataset_ids": 3,
+    "duplicates": 173393,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 173393,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Matbench": {
+    "folder": "collection/Matbench",
+    "rows": 257772,
+    "dataset_ids": 3,
+    "duplicates": 128497,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 88902,
+    "other_folder": 39595
+   },
+   "collection/SAIT_semiconductors_ACS_2023_HfO": {
+    "folder": "collection/SAIT_semiconductors_ACS_2023_HfO",
+    "rows": 233959,
+    "dataset_ids": 5,
+    "duplicates": 41983,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 10,
+    "same_folder_other_dataset_id": 41973,
+    "other_folder": 0
+   },
+   "collection/JARVIS_MEGNet": {
+    "folder": "collection/JARVIS_MEGNet",
+    "rows": 202634,
+    "dataset_ids": 2,
+    "duplicates": 1528,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 12,
+    "same_folder_other_dataset_id": 377,
+    "other_folder": 1139
+   },
+   "collection/JARVIS_Materials_Project": {
+    "folder": "collection/JARVIS_Materials_Project",
+    "rows": 209756,
+    "dataset_ids": 2,
+    "duplicates": 68643,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 2,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 68641
+   },
+   "collection/COLL": {
+    "folder": "collection/COLL",
+    "rows": 139470,
+    "dataset_ids": 3,
+    "duplicates": 31,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 16,
+    "same_folder_other_dataset_id": 15,
+    "other_folder": 0
+   },
+   "collection/QM9x": {
+    "folder": "collection/QM9x",
+    "rows": 133871,
+    "dataset_ids": 1,
+    "duplicates": 12046,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 12046
+   },
+   "collection/JARVIS_DFT": {
+    "folder": "collection/JARVIS_DFT",
+    "rows": 134707,
+    "dataset_ids": 3,
+    "duplicates": 114237,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 984,
+    "same_folder_other_dataset_id": 3,
+    "other_folder": 113250
+   },
+   "collection/a-AlOx_JCP_2020": {
+    "folder": "collection/a-AlOx_JCP_2020",
+    "rows": 123563,
+    "dataset_ids": 1,
+    "duplicates": 7,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 7,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/q-AQUA": {
+    "folder": "collection/q-AQUA",
+    "rows": 120356,
+    "dataset_ids": 1,
+    "duplicates": 195,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 195,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/UNEP_v1_2023": {
+    "folder": "collection/UNEP_v1_2023",
+    "rows": 109475,
+    "dataset_ids": 2,
+    "duplicates": 265,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 265,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/xxMD-DFT": {
+    "folder": "collection/xxMD-DFT",
+    "rows": 86658,
+    "dataset_ids": 3,
+    "duplicates": 86658,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 86658
+   },
+   "collection/SAIT_semiconductors_ACS_2023_SiN": {
+    "folder": "collection/SAIT_semiconductors_ACS_2023_SiN",
+    "rows": 117573,
+    "dataset_ids": 5,
+    "duplicates": 29462,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 37,
+    "same_folder_other_dataset_id": 29425,
+    "other_folder": 0
+   },
+   "collection/NENCI-2021": {
+    "folder": "collection/NENCI-2021",
+    "rows": 77630,
+    "dataset_ids": 1,
+    "duplicates": 69867,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 69867,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/JARVIS_CFID_3D_8_18_2022": {
+    "folder": "collection/JARVIS_CFID_3D_8_18_2022",
+    "rows": 73769,
+    "dataset_ids": 1,
+    "duplicates": 18190,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 18188,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 2
+   },
+   "collection/flexible_molecules_JCP2021": {
+    "folder": "collection/flexible_molecules_JCP2021",
+    "rows": 69177,
+    "dataset_ids": 1,
+    "duplicates": 3,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 3,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/DFT_polymorphs_PNAS_2022_benzene": {
+    "folder": "collection/DFT_polymorphs_PNAS_2022_benzene",
+    "rows": 59189,
+    "dataset_ids": 6,
+    "duplicates": 2015,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 2015,
+    "other_folder": 0
+   },
+   "collection/NequIP_NC_2022": {
+    "folder": "collection/NequIP_NC_2022",
+    "rows": 56838,
+    "dataset_ids": 1,
+    "duplicates": 25014,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 16,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 24998
+   },
+   "collection/alpha_brass_nanoparticles": {
+    "folder": "collection/alpha_brass_nanoparticles",
+    "rows": 53524,
+    "dataset_ids": 1,
+    "duplicates": 49,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 49,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/CA-9": {
+    "folder": "collection/CA-9",
+    "rows": 50720,
+    "dataset_ids": 3,
+    "duplicates": 1,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Cu_FHI-aims_NPJCM_2021": {
+    "folder": "collection/Cu_FHI-aims_NPJCM_2021",
+    "rows": 46353,
+    "dataset_ids": 1,
+    "duplicates": 26,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 26,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/JARVIS_SNUMAT": {
+    "folder": "collection/JARVIS_SNUMAT",
+    "rows": 41920,
+    "dataset_ids": 1,
+    "duplicates": 31440,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 31440,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/TdS-PdV_Atari5200": {
+    "folder": "collection/TdS-PdV_Atari5200",
+    "rows": 44313,
+    "dataset_ids": 1,
+    "duplicates": 303,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 303,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/AENET_amorphous_LiSi_JCP2021": {
+    "folder": "collection/AENET_amorphous_LiSi_JCP2021",
+    "rows": 44502,
+    "dataset_ids": 1,
+    "duplicates": 9,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 9,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/OC22-S2EF": {
+    "folder": "collection/OC22-S2EF",
+    "rows": 9232409,
+    "dataset_ids": 3,
+    "duplicates": 8663959,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 8023,
+    "same_folder_other_dataset_id": 437,
+    "other_folder": 8655499
+   },
+   "collection/aC_JCP_2023": {
+    "folder": "collection/aC_JCP_2023",
+    "rows": 37022,
+    "dataset_ids": 3,
+    "duplicates": 16828,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 16828,
+    "other_folder": 0
+   },
+   "collection/QM7b_AlphaML": {
+    "folder": "collection/QM7b_AlphaML",
+    "rows": 29028,
+    "dataset_ids": 1,
+    "duplicates": 21773,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 21773,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/DFT_polymorphs_PNAS_2022_glycine": {
+    "folder": "collection/DFT_polymorphs_PNAS_2022_glycine",
+    "rows": 34068,
+    "dataset_ids": 6,
+    "duplicates": 4683,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 19,
+    "same_folder_other_dataset_id": 4664,
+    "other_folder": 0
+   },
+   "collection/BA10-18": {
+    "folder": "collection/BA10-18",
+    "rows": 31836,
+    "dataset_ids": 1,
+    "duplicates": 15916,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 15916,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/HDNNP_H2O": {
+    "folder": "collection/HDNNP_H2O",
+    "rows": 28675,
+    "dataset_ids": 1,
+    "duplicates": 14138,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 14138,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/HEA25_high_entropy_transition-metal_alloys": {
+    "folder": "collection/HEA25_high_entropy_transition-metal_alloys",
+    "rows": 25625,
+    "dataset_ids": 1,
+    "duplicates": 10199,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 10199
+   },
+   "collection/WBe_PRB2019": {
+    "folder": "collection/WBe_PRB2019",
+    "rows": 25117,
+    "dataset_ids": 1,
+    "duplicates": 9531,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 19,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 9512
+   },
+   "collection/CA-9_BR": {
+    "folder": "collection/CA-9_BR",
+    "rows": 24015,
+    "dataset_ids": 2,
+    "duplicates": 24015,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 24015
+   },
+   "collection/CA-9_RR": {
+    "folder": "collection/CA-9_RR",
+    "rows": 24013,
+    "dataset_ids": 2,
+    "duplicates": 24011,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 24011
+   },
+   "collection/mbGDML_maldonado_2023": {
+    "folder": "collection/mbGDML_maldonado_2023",
+    "rows": 24612,
+    "dataset_ids": 1,
+    "duplicates": 103,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 103,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/CA-9_BB": {
+    "folder": "collection/CA-9_BB",
+    "rows": 24009,
+    "dataset_ids": 2,
+    "duplicates": 24006,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 24006
+   },
+   "collection/DFT_polymorphs_PNAS_2022_succinic_acid": {
+    "folder": "collection/DFT_polymorphs_PNAS_2022_succinic_acid",
+    "rows": 32418,
+    "dataset_ids": 6,
+    "duplicates": 3002,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 7,
+    "same_folder_other_dataset_id": 2995,
+    "other_folder": 0
+   },
+   "collection/Carbon_GAP_JCP_2020": {
+    "folder": "collection/Carbon_GAP_JCP_2020",
+    "rows": 23299,
+    "dataset_ids": 2,
+    "duplicates": 12406,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 116,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 12290
+   },
+   "collection/Zr_Sn_JNM_2024": {
+    "folder": "collection/Zr_Sn_JNM_2024",
+    "rows": 23521,
+    "dataset_ids": 1,
+    "duplicates": 289,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 289,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/NNIP_FeH_PRM_2021": {
+    "folder": "collection/NNIP_FeH_PRM_2021",
+    "rows": 20912,
+    "dataset_ids": 1,
+    "duplicates": 112,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 112,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Mg_edmonds_2022": {
+    "folder": "collection/Mg_edmonds_2022",
+    "rows": 16824,
+    "dataset_ids": 1,
+    "duplicates": 78,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 78,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/water_and_Cu__synergy_in_selective_CO2_hydrogenation_to_methanol_over_Cu_MgO_catalysts": {
+    "folder": "collection/water_and_Cu__synergy_in_selective_CO2_hydrogenation_to_methanol_over_Cu_MgO_catalysts",
+    "rows": 14959,
+    "dataset_ids": 1,
+    "duplicates": 5,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 5,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Carbon_allotrope_multilayer_graphene_graphite_PRB2019": {
+    "folder": "collection/Carbon_allotrope_multilayer_graphene_graphite_PRB2019",
+    "rows": 14218,
+    "dataset_ids": 1,
+    "duplicates": 2868,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 30,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 2838
+   },
+   "collection/CGM-MLP_natcomm2023": {
+    "folder": "collection/CGM-MLP_natcomm2023",
+    "rows": 13827,
+    "dataset_ids": 8,
+    "duplicates": 1696,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 1696,
+    "other_folder": 0
+   },
+   "collection/Zn_MTP_CMS2023": {
+    "folder": "collection/Zn_MTP_CMS2023",
+    "rows": 13462,
+    "dataset_ids": 1,
+    "duplicates": 163,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 163,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/3BPA": {
+    "folder": "collection/3BPA",
+    "rows": 13997,
+    "dataset_ids": 9,
+    "duplicates": 31,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 31,
+    "other_folder": 0
+   },
+   "collection/cathode_materials_for_rechargeable_Ca_batteries_CM2021": {
+    "folder": "collection/cathode_materials_for_rechargeable_Ca_batteries_CM2021",
+    "rows": 10843,
+    "dataset_ids": 1,
+    "duplicates": 4,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 4,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/W-14": {
+    "folder": "collection/W-14",
+    "rows": 9693,
+    "dataset_ids": 1,
+    "duplicates": 222,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 222,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/TiO2_CMS2016": {
+    "folder": "collection/TiO2_CMS2016",
+    "rows": 7810,
+    "dataset_ids": 1,
+    "duplicates": 1,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/GST_GAP_22": {
+    "folder": "collection/GST_GAP_22",
+    "rows": 8299,
+    "dataset_ids": 3,
+    "duplicates": 5385,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 2,
+    "same_folder_other_dataset_id": 5383,
+    "other_folder": 0
+   },
+   "collection/NEP_PRB_2021": {
+    "folder": "collection/NEP_PRB_2021",
+    "rows": 7425,
+    "dataset_ids": 1,
+    "duplicates": 348,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 348,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/PtNi_alloy_NPJ2022": {
+    "folder": "collection/PtNi_alloy_NPJ2022",
+    "rows": 6828,
+    "dataset_ids": 1,
+    "duplicates": 8,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 8,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/ANI-Al_NC2021": {
+    "folder": "collection/ANI-Al_NC2021",
+    "rows": 5551,
+    "dataset_ids": 2,
+    "duplicates": 3,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 3,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/defected_phosphorene_ACS_2023": {
+    "folder": "collection/defected_phosphorene_ACS_2023",
+    "rows": 5087,
+    "dataset_ids": 1,
+    "duplicates": 2,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 2,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Massive_Atomic_Diversity_bench": {
+    "folder": "collection/Massive_Atomic_Diversity_bench",
+    "rows": 4097,
+    "dataset_ids": 2,
+    "duplicates": 456,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 113,
+    "same_folder_other_dataset_id": 326,
+    "other_folder": 17
+   },
+   "collection/local_polarization_in_oxygen-deficient_LaMnO3_PRR2020": {
+    "folder": "collection/local_polarization_in_oxygen-deficient_LaMnO3_PRR2020",
+    "rows": 4589,
+    "dataset_ids": 1,
+    "duplicates": 76,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 76,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/V_PRM2019": {
+    "folder": "collection/V_PRM2019",
+    "rows": 3801,
+    "dataset_ids": 1,
+    "duplicates": 138,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 138
+   },
+   "collection/Co_dimer_JPCA_2022": {
+    "folder": "collection/Co_dimer_JPCA_2022",
+    "rows": 3960,
+    "dataset_ids": 2,
+    "duplicates": 1802,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 4,
+    "same_folder_other_dataset_id": 1798,
+    "other_folder": 0
+   },
+   "collection/Mo_PRM2019": {
+    "folder": "collection/Mo_PRM2019",
+    "rows": 3785,
+    "dataset_ids": 1,
+    "duplicates": 135,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 135
+   },
+   "collection/Ta_PRM2019": {
+    "folder": "collection/Ta_PRM2019",
+    "rows": 3773,
+    "dataset_ids": 1,
+    "duplicates": 130,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 130
+   },
+   "collection/Nb_PRM2019": {
+    "folder": "collection/Nb_PRM2019",
+    "rows": 3787,
+    "dataset_ids": 1,
+    "duplicates": 140,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 140
+   },
+   "collection/W_PRB2019": {
+    "folder": "collection/W_PRB2019",
+    "rows": 3528,
+    "dataset_ids": 1,
+    "duplicates": 108,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 108
+   },
+   "collection/JARVIS_AGRA": {
+    "folder": "collection/JARVIS_AGRA",
+    "rows": 3444,
+    "dataset_ids": 5,
+    "duplicates": 877,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 877,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/CHON_JCP_2020": {
+    "folder": "collection/CHON_JCP_2020",
+    "rows": 3778,
+    "dataset_ids": 1,
+    "duplicates": 4,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 4,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/stable_and_metastable_phases_in_sputtered_CuInS2": {
+    "folder": "collection/stable_and_metastable_phases_in_sputtered_CuInS2",
+    "rows": 3154,
+    "dataset_ids": 1,
+    "duplicates": 51,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 51,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/CGM-MLP_natcomm2023_screening_amorphous_carbon": {
+    "folder": "collection/CGM-MLP_natcomm2023_screening_amorphous_carbon",
+    "rows": 3052,
+    "dataset_ids": 2,
+    "duplicates": 3052,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 3052
+   },
+   "collection/AlNiTi_CMS_2019": {
+    "folder": "collection/AlNiTi_CMS_2019",
+    "rows": 2681,
+    "dataset_ids": 1,
+    "duplicates": 15,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 15,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/BOTnet_ACAC_2022": {
+    "folder": "collection/BOTnet_ACAC_2022",
+    "rows": 2363,
+    "dataset_ids": 7,
+    "duplicates": 3,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 3
+   },
+   "collection/HO_LiMoNiTi_NPJCM_2020_LiMoNiTi": {
+    "folder": "collection/HO_LiMoNiTi_NPJCM_2020_LiMoNiTi",
+    "rows": 2616,
+    "dataset_ids": 2,
+    "duplicates": 385,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 385,
+    "other_folder": 0
+   },
+   "collection/datasets_for_magnetic_MTP_NatSR2024": {
+    "folder": "collection/datasets_for_magnetic_MTP_NatSR2024",
+    "rows": 2348,
+    "dataset_ids": 2,
+    "duplicates": 1724,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1584,
+    "same_folder_other_dataset_id": 140,
+    "other_folder": 0
+   },
+   "collection/JARVIS-Polymer-Genome": {
+    "folder": "collection/JARVIS-Polymer-Genome",
+    "rows": 2146,
+    "dataset_ids": 1,
+    "duplicates": 1073,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1073,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/AgPd_NPJ_2021": {
+    "folder": "collection/AgPd_NPJ_2021",
+    "rows": 1986,
+    "dataset_ids": 1,
+    "duplicates": 993,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 993,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/JARVIS_mlearn": {
+    "folder": "collection/JARVIS_mlearn",
+    "rows": 1573,
+    "dataset_ids": 1,
+    "duplicates": 7,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 7,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/CGM-MLP_natcomm2023_screening_deposited-carbon_Cu": {
+    "folder": "collection/CGM-MLP_natcomm2023_screening_deposited-carbon_Cu",
+    "rows": 1560,
+    "dataset_ids": 2,
+    "duplicates": 1,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 1,
+    "other_folder": 0
+   },
+   "collection/sGDML_Toluene": {
+    "folder": "collection/sGDML_Toluene",
+    "rows": 1501,
+    "dataset_ids": 2,
+    "duplicates": 3,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 3,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/ferroelectricity_and_metallicity_in_BaTiO3_JMCC2021": {
+    "folder": "collection/ferroelectricity_and_metallicity_in_BaTiO3_JMCC2021",
+    "rows": 1128,
+    "dataset_ids": 1,
+    "duplicates": 66,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 66,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Si_JCP_2017": {
+    "folder": "collection/Si_JCP_2017",
+    "rows": 1117,
+    "dataset_ids": 1,
+    "duplicates": 7,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 7,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/discrepencies_and_error_metrics_NPJ_2023": {
+    "folder": "collection/discrepencies_and_error_metrics_NPJ_2023",
+    "rows": 1086,
+    "dataset_ids": 5,
+    "duplicates": 599,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 198,
+    "same_folder_other_dataset_id": 401,
+    "other_folder": 0
+   },
+   "collection/MTPu_2023": {
+    "folder": "collection/MTPu_2023",
+    "rows": 1062,
+    "dataset_ids": 1,
+    "duplicates": 1,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Graphene-hBN_and_Graphene-Graphene": {
+    "folder": "collection/Graphene-hBN_and_Graphene-Graphene",
+    "rows": 811,
+    "dataset_ids": 3,
+    "duplicates": 443,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 443,
+    "other_folder": 0
+   },
+   "collection/oxygen-vacancy_defects_in_Cu2O_111_": {
+    "folder": "collection/oxygen-vacancy_defects_in_Cu2O_111_",
+    "rows": 864,
+    "dataset_ids": 1,
+    "duplicates": 9,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 9,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/sGDML_Benzene": {
+    "folder": "collection/sGDML_Benzene",
+    "rows": 1500,
+    "dataset_ids": 2,
+    "duplicates": 3,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1,
+    "same_folder_other_dataset_id": 2,
+    "other_folder": 0
+   },
+   "collection/CGM-MLP_natcomm2023_screening_carbon-cluster_Cu": {
+    "folder": "collection/CGM-MLP_natcomm2023_screening_carbon-cluster_Cu",
+    "rows": 781,
+    "dataset_ids": 2,
+    "duplicates": 781,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 781
+   },
+   "collection/MISPR": {
+    "folder": "collection/MISPR",
+    "rows": 503,
+    "dataset_ids": 1,
+    "duplicates": 34,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 34
+   },
+   "collection/NiCoCr_NC2020": {
+    "folder": "collection/NiCoCr_NC2020",
+    "rows": 489,
+    "dataset_ids": 1,
+    "duplicates": 61,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 61,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/LiTiO_Science_2020": {
+    "folder": "collection/LiTiO_Science_2020",
+    "rows": 933,
+    "dataset_ids": 1,
+    "duplicates": 85,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 85,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/carbon_X": {
+    "folder": "collection/carbon_X",
+    "rows": 480,
+    "dataset_ids": 1,
+    "duplicates": 1,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 1
+   },
+   "collection/pure_magnesium_DFT_PRM2020": {
+    "folder": "collection/pure_magnesium_DFT_PRM2020",
+    "rows": 407,
+    "dataset_ids": 1,
+    "duplicates": 2,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 2,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Al_Cu_Mg_GSFE_JMPS2019": {
+    "folder": "collection/Al_Cu_Mg_GSFE_JMPS2019",
+    "rows": 273,
+    "dataset_ids": 1,
+    "duplicates": 1,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/mlearn_Si": {
+    "folder": "collection/mlearn_Si",
+    "rows": 239,
+    "dataset_ids": 2,
+    "duplicates": 48,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 48
+   },
+   "collection/vanadium_in_high_entropy_alloys_AM2020": {
+    "folder": "collection/vanadium_in_high_entropy_alloys_AM2020",
+    "rows": 240,
+    "dataset_ids": 1,
+    "duplicates": 8,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 8,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/ComBat": {
+    "folder": "collection/ComBat",
+    "rows": 230,
+    "dataset_ids": 1,
+    "duplicates": 56,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 56,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/linear_magnetic_coefficient_in_Cr2O3_JPCM2024": {
+    "folder": "collection/linear_magnetic_coefficient_in_Cr2O3_JPCM2024",
+    "rows": 208,
+    "dataset_ids": 1,
+    "duplicates": 43,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 43,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/CoCrFeNiPd_MRL2020": {
+    "folder": "collection/CoCrFeNiPd_MRL2020",
+    "rows": 116,
+    "dataset_ids": 1,
+    "duplicates": 14,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 14,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/adatoms_on_single-layer_graphene_PRR2021": {
+    "folder": "collection/adatoms_on_single-layer_graphene_PRR2021",
+    "rows": 29,
+    "dataset_ids": 1,
+    "duplicates": 11,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 11,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/ANI-1": {
+    "folder": "collection/ANI-1",
+    "rows": 24894775,
+    "dataset_ids": 3,
+    "duplicates": 169888,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 169888,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/ODAC": {
+    "folder": "collection/ODAC",
+    "rows": 57888368,
+    "dataset_ids": 2,
+    "duplicates": 656304,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 656304,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/Open_Molecular_Crystals_2025_OMC25": {
+    "folder": "collection/Open_Molecular_Crystals_2025_OMC25",
+    "rows": 25903652,
+    "dataset_ids": 2,
+    "duplicates": 2128,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 2128,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   },
+   "collection/ANI-2x": {
+    "folder": "collection/ANI-2x",
+    "rows": 46699362,
+    "dataset_ids": 5,
+    "duplicates": 19600933,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 0,
+    "same_folder_other_dataset_id": 19292237,
+    "other_folder": 308696
+   },
+   "collection/OMat24": {
+    "folder": "collection/OMat24",
+    "rows": 105797716,
+    "dataset_ids": 22,
+    "duplicates": 4145699,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 3994181,
+    "same_folder_other_dataset_id": 151444,
+    "other_folder": 74
+   },
+   "collection/Alexandria": {
+    "folder": "collection/Alexandria",
+    "rows": 118317580,
+    "dataset_ids": 7,
+    "duplicates": 11865448,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 6578788,
+    "same_folder_other_dataset_id": 5286660,
+    "other_folder": 0
+   },
+   "collection/gdb13": {
+    "folder": "collection/gdb13",
+    "rows": 933762319,
+    "dataset_ids": 1,
+    "duplicates": 1551541,
+    "high_collisions_among_originals": 0,
+    "same_folder_same_dataset_id": 1551541,
+    "same_folder_other_dataset_id": 0,
+    "other_folder": 0
+   }
+  }
+ },
+ "populations": {
+  "release_voronoi_population": {
+   "cells": 16777216,
+   "sum": 1694502355,
+   "largest": 114996700,
+   "largest_cell": 16531443,
+   "median": 3.0,
+   "cells_holding_half": 117,
+   "cells_holding_90_percent": 456653,
+   "empty_cells": 0
+  },
+  "pre_release_populations_npz_level24": {
+   "cells": 16777216,
+   "sum": 1695275276,
+   "largest": 114996707,
+   "largest_cell": 16531443,
+   "median": 3.0,
+   "cells_holding_half": 118,
+   "cells_holding_90_percent": 460602,
+   "empty_cells": 0
+  },
+  "pre_release_minus_release_per_cell": {
+   "cells_differing": 387220,
+   "rows": 772921
+  },
+  "sketchmap_weights_level20": {
+   "cells": 1048576,
+   "sum": 1695275276,
+   "wgamma": 0.25,
+   "n_effective": 698223.6703190329
+  },
+  "cell_fps_distinct_ordered": {
+   "cells": 16777216,
+   "sum": 1641975594,
+   "largest": 114974135,
+   "largest_cell": 16531443,
+   "median": 3.0,
+   "cells_holding_half": 102,
+   "cells_holding_90_percent": 394756,
+   "empty_cells": 0
+  },
+  "cell_fps_rows_with_ordering": 1694015702,
+  "cell_fps_rows_without_ordering": 486653
+ },
+ "per_folder": {
+  "collection/3BPA": {
+   "rows": 13997,
+   "filter_code": [
+    13997,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 31,
+   "passed_not_duplicate": 13966,
+   "passed_not_duplicate_below_300_atoms": 13966
+  },
+  "collection/ABC2D6-16_PRL_2018": {
+   "rows": 21881,
+   "filter_code": [
+    21881,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 21881,
+   "passed_not_duplicate_below_300_atoms": 21881
+  },
+  "collection/AENET_amorphous_LiSi_JCP2021": {
+   "rows": 44502,
+   "filter_code": [
+    44502,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 9,
+   "passed_not_duplicate": 44493,
+   "passed_not_duplicate_below_300_atoms": 38292
+  },
+  "collection/AENET_liquid_water_dataset_JCP2021": {
+   "rows": 9188,
+   "filter_code": [
+    9188,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 9188,
+   "passed_not_duplicate_below_300_atoms": 9188
+  },
+  "collection/ANI-1": {
+   "rows": 24894775,
+   "filter_code": [
+    24874950,
+    19825,
+    0,
+    0
+   ],
+   "duplicates": 169888,
+   "passed_not_duplicate": 24705087,
+   "passed_not_duplicate_below_300_atoms": 24703967
+  },
+  "collection/ANI-2x": {
+   "rows": 46699362,
+   "filter_code": [
+    46699359,
+    3,
+    0,
+    0
+   ],
+   "duplicates": 19600933,
+   "passed_not_duplicate": 27098428,
+   "passed_not_duplicate_below_300_atoms": 27098428
+  },
+  "collection/ANI-Al_NC2021": {
+   "rows": 5551,
+   "filter_code": [
+    5551,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3,
+   "passed_not_duplicate": 5548,
+   "passed_not_duplicate_below_300_atoms": 5548
+  },
+  "collection/AgPd_NPJ_2021": {
+   "rows": 1986,
+   "filter_code": [
+    1986,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 993,
+   "passed_not_duplicate": 993,
+   "passed_not_duplicate_below_300_atoms": 993
+  },
+  "collection/AlNiCu_AIP_2020": {
+   "rows": 1016,
+   "filter_code": [
+    1016,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1016,
+   "passed_not_duplicate_below_300_atoms": 1016
+  },
+  "collection/AlNiTi_CMS_2019": {
+   "rows": 2681,
+   "filter_code": [
+    2647,
+    34,
+    0,
+    0
+   ],
+   "duplicates": 15,
+   "passed_not_duplicate": 2642,
+   "passed_not_duplicate_below_300_atoms": 2642
+  },
+  "collection/Al_Cu_Mg_GSFE_JMPS2019": {
+   "rows": 273,
+   "filter_code": [
+    273,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1,
+   "passed_not_duplicate": 272,
+   "passed_not_duplicate_below_300_atoms": 272
+  },
+  "collection/Alex_MP-20": {
+   "rows": 742725,
+   "filter_code": [
+    742725,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 742725,
+   "passed_not_duplicate_below_300_atoms": 742725
+  },
+  "collection/Alexandria": {
+   "rows": 118317580,
+   "filter_code": [
+    118299169,
+    18411,
+    0,
+    0
+   ],
+   "duplicates": 11865448,
+   "passed_not_duplicate": 106434545,
+   "passed_not_duplicate_below_300_atoms": 106434545
+  },
+  "collection/BA10-18": {
+   "rows": 31836,
+   "filter_code": [
+    31836,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 15916,
+   "passed_not_duplicate": 15920,
+   "passed_not_duplicate_below_300_atoms": 15920
+  },
+  "collection/BOTnet_ACAC_2022": {
+   "rows": 2363,
+   "filter_code": [
+    2363,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3,
+   "passed_not_duplicate": 2360,
+   "passed_not_duplicate_below_300_atoms": 2360
+  },
+  "collection/C7H10O2": {
+   "rows": 6094,
+   "filter_code": [
+    6094,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 6094,
+   "passed_not_duplicate_below_300_atoms": 6094
+  },
+  "collection/CA-9": {
+   "rows": 50720,
+   "filter_code": [
+    50720,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1,
+   "passed_not_duplicate": 50719,
+   "passed_not_duplicate_below_300_atoms": 50719
+  },
+  "collection/CA-9_BB": {
+   "rows": 24009,
+   "filter_code": [
+    24009,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 24006,
+   "passed_not_duplicate": 3,
+   "passed_not_duplicate_below_300_atoms": 3
+  },
+  "collection/CA-9_BR": {
+   "rows": 24015,
+   "filter_code": [
+    24015,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 24015,
+   "passed_not_duplicate": 0,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/CA-9_RR": {
+   "rows": 24013,
+   "filter_code": [
+    24013,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 24011,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/CGM-MLP_natcomm2023": {
+   "rows": 13827,
+   "filter_code": [
+    13821,
+    6,
+    0,
+    0
+   ],
+   "duplicates": 1696,
+   "passed_not_duplicate": 12125,
+   "passed_not_duplicate_below_300_atoms": 12071
+  },
+  "collection/CGM-MLP_natcomm2023_screening_amorphous_carbon": {
+   "rows": 3052,
+   "filter_code": [
+    3052,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3052,
+   "passed_not_duplicate": 0,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/CGM-MLP_natcomm2023_screening_carbon-cluster_Cu": {
+   "rows": 781,
+   "filter_code": [
+    781,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 781,
+   "passed_not_duplicate": 0,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/CGM-MLP_natcomm2023_screening_deposited-carbon_Cu": {
+   "rows": 1560,
+   "filter_code": [
+    1559,
+    1,
+    0,
+    0
+   ],
+   "duplicates": 1,
+   "passed_not_duplicate": 1558,
+   "passed_not_duplicate_below_300_atoms": 231
+  },
+  "collection/CHON_JCP_2020": {
+   "rows": 3778,
+   "filter_code": [
+    3778,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 4,
+   "passed_not_duplicate": 3774,
+   "passed_not_duplicate_below_300_atoms": 3774
+  },
+  "collection/COHInPt_schaaf_2023": {
+   "rows": 1994,
+   "filter_code": [
+    1994,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1994,
+   "passed_not_duplicate_below_300_atoms": 1994
+  },
+  "collection/COLL": {
+   "rows": 139470,
+   "filter_code": [
+    139470,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 31,
+   "passed_not_duplicate": 139439,
+   "passed_not_duplicate_below_300_atoms": 139439
+  },
+  "collection/COMP6v2": {
+   "rows": 626726,
+   "filter_code": [
+    626726,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 156302,
+   "passed_not_duplicate": 470424,
+   "passed_not_duplicate_below_300_atoms": 470296
+  },
+  "collection/C_Gardner_2022": {
+   "rows": 115134,
+   "filter_code": [
+    114806,
+    328,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 114806,
+   "passed_not_duplicate_below_300_atoms": 114806
+  },
+  "collection/C_NPJ2020": {
+   "rows": 4769,
+   "filter_code": [
+    4769,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4769,
+   "passed_not_duplicate_below_300_atoms": 4769
+  },
+  "collection/Carbon_GAP_JCP_2020": {
+   "rows": 23299,
+   "filter_code": [
+    23130,
+    169,
+    0,
+    0
+   ],
+   "duplicates": 12406,
+   "passed_not_duplicate": 10735,
+   "passed_not_duplicate_below_300_atoms": 10732
+  },
+  "collection/Carbon_allotrope_multilayer_graphene_graphite_PRB2019": {
+   "rows": 14218,
+   "filter_code": [
+    14218,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 2868,
+   "passed_not_duplicate": 11350,
+   "passed_not_duplicate_below_300_atoms": 11350
+  },
+  "collection/Carolina_Materials": {
+   "rows": 214267,
+   "filter_code": [
+    214244,
+    23,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 214244,
+   "passed_not_duplicate_below_300_atoms": 214244
+  },
+  "collection/Cationic_phenoxyimine_complexes_of_yttrium": {
+   "rows": 109,
+   "filter_code": [
+    109,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 109,
+   "passed_not_duplicate_below_300_atoms": 109
+  },
+  "collection/ChIMES_C_2.0-Small_2025": {
+   "rows": 601,
+   "filter_code": [
+    601,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 601,
+   "passed_not_duplicate_below_300_atoms": 450
+  },
+  "collection/Chig-AIMD_random": {
+   "rows": 1990645,
+   "filter_code": [
+    1990645,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1990645,
+   "passed_not_duplicate_below_300_atoms": 1990645
+  },
+  "collection/Chig-AIMD_scaffold": {
+   "rows": 1990617,
+   "filter_code": [
+    1990617,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1990462,
+   "passed_not_duplicate": 155,
+   "passed_not_duplicate_below_300_atoms": 155
+  },
+  "collection/CoCrFeNiPd_MRL2020": {
+   "rows": 116,
+   "filter_code": [
+    116,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 14,
+   "passed_not_duplicate": 102,
+   "passed_not_duplicate_below_300_atoms": 102
+  },
+  "collection/CoNbV_CMS2019": {
+   "rows": 383,
+   "filter_code": [
+    383,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 383,
+   "passed_not_duplicate_below_300_atoms": 383
+  },
+  "collection/Co_dimer_JPCA_2022": {
+   "rows": 3960,
+   "filter_code": [
+    3960,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1802,
+   "passed_not_duplicate": 2158,
+   "passed_not_duplicate_below_300_atoms": 2158
+  },
+  "collection/ComBat": {
+   "rows": 230,
+   "filter_code": [
+    230,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 56,
+   "passed_not_duplicate": 174,
+   "passed_not_duplicate_below_300_atoms": 174
+  },
+  "collection/CrCoNi_Cao_2022": {
+   "rows": 1257,
+   "filter_code": [
+    1257,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1257,
+   "passed_not_duplicate_below_300_atoms": 1257
+  },
+  "collection/CuPd_CMS2019": {
+   "rows": 522,
+   "filter_code": [
+    522,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 522,
+   "passed_not_duplicate_below_300_atoms": 522
+  },
+  "collection/Cu_FHI-aims_NPJCM_2021": {
+   "rows": 46353,
+   "filter_code": [
+    46353,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 26,
+   "passed_not_duplicate": 46327,
+   "passed_not_duplicate_below_300_atoms": 46327
+  },
+  "collection/DAS_MLIP_CoSb_MgSb": {
+   "rows": 846,
+   "filter_code": [
+    846,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 846,
+   "passed_not_duplicate_below_300_atoms": 359
+  },
+  "collection/DFT_polymorphs_PNAS_2022_benzene": {
+   "rows": 59189,
+   "filter_code": [
+    59189,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 2015,
+   "passed_not_duplicate": 57174,
+   "passed_not_duplicate_below_300_atoms": 57174
+  },
+  "collection/DFT_polymorphs_PNAS_2022_glycine": {
+   "rows": 34068,
+   "filter_code": [
+    34068,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 4683,
+   "passed_not_duplicate": 29385,
+   "passed_not_duplicate_below_300_atoms": 29385
+  },
+  "collection/DFT_polymorphs_PNAS_2022_succinic_acid": {
+   "rows": 32418,
+   "filter_code": [
+    32418,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3002,
+   "passed_not_duplicate": 29416,
+   "passed_not_duplicate_below_300_atoms": 29416
+  },
+  "collection/Fe_nanoparticles_PRB_2023": {
+   "rows": 198,
+   "filter_code": [
+    198,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 198,
+   "passed_not_duplicate_below_300_atoms": 198
+  },
+  "collection/Finding_new_crystal_compounds_using_chemical_similarity": {
+   "rows": 219310,
+   "filter_code": [
+    219310,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 219310,
+   "passed_not_duplicate_below_300_atoms": 219310
+  },
+  "collection/Forces_are_not_enough": {
+   "rows": 294980,
+   "filter_code": [
+    294980,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 294980,
+   "passed_not_duplicate_below_300_atoms": 294980
+  },
+  "collection/GDB_9_nature_2014": {
+   "rows": 133877,
+   "filter_code": [
+    133877,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 133877,
+   "passed_not_duplicate_below_300_atoms": 133877
+  },
+  "collection/GST_GAP_22": {
+   "rows": 8299,
+   "filter_code": [
+    8299,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 5385,
+   "passed_not_duplicate": 2914,
+   "passed_not_duplicate_below_300_atoms": 2873
+  },
+  "collection/Graphene-hBN_and_Graphene-Graphene": {
+   "rows": 811,
+   "filter_code": [
+    811,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 443,
+   "passed_not_duplicate": 368,
+   "passed_not_duplicate_below_300_atoms": 368
+  },
+  "collection/HDNNP_H2O": {
+   "rows": 28675,
+   "filter_code": [
+    28675,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 14138,
+   "passed_not_duplicate": 14537,
+   "passed_not_duplicate_below_300_atoms": 13794
+  },
+  "collection/HEA25S_high_entropy_alloys": {
+   "rows": 15004,
+   "filter_code": [
+    15004,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 15004,
+   "passed_not_duplicate_below_300_atoms": 15004
+  },
+  "collection/HEA25_high_entropy_transition-metal_alloys": {
+   "rows": 25625,
+   "filter_code": [
+    25625,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 10199,
+   "passed_not_duplicate": 15426,
+   "passed_not_duplicate_below_300_atoms": 15426
+  },
+  "collection/HME21": {
+   "rows": 24947,
+   "filter_code": [
+    24947,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 24947,
+   "passed_not_duplicate_below_300_atoms": 24947
+  },
+  "collection/HO_LiMoNiTi_NPJCM_2020_LiMoNiTi": {
+   "rows": 2616,
+   "filter_code": [
+    2616,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 385,
+   "passed_not_duplicate": 2231,
+   "passed_not_duplicate_below_300_atoms": 2231
+  },
+  "collection/HO_LiMoNiTi_NPJCM_2020_bulk_water": {
+   "rows": 2812,
+   "filter_code": [
+    2812,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2812,
+   "passed_not_duplicate_below_300_atoms": 2812
+  },
+  "collection/HO_LiMoNiTi_NPJCM_2020_water_clusters": {
+   "rows": 1847,
+   "filter_code": [
+    1847,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1847,
+   "passed_not_duplicate_below_300_atoms": 1847
+  },
+  "collection/HO_PNAS_2019": {
+   "rows": 1588,
+   "filter_code": [
+    1588,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1588,
+   "passed_not_duplicate_below_300_atoms": 1588
+  },
+  "collection/HPt_NC_2022": {
+   "rows": 90731,
+   "filter_code": [
+    90419,
+    312,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 90419,
+   "passed_not_duplicate_below_300_atoms": 90419
+  },
+  "collection/H_nature_2022": {
+   "rows": 343665,
+   "filter_code": [
+    343649,
+    16,
+    0,
+    0
+   ],
+   "duplicates": 27722,
+   "passed_not_duplicate": 315933,
+   "passed_not_duplicate_below_300_atoms": 315933
+  },
+  "collection/Hessian_QM9": {
+   "rows": 166580,
+   "filter_code": [
+    166580,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 166580,
+   "passed_not_duplicate_below_300_atoms": 166580
+  },
+  "collection/HfO2_NPJ_2020": {
+   "rows": 5999,
+   "filter_code": [
+    5999,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5999,
+   "passed_not_duplicate_below_300_atoms": 5999
+  },
+  "collection/Hydrogen-induced_insulating_state_SmNiO3": {
+   "rows": 3318,
+   "filter_code": [
+    3318,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3318,
+   "passed_not_duplicate_below_300_atoms": 3318
+  },
+  "collection/ISO17_NC_2017": {
+   "rows": 634810,
+   "filter_code": [
+    634810,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 634810,
+   "passed_not_duplicate_below_300_atoms": 634810
+  },
+  "collection/JARVIS-Polymer-Genome": {
+   "rows": 2146,
+   "filter_code": [
+    2146,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1073,
+   "passed_not_duplicate": 1073,
+   "passed_not_duplicate_below_300_atoms": 1073
+  },
+  "collection/JARVIS-QM9-DGL": {
+   "rows": 130831,
+   "filter_code": [
+    130831,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 130831,
+   "passed_not_duplicate_below_300_atoms": 130831
+  },
+  "collection/JARVIS_2DMatPedia": {
+   "rows": 6351,
+   "filter_code": [
+    6351,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 6351,
+   "passed_not_duplicate_below_300_atoms": 6351
+  },
+  "collection/JARVIS_AGRA": {
+   "rows": 3444,
+   "filter_code": [
+    3444,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 877,
+   "passed_not_duplicate": 2567,
+   "passed_not_duplicate_below_300_atoms": 2567
+  },
+  "collection/JARVIS_ALIGNN_FF": {
+   "rows": 306376,
+   "filter_code": [
+    306328,
+    48,
+    0,
+    0
+   ],
+   "duplicates": 2236,
+   "passed_not_duplicate": 304092,
+   "passed_not_duplicate_below_300_atoms": 304092
+  },
+  "collection/JARVIS_C2DB": {
+   "rows": 3520,
+   "filter_code": [
+    3520,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3520,
+   "passed_not_duplicate_below_300_atoms": 3520
+  },
+  "collection/JARVIS_CFID_3D_8_18_2022": {
+   "rows": 73769,
+   "filter_code": [
+    73765,
+    4,
+    0,
+    0
+   ],
+   "duplicates": 18190,
+   "passed_not_duplicate": 55577,
+   "passed_not_duplicate_below_300_atoms": 55577
+  },
+  "collection/JARVIS_CFID_OQMD": {
+   "rows": 459907,
+   "filter_code": [
+    459134,
+    773,
+    0,
+    0
+   ],
+   "duplicates": 9,
+   "passed_not_duplicate": 459125,
+   "passed_not_duplicate_below_300_atoms": 459124
+  },
+  "collection/JARVIS_DFT": {
+   "rows": 134707,
+   "filter_code": [
+    134707,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 114237,
+   "passed_not_duplicate": 20470,
+   "passed_not_duplicate_below_300_atoms": 20470
+  },
+  "collection/JARVIS_EPC_2D": {
+   "rows": 161,
+   "filter_code": [
+    161,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 161,
+   "passed_not_duplicate_below_300_atoms": 161
+  },
+  "collection/JARVIS_MEGNet": {
+   "rows": 202634,
+   "filter_code": [
+    202634,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1528,
+   "passed_not_duplicate": 201106,
+   "passed_not_duplicate_below_300_atoms": 201064
+  },
+  "collection/JARVIS_Materials_Project": {
+   "rows": 209756,
+   "filter_code": [
+    209756,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 68643,
+   "passed_not_duplicate": 141113,
+   "passed_not_duplicate_below_300_atoms": 141076
+  },
+  "collection/JARVIS_OMDB": {
+   "rows": 12496,
+   "filter_code": [
+    12493,
+    3,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 12493,
+   "passed_not_duplicate_below_300_atoms": 12493
+  },
+  "collection/JARVIS_OQMD_no_CFID": {
+   "rows": 811669,
+   "filter_code": [
+    811608,
+    61,
+    0,
+    0
+   ],
+   "duplicates": 2264,
+   "passed_not_duplicate": 809344,
+   "passed_not_duplicate_below_300_atoms": 809342
+  },
+  "collection/JARVIS_Open_Catalyst": {
+   "rows": 645108,
+   "filter_code": [
+    645062,
+    46,
+    0,
+    0
+   ],
+   "duplicates": 159866,
+   "passed_not_duplicate": 485205,
+   "passed_not_duplicate_below_300_atoms": 485205
+  },
+  "collection/JARVIS_QE_TB": {
+   "rows": 829572,
+   "filter_code": [
+    829532,
+    40,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 829532,
+   "passed_not_duplicate_below_300_atoms": 829532
+  },
+  "collection/JARVIS_QM9_STD_JCTC": {
+   "rows": 130829,
+   "filter_code": [
+    130829,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 130829,
+   "passed_not_duplicate_below_300_atoms": 130829
+  },
+  "collection/JARVIS_QMOF": {
+   "rows": 20425,
+   "filter_code": [
+    20425,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 20425,
+   "passed_not_duplicate_below_300_atoms": 19844
+  },
+  "collection/JARVIS_SNUMAT": {
+   "rows": 41920,
+   "filter_code": [
+    41916,
+    4,
+    0,
+    0
+   ],
+   "duplicates": 31440,
+   "passed_not_duplicate": 10479,
+   "passed_not_duplicate_below_300_atoms": 10479
+  },
+  "collection/JARVIS_TinNet": {
+   "rows": 1824,
+   "filter_code": [
+    1824,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1824,
+   "passed_not_duplicate_below_300_atoms": 1824
+  },
+  "collection/JARVIS_mlearn": {
+   "rows": 1573,
+   "filter_code": [
+    1573,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 7,
+   "passed_not_duplicate": 1566,
+   "passed_not_duplicate_below_300_atoms": 1566
+  },
+  "collection/LiTiO_Science_2020": {
+   "rows": 933,
+   "filter_code": [
+    933,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 85,
+   "passed_not_duplicate": 848,
+   "passed_not_duplicate_below_300_atoms": 848
+  },
+  "collection/MD22": {
+   "rows": 223401,
+   "filter_code": [
+    223401,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 223401,
+   "passed_not_duplicate_below_300_atoms": 218369
+  },
+  "collection/MISPR": {
+   "rows": 503,
+   "filter_code": [
+    503,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 34,
+   "passed_not_duplicate": 469,
+   "passed_not_duplicate_below_300_atoms": 469
+  },
+  "collection/MP-ALOE": {
+   "rows": 909789,
+   "filter_code": [
+    909789,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 909789,
+   "passed_not_duplicate_below_300_atoms": 909789
+  },
+  "collection/MTPu_2023": {
+   "rows": 1062,
+   "filter_code": [
+    1062,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1,
+   "passed_not_duplicate": 1061,
+   "passed_not_duplicate_below_300_atoms": 1061
+  },
+  "collection/Massive_Atomic_Diversity_bench": {
+   "rows": 4097,
+   "filter_code": [
+    4097,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 456,
+   "passed_not_duplicate": 3641,
+   "passed_not_duplicate_below_300_atoms": 3617
+  },
+  "collection/MatPES-2025.1": {
+   "rows": 822607,
+   "filter_code": [
+    822580,
+    27,
+    0,
+    0
+   ],
+   "duplicates": 388866,
+   "passed_not_duplicate": 433726,
+   "passed_not_duplicate_below_300_atoms": 433726
+  },
+  "collection/Matbench": {
+   "rows": 257772,
+   "filter_code": [
+    257772,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 128497,
+   "passed_not_duplicate": 129275,
+   "passed_not_duplicate_below_300_atoms": 129233
+  },
+  "collection/Materials_Project": {
+   "rows": 6343366,
+   "filter_code": [
+    6341983,
+    1383,
+    0,
+    0
+   ],
+   "duplicates": 218749,
+   "passed_not_duplicate": 6123248,
+   "passed_not_duplicate_below_300_atoms": 6122151
+  },
+  "collection/Mg_edmonds_2022": {
+   "rows": 16824,
+   "filter_code": [
+    16824,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 78,
+   "passed_not_duplicate": 16746,
+   "passed_not_duplicate_below_300_atoms": 16746
+  },
+  "collection/MoNbTaVW_PRB2021": {
+   "rows": 2329,
+   "filter_code": [
+    2275,
+    54,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2275,
+   "passed_not_duplicate_below_300_atoms": 2275
+  },
+  "collection/Mo_PRM2019": {
+   "rows": 3785,
+   "filter_code": [
+    3756,
+    29,
+    0,
+    0
+   ],
+   "duplicates": 135,
+   "passed_not_duplicate": 3626,
+   "passed_not_duplicate_below_300_atoms": 3626
+  },
+  "collection/NDSC_TUT_2022": {
+   "rows": 500,
+   "filter_code": [
+    500,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 500,
+   "passed_not_duplicate_below_300_atoms": 500
+  },
+  "collection/NENCI-2021": {
+   "rows": 77630,
+   "filter_code": [
+    77630,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 69867,
+   "passed_not_duplicate": 7763,
+   "passed_not_duplicate_below_300_atoms": 7763
+  },
+  "collection/NEP_PRB_2021": {
+   "rows": 7425,
+   "filter_code": [
+    7425,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 348,
+   "passed_not_duplicate": 7077,
+   "passed_not_duplicate_below_300_atoms": 7077
+  },
+  "collection/NEP_qHPF": {
+   "rows": 276,
+   "filter_code": [
+    276,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 276,
+   "passed_not_duplicate_below_300_atoms": 276
+  },
+  "collection/NMD-18": {
+   "rows": 3000,
+   "filter_code": [
+    3000,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3000,
+   "passed_not_duplicate_below_300_atoms": 3000
+  },
+  "collection/NNIP_FeH_PRM_2021": {
+   "rows": 20912,
+   "filter_code": [
+    20912,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 112,
+   "passed_not_duplicate": 20800,
+   "passed_not_duplicate_below_300_atoms": 20800
+  },
+  "collection/NNP-Ga2O3": {
+   "rows": 9200,
+   "filter_code": [
+    9200,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 9200,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/N_O_F_columns_non-bonded_vdW_potential_JCP2023": {
+   "rows": 262,
+   "filter_code": [
+    262,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 262,
+   "passed_not_duplicate_below_300_atoms": 262
+  },
+  "collection/Nb_PRM2019": {
+   "rows": 3787,
+   "filter_code": [
+    3770,
+    17,
+    0,
+    0
+   ],
+   "duplicates": 140,
+   "passed_not_duplicate": 3634,
+   "passed_not_duplicate_below_300_atoms": 3634
+  },
+  "collection/NequIP_NC_2022": {
+   "rows": 56838,
+   "filter_code": [
+    56838,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 25014,
+   "passed_not_duplicate": 31824,
+   "passed_not_duplicate_below_300_atoms": 31824
+  },
+  "collection/NiCoCr_NC2020": {
+   "rows": 489,
+   "filter_code": [
+    489,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 61,
+   "passed_not_duplicate": 428,
+   "passed_not_duplicate_below_300_atoms": 428
+  },
+  "collection/OC20-IS2RES": {
+   "rows": 18723399,
+   "filter_code": [
+    18720024,
+    3375,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 18720024,
+   "passed_not_duplicate_below_300_atoms": 18720024
+  },
+  "collection/OC20-S2EF": {
+   "rows": 3999457,
+   "filter_code": [
+    3999084,
+    373,
+    0,
+    0
+   ],
+   "duplicates": 1144028,
+   "passed_not_duplicate": 2855074,
+   "passed_not_duplicate_below_300_atoms": 2855074
+  },
+  "collection/OC20_S2EF_train_all": {
+   "rows": 133914016,
+   "filter_code": [
+    133884908,
+    29108,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 133884908,
+   "passed_not_duplicate_below_300_atoms": 133884908
+  },
+  "collection/OC22-IS2RE": {
+   "rows": 8830240,
+   "filter_code": [
+    8826808,
+    3432,
+    0,
+    0
+   ],
+   "duplicates": 10715,
+   "passed_not_duplicate": 8816093,
+   "passed_not_duplicate_below_300_atoms": 8816093
+  },
+  "collection/OC22-S2EF": {
+   "rows": 9232409,
+   "filter_code": [
+    9225753,
+    6656,
+    0,
+    0
+   ],
+   "duplicates": 8663959,
+   "passed_not_duplicate": 565196,
+   "passed_not_duplicate_below_300_atoms": 565196
+  },
+  "collection/OC25": {
+   "rows": 7599142,
+   "filter_code": [
+    7599136,
+    6,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 7599136,
+   "passed_not_duplicate_below_300_atoms": 7595618
+  },
+  "collection/ODAC": {
+   "rows": 57888368,
+   "filter_code": [
+    57888368,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 656304,
+   "passed_not_duplicate": 57232064,
+   "passed_not_duplicate_below_300_atoms": 40593753
+  },
+  "collection/OMat24": {
+   "rows": 105797716,
+   "filter_code": [
+    105753345,
+    44371,
+    0,
+    0
+   ],
+   "duplicates": 4145699,
+   "passed_not_duplicate": 101610314,
+   "passed_not_duplicate_below_300_atoms": 101610314
+  },
+  "collection/OMol25": {
+   "rows": 142083110,
+   "filter_code": [
+    142083110,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 142083110,
+   "passed_not_duplicate_below_300_atoms": 141882724
+  },
+  "collection/OPoly26": {
+   "rows": 6318456,
+   "filter_code": [
+    6318456,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3278,
+   "passed_not_duplicate": 6315178,
+   "passed_not_duplicate_below_300_atoms": 6151829
+  },
+  "collection/Open_Molecular_Crystals_2025_OMC25": {
+   "rows": 25903652,
+   "filter_code": [
+    25903652,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 2128,
+   "passed_not_duplicate": 25901524,
+   "passed_not_duplicate_below_300_atoms": 25878123
+  },
+  "collection/OrbNet_Denali": {
+   "rows": 2338014,
+   "filter_code": [
+    2338014,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 785,
+   "passed_not_duplicate": 2337229,
+   "passed_not_duplicate_below_300_atoms": 2337229
+  },
+  "collection/PWMLFF_feature_comparison_NPJ2023": {
+   "rows": 17255,
+   "filter_code": [
+    17255,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 17255,
+   "passed_not_duplicate_below_300_atoms": 17255
+  },
+  "collection/Paramagnetic_lanthanide_compounds": {
+   "rows": 41746,
+   "filter_code": [
+    41746,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 41746,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/PropMolFlow_QM9_CNOFH_2025": {
+   "rows": 10773,
+   "filter_code": [
+    10773,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 10773,
+   "passed_not_duplicate_below_300_atoms": 10773
+  },
+  "collection/PtNi_alloy_NPJ2022": {
+   "rows": 6828,
+   "filter_code": [
+    6828,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 8,
+   "passed_not_duplicate": 6820,
+   "passed_not_duplicate_below_300_atoms": 6820
+  },
+  "collection/QM-22": {
+   "rows": 952896,
+   "filter_code": [
+    952286,
+    610,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 952286,
+   "passed_not_duplicate_below_300_atoms": 952286
+  },
+  "collection/QM7b_AlphaML": {
+   "rows": 29028,
+   "filter_code": [
+    29028,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 21773,
+   "passed_not_duplicate": 7255,
+   "passed_not_duplicate_below_300_atoms": 7255
+  },
+  "collection/QM9x": {
+   "rows": 133871,
+   "filter_code": [
+    133871,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 12046,
+   "passed_not_duplicate": 121825,
+   "passed_not_duplicate_below_300_atoms": 121825
+  },
+  "collection/QM_hamiltonian_nature_2019": {
+   "rows": 91966,
+   "filter_code": [
+    91966,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 91966,
+   "passed_not_duplicate_below_300_atoms": 91966
+  },
+  "collection/REANN_CO2_Ni100": {
+   "rows": 9845,
+   "filter_code": [
+    9845,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 9845,
+   "passed_not_duplicate_below_300_atoms": 9845
+  },
+  "collection/SAIT_semiconductors_ACS_2023_HfO": {
+   "rows": 233959,
+   "filter_code": [
+    233947,
+    12,
+    0,
+    0
+   ],
+   "duplicates": 41983,
+   "passed_not_duplicate": 191964,
+   "passed_not_duplicate_below_300_atoms": 191964
+  },
+  "collection/SAIT_semiconductors_ACS_2023_SiN": {
+   "rows": 117573,
+   "filter_code": [
+    117554,
+    19,
+    0,
+    0
+   ],
+   "duplicates": 29462,
+   "passed_not_duplicate": 88095,
+   "passed_not_duplicate_below_300_atoms": 87348
+  },
+  "collection/SN2_JCTC_2019": {
+   "rows": 394653,
+   "filter_code": [
+    394653,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 394653,
+   "passed_not_duplicate_below_300_atoms": 394653
+  },
+  "collection/SPICE_2023": {
+   "rows": 116504,
+   "filter_code": [
+    116504,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 116504,
+   "passed_not_duplicate_below_300_atoms": 116504
+  },
+  "collection/Si-H-GAP": {
+   "rows": 656,
+   "filter_code": [
+    656,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 656,
+   "passed_not_duplicate_below_300_atoms": 585
+  },
+  "collection/Si_Al_Ti_Seko_PRB_2019": {
+   "rows": 39727,
+   "filter_code": [
+    38177,
+    1550,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 38177,
+   "passed_not_duplicate_below_300_atoms": 38177
+  },
+  "collection/Si_JCP_2017": {
+   "rows": 1117,
+   "filter_code": [
+    1117,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 7,
+   "passed_not_duplicate": 1110,
+   "passed_not_duplicate_below_300_atoms": 1110
+  },
+  "collection/Silica_NPJCM_2022": {
+   "rows": 3074,
+   "filter_code": [
+    3074,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3074,
+   "passed_not_duplicate_below_300_atoms": 3074
+  },
+  "collection/TSFF_PLOS_2022": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/Ta_PRM2019": {
+   "rows": 3773,
+   "filter_code": [
+    3732,
+    41,
+    0,
+    0
+   ],
+   "duplicates": 130,
+   "passed_not_duplicate": 3609,
+   "passed_not_duplicate_below_300_atoms": 3609
+  },
+  "collection/TdS-PdV_Atari5200": {
+   "rows": 44313,
+   "filter_code": [
+    44313,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 303,
+   "passed_not_duplicate": 44010,
+   "passed_not_duplicate_below_300_atoms": 44010
+  },
+  "collection/TiMoS_alloys_CMS2021": {
+   "rows": 259,
+   "filter_code": [
+    259,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 259,
+   "passed_not_duplicate_below_300_atoms": 259
+  },
+  "collection/TiO2_CMS2016": {
+   "rows": 7810,
+   "filter_code": [
+    7810,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1,
+   "passed_not_duplicate": 7809,
+   "passed_not_duplicate_below_300_atoms": 7809
+  },
+  "collection/TiZrHfTa_APS2021": {
+   "rows": 3622,
+   "filter_code": [
+    3622,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3622,
+   "passed_not_duplicate_below_300_atoms": 3622
+  },
+  "collection/Transition1x": {
+   "rows": 518227,
+   "filter_code": [
+    518227,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 6,
+   "passed_not_duplicate": 518221,
+   "passed_not_duplicate_below_300_atoms": 518221
+  },
+  "collection/UNEP_v1_2023": {
+   "rows": 109475,
+   "filter_code": [
+    109398,
+    77,
+    0,
+    0
+   ],
+   "duplicates": 265,
+   "passed_not_duplicate": 109145,
+   "passed_not_duplicate_below_300_atoms": 109139
+  },
+  "collection/V_PRM2019": {
+   "rows": 3801,
+   "filter_code": [
+    3793,
+    8,
+    0,
+    0
+   ],
+   "duplicates": 138,
+   "passed_not_duplicate": 3655,
+   "passed_not_duplicate_below_300_atoms": 3655
+  },
+  "collection/Vector-QM24": {
+   "rows": 1104982,
+   "filter_code": [
+    1104982,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 268726,
+   "passed_not_duplicate": 836256,
+   "passed_not_duplicate_below_300_atoms": 836256
+  },
+  "collection/W-14": {
+   "rows": 9693,
+   "filter_code": [
+    9693,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 222,
+   "passed_not_duplicate": 9471,
+   "passed_not_duplicate_below_300_atoms": 9471
+  },
+  "collection/WBe_PRB2019": {
+   "rows": 25117,
+   "filter_code": [
+    25071,
+    46,
+    0,
+    0
+   ],
+   "duplicates": 9531,
+   "passed_not_duplicate": 15540,
+   "passed_not_duplicate_below_300_atoms": 15540
+  },
+  "collection/WS22": {
+   "rows": 1179957,
+   "filter_code": [
+    1179957,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1179957,
+   "passed_not_duplicate_below_300_atoms": 1179957
+  },
+  "collection/W_LML-retrain_bulk_MD_test": {
+   "rows": 8,
+   "filter_code": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 8,
+   "passed_not_duplicate_below_300_atoms": 8
+  },
+  "collection/W_PRB2019": {
+   "rows": 3528,
+   "filter_code": [
+    3476,
+    52,
+    0,
+    0
+   ],
+   "duplicates": 108,
+   "passed_not_duplicate": 3375,
+   "passed_not_duplicate_below_300_atoms": 3375
+  },
+  "collection/Yttrium-catalyzed_benzylic_C-H_alkylations_of_alkylpyridines_with_olefins": {
+   "rows": 58,
+   "filter_code": [
+    58,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 58,
+   "passed_not_duplicate_below_300_atoms": 58
+  },
+  "collection/ZIF-4_Amorphous_Zeolitic_Imidazolate_Frameworks_2023": {
+   "rows": 1189734,
+   "filter_code": [
+    1189734,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 2,
+   "passed_not_duplicate": 1189732,
+   "passed_not_duplicate_below_300_atoms": 1189732
+  },
+  "collection/Zeo-1_SD_2022": {
+   "rows": 12929,
+   "filter_code": [
+    12929,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 12929,
+   "passed_not_duplicate_below_300_atoms": 12888
+  },
+  "collection/Zn_MTP_CMS2023": {
+   "rows": 13462,
+   "filter_code": [
+    13462,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 163,
+   "passed_not_duplicate": 13299,
+   "passed_not_duplicate_below_300_atoms": 13299
+  },
+  "collection/Zr_Sn_JNM_2024": {
+   "rows": 23521,
+   "filter_code": [
+    23521,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 289,
+   "passed_not_duplicate": 23232,
+   "passed_not_duplicate_below_300_atoms": 23232
+  },
+  "collection/a-AlOx_JCP_2020": {
+   "rows": 123563,
+   "filter_code": [
+    123281,
+    282,
+    0,
+    0
+   ],
+   "duplicates": 7,
+   "passed_not_duplicate": 123274,
+   "passed_not_duplicate_below_300_atoms": 123074
+  },
+  "collection/aC_JCP_2023": {
+   "rows": 37022,
+   "filter_code": [
+    37022,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 16828,
+   "passed_not_duplicate": 20194,
+   "passed_not_duplicate_below_300_atoms": 17390
+  },
+  "collection/adatoms_on_single-layer_graphene_PRR2021": {
+   "rows": 29,
+   "filter_code": [
+    29,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 11,
+   "passed_not_duplicate": 18,
+   "passed_not_duplicate_below_300_atoms": 18
+  },
+  "collection/alkali-metal_intercalation_in_disordered_carbon_anode_materials_JMCA2019": {
+   "rows": 1365,
+   "filter_code": [
+    1365,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1365,
+   "passed_not_duplicate_below_300_atoms": 1365
+  },
+  "collection/alpha_brass_nanoparticles": {
+   "rows": 53524,
+   "filter_code": [
+    53524,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 49,
+   "passed_not_duplicate": 53475,
+   "passed_not_duplicate_below_300_atoms": 53231
+  },
+  "collection/cG-SchNet": {
+   "rows": 23632,
+   "filter_code": [
+    23632,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 23632,
+   "passed_not_duplicate_below_300_atoms": 23632
+  },
+  "collection/calcium_ferrites_as_cathodes_ca4fe9o17": {
+   "rows": 345,
+   "filter_code": [
+    345,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 345,
+   "passed_not_duplicate_below_300_atoms": 345
+  },
+  "collection/carbon-24_unique_with_enantiomorphs": {
+   "rows": 4330,
+   "filter_code": [
+    4330,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4330,
+   "passed_not_duplicate_below_300_atoms": 4330
+  },
+  "collection/carbon_X": {
+   "rows": 480,
+   "filter_code": [
+    480,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1,
+   "passed_not_duplicate": 479,
+   "passed_not_duplicate_below_300_atoms": 479
+  },
+  "collection/cathode_materials_for_rechargeable_Ca_batteries_CM2021": {
+   "rows": 10843,
+   "filter_code": [
+    10842,
+    1,
+    0,
+    0
+   ],
+   "duplicates": 4,
+   "passed_not_duplicate": 10838,
+   "passed_not_duplicate_below_300_atoms": 10838
+  },
+  "collection/datasets_for_magnetic_MTP_NatSR2024": {
+   "rows": 2348,
+   "filter_code": [
+    2348,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 1724,
+   "passed_not_duplicate": 624,
+   "passed_not_duplicate_below_300_atoms": 624
+  },
+  "collection/defected_phosphorene_ACS_2023": {
+   "rows": 5087,
+   "filter_code": [
+    5087,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 2,
+   "passed_not_duplicate": 5085,
+   "passed_not_duplicate_below_300_atoms": 5085
+  },
+  "collection/discrepencies_and_error_metrics_NPJ_2023": {
+   "rows": 1086,
+   "filter_code": [
+    1086,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 599,
+   "passed_not_duplicate": 487,
+   "passed_not_duplicate_below_300_atoms": 487
+  },
+  "collection/disordered_transition_metal_oxyfluorides_EA2021": {
+   "rows": 233,
+   "filter_code": [
+    233,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 233,
+   "passed_not_duplicate_below_300_atoms": 233
+  },
+  "collection/doped_CsPbI3_energetics": {
+   "rows": 200,
+   "filter_code": [
+    200,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 200,
+   "passed_not_duplicate_below_300_atoms": 200
+  },
+  "collection/electrode_materials_for_ca-based_rechargeable_batteries": {
+   "rows": 4726,
+   "filter_code": [
+    4726,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4726,
+   "passed_not_duplicate_below_300_atoms": 4726
+  },
+  "collection/ferroelectricity_and_metallicity_in_BaTiO3_JMCC2021": {
+   "rows": 1128,
+   "filter_code": [
+    1128,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 66,
+   "passed_not_duplicate": 1062,
+   "passed_not_duplicate_below_300_atoms": 1062
+  },
+  "collection/flexible_molecules_JCP2021": {
+   "rows": 69177,
+   "filter_code": [
+    69177,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3,
+   "passed_not_duplicate": 69174,
+   "passed_not_duplicate_below_300_atoms": 69174
+  },
+  "collection/gdb13": {
+   "rows": 933762319,
+   "filter_code": [
+    933762293,
+    26,
+    0,
+    0
+   ],
+   "duplicates": 1551541,
+   "passed_not_duplicate": 932210752,
+   "passed_not_duplicate_below_300_atoms": 932210752
+  },
+  "collection/glass-ceramic_lithium_thiophosphate_electrolytes_": {
+   "rows": 6055,
+   "filter_code": [
+    6055,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 6055,
+   "passed_not_duplicate_below_300_atoms": 6055
+  },
+  "collection/linear_magnetic_coefficient_in_Cr2O3_JPCM2024": {
+   "rows": 208,
+   "filter_code": [
+    208,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 43,
+   "passed_not_duplicate": 165,
+   "passed_not_duplicate_below_300_atoms": 165
+  },
+  "collection/local_polarization_in_oxygen-deficient_LaMnO3_PRR2020": {
+   "rows": 4589,
+   "filter_code": [
+    4589,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 76,
+   "passed_not_duplicate": 4513,
+   "passed_not_duplicate_below_300_atoms": 4513
+  },
+  "collection/mbGDML_maldonado_2023": {
+   "rows": 24612,
+   "filter_code": [
+    24612,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 103,
+   "passed_not_duplicate": 24509,
+   "passed_not_duplicate_below_300_atoms": 24509
+  },
+  "collection/mcloud__2dtopo": {
+   "rows": 208,
+   "filter_code": [
+    208,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 208,
+   "passed_not_duplicate_below_300_atoms": 208
+  },
+  "collection/mcloud__autowannier": {
+   "rows": 1947,
+   "filter_code": [
+    1947,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1947,
+   "passed_not_duplicate_below_300_atoms": 1947
+  },
+  "collection/mcloud__curated-cofs": {
+   "rows": 3737,
+   "filter_code": [
+    3737,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3737,
+   "passed_not_duplicate_below_300_atoms": 1863
+  },
+  "collection/mcloud__mc2d": {
+   "rows": 2683,
+   "filter_code": [
+    2682,
+    1,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2682,
+   "passed_not_duplicate_below_300_atoms": 2682
+  },
+  "collection/mcloud__pyrene-mofs": {
+   "rows": 223,
+   "filter_code": [
+    223,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 223,
+   "passed_not_duplicate_below_300_atoms": 79
+  },
+  "collection/mcloud__stoceriaitf": {
+   "rows": 95,
+   "filter_code": [
+    95,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 95,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloud__tin-antimony-sulfoiodide": {
+   "rows": 596,
+   "filter_code": [
+    591,
+    5,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 591,
+   "passed_not_duplicate_below_300_atoms": 591
+  },
+  "collection/mcloudarchive__00s2s-xre47": {
+   "rows": 2322,
+   "filter_code": [
+    2322,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2322,
+   "passed_not_duplicate_below_300_atoms": 2322
+  },
+  "collection/mcloudarchive__02rcd-nc341": {
+   "rows": 15,
+   "filter_code": [
+    15,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 15,
+   "passed_not_duplicate_below_300_atoms": 15
+  },
+  "collection/mcloudarchive__05j11-ky482": {
+   "rows": 140410,
+   "filter_code": [
+    140410,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 140410,
+   "passed_not_duplicate_below_300_atoms": 20039
+  },
+  "collection/mcloudarchive__06329-0n866": {
+   "rows": 56,
+   "filter_code": [
+    56,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 56,
+   "passed_not_duplicate_below_300_atoms": 27
+  },
+  "collection/mcloudarchive__07wfy-shs16": {
+   "rows": 486,
+   "filter_code": [
+    486,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 486,
+   "passed_not_duplicate_below_300_atoms": 486
+  },
+  "collection/mcloudarchive__08a12-p4a37": {
+   "rows": 21,
+   "filter_code": [
+    21,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 21,
+   "passed_not_duplicate_below_300_atoms": 21
+  },
+  "collection/mcloudarchive__0db0e-t6d44": {
+   "rows": 36,
+   "filter_code": [
+    36,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 36,
+   "passed_not_duplicate_below_300_atoms": 36
+  },
+  "collection/mcloudarchive__0ewdw-fx861": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__0p5ya-w1n45": {
+   "rows": 155,
+   "filter_code": [
+    155,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 155,
+   "passed_not_duplicate_below_300_atoms": 155
+  },
+  "collection/mcloudarchive__16jd7-0zz18": {
+   "rows": 26,
+   "filter_code": [
+    26,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 26,
+   "passed_not_duplicate_below_300_atoms": 26
+  },
+  "collection/mcloudarchive__1ap7q-cn115": {
+   "rows": 67,
+   "filter_code": [
+    67,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 67,
+   "passed_not_duplicate_below_300_atoms": 48
+  },
+  "collection/mcloudarchive__1bymd-by722": {
+   "rows": 752,
+   "filter_code": [
+    752,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 752,
+   "passed_not_duplicate_below_300_atoms": 752
+  },
+  "collection/mcloudarchive__1fx58-pde31": {
+   "rows": 3632,
+   "filter_code": [
+    3632,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3632,
+   "passed_not_duplicate_below_300_atoms": 3632
+  },
+  "collection/mcloudarchive__1herw-7m923": {
+   "rows": 49873,
+   "filter_code": [
+    49873,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 49873,
+   "passed_not_duplicate_below_300_atoms": 49873
+  },
+  "collection/mcloudarchive__1qfe8-htw65": {
+   "rows": 279,
+   "filter_code": [
+    277,
+    2,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 277,
+   "passed_not_duplicate_below_300_atoms": 259
+  },
+  "collection/mcloudarchive__1z-pd": {
+   "rows": 2233,
+   "filter_code": [
+    2233,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2233,
+   "passed_not_duplicate_below_300_atoms": 2233
+  },
+  "collection/mcloudarchive__1z76q-e6n84": {
+   "rows": 45,
+   "filter_code": [
+    45,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 45,
+   "passed_not_duplicate_below_300_atoms": 40
+  },
+  "collection/mcloudarchive__1zpzw-a7p58": {
+   "rows": 1568,
+   "filter_code": [
+    1568,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1568,
+   "passed_not_duplicate_below_300_atoms": 1568
+  },
+  "collection/mcloudarchive__238ad-1bg44": {
+   "rows": 2772,
+   "filter_code": [
+    2772,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2772,
+   "passed_not_duplicate_below_300_atoms": 2772
+  },
+  "collection/mcloudarchive__286v9-64865": {
+   "rows": 452724,
+   "filter_code": [
+    452714,
+    10,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 452714,
+   "passed_not_duplicate_below_300_atoms": 90386
+  },
+  "collection/mcloudarchive__2aj5h-tzk43": {
+   "rows": 39,
+   "filter_code": [
+    39,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 39,
+   "passed_not_duplicate_below_300_atoms": 34
+  },
+  "collection/mcloudarchive__2cn5m-gek76": {
+   "rows": 106,
+   "filter_code": [
+    106,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 106,
+   "passed_not_duplicate_below_300_atoms": 106
+  },
+  "collection/mcloudarchive__2daf9-7pk21": {
+   "rows": 22004,
+   "filter_code": [
+    22004,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 22004,
+   "passed_not_duplicate_below_300_atoms": 22004
+  },
+  "collection/mcloudarchive__2e2md-b4070": {
+   "rows": 5,
+   "filter_code": [
+    5,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5,
+   "passed_not_duplicate_below_300_atoms": 5
+  },
+  "collection/mcloudarchive__2ftdw-8cr18": {
+   "rows": 14760,
+   "filter_code": [
+    14476,
+    284,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 14476,
+   "passed_not_duplicate_below_300_atoms": 13875
+  },
+  "collection/mcloudarchive__2gr2g-h8s29": {
+   "rows": 224,
+   "filter_code": [
+    224,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 224,
+   "passed_not_duplicate_below_300_atoms": 224
+  },
+  "collection/mcloudarchive__2kh6a-57d12": {
+   "rows": 1984,
+   "filter_code": [
+    1984,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1984,
+   "passed_not_duplicate_below_300_atoms": 1984
+  },
+  "collection/mcloudarchive__2y89r-m1q15": {
+   "rows": 202487,
+   "filter_code": [
+    202481,
+    6,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 202481,
+   "passed_not_duplicate_below_300_atoms": 171472
+  },
+  "collection/mcloudarchive__342fz-5wx57": {
+   "rows": 10,
+   "filter_code": [
+    10,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 10,
+   "passed_not_duplicate_below_300_atoms": 10
+  },
+  "collection/mcloudarchive__36x8p-hrv47": {
+   "rows": 76,
+   "filter_code": [
+    76,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 76,
+   "passed_not_duplicate_below_300_atoms": 76
+  },
+  "collection/mcloudarchive__3a62g-a7r35": {
+   "rows": 31,
+   "filter_code": [
+    31,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 31,
+   "passed_not_duplicate_below_300_atoms": 31
+  },
+  "collection/mcloudarchive__3agdy-69a84": {
+   "rows": 3,
+   "filter_code": [
+    3,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3,
+   "passed_not_duplicate_below_300_atoms": 3
+  },
+  "collection/mcloudarchive__3t20t-26564": {
+   "rows": 2088,
+   "filter_code": [
+    2088,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2088,
+   "passed_not_duplicate_below_300_atoms": 2088
+  },
+  "collection/mcloudarchive__3ydnb-ckz62": {
+   "rows": 61,
+   "filter_code": [
+    61,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 61,
+   "passed_not_duplicate_below_300_atoms": 31
+  },
+  "collection/mcloudarchive__3yf97-hzb15": {
+   "rows": 13254,
+   "filter_code": [
+    13254,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 13254,
+   "passed_not_duplicate_below_300_atoms": 5433
+  },
+  "collection/mcloudarchive__3yke8-xxf82": {
+   "rows": 38,
+   "filter_code": [
+    38,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 38,
+   "passed_not_duplicate_below_300_atoms": 38
+  },
+  "collection/mcloudarchive__405an-d8183": {
+   "rows": 38465,
+   "filter_code": [
+    38465,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 38465,
+   "passed_not_duplicate_below_300_atoms": 38465
+  },
+  "collection/mcloudarchive__45yfz-7xa87": {
+   "rows": 222,
+   "filter_code": [
+    222,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 222,
+   "passed_not_duplicate_below_300_atoms": 222
+  },
+  "collection/mcloudarchive__4m62e-np961": {
+   "rows": 13015,
+   "filter_code": [
+    13015,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 13015,
+   "passed_not_duplicate_below_300_atoms": 13015
+  },
+  "collection/mcloudarchive__4t64a-r3d56": {
+   "rows": 5129,
+   "filter_code": [
+    5129,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5129,
+   "passed_not_duplicate_below_300_atoms": 5129
+  },
+  "collection/mcloudarchive__4vt5h-sjd96": {
+   "rows": 206115,
+   "filter_code": [
+    206115,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 206115,
+   "passed_not_duplicate_below_300_atoms": 206115
+  },
+  "collection/mcloudarchive__55jga-d0447": {
+   "rows": 63489,
+   "filter_code": [
+    63487,
+    2,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 63487,
+   "passed_not_duplicate_below_300_atoms": 63487
+  },
+  "collection/mcloudarchive__57kc3-fhs52": {
+   "rows": 20,
+   "filter_code": [
+    20,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 20,
+   "passed_not_duplicate_below_300_atoms": 10
+  },
+  "collection/mcloudarchive__58a61-7te73": {
+   "rows": 3182,
+   "filter_code": [
+    3182,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3182,
+   "passed_not_duplicate_below_300_atoms": 3182
+  },
+  "collection/mcloudarchive__5jsfj-cdg70": {
+   "rows": 302,
+   "filter_code": [
+    302,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 302,
+   "passed_not_duplicate_below_300_atoms": 302
+  },
+  "collection/mcloudarchive__5pdz3-vsq42": {
+   "rows": 18130,
+   "filter_code": [
+    18130,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 18130,
+   "passed_not_duplicate_below_300_atoms": 18130
+  },
+  "collection/mcloudarchive__5vh19-61y09": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__61kg0-hy694": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__645qm-6ss59": {
+   "rows": 8,
+   "filter_code": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 8,
+   "passed_not_duplicate_below_300_atoms": 8
+  },
+  "collection/mcloudarchive__6eedj-3ey43": {
+   "rows": 137,
+   "filter_code": [
+    137,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 137,
+   "passed_not_duplicate_below_300_atoms": 137
+  },
+  "collection/mcloudarchive__6f23w-zqe90": {
+   "rows": 8653,
+   "filter_code": [
+    8653,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 8653,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__6jc67-ars95": {
+   "rows": 462,
+   "filter_code": [
+    462,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 462,
+   "passed_not_duplicate_below_300_atoms": 462
+  },
+  "collection/mcloudarchive__6ntbp-vbx54": {
+   "rows": 24,
+   "filter_code": [
+    24,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 24,
+   "passed_not_duplicate_below_300_atoms": 24
+  },
+  "collection/mcloudarchive__6t3hd-9v682": {
+   "rows": 48,
+   "filter_code": [
+    48,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 48,
+   "passed_not_duplicate_below_300_atoms": 48
+  },
+  "collection/mcloudarchive__6t5yd-kek31": {
+   "rows": 51,
+   "filter_code": [
+    51,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 51,
+   "passed_not_duplicate_below_300_atoms": 51
+  },
+  "collection/mcloudarchive__6txnj-70460": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__6xm49-rz892": {
+   "rows": 75326,
+   "filter_code": [
+    75326,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 75326,
+   "passed_not_duplicate_below_300_atoms": 75326
+  },
+  "collection/mcloudarchive__71861-xfe58": {
+   "rows": 2966,
+   "filter_code": [
+    2966,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2966,
+   "passed_not_duplicate_below_300_atoms": 2861
+  },
+  "collection/mcloudarchive__7p3z3-t3q91": {
+   "rows": 38672,
+   "filter_code": [
+    38161,
+    511,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 38161,
+   "passed_not_duplicate_below_300_atoms": 33129
+  },
+  "collection/mcloudarchive__7qm51-anq57": {
+   "rows": 2734,
+   "filter_code": [
+    2734,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2734,
+   "passed_not_duplicate_below_300_atoms": 2261
+  },
+  "collection/mcloudarchive__7v6p9-92t31": {
+   "rows": 15954,
+   "filter_code": [
+    15954,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 15954,
+   "passed_not_duplicate_below_300_atoms": 15954
+  },
+  "collection/mcloudarchive__7v74k-sbq73": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__83e5g-ts228": {
+   "rows": 5916,
+   "filter_code": [
+    5916,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5916,
+   "passed_not_duplicate_below_300_atoms": 5916
+  },
+  "collection/mcloudarchive__8a0qm-ae178": {
+   "rows": 341,
+   "filter_code": [
+    339,
+    2,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 339,
+   "passed_not_duplicate_below_300_atoms": 339
+  },
+  "collection/mcloudarchive__8fdar-jpw03": {
+   "rows": 5,
+   "filter_code": [
+    5,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__8fj15-e3949": {
+   "rows": 233,
+   "filter_code": [
+    233,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 233,
+   "passed_not_duplicate_below_300_atoms": 233
+  },
+  "collection/mcloudarchive__8q9cy-0e333": {
+   "rows": 11,
+   "filter_code": [
+    11,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 11,
+   "passed_not_duplicate_below_300_atoms": 11
+  },
+  "collection/mcloudarchive__8qvdy-t3662": {
+   "rows": 42,
+   "filter_code": [
+    42,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 42,
+   "passed_not_duplicate_below_300_atoms": 42
+  },
+  "collection/mcloudarchive__8sbz4-6ng07": {
+   "rows": 4,
+   "filter_code": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4,
+   "passed_not_duplicate_below_300_atoms": 4
+  },
+  "collection/mcloudarchive__8z1k0-m0p53": {
+   "rows": 15,
+   "filter_code": [
+    15,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 15,
+   "passed_not_duplicate_below_300_atoms": 15
+  },
+  "collection/mcloudarchive__935a7-wb166": {
+   "rows": 4,
+   "filter_code": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4,
+   "passed_not_duplicate_below_300_atoms": 4
+  },
+  "collection/mcloudarchive__95z7z-zbr43": {
+   "rows": 3,
+   "filter_code": [
+    3,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__9hydd-z0v77": {
+   "rows": 595,
+   "filter_code": [
+    595,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 595,
+   "passed_not_duplicate_below_300_atoms": 542
+  },
+  "collection/mcloudarchive__9j1pn-77r98": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__9qf6r-9fq18": {
+   "rows": 1231,
+   "filter_code": [
+    1231,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1231,
+   "passed_not_duplicate_below_300_atoms": 1231
+  },
+  "collection/mcloudarchive__9x8ac-2dg09": {
+   "rows": 13,
+   "filter_code": [
+    13,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 13,
+   "passed_not_duplicate_below_300_atoms": 13
+  },
+  "collection/mcloudarchive__a68hf-tt080": {
+   "rows": 36658,
+   "filter_code": [
+    36658,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 36658,
+   "passed_not_duplicate_below_300_atoms": 36658
+  },
+  "collection/mcloudarchive__a8r4c-whw21": {
+   "rows": 778,
+   "filter_code": [
+    778,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 778,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__afx8g-ra033": {
+   "rows": 5,
+   "filter_code": [
+    5,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5,
+   "passed_not_duplicate_below_300_atoms": 5
+  },
+  "collection/mcloudarchive__ann3c-0qq90": {
+   "rows": 9191,
+   "filter_code": [
+    9191,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 9191,
+   "passed_not_duplicate_below_300_atoms": 9191
+  },
+  "collection/mcloudarchive__anq8a-2ep59": {
+   "rows": 5,
+   "filter_code": [
+    5,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5,
+   "passed_not_duplicate_below_300_atoms": 3
+  },
+  "collection/mcloudarchive__as20t-exy47": {
+   "rows": 24,
+   "filter_code": [
+    24,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 24,
+   "passed_not_duplicate_below_300_atoms": 4
+  },
+  "collection/mcloudarchive__as73a-ja910": {
+   "rows": 45,
+   "filter_code": [
+    45,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 45,
+   "passed_not_duplicate_below_300_atoms": 43
+  },
+  "collection/mcloudarchive__at71v-gdh04": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__b0ved-e1358": {
+   "rows": 80446,
+   "filter_code": [
+    80446,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 80446,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__b4kgx-rtd78": {
+   "rows": 649,
+   "filter_code": [
+    646,
+    3,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 646,
+   "passed_not_duplicate_below_300_atoms": 544
+  },
+  "collection/mcloudarchive__b9k22-a4856": {
+   "rows": 73709,
+   "filter_code": [
+    73709,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 73709,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__bj15t-p3415": {
+   "rows": 2271,
+   "filter_code": [
+    2271,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2271,
+   "passed_not_duplicate_below_300_atoms": 2137
+  },
+  "collection/mcloudarchive__bj9ac-bn156": {
+   "rows": 113,
+   "filter_code": [
+    113,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 113,
+   "passed_not_duplicate_below_300_atoms": 100
+  },
+  "collection/mcloudarchive__bmrfs-z1892": {
+   "rows": 4,
+   "filter_code": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4,
+   "passed_not_duplicate_below_300_atoms": 4
+  },
+  "collection/mcloudarchive__bnxsn-7w947": {
+   "rows": 230,
+   "filter_code": [
+    230,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 230,
+   "passed_not_duplicate_below_300_atoms": 230
+  },
+  "collection/mcloudarchive__bzch9-1xh79": {
+   "rows": 34,
+   "filter_code": [
+    34,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 34,
+   "passed_not_duplicate_below_300_atoms": 34
+  },
+  "collection/mcloudarchive__c00et-26a37": {
+   "rows": 12,
+   "filter_code": [
+    12,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 12,
+   "passed_not_duplicate_below_300_atoms": 12
+  },
+  "collection/mcloudarchive__c0hpy-pad70": {
+   "rows": 33,
+   "filter_code": [
+    33,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 33,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__c3px7-y0k21": {
+   "rows": 49,
+   "filter_code": [
+    49,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 49,
+   "passed_not_duplicate_below_300_atoms": 49
+  },
+  "collection/mcloudarchive__c40dt-dg536": {
+   "rows": 40,
+   "filter_code": [
+    40,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 40,
+   "passed_not_duplicate_below_300_atoms": 40
+  },
+  "collection/mcloudarchive__c6ngz-zrh49": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__c9ksd-mbb05": {
+   "rows": 1588,
+   "filter_code": [
+    1588,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1588,
+   "passed_not_duplicate_below_300_atoms": 1588
+  },
+  "collection/mcloudarchive__c9peh-kt938": {
+   "rows": 13422,
+   "filter_code": [
+    13422,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 13422,
+   "passed_not_duplicate_below_300_atoms": 13243
+  },
+  "collection/mcloudarchive__cdh59-rfp34": {
+   "rows": 21,
+   "filter_code": [
+    21,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 21,
+   "passed_not_duplicate_below_300_atoms": 21
+  },
+  "collection/mcloudarchive__cmh66-t8h09": {
+   "rows": 12498,
+   "filter_code": [
+    12498,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 12498,
+   "passed_not_duplicate_below_300_atoms": 12498
+  },
+  "collection/mcloudarchive__cr6yv-kmm28": {
+   "rows": 12,
+   "filter_code": [
+    12,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 12,
+   "passed_not_duplicate_below_300_atoms": 12
+  },
+  "collection/mcloudarchive__crxpj-3gk87": {
+   "rows": 31,
+   "filter_code": [
+    31,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 31,
+   "passed_not_duplicate_below_300_atoms": 31
+  },
+  "collection/mcloudarchive__d6pmr-tty23": {
+   "rows": 14268,
+   "filter_code": [
+    13934,
+    334,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 13934,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__d7k4k-xbw11": {
+   "rows": 69,
+   "filter_code": [
+    68,
+    1,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 68,
+   "passed_not_duplicate_below_300_atoms": 68
+  },
+  "collection/mcloudarchive__dby42-mrn61": {
+   "rows": 32,
+   "filter_code": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 32,
+   "passed_not_duplicate_below_300_atoms": 32
+  },
+  "collection/mcloudarchive__dca0t-q7m31": {
+   "rows": 23087,
+   "filter_code": [
+    23087,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 23087,
+   "passed_not_duplicate_below_300_atoms": 23087
+  },
+  "collection/mcloudarchive__desfh-3ma25": {
+   "rows": 155113,
+   "filter_code": [
+    155113,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 155113,
+   "passed_not_duplicate_below_300_atoms": 155113
+  },
+  "collection/mcloudarchive__detxn-0ga89": {
+   "rows": 566,
+   "filter_code": [
+    566,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 566,
+   "passed_not_duplicate_below_300_atoms": 566
+  },
+  "collection/mcloudarchive__dfnmr-0r807": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__dr2cc-f2047": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__drzx4-bh631": {
+   "rows": 5,
+   "filter_code": [
+    5,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__dyvt8-af249": {
+   "rows": 35,
+   "filter_code": [
+    35,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 35,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__e4fat-6ga07": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__ed-g2": {
+   "rows": 2413,
+   "filter_code": [
+    2413,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2413,
+   "passed_not_duplicate_below_300_atoms": 2413
+  },
+  "collection/mcloudarchive__eg3pn-1fw83": {
+   "rows": 1595,
+   "filter_code": [
+    1595,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1595,
+   "passed_not_duplicate_below_300_atoms": 1595
+  },
+  "collection/mcloudarchive__emryk-yfa58": {
+   "rows": 16296,
+   "filter_code": [
+    16296,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 16296,
+   "passed_not_duplicate_below_300_atoms": 16296
+  },
+  "collection/mcloudarchive__es05d-9jc34": {
+   "rows": 95,
+   "filter_code": [
+    95,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 95,
+   "passed_not_duplicate_below_300_atoms": 95
+  },
+  "collection/mcloudarchive__et7sa-3cv85": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__f20vs-e0v74": {
+   "rows": 4,
+   "filter_code": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4,
+   "passed_not_duplicate_below_300_atoms": 4
+  },
+  "collection/mcloudarchive__f4cjq-y4987": {
+   "rows": 10,
+   "filter_code": [
+    10,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 10,
+   "passed_not_duplicate_below_300_atoms": 10
+  },
+  "collection/mcloudarchive__f59hy-ben23": {
+   "rows": 2943,
+   "filter_code": [
+    2856,
+    87,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2856,
+   "passed_not_duplicate_below_300_atoms": 2852
+  },
+  "collection/mcloudarchive__ffkqx-5ae17": {
+   "rows": 25964,
+   "filter_code": [
+    25964,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 25964,
+   "passed_not_duplicate_below_300_atoms": 25964
+  },
+  "collection/mcloudarchive__ffvcy-q4c20": {
+   "rows": 288,
+   "filter_code": [
+    288,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 288,
+   "passed_not_duplicate_below_300_atoms": 288
+  },
+  "collection/mcloudarchive__fmrcj-08z10": {
+   "rows": 2934,
+   "filter_code": [
+    2928,
+    6,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2928,
+   "passed_not_duplicate_below_300_atoms": 2920
+  },
+  "collection/mcloudarchive__fx32t-12t34": {
+   "rows": 2012,
+   "filter_code": [
+    2012,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2012,
+   "passed_not_duplicate_below_300_atoms": 1852
+  },
+  "collection/mcloudarchive__g5rqp-2aw69": {
+   "rows": 56,
+   "filter_code": [
+    56,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 56,
+   "passed_not_duplicate_below_300_atoms": 56
+  },
+  "collection/mcloudarchive__g8jhr-t8x36": {
+   "rows": 70,
+   "filter_code": [
+    70,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 70,
+   "passed_not_duplicate_below_300_atoms": 56
+  },
+  "collection/mcloudarchive__grmx8-xva78": {
+   "rows": 23960,
+   "filter_code": [
+    23960,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 23960,
+   "passed_not_duplicate_below_300_atoms": 23430
+  },
+  "collection/mcloudarchive__grpwm-0mn79": {
+   "rows": 1800,
+   "filter_code": [
+    1797,
+    3,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1797,
+   "passed_not_duplicate_below_300_atoms": 757
+  },
+  "collection/mcloudarchive__gwxqt-erf27": {
+   "rows": 30,
+   "filter_code": [
+    30,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 30,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__hacw9-yzc96": {
+   "rows": 1240,
+   "filter_code": [
+    1240,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1240,
+   "passed_not_duplicate_below_300_atoms": 1240
+  },
+  "collection/mcloudarchive__hbpvk-pfp22": {
+   "rows": 23,
+   "filter_code": [
+    23,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 23,
+   "passed_not_duplicate_below_300_atoms": 23
+  },
+  "collection/mcloudarchive__hdb97-me114": {
+   "rows": 164,
+   "filter_code": [
+    164,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 164,
+   "passed_not_duplicate_below_300_atoms": 164
+  },
+  "collection/mcloudarchive__hk0x5-xxq93": {
+   "rows": 2160,
+   "filter_code": [
+    2160,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2160,
+   "passed_not_duplicate_below_300_atoms": 450
+  },
+  "collection/mcloudarchive__hmdsb-k3h43": {
+   "rows": 766,
+   "filter_code": [
+    763,
+    3,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 763,
+   "passed_not_duplicate_below_300_atoms": 763
+  },
+  "collection/mcloudarchive__hnjfh-nd118": {
+   "rows": 3351,
+   "filter_code": [
+    3351,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3351,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__hqa6g-z2386": {
+   "rows": 14283,
+   "filter_code": [
+    14264,
+    19,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 14264,
+   "passed_not_duplicate_below_300_atoms": 14263
+  },
+  "collection/mcloudarchive__hry14-dk842": {
+   "rows": 74368,
+   "filter_code": [
+    74133,
+    235,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 74133,
+   "passed_not_duplicate_below_300_atoms": 74133
+  },
+  "collection/mcloudarchive__hv7b1-71340": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__hx49x-ab323": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__hyjhn-8em96": {
+   "rows": 34014,
+   "filter_code": [
+    34014,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 34014,
+   "passed_not_duplicate_below_300_atoms": 34014
+  },
+  "collection/mcloudarchive__j144f-74t50": {
+   "rows": 296,
+   "filter_code": [
+    296,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 296,
+   "passed_not_duplicate_below_300_atoms": 188
+  },
+  "collection/mcloudarchive__j2fka-sda13": {
+   "rows": 73629,
+   "filter_code": [
+    73629,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 73629,
+   "passed_not_duplicate_below_300_atoms": 73629
+  },
+  "collection/mcloudarchive__j2myj-5zd34": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__j4v22-z2c33": {
+   "rows": 197366,
+   "filter_code": [
+    197366,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 197366,
+   "passed_not_duplicate_below_300_atoms": 5
+  },
+  "collection/mcloudarchive__jk-9v": {
+   "rows": 3595900,
+   "filter_code": [
+    3595900,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 8300,
+   "passed_not_duplicate": 3587600,
+   "passed_not_duplicate_below_300_atoms": 3587600
+  },
+  "collection/mcloudarchive__jsrvx-8yp49": {
+   "rows": 878,
+   "filter_code": [
+    878,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 878,
+   "passed_not_duplicate_below_300_atoms": 878
+  },
+  "collection/mcloudarchive__jwt9m-dtt37": {
+   "rows": 48722,
+   "filter_code": [
+    48722,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 48722,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__jxf1h-pe887": {
+   "rows": 70,
+   "filter_code": [
+    70,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 70,
+   "passed_not_duplicate_below_300_atoms": 70
+  },
+  "collection/mcloudarchive__jyjyw-fm563": {
+   "rows": 50,
+   "filter_code": [
+    50,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 50,
+   "passed_not_duplicate_below_300_atoms": 50
+  },
+  "collection/mcloudarchive__k1hjd-y6e90": {
+   "rows": 1263,
+   "filter_code": [
+    1263,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1263,
+   "passed_not_duplicate_below_300_atoms": 1263
+  },
+  "collection/mcloudarchive__k45dq-ebf35": {
+   "rows": 6418,
+   "filter_code": [
+    6394,
+    24,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 6394,
+   "passed_not_duplicate_below_300_atoms": 6394
+  },
+  "collection/mcloudarchive__k79n4-gaj04": {
+   "rows": 1896,
+   "filter_code": [
+    1896,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1896,
+   "passed_not_duplicate_below_300_atoms": 1896
+  },
+  "collection/mcloudarchive__kacdj-ssv28": {
+   "rows": 8,
+   "filter_code": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 8,
+   "passed_not_duplicate_below_300_atoms": 8
+  },
+  "collection/mcloudarchive__kbsns-73a82": {
+   "rows": 421452,
+   "filter_code": [
+    421452,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 421452,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__kd6ct-85z54": {
+   "rows": 4,
+   "filter_code": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4,
+   "passed_not_duplicate_below_300_atoms": 4
+  },
+  "collection/mcloudarchive__kf8d0-27289": {
+   "rows": 7807,
+   "filter_code": [
+    7807,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 7807,
+   "passed_not_duplicate_below_300_atoms": 7807
+  },
+  "collection/mcloudarchive__kqv0y-v9k76": {
+   "rows": 26,
+   "filter_code": [
+    26,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 26,
+   "passed_not_duplicate_below_300_atoms": 26
+  },
+  "collection/mcloudarchive__kwfgp-94v27": {
+   "rows": 7,
+   "filter_code": [
+    7,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 7,
+   "passed_not_duplicate_below_300_atoms": 7
+  },
+  "collection/mcloudarchive__kyaqv-avg31": {
+   "rows": 11817,
+   "filter_code": [
+    11817,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 11817,
+   "passed_not_duplicate_below_300_atoms": 11817
+  },
+  "collection/mcloudarchive__m0-zg": {
+   "rows": 35601,
+   "filter_code": [
+    35579,
+    22,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 35579,
+   "passed_not_duplicate_below_300_atoms": 35579
+  },
+  "collection/mcloudarchive__m17qc-y7350": {
+   "rows": 17000,
+   "filter_code": [
+    17000,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 17000,
+   "passed_not_duplicate_below_300_atoms": 17000
+  },
+  "collection/mcloudarchive__m7d8t-ktv16": {
+   "rows": 61009,
+   "filter_code": [
+    61009,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 61009,
+   "passed_not_duplicate_below_300_atoms": 28087
+  },
+  "collection/mcloudarchive__m9gfa-xr118": {
+   "rows": 8,
+   "filter_code": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 8,
+   "passed_not_duplicate_below_300_atoms": 8
+  },
+  "collection/mcloudarchive__n271h-74987": {
+   "rows": 8,
+   "filter_code": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 8,
+   "passed_not_duplicate_below_300_atoms": 8
+  },
+  "collection/mcloudarchive__nc4x8-yme87": {
+   "rows": 10,
+   "filter_code": [
+    10,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 10,
+   "passed_not_duplicate_below_300_atoms": 10
+  },
+  "collection/mcloudarchive__nepw0-kn826": {
+   "rows": 630,
+   "filter_code": [
+    630,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 630,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__nf76v-1eh14": {
+   "rows": 3558,
+   "filter_code": [
+    3558,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3558,
+   "passed_not_duplicate_below_300_atoms": 3558
+  },
+  "collection/mcloudarchive__njdbv-4yr45": {
+   "rows": 2710,
+   "filter_code": [
+    2710,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2710,
+   "passed_not_duplicate_below_300_atoms": 2710
+  },
+  "collection/mcloudarchive__nqd1f-q1z28": {
+   "rows": 16,
+   "filter_code": [
+    16,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 16,
+   "passed_not_duplicate_below_300_atoms": 16
+  },
+  "collection/mcloudarchive__nr4an-byf21": {
+   "rows": 1401,
+   "filter_code": [
+    1401,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1401,
+   "passed_not_duplicate_below_300_atoms": 1401
+  },
+  "collection/mcloudarchive__nsp7v-2dk91": {
+   "rows": 324060,
+   "filter_code": [
+    323959,
+    101,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 323959,
+   "passed_not_duplicate_below_300_atoms": 279382
+  },
+  "collection/mcloudarchive__nz8sk-6h010": {
+   "rows": 5294,
+   "filter_code": [
+    5294,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5294,
+   "passed_not_duplicate_below_300_atoms": 5294
+  },
+  "collection/mcloudarchive__p8n7a-p5e75": {
+   "rows": 2306,
+   "filter_code": [
+    2306,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2306,
+   "passed_not_duplicate_below_300_atoms": 2306
+  },
+  "collection/mcloudarchive__pke3c-65m49": {
+   "rows": 2,
+   "filter_code": [
+    2,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2,
+   "passed_not_duplicate_below_300_atoms": 2
+  },
+  "collection/mcloudarchive__pkhy1-ted45": {
+   "rows": 17295,
+   "filter_code": [
+    16960,
+    335,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 16960,
+   "passed_not_duplicate_below_300_atoms": 16844
+  },
+  "collection/mcloudarchive__pkn2d-h8190": {
+   "rows": 6709,
+   "filter_code": [
+    6694,
+    15,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 6694,
+   "passed_not_duplicate_below_300_atoms": 6685
+  },
+  "collection/mcloudarchive__pp9m5-dfr36": {
+   "rows": 77,
+   "filter_code": [
+    77,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 77,
+   "passed_not_duplicate_below_300_atoms": 77
+  },
+  "collection/mcloudarchive__pqa4c-qk811": {
+   "rows": 5,
+   "filter_code": [
+    5,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__q2smg-en715": {
+   "rows": 5937,
+   "filter_code": [
+    5937,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5937,
+   "passed_not_duplicate_below_300_atoms": 5935
+  },
+  "collection/mcloudarchive__qbdsr-k2m78": {
+   "rows": 148,
+   "filter_code": [
+    148,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 148,
+   "passed_not_duplicate_below_300_atoms": 148
+  },
+  "collection/mcloudarchive__qe7x5-fbb10": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__qffdm-h9w98": {
+   "rows": 129,
+   "filter_code": [
+    129,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 129,
+   "passed_not_duplicate_below_300_atoms": 129
+  },
+  "collection/mcloudarchive__qp1ej-vst22": {
+   "rows": 170772,
+   "filter_code": [
+    170772,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 170772,
+   "passed_not_duplicate_below_300_atoms": 170772
+  },
+  "collection/mcloudarchive__qs0kz-6t805": {
+   "rows": 94,
+   "filter_code": [
+    94,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 94,
+   "passed_not_duplicate_below_300_atoms": 94
+  },
+  "collection/mcloudarchive__qwg2b-ncm42": {
+   "rows": 3,
+   "filter_code": [
+    3,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3,
+   "passed_not_duplicate_below_300_atoms": 3
+  },
+  "collection/mcloudarchive__qyb0c-q8m61": {
+   "rows": 1159,
+   "filter_code": [
+    1159,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1159,
+   "passed_not_duplicate_below_300_atoms": 1159
+  },
+  "collection/mcloudarchive__r0ysk-tx858": {
+   "rows": 496,
+   "filter_code": [
+    496,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 496,
+   "passed_not_duplicate_below_300_atoms": 408
+  },
+  "collection/mcloudarchive__r8e44-wf170": {
+   "rows": 1351,
+   "filter_code": [
+    1350,
+    1,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1350,
+   "passed_not_duplicate_below_300_atoms": 1350
+  },
+  "collection/mcloudarchive__rnve6-eas10": {
+   "rows": 277,
+   "filter_code": [
+    277,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 277,
+   "passed_not_duplicate_below_300_atoms": 260
+  },
+  "collection/mcloudarchive__rs6a8-47972": {
+   "rows": 24,
+   "filter_code": [
+    24,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 24,
+   "passed_not_duplicate_below_300_atoms": 24
+  },
+  "collection/mcloudarchive__s3nkw-qv745": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__s48qh-yzy40": {
+   "rows": 13,
+   "filter_code": [
+    13,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 13,
+   "passed_not_duplicate_below_300_atoms": 13
+  },
+  "collection/mcloudarchive__sbvxf-73e81": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__skbnr-9wx61": {
+   "rows": 2002,
+   "filter_code": [
+    2002,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2002,
+   "passed_not_duplicate_below_300_atoms": 244
+  },
+  "collection/mcloudarchive__sqrdx-ebj42": {
+   "rows": 278716,
+   "filter_code": [
+    278716,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 278716,
+   "passed_not_duplicate_below_300_atoms": 278716
+  },
+  "collection/mcloudarchive__sqstg-vcd29": {
+   "rows": 3504,
+   "filter_code": [
+    3504,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3504,
+   "passed_not_duplicate_below_300_atoms": 3504
+  },
+  "collection/mcloudarchive__t5nvc-rah21": {
+   "rows": 4557,
+   "filter_code": [
+    4534,
+    23,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4534,
+   "passed_not_duplicate_below_300_atoms": 3988
+  },
+  "collection/mcloudarchive__tbphj-bsk15": {
+   "rows": 52,
+   "filter_code": [
+    52,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 52,
+   "passed_not_duplicate_below_300_atoms": 52
+  },
+  "collection/mcloudarchive__tcrks-ymp88": {
+   "rows": 162000,
+   "filter_code": [
+    162000,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 162000,
+   "passed_not_duplicate_below_300_atoms": 162000
+  },
+  "collection/mcloudarchive__txxzk-5mp05": {
+   "rows": 246,
+   "filter_code": [
+    246,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 246,
+   "passed_not_duplicate_below_300_atoms": 246
+  },
+  "collection/mcloudarchive__vbd5n-pnp32": {
+   "rows": 32,
+   "filter_code": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 32,
+   "passed_not_duplicate_below_300_atoms": 32
+  },
+  "collection/mcloudarchive__vermx-08476": {
+   "rows": 24,
+   "filter_code": [
+    24,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 24,
+   "passed_not_duplicate_below_300_atoms": 24
+  },
+  "collection/mcloudarchive__vpyk8-xaa86": {
+   "rows": 44,
+   "filter_code": [
+    44,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 44,
+   "passed_not_duplicate_below_300_atoms": 44
+  },
+  "collection/mcloudarchive__vtahk-cd853": {
+   "rows": 8,
+   "filter_code": [
+    8,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 8,
+   "passed_not_duplicate_below_300_atoms": 8
+  },
+  "collection/mcloudarchive__vv6sy-98m49": {
+   "rows": 25125,
+   "filter_code": [
+    25096,
+    29,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 25096,
+   "passed_not_duplicate_below_300_atoms": 25095
+  },
+  "collection/mcloudarchive__w7hen-cme26": {
+   "rows": 252191,
+   "filter_code": [
+    252191,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 252191,
+   "passed_not_duplicate_below_300_atoms": 9
+  },
+  "collection/mcloudarchive__wpz35-q2y88": {
+   "rows": 2299,
+   "filter_code": [
+    2299,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2299,
+   "passed_not_duplicate_below_300_atoms": 2299
+  },
+  "collection/mcloudarchive__wwrkx-77334": {
+   "rows": 5379,
+   "filter_code": [
+    5379,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 5379,
+   "passed_not_duplicate_below_300_atoms": 2849
+  },
+  "collection/mcloudarchive__wxy8k-14m62": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__x1n3f-vwz18": {
+   "rows": 6826,
+   "filter_code": [
+    6826,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 6826,
+   "passed_not_duplicate_below_300_atoms": 6826
+  },
+  "collection/mcloudarchive__xavbv-5h791": {
+   "rows": 57757,
+   "filter_code": [
+    57611,
+    146,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 57611,
+   "passed_not_duplicate_below_300_atoms": 57611
+  },
+  "collection/mcloudarchive__xb7gc-shq49": {
+   "rows": 53,
+   "filter_code": [
+    53,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 53,
+   "passed_not_duplicate_below_300_atoms": 53
+  },
+  "collection/mcloudarchive__xc3bm-qc060": {
+   "rows": 14572,
+   "filter_code": [
+    14572,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 14572,
+   "passed_not_duplicate_below_300_atoms": 14536
+  },
+  "collection/mcloudarchive__xfsv2-2fq31": {
+   "rows": 323,
+   "filter_code": [
+    323,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 323,
+   "passed_not_duplicate_below_300_atoms": 323
+  },
+  "collection/mcloudarchive__xrtkn-tzm42": {
+   "rows": 3387,
+   "filter_code": [
+    3378,
+    9,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3378,
+   "passed_not_duplicate_below_300_atoms": 3378
+  },
+  "collection/mcloudarchive__y84fb-t4h71": {
+   "rows": 11368,
+   "filter_code": [
+    11368,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 11368,
+   "passed_not_duplicate_below_300_atoms": 11368
+  },
+  "collection/mcloudarchive__y90bb-bpd55": {
+   "rows": 4,
+   "filter_code": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4,
+   "passed_not_duplicate_below_300_atoms": 4
+  },
+  "collection/mcloudarchive__yayv3-eha98": {
+   "rows": 4978,
+   "filter_code": [
+    4978,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4978,
+   "passed_not_duplicate_below_300_atoms": 4978
+  },
+  "collection/mcloudarchive__ydn09-ngs56": {
+   "rows": 27,
+   "filter_code": [
+    27,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 27,
+   "passed_not_duplicate_below_300_atoms": 27
+  },
+  "collection/mcloudarchive__ykwg5-vb523": {
+   "rows": 32,
+   "filter_code": [
+    32,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 32,
+   "passed_not_duplicate_below_300_atoms": 32
+  },
+  "collection/mcloudarchive__yzhmw-vje16": {
+   "rows": 4,
+   "filter_code": [
+    4,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 4,
+   "passed_not_duplicate_below_300_atoms": 3
+  },
+  "collection/mcloudarchive__z3g78-sq788": {
+   "rows": 2,
+   "filter_code": [
+    1,
+    1,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mcloudarchive__z6g6d-mp618": {
+   "rows": 127400,
+   "filter_code": [
+    127400,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 127400,
+   "passed_not_duplicate_below_300_atoms": 127400
+  },
+  "collection/mcloudarchive__zd984-2ja12": {
+   "rows": 3753,
+   "filter_code": [
+    3753,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3753,
+   "passed_not_duplicate_below_300_atoms": 3753
+  },
+  "collection/mcloudarchive__zhab2-1tp79": {
+   "rows": 35,
+   "filter_code": [
+    35,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 35,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "collection/mcloudarchive__zne6q-a4h48": {
+   "rows": 1507,
+   "filter_code": [
+    396,
+    1111,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 396,
+   "passed_not_duplicate_below_300_atoms": 254
+  },
+  "collection/mcloudarchive__zqxj1-45w58": {
+   "rows": 16344,
+   "filter_code": [
+    16344,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 16344,
+   "passed_not_duplicate_below_300_atoms": 16344
+  },
+  "collection/mcloudarchive__zt-z4": {
+   "rows": 145,
+   "filter_code": [
+    145,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 145,
+   "passed_not_duplicate_below_300_atoms": 145
+  },
+  "collection/mcloudarchive__ztd8f-vj464": {
+   "rows": 21,
+   "filter_code": [
+    21,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 21,
+   "passed_not_duplicate_below_300_atoms": 21
+  },
+  "collection/mcloudarchive__zw0nd-wx180": {
+   "rows": 1,
+   "filter_code": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1,
+   "passed_not_duplicate_below_300_atoms": 1
+  },
+  "collection/mlearn_Cu": {
+   "rows": 293,
+   "filter_code": [
+    293,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 293,
+   "passed_not_duplicate_below_300_atoms": 293
+  },
+  "collection/mlearn_Ge": {
+   "rows": 253,
+   "filter_code": [
+    253,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 253,
+   "passed_not_duplicate_below_300_atoms": 253
+  },
+  "collection/mlearn_Li": {
+   "rows": 270,
+   "filter_code": [
+    270,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 270,
+   "passed_not_duplicate_below_300_atoms": 270
+  },
+  "collection/mlearn_Mo": {
+   "rows": 217,
+   "filter_code": [
+    217,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 217,
+   "passed_not_duplicate_below_300_atoms": 217
+  },
+  "collection/mlearn_Ni": {
+   "rows": 294,
+   "filter_code": [
+    294,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 294,
+   "passed_not_duplicate_below_300_atoms": 294
+  },
+  "collection/mlearn_Si": {
+   "rows": 239,
+   "filter_code": [
+    239,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 48,
+   "passed_not_duplicate": 191,
+   "passed_not_duplicate_below_300_atoms": 191
+  },
+  "collection/nomad": {
+   "rows": 5408927,
+   "filter_code": [
+    5057646,
+    80250,
+    8553,
+    262478
+   ],
+   "duplicates": 5995,
+   "passed_not_duplicate": 5057529,
+   "passed_not_duplicate_below_300_atoms": 5007523
+  },
+  "collection/oc20neb": {
+   "rows": 1375930,
+   "filter_code": [
+    1375930,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1375930,
+   "passed_not_duplicate_below_300_atoms": 1375930
+  },
+  "collection/oqmd__oqmd": {
+   "rows": 11189,
+   "filter_code": [
+    11189,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 11189,
+   "passed_not_duplicate_below_300_atoms": 11189
+  },
+  "collection/oxygen-vacancy_defects_in_Cu2O_111_": {
+   "rows": 864,
+   "filter_code": [
+    864,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 9,
+   "passed_not_duplicate": 855,
+   "passed_not_duplicate_below_300_atoms": 37
+  },
+  "collection/pure_magnesium_DFT_PRM2020": {
+   "rows": 407,
+   "filter_code": [
+    407,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 2,
+   "passed_not_duplicate": 405,
+   "passed_not_duplicate_below_300_atoms": 405
+  },
+  "collection/q-AQUA": {
+   "rows": 120356,
+   "filter_code": [
+    120343,
+    13,
+    0,
+    0
+   ],
+   "duplicates": 195,
+   "passed_not_duplicate": 120149,
+   "passed_not_duplicate_below_300_atoms": 120149
+  },
+  "collection/rMD17": {
+   "rows": 999906,
+   "filter_code": [
+    999906,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 999906,
+   "passed_not_duplicate_below_300_atoms": 999906
+  },
+  "collection/rQM9": {
+   "rows": 133885,
+   "filter_code": [
+    133885,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 133885,
+   "passed_not_duplicate_below_300_atoms": 133885
+  },
+  "collection/reactive_hydrogen_ACS_2023": {
+   "rows": 3400,
+   "filter_code": [
+    3351,
+    49,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 3351,
+   "passed_not_duplicate_below_300_atoms": 3351
+  },
+  "collection/reduced-perovskite_and_oxidized-marokite_oxides": {
+   "rows": 2919,
+   "filter_code": [
+    2919,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2919,
+   "passed_not_duplicate_below_300_atoms": 2919
+  },
+  "collection/sGDML_Aspirin": {
+   "rows": 1496,
+   "filter_code": [
+    1496,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1496,
+   "passed_not_duplicate_below_300_atoms": 1496
+  },
+  "collection/sGDML_Benzene": {
+   "rows": 1500,
+   "filter_code": [
+    1500,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3,
+   "passed_not_duplicate": 1497,
+   "passed_not_duplicate_below_300_atoms": 1497
+  },
+  "collection/sGDML_Benzene_DFT_NC2018": {
+   "rows": 49862,
+   "filter_code": [
+    49862,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 49862,
+   "passed_not_duplicate_below_300_atoms": 49862
+  },
+  "collection/sGDML_Ethanol": {
+   "rows": 1998,
+   "filter_code": [
+    1998,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1998,
+   "passed_not_duplicate_below_300_atoms": 1998
+  },
+  "collection/sGDML_Malonaldehyde": {
+   "rows": 1500,
+   "filter_code": [
+    1500,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 1500,
+   "passed_not_duplicate_below_300_atoms": 1500
+  },
+  "collection/sGDML_Toluene": {
+   "rows": 1501,
+   "filter_code": [
+    1501,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 3,
+   "passed_not_duplicate": 1498,
+   "passed_not_duplicate_below_300_atoms": 1498
+  },
+  "collection/solute_strengthening_of_prism_edge_locations_in_Mg_alloys": {
+   "rows": 94,
+   "filter_code": [
+    94,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 94,
+   "passed_not_duplicate_below_300_atoms": 41
+  },
+  "collection/solvated_protein_fragments_JCTC_2019": {
+   "rows": 2730942,
+   "filter_code": [
+    2730942,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 2730942,
+   "passed_not_duplicate_below_300_atoms": 2730942
+  },
+  "collection/stable_and_metastable_phases_in_sputtered_CuInS2": {
+   "rows": 3154,
+   "filter_code": [
+    3154,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 51,
+   "passed_not_duplicate": 3103,
+   "passed_not_duplicate_below_300_atoms": 3103
+  },
+  "collection/tmQM_wB97MV": {
+   "rows": 86501,
+   "filter_code": [
+    86501,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 86501,
+   "passed_not_duplicate_below_300_atoms": 86496
+  },
+  "collection/vanadium_in_high_entropy_alloys_AM2020": {
+   "rows": 240,
+   "filter_code": [
+    240,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 8,
+   "passed_not_duplicate": 232,
+   "passed_not_duplicate_below_300_atoms": 232
+  },
+  "collection/water_and_Cu__synergy_in_selective_CO2_hydrogenation_to_methanol_over_Cu_MgO_catalysts": {
+   "rows": 14959,
+   "filter_code": [
+    14956,
+    3,
+    0,
+    0
+   ],
+   "duplicates": 5,
+   "passed_not_duplicate": 14951,
+   "passed_not_duplicate_below_300_atoms": 14951
+  },
+  "collection/water_ice": {
+   "rows": 9628,
+   "filter_code": [
+    9628,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 9628,
+   "passed_not_duplicate_below_300_atoms": 8416
+  },
+  "collection/xxMD-CASSCF": {
+   "rows": 260102,
+   "filter_code": [
+    260102,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 173393,
+   "passed_not_duplicate": 86709,
+   "passed_not_duplicate_below_300_atoms": 86709
+  },
+  "collection/xxMD-DFT": {
+   "rows": 86658,
+   "filter_code": [
+    86658,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 86658,
+   "passed_not_duplicate": 0,
+   "passed_not_duplicate_below_300_atoms": 0
+  },
+  "mad-next-coreset": {
+   "rows": 856012,
+   "filter_code": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "duplicates": 0,
+   "passed_not_duplicate": 0,
+   "passed_not_duplicate_below_300_atoms": 0
+  }
+ }
+}

@@ -1,0 +1,315 @@
+{
+ "source_round2_manifests": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v2/manifests",
+ "source_round2_split_sha256": "ce152c63642306c25b64e49a9dffbbfb8b907cbc7f3982b2da77d18bd27ebf30",
+ "monomers_pbe_xyz": "${DEV_ROOT}/phace-atomic/mad-core-valid/dft/lda_pbe/references/monomers_pbe.xyz",
+ "monomers_pbe_sha256": "d7b2208242f9f8b8de6cd5826924086d979a45a12580ab14ab910287e318369e",
+ "references": {
+  "structures": 102,
+  "atoms": 102,
+  "manifest_sha256": "675757ffac6e6e1710cae4d5ec046a2ce8502f736fb549e9cc41e6fef6df493f",
+  "xyz_sha256": "663603f04127ed1d2c40538188d2683030d172055aa1d3e0e3f36c60301e2d23",
+  "targets": "atomization_energy 0.0 eV and zero forces for every frame, applied to the complete prediction (composition baseline included)",
+  "convention": "the monomer free energies are the per element E0 subtracted in every training atomization energy (merge_labels_staged_20261005.py, TRAINING_HANDOFF.md section 3), so the zero target is exact by construction"
+ },
+ "sets": {
+  "madcore_2k": {
+   "ordinary_structures": 2000,
+   "added_references": 102,
+   "total_structures": 2102,
+   "atoms_ordinary": 13013,
+   "atoms_total": 13115,
+   "elements_before": 102,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 32,
+   "ordering": "round 2 ordering",
+   "prefix_of": "madcore_20k (round 2)",
+   "manifest_sha256": "dae5749f84a17b66f13afe7a0d1e07300af3e4944d67eac305b025803aa622d7",
+   "xyz_sha256": "25cb61419cbea791f0a13ee7f45141ee9b30fdb78dc7b6a9f46fb39e3ce7eec8",
+   "ordinary_manifest_sha256": "a6bcf186afed2becabdcea36a2d66f5cd635956e5d8c2e8c48fd74d2a36f89e8"
+  },
+  "madcore_5k": {
+   "ordinary_structures": 5000,
+   "added_references": 102,
+   "total_structures": 5102,
+   "atoms_ordinary": 32973,
+   "atoms_total": 33075,
+   "elements_before": 102,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 79,
+   "ordering": "round 2 ordering",
+   "prefix_of": "madcore_20k (round 2)",
+   "manifest_sha256": "6a2ab850b584698c8513a21dfa6ff6a7f7723124ebc5bee2e3c5940482dce373",
+   "xyz_sha256": "81bd597a0a5291adc923ef44d7c7eeb0f57ec5475f243c426d6d0daf315cf2ca",
+   "ordinary_manifest_sha256": "ef4a891aa22f5ef1e3346d92f6f5b9c6424430c06d4260d14cba156095718e41"
+  },
+  "madcore_10k": {
+   "ordinary_structures": 10000,
+   "added_references": 102,
+   "total_structures": 10102,
+   "atoms_ordinary": 63653,
+   "atoms_total": 63755,
+   "elements_before": 102,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 157,
+   "ordering": "round 2 ordering",
+   "prefix_of": "madcore_20k (round 2)",
+   "manifest_sha256": "a5b3e65406b9023e933135b6a06330f6a320ba1c12d9b232c9462b0616cdba86",
+   "xyz_sha256": "c505d47b3d11a267368c20facce1c83b441449ac25e34437ed4fd4500f6cc4d1",
+   "ordinary_manifest_sha256": "9058343703091ef04d7cbc60cc31d53711c64a8e1e002fd4bf9540b8a4785353"
+  },
+  "madcore_20k": {
+   "ordinary_structures": 20000,
+   "added_references": 102,
+   "total_structures": 20102,
+   "atoms_ordinary": 120468,
+   "atoms_total": 120570,
+   "elements_before": 102,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 314,
+   "ordering": "round 2 ordering",
+   "prefix_of": "madcore_20k (round 2)",
+   "manifest_sha256": "0f4c23445fa1dd8b9707850080467a6176f8a44921e980f80b624340abbd7f12",
+   "xyz_sha256": "9c72d8c79438664f594f1c3c52b42909ac2254cbbc06ed225ae7d3468ca81f72",
+   "ordinary_manifest_sha256": "cb2042fa1b947180fd07b3f2b8ed63cbdb5053f1195cb015b7529cb19a6c98a5"
+  },
+  "random_2k": {
+   "ordinary_structures": 2000,
+   "added_references": 102,
+   "total_structures": 2102,
+   "atoms_ordinary": 73877,
+   "atoms_total": 73979,
+   "elements_before": 90,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 32,
+   "ordering": "round 2 ordering",
+   "prefix_of": "random_20k (round 2)",
+   "manifest_sha256": "39e3f945ce995e926a2f28c608c9f4a42ede4aee347af24d2ac657c6f0920da3",
+   "xyz_sha256": "11ff044b4b9c10d2f0e4f78b03a9f19ee4f7f240d31bd9acff7834b7aeaf4948",
+   "ordinary_manifest_sha256": "ebfe5a5f5cc6b50a9a3d542c15e25f9194dbac037943d8912fd8bc404bd60e61"
+  },
+  "random_5k": {
+   "ordinary_structures": 5000,
+   "added_references": 102,
+   "total_structures": 5102,
+   "atoms_ordinary": 186211,
+   "atoms_total": 186313,
+   "elements_before": 92,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 79,
+   "ordering": "round 2 ordering",
+   "prefix_of": "random_20k (round 2)",
+   "manifest_sha256": "11f78c020344010a958c188d6e5b02d0d2c818d7e35c161f66b479dbd187fdda",
+   "xyz_sha256": "b79963db377bd9011acda298b488588a2dd90e8c06627b61f943fe2c2039fffd",
+   "ordinary_manifest_sha256": "208c910040f119085dac19aac7e507d68831a1b2cbce2cac830b9d5d31efec1f"
+  },
+  "random_10k": {
+   "ordinary_structures": 10000,
+   "added_references": 102,
+   "total_structures": 10102,
+   "atoms_ordinary": 369718,
+   "atoms_total": 369820,
+   "elements_before": 92,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 157,
+   "ordering": "round 2 ordering",
+   "prefix_of": "random_20k (round 2)",
+   "manifest_sha256": "d19bc7411907441bcd609eabca4dba8c59cfeb756dc02fa982d086b6fa9b4207",
+   "xyz_sha256": "1298c0a1fe49d246fd13db69322ec06bab63fce6131a195dec87573ba3e3cfcf",
+   "ordinary_manifest_sha256": "920161c5e0f78ea5ad31bf3abdd3a94253e07950744ab59b6582c77abb3e8c41"
+  },
+  "random_20k": {
+   "ordinary_structures": 20000,
+   "added_references": 102,
+   "total_structures": 20102,
+   "atoms_ordinary": 730646,
+   "atoms_total": 730748,
+   "elements_before": 100,
+   "elements_after": 102,
+   "steps_per_epoch_batch_64_drop_last": 314,
+   "ordering": "round 2 ordering",
+   "prefix_of": "random_20k (round 2)",
+   "manifest_sha256": "e48aa1bcdf0d81ef5cc1a45cb11372b9a8b9a51c7adf2140f638e91572cc057f",
+   "xyz_sha256": "ecb6d2b7607062f99926f93526ffff958067266b6011db5f524d1cc7f7f25b8e",
+   "ordinary_manifest_sha256": "83cd8ce022ffe17cc8d8f072df1e8b4ef6832e9c33438132933055ba9d223678"
+  },
+  "smoke_mixed": {
+   "ordinary_structures": 500,
+   "added_references": 102,
+   "total_structures": 602,
+   "steps_per_epoch_batch_64_drop_last": 9,
+   "xyz_sha256": "eb66c947a9c70da446a1bf95d4f7737b68a79758439e6c4cad6c572098511293"
+  }
+ },
+ "duplicates": {
+  "madcore_2k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": []
+  },
+  "madcore_5k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": []
+  },
+  "madcore_10k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": []
+  },
+  "madcore_20k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": [
+    [
+     "MAD-1.5:c68628ded754145eb5dd77e061888a5e",
+     "Gd"
+    ],
+    [
+     "MAD-1.5:894fed51753287c5574e592a20dc0765",
+     "Xe"
+    ]
+   ]
+  },
+  "random_2k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": []
+  },
+  "random_5k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": []
+  },
+  "random_10k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": [
+    [
+     "nomad:8e6f964a1f4c603fda78f91de9e4c1b0",
+     "P"
+    ]
+   ]
+  },
+  "random_20k": {
+   "ordinary_nonperiodic_single_atoms_also_present_as_reference": [
+    [
+     "nomad:8e6f964a1f4c603fda78f91de9e4c1b0",
+     "P"
+    ]
+   ]
+  }
+ },
+ "checks": {
+  "val_nonperiodic_single_atoms": 0,
+  "val_ids_colliding_with_references": 0,
+  "test_random_nonperiodic_single_atoms": 0,
+  "test_random_ids_colliding_with_references": 0,
+  "test_madcore_nonperiodic_single_atoms": 0,
+  "test_madcore_ids_colliding_with_references": 0,
+  "val_madcore_250_nonperiodic_single_atoms": 0,
+  "val_madcore_250_ids_colliding_with_references": 0,
+  "prefix_nesting": "2k subset of 5k subset of 10k subset of 20k by configuration_id order, both arms, verified",
+  "ordinary_frames_identical_to_round2": true,
+  "eligibility_verification": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling/reports/audit/final_mae_10k/DIAGNOSTIC.md section 3 (pair rule, fmax <= 100 both functionals, zero violations, all round 2 sets)"
+ },
+ "atomic_types": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  76,
+  77,
+  78,
+  79,
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  90,
+  91,
+  92,
+  93,
+  94,
+  95,
+  96,
+  97,
+  98,
+  99,
+  100,
+  101,
+  102
+ ],
+ "validation": {
+  "combined_xyz": "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/scratch_scaling_v2/manifests/xyz/val_combined_1250.xyz",
+  "combined_xyz_sha256": "4a39129778b8a64044f4bdc37d3f089ce7b98845e18a6971052871d8dc7f7da1",
+  "val_madcore_250_sha256": "466655c1859bfa27449055f79c09926d9141cf899729a0253b3484487dbfe703",
+  "native_aggregation": {
+   "energy_term": "mean over the 1250 structures of |dE| / natoms, each structure counts once, MAD-CORE share 250/1250 = 20.0 percent",
+   "force_term": "sum of |dF| over all force components divided by the number of components, MAD-CORE share 4431/110595 = 4.0 percent",
+   "selection": "best_model_metric mae_prod = energy MAE (per atom) x forces MAE, minimised over epochs, metatrain native"
+  }
+ }
+}

@@ -1,0 +1,324 @@
+{
+ "radius": 0.2179152404598418,
+ "units": "scaled ecumetric distance, same units as the radius, not squared",
+ "maximum_all_finite": [
+  {
+   "folder": "nomad",
+   "row": 5408470,
+   "configuration_id": "nomad:2c95a14d3df855d73f0528233d26a985",
+   "dataset_id": "nomad",
+   "distance_stored_float32": 12029.7802734375,
+   "distance_float64_direct": 12029.780148090904,
+   "distance_over_radius": 55203.94189985253,
+   "filter_code": 1,
+   "filter": "zbl_rejected",
+   "is_duplicate": true,
+   "in_selection_pool": false,
+   "image_flag_row": false,
+   "nearest_madcore_row": 7,
+   "nearest_madcore_configuration_id": "Alexandria:3b453221264b3a6e735a6f1d8c26dce0",
+   "n_atoms": 3,
+   "formula": "Cu2Se",
+   "pbc": [
+    true,
+    true,
+    true
+   ],
+   "cell_lengths_angles": [
+    0.2793,
+    0.2793,
+    0.2793,
+    60.0,
+    60.0,
+    60.0
+   ],
+   "min_interatomic_distance_open": 0.17105279762944728,
+   "min_interatomic_distance_periodic": 0.17105279332806195,
+   "zbl_max_force": 1.2204383611679077,
+   "zbl_energy_per_atom": 504679.53125,
+   "zbl_max_atomic_energy": 545177.875
+  }
+ ],
+ "maximum_passed": [
+  {
+   "folder": "OMat24",
+   "row": 97314469,
+   "configuration_id": "OMat24:cc542c946018a5e4fe7bdd744fe1eb9f",
+   "dataset_id": "colabfit_OMat24_train_rattled_relax",
+   "distance_stored_float32": 0.3999886214733124,
+   "distance_float64_direct": 0.39998858324063846,
+   "distance_over_radius": 1.8355238515179653,
+   "filter_code": 0,
+   "filter": "passed",
+   "is_duplicate": false,
+   "in_selection_pool": false,
+   "image_flag_row": false,
+   "nearest_madcore_row": 8236180,
+   "nearest_madcore_configuration_id": "Alexandria:e8a9922649116beda5d9f64c11542c85",
+   "n_atoms": 4,
+   "formula": "MgNiPtY",
+   "pbc": [
+    true,
+    true,
+    true
+   ],
+   "cell_lengths_angles": [
+    4.8242,
+    4.8524,
+    5.0608,
+    61.4467,
+    62.0534,
+    60.762
+   ],
+   "min_interatomic_distance_open": 3.0685382596226063,
+   "min_interatomic_distance_periodic": 2.759561463512983,
+   "zbl_max_force": 1.6063894033432007,
+   "zbl_energy_per_atom": 2.1549932956695557,
+   "zbl_max_atomic_energy": 2.450437545776367
+  }
+ ],
+ "maximum_passed_not_duplicate": [
+  {
+   "folder": "OMat24",
+   "row": 97314469,
+   "configuration_id": "OMat24:cc542c946018a5e4fe7bdd744fe1eb9f",
+   "dataset_id": "colabfit_OMat24_train_rattled_relax",
+   "distance_stored_float32": 0.3999886214733124,
+   "distance_float64_direct": 0.39998858324063846,
+   "distance_over_radius": 1.8355238515179653,
+   "filter_code": 0,
+   "filter": "passed",
+   "is_duplicate": false,
+   "in_selection_pool": false,
+   "image_flag_row": false,
+   "nearest_madcore_row": 8236180,
+   "nearest_madcore_configuration_id": "Alexandria:e8a9922649116beda5d9f64c11542c85",
+   "n_atoms": 4,
+   "formula": "MgNiPtY",
+   "pbc": [
+    true,
+    true,
+    true
+   ],
+   "cell_lengths_angles": [
+    4.8242,
+    4.8524,
+    5.0608,
+    61.4467,
+    62.0534,
+    60.762
+   ],
+   "min_interatomic_distance_open": 3.0685382596226063,
+   "min_interatomic_distance_periodic": 2.759561463512983,
+   "zbl_max_force": 1.6063894033432007,
+   "zbl_energy_per_atom": 2.1549932956695557,
+   "zbl_max_atomic_energy": 2.450437545776367
+  }
+ ],
+ "maximum_flagged": [
+  {
+   "folder": "nomad",
+   "row": 5408470,
+   "configuration_id": "nomad:2c95a14d3df855d73f0528233d26a985",
+   "dataset_id": "nomad",
+   "distance_stored_float32": 12029.7802734375,
+   "distance_float64_direct": 12029.780148090904,
+   "distance_over_radius": 55203.94189985253,
+   "filter_code": 1,
+   "filter": "zbl_rejected",
+   "is_duplicate": true,
+   "in_selection_pool": false,
+   "image_flag_row": false,
+   "nearest_madcore_row": 7,
+   "nearest_madcore_configuration_id": "Alexandria:3b453221264b3a6e735a6f1d8c26dce0",
+   "n_atoms": 3,
+   "formula": "Cu2Se",
+   "pbc": [
+    true,
+    true,
+    true
+   ],
+   "cell_lengths_angles": [
+    0.2793,
+    0.2793,
+    0.2793,
+    60.0,
+    60.0,
+    60.0
+   ],
+   "min_interatomic_distance_open": 0.17105279762944728,
+   "min_interatomic_distance_periodic": 0.17105279332806195,
+   "zbl_max_force": 1.2204383611679077,
+   "zbl_energy_per_atom": 504679.53125,
+   "zbl_max_atomic_energy": 545177.875
+  }
+ ],
+ "maximum_selection_pool": [
+  {
+   "folder": "MatPES-2025.1",
+   "row": 41879,
+   "configuration_id": "MatPES-2025.1:78bba3fb23bbc8cd4a54f01c1578c14d",
+   "dataset_id": "colabfit_MatPES-PBE-2025.1",
+   "distance_stored_float32": 0.21791571378707886,
+   "distance_float64_direct": 0.21788173355947793,
+   "distance_over_radius": 1.0000021720703702,
+   "filter_code": 0,
+   "filter": "passed",
+   "is_duplicate": false,
+   "in_selection_pool": true,
+   "image_flag_row": false,
+   "nearest_madcore_row": 14435210,
+   "nearest_madcore_configuration_id": "MatPES-2025.1:a350db44b5c297a9e4c4c7ff54651f38",
+   "n_atoms": 8,
+   "formula": "Co2Re6",
+   "pbc": [
+    true,
+    true,
+    true
+   ],
+   "cell_lengths_angles": [
+    5.2912,
+    4.8162,
+    4.9891,
+    80.2596,
+    62.8381,
+    82.8615
+   ],
+   "min_interatomic_distance_open": 2.5752241242444085,
+   "min_interatomic_distance_periodic": 2.449235718696992,
+   "zbl_max_force": 3.0305850505828857,
+   "zbl_energy_per_atom": 8.79983901977539,
+   "zbl_max_atomic_energy": 9.528565406799316
+  }
+ ],
+ "passed_outside": {
+  "n": 13700804,
+  "p50": 0.2289138287305832,
+  "p90": 0.24388231337070465,
+  "p99": 0.26388248801231384,
+  "max": 0.3999886214733124
+ },
+ "nonfinite": {
+  "n": 67975,
+  "category_names": [
+   "passed|unique|not_in_pool",
+   "passed|unique|in_pool",
+   "passed|duplicate|not_in_pool",
+   "passed|duplicate|in_pool",
+   "zbl_rejected|unique|not_in_pool",
+   "zbl_rejected|unique|in_pool",
+   "zbl_rejected|duplicate|not_in_pool",
+   "zbl_rejected|duplicate|in_pool",
+   "nan_features|unique|not_in_pool",
+   "nan_features|unique|in_pool",
+   "nan_features|duplicate|not_in_pool",
+   "nan_features|duplicate|in_pool",
+   "nomad_excluded|unique|not_in_pool",
+   "nomad_excluded|unique|in_pool",
+   "nomad_excluded|duplicate|not_in_pool",
+   "nomad_excluded|duplicate|in_pool"
+  ],
+  "by_folder": {
+   "mcloudarchive__b4kgx-rtd78": [
+    0,
+    0,
+    0,
+    0,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mcloudarchive__pkhy1-ted45": [
+    0,
+    0,
+    0,
+    0,
+    25,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "mcloudarchive__zne6q-a4h48": [
+    0,
+    0,
+    0,
+    0,
+    20,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "nomad": [
+    0,
+    0,
+    0,
+    0,
+    56896,
+    0,
+    2478,
+    0,
+    8553,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ },
+ "within_level_23_radius": {
+  "radius_level_23": 0.3045596175225411,
+  "all_outside_with_nonfinite": {
+   "within": 13755735,
+   "total": 14132530,
+   "percent": 97.33384609832775
+  },
+  "finite": {
+   "within": 13755735,
+   "total": 14064555,
+   "percent": 97.80426753637069
+  },
+  "passed": {
+   "within": 13691695,
+   "total": 13700804,
+   "percent": 99.93351485066133
+  },
+  "passed_not_duplicate": {
+   "within": 12684112,
+   "total": 12693218,
+   "percent": 99.92826090279077
+  },
+  "flagged_with_nonfinite": {
+   "within": 64040,
+   "total": 431726,
+   "percent": 14.833482347600098
+  }
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "claim": "fraction of the released collection within the level-24 coverage radius of the candidate pool",
+ "level": 24,
+ "size": 16777216,
+ "n_folders": 455,
+ "n_rows": 1694502355,
+ "n_nonfinite_distance": 67975,
+ "largest_distance": 12029.7802734375,
+ "radius": {
+  "certified_exact": 0.2179152404598418,
+  "construction_log_float32": 0.2179064154624939
+ },
+ "within": {
+  "certified_exact": {
+   "count": 1680369825,
+   "percent": 99.16597755333305
+  },
+  "construction_log_float32": {
+   "count": 1680363071,
+   "percent": 99.16557897023401
+  }
+ }
+}

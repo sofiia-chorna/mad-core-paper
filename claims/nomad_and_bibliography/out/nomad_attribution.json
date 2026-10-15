@@ -1,0 +1,35 @@
+{
+ "released_rows": 5408927,
+ "rows_with_any_dataset_doi": 1001092,
+ "rows_in_a_cited_dataset": 1001092,
+ "rows_without_any_dataset_doi": 4407835,
+ "rows_outside_cited_datasets": 4407835,
+ "reconciliation": {
+  "rows_outside_cited_datasets": 4407835,
+  "in_uploads_without_any_cited_dataset": 4312949,
+  "in_uploads_that_also_hold_cited_records": 94886,
+  "check": true,
+  "uploads_without_any_cited_dataset": 4371,
+  "uploads_with_cited_records": 1854
+ },
+ "dois_with_released_records": 562,
+ "doi_status": {
+  "cited": 532,
+  "omitted, nested in a cited DOI": 30
+ },
+ "uploads": 6225,
+ "credit_variants": 303409,
+ "uploads_with_more_than_one_credit_variant": 1092,
+ "rows_without_credit_record": 0,
+ "distinct_authors": 786,
+ "distinct_references": 232051,
+ "uploads_with_references": 1708,
+ "rows_with_references": 2384390,
+ "external_db": {
+  "Materials Project": 268876
+ },
+ "materials_project": {
+  "uploads": 844,
+  "rows": 268876
+ }
+}

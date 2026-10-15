@@ -1,0 +1,55 @@
+{
+ "nomad_rows": 5408927,
+ "nonfinite_descriptor_rows": 67927,
+ "nonfinite_by_filter_code": {
+  "passed": 0,
+  "zbl_rejected": 59374,
+  "nan_features": 8553,
+  "nomad_excluded": 0
+ },
+ "rows_with_unwrapped_source_coordinates": 68993,
+ "rows_with_source_coordinates_beyond_1e4_A": 68993,
+ "nonfinite_rows_with_unwrapped_coordinates": 67927,
+ "nonfinite_rows_beyond_1e4_A": 67927,
+ "nonfinite_rows_with_ordinary_coordinates": 0,
+ "source_extent_of_nonfinite_rows_A": {
+  "min": 2500000000.0,
+  "median": 8534348210.0,
+  "max": 17550188740.0
+ },
+ "far_rows_with_finite_descriptors": 1066,
+ "release_nonfinite_rows": 67975,
+ "release_nonfinite_rows_outside_nomad": 48,
+ "nonfinite_outside_nomad_by_folder": {
+  "collection/mcloudarchive__b4kgx-rtd78": {
+   "nonfinite_rows": 3,
+   "with_unwrapped_source_coordinates": 3,
+   "zbl_max_force_nonfinite": 0,
+   "rows_with_coincident_atoms": 0,
+   "smallest_interatomic_distance_A": [
+    0.24848842028818408,
+    0.5114677897833871
+   ]
+  },
+  "collection/mcloudarchive__pkhy1-ted45": {
+   "nonfinite_rows": 25,
+   "with_unwrapped_source_coordinates": 0,
+   "zbl_max_force_nonfinite": 25,
+   "rows_with_coincident_atoms": 25,
+   "smallest_interatomic_distance_A": [
+    0.0,
+    0.0
+   ]
+  },
+  "collection/mcloudarchive__zne6q-a4h48": {
+   "nonfinite_rows": 20,
+   "with_unwrapped_source_coordinates": 0,
+   "zbl_max_force_nonfinite": 20,
+   "rows_with_coincident_atoms": 20,
+   "smallest_interatomic_distance_A": [
+    0.0,
+    0.0
+   ]
+  }
+ }
+}
