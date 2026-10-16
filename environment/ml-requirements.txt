@@ -9,8 +9,4 @@ ipi==3.3.0
 chemiscope==1.0.3
 scikit-learn==1.8.0
 h5py==3.16.0
-# the FPS and accretion runs need the coresets package from its git repository (CUDA extension)
-# pip install git+https://github.com/sofiia-chorna/coresets.git
-# the GFRE/LFRE and sketch-map steps need scikit-matter (sketch-map fit: the torch implementation
-# of the author's fork, see workflows/README.md)
 scikit-matter>=0.4.0

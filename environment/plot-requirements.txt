@@ -1,4 +1,3 @@
-# tested for the figure, table and claim commands, pixel identical figures need matplotlib 3.10.9 for Figs. 1, 3 to 8 and 3.11.1 for the rest
 matplotlib==3.11.1
 numpy==2.4.4
 scipy==1.18.0

@@ -5,5 +5,4 @@ form, PBE, and r2SCAN through libxc. Energies are given relative to the 102 isol
 structures, 25,000 random, 25,000 by cell population, 6,000 random test, with the scripts
 that drew them and filled in nine rare elements. 22,276, 24,281 and 5,847 of them converged
 for both functionals. r2scan_random_test is the 1,000 random structures computed at r2SCAN,
-r2scan_selection the rounds that chose MAD-CORE structures for r2SCAN, record_packaging the
-scripts that wrote the label files of the MAD-CORE record.
+record_packaging the scripts that wrote the label files of the MAD-CORE record.
