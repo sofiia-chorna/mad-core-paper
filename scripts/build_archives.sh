@@ -15,7 +15,7 @@ git rev-parse HEAD > $out/$name-src.commit
 tar --transform "s|^results_archive|$name-results|" -czf $out/$name-results.tar.gz results_archive
 tar --transform "s|^models_archive|$name-models|" -czf $out/$name-models.tar.gz models_archive
 
-cp README.md docs/reproduction.md docs/verification.md docs/zenodo.json $out
+cp README.md docs/reproduction.md docs/zenodo.json $out
 
 cd $out
 sha256sum *.tar.gz *.md > SHA256SUMS
