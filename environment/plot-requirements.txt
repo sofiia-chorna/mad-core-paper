@@ -1,7 +1,4 @@
-# environment tested for the figure, table and claim commands of REPRODUCTION.md on 2026-10-16.
-# the papers-repo figures are pixel-identical with matplotlib 3.10.9 and the training and water
-# figures with matplotlib 3.11.1 (the versions of the submitted PDFs); other versions change text
-# antialiasing only. python 3.12.
+# tested for the figure, table and claim commands, pixel identical figures need matplotlib 3.10.9 for Figs. 1, 3 to 8 and 3.11.1 for the rest
 matplotlib==3.11.1
 numpy==2.4.4
 scipy==1.18.0

@@ -1,36 +1,31 @@
-# Code and supporting results for "Hierarchical universal open structure dataset for atomistic modeling"
+# mad-core-paper
 
-The paper introduces MAD-COSMO, a collection of about 1.7 billion structures from public
-atomistic datasets, and MAD-CORE, its nested coreset of 2^24 structures selected by farthest
-point sampling and accretion in the space of the ecumetric, a learned structural descriptor.
-The structures, features and DFT labels are in the MAD-CORE and MAD-COSMO records of the
-Materials Cloud Archive, the ecumetric model at https://huggingface.co/lab-cosmo/ecumetric.
-This repository holds what is needed to regenerate the figures, tables and numbers of the
-paper, and the code of the workflows behind them.
+Code and results behind the paper "Hierarchical universal open structure dataset for
+atomistic modeling" (MAD-COSMO, a collection of 1.7 billion structures from public datasets,
+and MAD-CORE, its nested coreset of 2^24 structures). The structures are in the MAD-CORE and
+MAD-COSMO records on the Materials Cloud Archive, the ecumetric model on Hugging Face
+(lab-cosmo/ecumetric), the FPS and accretion code at github.com/sofiia-chorna/coresets.
 
-| folder | content |
-|---|---|
-| `figures/` | one folder per figure, `plot.py` draws it from `data/`, `prepare_data.py` rebuilds `data/` from the large sources |
-| `tables/` | the source files of the SI tables and `check_tables.py` |
-| `claims/` | the scripts behind the numbers stated in the text, with their outputs in `claims/out/` |
-| `reference_figures/` | the submitted figure files, never overwritten |
-| `plotting/`, `data/` | shared plotting code, the scaler of the metric and the sketch-map projector |
-| `workflows/` | the upstream code and run records, by purpose, with a README |
-| `provenance/` | source commits and the original path and hash of every copied file |
-| `scripts/` | `check_figures.sh` (every figure against the submitted PDF), `build_archives.sh`, `zenodo_upload.py` |
-| `environment/` | tested plotting environment, recorded ML environment |
+    figures/            one folder per figure, plot.py draws it from data/, prepare_data.py rebuilds data/
+    tables/             source files of the SI tables, check_tables.py compares them with the paper
+    claims/             scripts behind the numbers in the text, outputs in claims/out
+    reference_figures/  the submitted pdfs
+    plotting/, data/    shared plotting code, the scaler of the metric, the sketch-map projector
+    workflows/          code and run records of the pipeline, not rerun
+    provenance/         where every file came from (extracted_files.csv) and which were edited (modified_files.csv)
+    scripts/            check_figures.sh, build_archives.sh, zenodo_upload.py
+    environment/        package versions
 
-```
-pip install -r environment/plot-requirements.txt
-bash scripts/check_figures.sh python          every figure against the submitted pdf
-python tables/check_tables.py                  every table value against its source file
-bash scripts/build_archives.sh 1.0.0           the release archives into dist/
-python scripts/zenodo_upload.py <id> dist/1.0.0 docs/zenodo.json   files and metadata to a Zenodo draft
-```
+    pip install -r environment/plot-requirements.txt
+    bash scripts/check_figures.sh python
+    python tables/check_tables.py
 
-The release files are the source archive of this repository, a supporting-results archive
-(level-2 inputs, unpack as `results_archive/`) and a models archive (the trained PET
-checkpoints, unpack as `models_archive/`), with `SHA256SUMS`. Code is BSD-3-Clause
-(`LICENSE`), figures and results CC BY 4.0 (`LICENSE-DATA`). The paper's authors acknowledge
-Claude (Anthropic) and ChatGPT (OpenAI) for assistance with code development and manuscript
-preparation; this release was prepared with Claude under the authors' direction.
+Figures 1 and 3 to 10 and the three SI figures come out pixel for pixel equal to the submitted
+files (matplotlib 3.10.9 for the first eight, 3.11.1 for the rest). Figure 2 is drawn by hand.
+The large level-2 inputs and the trained models are in the results and models archives of the
+release, to be unpacked as results_archive/ and models_archive/ next to this folder.
+
+Sources: papers repository at 28cfe43, development repository at 97bec6f. Cluster paths in
+workflows/ are replaced by ${DEV_ROOT}, ${STORE_ROOT} and ${HOME}. Code is BSD-3-Clause
+(LICENSE), figures and results CC BY 4.0 (LICENSE-DATA). Prepared with the help of Claude,
+as acknowledged in the paper.

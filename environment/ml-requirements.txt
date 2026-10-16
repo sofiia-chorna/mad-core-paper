@@ -1,6 +1,4 @@
-# environment of the level-2 and level-3 workflows as recorded in the sources (2026-10-16);
-# these commands were not rerun for the release, see REPRODUCTION.md and workflows/README.md.
-# torch 2.9.1 came from the CSCS uenv image pytorch/v2.9.1:v2 on GH200 nodes.
+# versions of the level 2 and 3 workflows as recorded in the sources, not rerun
 torch==2.9.1
 metatrain==2026.4
 metatomic-torch==0.1.17
