@@ -16,6 +16,4 @@ ROOT=${DEV_ROOT}
 source ${HOME}/venv-phace/bin/activate
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-echo "STARTING $(date)"
 python -u "$ROOT/paper/figures/mad1.5_gfre_lfre_compare/featurize_phace_union_test.py"
-echo "ENDING $(date)"

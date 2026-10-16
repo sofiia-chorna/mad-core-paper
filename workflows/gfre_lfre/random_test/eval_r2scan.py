@@ -35,7 +35,6 @@ def stats(values):
     }
 
 
-# energy errors per atom in meV and force errors over all cartesian components in meV per angstrom, as in the delta learning table
 def metrics(energy_pred, energy_true, forces_pred, forces_true, natoms):
     energy = (np.asarray(energy_pred) - np.asarray(energy_true)) / np.asarray(natoms) * 1000
     forces = np.concatenate([((pred - true) * 1000).ravel() for pred, true in zip(forces_pred, forces_true)])
@@ -94,7 +93,6 @@ def load_predictor():
     return predict
 
 
-# stored release predictions of the same rows, with the atom order checked against the r2scan frame
 def release_check(frames, locations, energies, forces):
     arrays = {}
     species_mismatch = 0

@@ -23,7 +23,6 @@ ARMS = ("random", "madcore")
 MODELS = [f"scratch-s--{arm}_{size}--s42" for arm in ARMS for size in SIZES]
 ARM_LABEL = {"random": "random training", "madcore": "MAD-CORE training", "voronoi": "Voronoi training",
              "random_atoms": "random training\n(atom matched)", "voronoi_atoms": "Voronoi training\n(atom matched)"}
-# figure sets: rows of panels (one arm per row, one size per column); "scaling" is the delivered six run figure
 FIGURE_SETS = {"scaling": ("random", "madcore"), "voronoi": ("random", "voronoi", "madcore"), "atoms": ("random_atoms", "voronoi_atoms", "madcore")}
 SET_LABEL = {"test_random": "random test (5,847)", "test_madcore": "MAD-CORE holdout (2,000)"}
 

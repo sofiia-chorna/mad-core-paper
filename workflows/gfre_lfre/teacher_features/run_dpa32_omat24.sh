@@ -10,8 +10,6 @@
 #SBATCH --account=cosmo
 #SBATCH --partition=h100
 
-echo STARTING AT `date`
-
 cd ${KUMA_WORK_ROOT}
 
 source ~/.bashrc
@@ -22,4 +20,3 @@ export CUDAToolkit_ROOT=$CUDA_HOME
 
 python3 scripts/feats/mad15/mad15_dpa32_feats.py OMat24 LL
 
-echo FINISHED at `date`

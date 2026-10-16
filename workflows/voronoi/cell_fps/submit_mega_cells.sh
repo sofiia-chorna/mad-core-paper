@@ -17,14 +17,11 @@ export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-64}"
 export CORESETS_FPS_SHARD_XSEL=1
 
 OUT=${DEV_ROOT}/phace-atomic/voronoi/out/cell_fps
-: "${CELLS:?pass cells via sbatch --export=ALL,CELLS=\"id id ...\"}"
 CKPT_EVERY="${CKPT_EVERY:-4000000}"
 total_tasks=$((SLURM_NNODES * 4))
 
-echo "start $(date -Is) nodes=$SLURM_NNODES cells=$CELLS"
 port=29520
 for cell in $CELLS; do
-    echo "=== cell $cell $(date -Is)"
     export MASTER_PORT=$((port++))
     srun -ul --ntasks="$total_tasks" --gpus-per-task=1 \
         python run_cell_fps_sharded.py --cell "$cell" \
@@ -33,4 +30,3 @@ for cell in $CELLS; do
         --checkpoint-root "$OUT/checkpoints" \
         --checkpoint-every "$CKPT_EVERY"
 done
-echo "finish $(date -Is)"

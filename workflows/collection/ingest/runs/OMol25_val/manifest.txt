@@ -1,80 +1,80 @@
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0000.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0001.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0002.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0003.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0004.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0005.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0006.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0007.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0008.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0009.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0010.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0011.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0012.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0013.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0014.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0015.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0016.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0017.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0018.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0019.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0020.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0021.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0022.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0023.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0024.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0025.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0026.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0027.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0028.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0029.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0030.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0031.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0032.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0033.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0034.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0035.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0036.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0037.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0038.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0039.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0040.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0041.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0042.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0043.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0044.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0045.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0046.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0047.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0048.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0049.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0050.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0051.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0052.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0053.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0054.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0055.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0056.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0057.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0058.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0059.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0060.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0061.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0062.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0063.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0064.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0065.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0066.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0067.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0068.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0069.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0070.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0071.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0072.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0073.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0074.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0075.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0076.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0077.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0078.aselmdb
-OMol25_val filtered ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0079.aselmdb
+OMol25_val filtered data0000 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0000.aselmdb
+OMol25_val filtered data0001 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0001.aselmdb
+OMol25_val filtered data0002 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0002.aselmdb
+OMol25_val filtered data0003 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0003.aselmdb
+OMol25_val filtered data0004 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0004.aselmdb
+OMol25_val filtered data0005 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0005.aselmdb
+OMol25_val filtered data0006 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0006.aselmdb
+OMol25_val filtered data0007 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0007.aselmdb
+OMol25_val filtered data0008 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0008.aselmdb
+OMol25_val filtered data0009 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0009.aselmdb
+OMol25_val filtered data0010 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0010.aselmdb
+OMol25_val filtered data0011 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0011.aselmdb
+OMol25_val filtered data0012 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0012.aselmdb
+OMol25_val filtered data0013 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0013.aselmdb
+OMol25_val filtered data0014 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0014.aselmdb
+OMol25_val filtered data0015 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0015.aselmdb
+OMol25_val filtered data0016 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0016.aselmdb
+OMol25_val filtered data0017 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0017.aselmdb
+OMol25_val filtered data0018 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0018.aselmdb
+OMol25_val filtered data0019 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0019.aselmdb
+OMol25_val filtered data0020 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0020.aselmdb
+OMol25_val filtered data0021 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0021.aselmdb
+OMol25_val filtered data0022 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0022.aselmdb
+OMol25_val filtered data0023 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0023.aselmdb
+OMol25_val filtered data0024 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0024.aselmdb
+OMol25_val filtered data0025 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0025.aselmdb
+OMol25_val filtered data0026 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0026.aselmdb
+OMol25_val filtered data0027 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0027.aselmdb
+OMol25_val filtered data0028 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0028.aselmdb
+OMol25_val filtered data0029 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0029.aselmdb
+OMol25_val filtered data0030 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0030.aselmdb
+OMol25_val filtered data0031 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0031.aselmdb
+OMol25_val filtered data0032 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0032.aselmdb
+OMol25_val filtered data0033 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0033.aselmdb
+OMol25_val filtered data0034 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0034.aselmdb
+OMol25_val filtered data0035 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0035.aselmdb
+OMol25_val filtered data0036 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0036.aselmdb
+OMol25_val filtered data0037 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0037.aselmdb
+OMol25_val filtered data0038 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0038.aselmdb
+OMol25_val filtered data0039 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0039.aselmdb
+OMol25_val filtered data0040 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0040.aselmdb
+OMol25_val filtered data0041 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0041.aselmdb
+OMol25_val filtered data0042 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0042.aselmdb
+OMol25_val filtered data0043 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0043.aselmdb
+OMol25_val filtered data0044 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0044.aselmdb
+OMol25_val filtered data0045 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0045.aselmdb
+OMol25_val filtered data0046 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0046.aselmdb
+OMol25_val filtered data0047 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0047.aselmdb
+OMol25_val filtered data0048 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0048.aselmdb
+OMol25_val filtered data0049 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0049.aselmdb
+OMol25_val filtered data0050 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0050.aselmdb
+OMol25_val filtered data0051 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0051.aselmdb
+OMol25_val filtered data0052 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0052.aselmdb
+OMol25_val filtered data0053 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0053.aselmdb
+OMol25_val filtered data0054 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0054.aselmdb
+OMol25_val filtered data0055 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0055.aselmdb
+OMol25_val filtered data0056 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0056.aselmdb
+OMol25_val filtered data0057 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0057.aselmdb
+OMol25_val filtered data0058 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0058.aselmdb
+OMol25_val filtered data0059 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0059.aselmdb
+OMol25_val filtered data0060 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0060.aselmdb
+OMol25_val filtered data0061 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0061.aselmdb
+OMol25_val filtered data0062 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0062.aselmdb
+OMol25_val filtered data0063 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0063.aselmdb
+OMol25_val filtered data0064 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0064.aselmdb
+OMol25_val filtered data0065 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0065.aselmdb
+OMol25_val filtered data0066 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0066.aselmdb
+OMol25_val filtered data0067 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0067.aselmdb
+OMol25_val filtered data0068 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0068.aselmdb
+OMol25_val filtered data0069 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0069.aselmdb
+OMol25_val filtered data0070 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0070.aselmdb
+OMol25_val filtered data0071 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0071.aselmdb
+OMol25_val filtered data0072 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0072.aselmdb
+OMol25_val filtered data0073 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0073.aselmdb
+OMol25_val filtered data0074 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0074.aselmdb
+OMol25_val filtered data0075 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0075.aselmdb
+OMol25_val filtered data0076 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0076.aselmdb
+OMol25_val filtered data0077 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0077.aselmdb
+OMol25_val filtered data0078 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0078.aselmdb
+OMol25_val filtered data0079 ${STORE_ROOT}/dataset_collection/omol_data/val_passed/data0079.aselmdb

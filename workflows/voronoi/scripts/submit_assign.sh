@@ -17,7 +17,5 @@ source ${HOME}/venv-phace/bin/activate
 export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-64}"
 
 total_tasks=$((SLURM_NNODES * 4))
-echo "start $(date -Is) tasks=$total_tasks"
 srun -ul --ntasks="$total_tasks" --gpus-per-task=1 bash -c \
     "python assign_shards.py --task-id \$SLURM_PROCID --num-tasks $total_tasks"
-echo "finish $(date -Is)"

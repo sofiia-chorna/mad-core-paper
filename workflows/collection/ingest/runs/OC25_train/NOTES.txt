@@ -1,1 +1,0 @@
-OC25 train_passed: 20 aselmdb (72G, ~8M structs), periodic catalyst, E+F. (2 rejected@0.35, none@0.25 -> use train+val passed.)

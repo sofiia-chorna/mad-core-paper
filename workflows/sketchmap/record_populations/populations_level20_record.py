@@ -17,7 +17,6 @@ CHUNK_ROWS = 20_000_000
 WORKERS = 64
 
 
-# level 20 and level 24 centre counts of one slice of one release folder, only the centres it uses
 def count_slice(folder, start, stop):
     assignments = np.memmap(RELEASE / folder / 'voronoi_a.bin', dtype=np.int32, mode='r').reshape(-1, LEVELS)
     block = np.asarray(assignments[start:stop])

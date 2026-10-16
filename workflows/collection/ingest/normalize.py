@@ -11,19 +11,19 @@ import pyarrow.parquet as pq
 from .ids import FROZEN_PARAMS
 
 SCHEMA = pa.schema([
-    # ---- identity ----
+    # identity
     pa.field("configuration_id", pa.string()),
     pa.field("configuration_hash", pa.string()),
     pa.field("structure_hash", pa.string()),
     pa.field("dataset_id", pa.string()),
     pa.field("source_id", pa.string()),                       # native id, nullable
     pa.field("names", pa.list_(pa.string())),
-    # ---- geometry: EXACT types systems_from_table reads ----
+    # geometry EXACT types systems_from_table reads
     pa.field("atomic_numbers", pa.list_(pa.int64())),
     pa.field("positions", pa.list_(pa.list_(pa.float64()))),
     pa.field("cell", pa.list_(pa.list_(pa.float64()))),
     pa.field("pbc", pa.list_(pa.bool_())),
-    # ---- carried training labels (nullable) ----
+    # carried training labels (nullable)
     pa.field("energy", pa.float64()),
     pa.field("atomic_forces", pa.list_(pa.list_(pa.float64()))),
     pa.field("cauchy_stress", pa.list_(pa.list_(pa.float64()))),

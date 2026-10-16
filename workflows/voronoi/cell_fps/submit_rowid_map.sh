@@ -18,8 +18,6 @@ export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-32}"
 OUT=${DEV_ROOT}/phace-atomic/voronoi/out/cell_fps
 total_tasks=$((SLURM_NNODES * 8))
 
-echo "start $(date -Is) tasks=$total_tasks"
 srun -ul --ntasks="$total_tasks" bash -c \
     "python build_rowid_map.py --plan $OUT/plan.json --out $OUT/rowid \
      --task-id \$SLURM_PROCID --num-tasks $total_tasks"
-echo "finish $(date -Is)"

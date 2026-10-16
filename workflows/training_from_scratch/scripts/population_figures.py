@@ -73,7 +73,6 @@ def population_errors(manifest):
     return errors
 
 
-# pooled metrics in meV, energy over structures, forces over all cartesian components of the population
 def pooled(e):
     a = np.abs(e["de"])
     n = e["n_components"].sum()
@@ -103,7 +102,6 @@ def log_padding(low, high, fraction=0.12):
     return low / factor, high * factor
 
 
-# log y axis with labelled powers of ten, a panel without a power of ten gets plain labels at 2, 3 and 5 times a power of ten
 def log_y_ticks(ax, limits):
     ax.margins(x=0.09)
     ax.autoscale_view()
@@ -310,7 +308,6 @@ def main():
         write_tsv(OUT / p / "tables" / f"metrics_{p}.tsv", full, full_columns)
         write_tsv(OUT / p / "tables" / f"metrics_compact_{p}.tsv", compact, compact_columns)
 
-        # each part of the population on its own, so the sampled random part can be compared with the full random test
         by_part = []
         source_test = np.array([r["source_test"] for r in manifests[p]])
         for t in TESTS:

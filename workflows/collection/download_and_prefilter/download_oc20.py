@@ -1,30 +1,4 @@
 #!/usr/bin/env python3
-"""
-Bulk download OC20 datasets from ColabFit on HuggingFace.
-
-Datasets:
-  IS2RES validation:  val_id, val_ood_ads, val_ood_both, val_ood_cat
-  S2EF train:         train_all  (WARNING: ~63M structures, very large)
-  S2EF validation:    val_id, val_ood_ads, val_ood_both, val_ood_cat
-
-Usage:
-    pip install huggingface_hub
-
-    # List what would be downloaded
-    python download_oc20.py --list
-
-    # Download everything (heavy: train_all dominates)
-    python download_oc20.py --output ./oc20_data
-
-    # Skip the giant training set, validation only
-    python download_oc20.py --output ./oc20_data --skip-train
-
-    # Download a subset by name substring
-    python download_oc20.py --output ./oc20_data --only IS2RES
-
-    # Single dataset
-    python download_oc20.py --output ./oc20_data --only OC20_S2EF_val_id
-"""
 
 import argparse
 import sys
@@ -35,7 +9,7 @@ from threading import Lock
 
 from huggingface_hub import snapshot_download
 
-# Explicit allowlist. Bare names; the colabfit/ prefix is added below.
+# explicit allowlist. Bare names the colabfit/ prefix is added below
 OC20_DATASETS = [
     # IS2RES validation
     "OC20_IS2RES_val_id",
@@ -63,7 +37,6 @@ def log(msg):
 
 
 def select_datasets(only=None, skip_train=False):
-    """Return list of full repo_ids to download from the OC20 allowlist."""
     names = list(OC20_DATASETS)
     if skip_train:
         names = [n for n in names if n not in TRAIN_DATASETS]
@@ -74,7 +47,6 @@ def select_datasets(only=None, skip_train=False):
 
 
 def download_dataset(repo_id, output_dir, max_retries=3, label=""):
-    """Download a single dataset with retries."""
     local_dir = Path(output_dir) / repo_id.replace("/", "_")
     for attempt in range(max_retries):
         try:

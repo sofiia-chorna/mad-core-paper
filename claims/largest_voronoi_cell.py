@@ -119,7 +119,6 @@ def main():
     folder_counts = np.bincount(member_directory, minlength=len(names))
     members_by_folder = {names[i]: int(c) for i, c in sorted(enumerate(folder_counts), key=lambda t: -t[1]) if c}
 
-    # where the centres of the cells holding half of the records come from
     top = np.argsort(population)[::-1][:half_cells]
     top_groups = Counter(text(group[i]) for i in top)
 

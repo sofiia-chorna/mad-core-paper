@@ -68,7 +68,6 @@ def load():
 def draw_ptable(ax, el_counts):
     vals = [v for v in el_counts.values() if v > 0]
 
-    # not the palette of panel a
     cmap = plt.colormaps["viridis"]
     norm = mcolors.LogNorm(vmin=min(vals), vmax=max(vals))
 
@@ -112,7 +111,6 @@ def draw_ptable(ax, el_counts):
 
 def main():
 
-    # panel a
     ks, cum, el_counts = load()
     fam_idx = {f: i for i, f in enumerate(FAM_ORDER)}
 
@@ -122,7 +120,6 @@ def main():
     axa = fig.add_subplot(gs[0])
     axb = fig.add_subplot(gs[1])
 
-    # ---- panel a
     x = np.arange(len(ks), dtype=float)
     bottom = np.zeros(len(ks))
 
@@ -146,7 +143,7 @@ def main():
     axa.text(-0.075, 1.20, "a", transform=axa.transAxes, fontsize=FS_PANEL,
              fontweight="bold", va="top", ha="left")
 
-    # ---- panel b
+    # panel b
     draw_ptable(axb, el_counts)
     axb.text(-0.075, 1.0, "b", transform=axb.transAxes, fontsize=FS_PANEL,
              fontweight="bold", va="top", ha="left")

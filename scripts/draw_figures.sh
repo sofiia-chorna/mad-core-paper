@@ -1,6 +1,5 @@
 #!/bin/bash
 # draws every figure of the paper into build/figures
-# usage  bash scripts/draw_figures.sh [python]
 
 cd "$(dirname "$0")/.."
 python=${1:-python}

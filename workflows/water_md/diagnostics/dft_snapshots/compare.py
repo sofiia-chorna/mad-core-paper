@@ -136,7 +136,6 @@ def main():
         lines.append("| " + " | ".join(row) + " |")
     lines.append("")
 
-    # relative energies, every snapshot is H64O32, so the mean over the complete snapshots is the common reference
     sources = {
         "DFT LDA": lambda f: f["dft"]["pw-lda"]["free_energy_eV"],
         "DFT PBE": lambda f: f["dft"]["pbe"]["free_energy_eV"],
@@ -168,7 +167,6 @@ def main():
         lines.append(f"| {a} vs {b} | {np.abs(d).mean():.1f} | {np.abs(d).max():.1f} | {rel[b].max() - rel[b].min():.1f} |")
     lines.append("")
 
-    # the event, energies relative to before and forces on the three atoms along the donor to acceptor axis
     roles = [r for r in ("before", "during", "after") if f"event_{r}" in complete]
     if "before" in roles and len(roles) > 1:
         lines += ["## The proton transfer event, energies relative to the before snapshot in meV/atom (eV per cell in brackets)", "", "| source | " + " | ".join(roles[1:]) + " |", "|---|" + "---|" * (len(roles) - 1)]

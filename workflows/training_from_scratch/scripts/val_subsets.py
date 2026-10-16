@@ -17,9 +17,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 sys.path.insert(0, "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/voronoi_weighted/pbe_20k/audit/batchdep")
 from common_bd import EVAL_OPTIONS, load_predictions, read_truth  # noqa: E402
 
-# post hoc, inference only diagnostics of finished runs: the native validation metrics recomputed on the combined
-# validation file and on its two subsets (1000 random, 250 MAD-CORE) for the selected checkpoint, the final checkpoint
-# and a stride of snapshots; nothing here enters checkpoint selection
+# and a stride of snapshots nothing here enters checkpoint selection
 MTT = "${HOME}/venv-metatrain-fix/bin/mtt"
 S = Path(__file__).resolve().parent.parent
 RUNS = S / "runs"
@@ -103,7 +101,6 @@ def main():
     log("SUBSETS DONE")
 
 
-# per run, energy and force MAE of the three validation views against optimizer updates, selected epoch marked
 def figure(rows):
     runs = sorted({r["run"] for r in rows})
     fig, axes = plt.subplots(len(runs), 2, figsize=(11, 2.6 * len(runs)), squeeze=False)

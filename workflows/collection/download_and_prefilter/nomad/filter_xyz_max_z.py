@@ -1,33 +1,3 @@
-"""
-Parallelized filter for large extxyz shards.
-
-Architecture:
-  - Main thread streams the input file in chunks, splits frames at byte
-    boundaries, batches them, dispatches each batch to a worker pool.
-  - Workers parse + filter their batch and return passed / rejected
-    bytes. No re-pickling of Atoms objects -- raw frame bytes are sent.
-  - Main thread FIFO-drains completed futures, writes them in submission
-    order to a session part file inside the output directory, fsyncing
-    every N batches.
-
-Resume:
-  Outputs go to a directory of session part files (part_0000.xyz,
-  part_0001.xyz, ...). On startup, frames in existing part files
-  (passed + rejected) are counted, and that many frames are skipped from
-  the input on the new run. The new session writes part_(N+1).xyz.
-
-Byte preservation:
-  Passed frames in the output are byte-identical to the input. The
-  filter never re-formats numerical values, never re-orders comment-line
-  keys -- it just parses enough to run the distance check and otherwise
-  hands raw bytes through.
-
-Usage:
-    python xyz_parallel_filter.py shard.xyz \\
-        -o passed_dir/ --rejected rejected_dir/ \\
-        --workers 32 --scale 0.5
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -46,18 +16,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pyykko_filter import build_min_distance_matrix, find_close_contacts
 
 
-# -----------------------------------------------------------------------------
-# Frame I/O (self-contained -- no oc20_tar_filter import)
-# -----------------------------------------------------------------------------
 _LATTICE_RE = re.compile(rb'Lattice=(?:"([^"]*)"|(\S+))')
 _PBC_RE     = re.compile(rb'pbc=(?:"([^"]*)"|(\S+))')
 
 
 def _extract_one_frame(buf: bytes, pos: int) -> tuple[int, int] | None:
-    """
-    Find the boundaries of the next complete extxyz frame starting at byte `pos`.
-    Returns (start, end) or None if buf doesn't have a full frame yet.
-    """
     L = len(buf)
     if pos >= L:
         return None
@@ -67,7 +30,7 @@ def _extract_one_frame(buf: bytes, pos: int) -> tuple[int, int] | None:
     try:
         n_atoms = int(buf[pos:nl].strip())
     except ValueError:
-        # Malformed count line; surface as ValueError to the caller.
+        # malformed count line surface as ValueError to the caller
         raise ValueError(
             f"expected integer atom count, got {buf[pos:nl][:40]!r} at byte {pos}"
         )
@@ -84,14 +47,13 @@ def _extract_one_frame(buf: bytes, pos: int) -> tuple[int, int] | None:
 
 
 def _split_extxyz_frames(text: bytes) -> list[bytes]:
-    """Split a multi-frame extxyz blob into per-frame byte slices."""
     frames: list[bytes] = []
     pos = 0
     while True:
         try:
             r = _extract_one_frame(text, pos)
         except ValueError:
-            # Truncation or malformed mid-stream -> stop, return what we got.
+            # truncation or malformed mid-stream to stop, return what we got
             break
         if r is None:
             break
@@ -102,10 +64,6 @@ def _split_extxyz_frames(text: bytes) -> list[bytes]:
 
 
 def _parse_frame_to_atoms(frame_bytes: bytes) -> Atoms:
-    """
-    Build an Atoms with positions, numbers, cell, pbc from one frame.
-    Handles both periodic (Lattice= + pbc=) and non-periodic (no Lattice).
-    """
     lines = frame_bytes.split(b"\n")
     n_atoms = int(lines[0].strip())
     comment = lines[1]
@@ -125,7 +83,7 @@ def _parse_frame_to_atoms(frame_bytes: bytes) -> Atoms:
         if pbc.size == 1:
             pbc = np.repeat(pbc, 3)
     elif cell is not None:
-        # Has cell but no explicit pbc: default to periodic.
+        # has cell but no explicit pbc default to periodic
         pbc = np.array([True, True, True])
 
     syms = []
@@ -145,10 +103,6 @@ def _parse_frame_to_atoms(frame_bytes: bytes) -> Atoms:
 def _stream_frame_bytes(
     in_path: str, read_chunk_bytes: int = 64 * 1024 * 1024,
 ):
-    """
-    Generator yielding extxyz frame bytes from a file. Memory bounded:
-    holds at most 2 * read_chunk_bytes in memory at a time.
-    """
     with open(in_path, "rb") as fp:
         buf = b""
         pos = 0
@@ -156,12 +110,12 @@ def _stream_frame_bytes(
             chunk = fp.read(read_chunk_bytes)
             if not chunk:
                 break
-            # Keep only the unread tail + new chunk.
+            # keep only the unread tail + new chunk
             if pos:
                 buf = buf[pos:]
                 pos = 0
             buf = buf + chunk
-            # Extract all complete frames.
+            # extract all complete frames
             while True:
                 try:
                     r = _extract_one_frame(buf, pos)
@@ -172,7 +126,7 @@ def _stream_frame_bytes(
                 start, end = r
                 yield bytes(buf[start:end])
                 pos = end
-        # End of file: drain whatever remains.
+        # end of file drain whatever remains
         while True:
             try:
                 r = _extract_one_frame(buf, pos)
@@ -185,9 +139,7 @@ def _stream_frame_bytes(
             pos = end
 
 
-# -----------------------------------------------------------------------------
-# Worker
-# -----------------------------------------------------------------------------
+# worker
 def _process_batch_pure(
     batch_idx: int,
     frames_bytes: bytes,
@@ -195,18 +147,6 @@ def _process_batch_pure(
     backend: str,
     max_z: int = 102,
 ) -> dict:
-    """
-    Filter a batch of concatenated extxyz frames. Pickleable for ProcessPool.
-    Returns passed/rejected bytes plus stats.
-
-    Per-frame errors are isolated: a malformed frame, a frame with Z out of
-    the covalent-radius table range, or a frame with a singular cell matrix
-    is silently skipped (counted) -- it does NOT kill the rest of the batch.
-
-    Frames where any atom has Z > max_z are silently skipped BEFORE the
-    distance check runs (default 102 -- one below the Pyykko table limit
-    of 103, so transactinides and heavier are excluded cleanly).
-    """
     mdm = build_min_distance_matrix(scale=scale)
     frames = _split_extxyz_frames(frames_bytes)
 
@@ -228,7 +168,7 @@ def _process_batch_pure(
             error_counter[f"parse:{type(e).__name__}"] += 1
             continue
 
-        # Heavy-element pre-filter: drop silently if any Z exceeds max_z.
+        # heavy-element pre-filter drop silently if any Z exceeds max_z
         if int(atoms.numbers.max()) > max_z:
             skipped_heavy += 1
             error_counter[heavy_key] += 1
@@ -243,8 +183,7 @@ def _process_batch_pure(
             i, j, d, S = find_close_contacts(atoms, mdm, backend=backend)
         except Exception as e:
             filter_errors += 1
-            # Categorize: singular cell is the main remaining one now that
-            # max_z is pre-filtered; anything else gets a generic bucket.
+            # max_z is pre-filtered anything else gets a generic bucket
             msg = str(e)
             if "exceeds matrix size" in msg or "max_z" in msg:
                 error_counter["filter:superheavy_Z"] += 1
@@ -277,11 +216,8 @@ def _process_batch_pure(
     }
 
 
-# -----------------------------------------------------------------------------
-# Resume scanner
-# -----------------------------------------------------------------------------
+# resume scanner
 def _count_frames(path: Path) -> int:
-    """Count complete frames in an extxyz file. Robust to truncation."""
     try:
         with open(path, "rb") as f:
             data = f.read()
@@ -293,10 +229,6 @@ def _count_frames(path: Path) -> int:
 def _scan_existing_parts(
     out_dir: Path, rej_dir: Path | None,
 ) -> tuple[int, int]:
-    """
-    Returns (total_input_frames_done, max_part_idx).
-    Done count = passed_frames + rejected_frames (= input frames covered).
-    """
     part_indices: set[int] = set()
     for d in (out_dir, rej_dir):
         if d is not None and d.is_dir():
@@ -320,9 +252,7 @@ def _scan_existing_parts(
     return total, max(part_indices)
 
 
-# -----------------------------------------------------------------------------
-# Main parallel driver
-# -----------------------------------------------------------------------------
+# main parallel driver
 def filter_extxyz_parallel(
     in_path: str,
     out_dir: str,
@@ -336,16 +266,6 @@ def filter_extxyz_parallel(
     queue_size: int | None = None,
     max_z: int = 102,
 ) -> dict:
-    """
-    Stream extxyz from in_path through a worker pool. Outputs go to a
-    directory of session part files; resume scans existing parts to count
-    frames already processed.
-
-    For resume to be reliable, rejected_dir must be specified. Without it,
-    rejected frames don't count toward the done set, and a restart will
-    silently re-process and re-reject them (output stays correct, you just
-    do duplicate work).
-    """
     if queue_size is None:
         queue_size = 4 * n_workers
 
@@ -475,7 +395,7 @@ def filter_extxyz_parallel(
                 while _drain_one(blocking=False):
                     pass
 
-            # Final partial batch.
+            # final partial batch
             if batch_buffer:
                 fut = pool.submit(
                     _process_batch_pure,
@@ -532,9 +452,7 @@ def filter_extxyz_parallel(
     }
 
 
-# -----------------------------------------------------------------------------
-# Directory driver: iterate over input files, one parallel run per file.
-# -----------------------------------------------------------------------------
+# directory driver iterate over input files, one parallel run per file
 import csv
 import json
 
@@ -554,19 +472,6 @@ def filter_extxyz_dir_parallel(
     exclude: tuple[str, ...] = (),
     max_z: int = 102,
 ) -> dict:
-    """
-    Walk in_dir for matching extxyz files; process each with
-    filter_extxyz_parallel into out_dir/<stem>/.
-
-    Per-file output layout:
-        out_dir/<stem>/
-            part_0000.xyz
-            part_0001.xyz       (subsequent sessions)
-            stats.json          (written on successful completion)
-
-    Idempotent: if stats.json exists for a stem, that file is skipped.
-    Writes a top-level audit.csv summarizing every file.
-    """
     in_dir_p  = Path(in_dir)
     out_dir_p = Path(out_dir)
     out_dir_p.mkdir(parents=True, exist_ok=True)
@@ -575,7 +480,7 @@ def filter_extxyz_dir_parallel(
         rej_dir_p = Path(rejected_dir)
         rej_dir_p.mkdir(parents=True, exist_ok=True)
 
-    # Discover input files matching any of the patterns.
+    # discover input files matching any of the patterns
     files: list[Path] = []
     seen: set[Path] = set()
     for pat in pattern:
@@ -593,8 +498,7 @@ def filter_extxyz_dir_parallel(
     if not files:
         print(f"No matching files in {in_dir} with patterns {pattern}",
               flush=True)
-        # Help debugging: if --only was given, list a few stems that DO exist
-        # so the user can see why their filter rejected everything.
+        # so the user can see why their filter rejected everything
         if only:
             available = []
             for pat in pattern:
@@ -619,12 +523,11 @@ def filter_extxyz_dir_parallel(
     audit_path = out_dir_p / "audit.csv"
     audit_rows: list[dict] = []
 
-    # Load existing audit.csv if present, so re-runs accumulate rather than
-    # overwrite. This makes the audit durable across crashes.
+    # load existing audit.csv if present, so re-runs accumulate rather than
     if audit_path.exists():
         with open(audit_path) as f:
             audit_rows = list(csv.DictReader(f))
-        # Index by stem for quick update.
+        # index by stem for quick update
         existing_stems = {r["stem"] for r in audit_rows}
     else:
         existing_stems = set()
@@ -639,7 +542,7 @@ def filter_extxyz_dir_parallel(
         per_rej_dir = (rej_dir_p / stem) if rej_dir_p else None
         stats_path  = per_out_dir / "stats.json"
 
-        # Already done?
+        # already done?
         if stats_path.exists():
             with open(stats_path) as f:
                 prev = json.load(f)
@@ -665,7 +568,7 @@ def filter_extxyz_dir_parallel(
                 fsync_every=fsync_every,
                 max_z=max_z,
             )
-            # Strip non-serializable fields before writing stats.json.
+            # strip non-serializable fields before writing stats.json
             stats_to_write = {kk: v for kk, v in stats.items()
                               if kk not in ("rejection_pairs", "error_counter")}
             stats_to_write["rejection_pairs_top"] = [
@@ -690,10 +593,10 @@ def filter_extxyz_dir_parallel(
                    "error": f"{type(e).__name__}: {e}",
                    "passed": "", "rejected": "", "skipped": "", "total": ""}
 
-        # Update audit row for this stem (replace if existed, else append).
+        # update audit row for this stem (replace if existed, else append)
         audit_rows = [r for r in audit_rows if r.get("stem") != stem]
         audit_rows.append(row)
-        # Rewrite audit.csv after every file (durable across crashes).
+        # rewrite audit.csv after every file (durable across crashes)
         fieldnames = ["stem", "status", "passed", "rejected", "skipped",
                       "total", "error"]
         with open(audit_path, "w", newline="") as f:
@@ -710,9 +613,7 @@ def filter_extxyz_dir_parallel(
             "audit_csv": str(audit_path)}
 
 
-# -----------------------------------------------------------------------------
 # CLI
-# -----------------------------------------------------------------------------
 if __name__ == "__main__":
     p = argparse.ArgumentParser(
         description="Parallelized covalent-radius distance filter for extxyz "
@@ -755,7 +656,7 @@ if __name__ == "__main__":
 
     in_path = Path(args.input)
     if in_path.is_dir():
-        # Directory mode.
+        # directory mode
         result = filter_extxyz_dir_parallel(
             str(in_path),
             out_dir=args.output,
@@ -776,7 +677,7 @@ if __name__ == "__main__":
               f"(heavy_Z={t.get('skipped_heavy', 0):,}) "
               f"total={t['total']:,}")
     else:
-        # Single-file mode.
+        # single-file mode
         stats = filter_extxyz_parallel(
             args.input,
             out_dir=args.output,

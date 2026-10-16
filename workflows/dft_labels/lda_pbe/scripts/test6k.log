@@ -1,4 +1,0 @@
-pool 1694502355 rows in 455 groups; excluding 50000 ids
-accepted 6000/6000  rejected {'filtered': 1, 'duplicate': 377, 'too_big': 144, 'collision': 0}
-mad-tier rows sampled: 3
-written to ${DEV_ROOT}/phace-atomic/madcore_vs_random_20k/out/random_test_6k: ttt=1071, fff=4275, surfaces=654

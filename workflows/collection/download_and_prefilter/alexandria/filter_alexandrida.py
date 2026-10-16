@@ -1,36 +1,3 @@
-"""
-Apply the Pyykko covalent-radius distance filter to Alexandria-format JSON
-datasets (e.g. https://alexandria.icams.rub.de/data/pbe/benchmarks/...).
-
-Alexandria distributes datasets as bzip2-compressed JSON. Each file is
-either:
-
-    {"entries": [<entry>, <entry>, ...]}      <- common case
-or
-    [<entry>, <entry>, ...]                   <- bare list
-
-Each entry contains a pymatgen-serialized structure under the "structure"
-key with:
-
-    structure["lattice"]["matrix"]   -> 3x3 list (cell in A)
-    structure["sites"]               -> list of site dicts, each with:
-        species[0]["element"]            -> element symbol (str)
-        xyz                              -> Cartesian coords (3-vector, A) [preferred]
-        abc                              -> fractional coords (3-vector)   [fallback]
-
-PBC is implicit in pymatgen structures (always True in 3D); the filter
-treats every Alexandria entry as fully periodic.
-
-The output is also Alexandria-format JSON: a bzip2-compressed file with
-{"entries": [...]} containing only the structures that passed. A
-sidecar JSON for rejections gets the same layout plus extra
-"_rejection" diagnostics on each entry.
-
-Usage:
-    python alexandria_filter.py P000.json.bz2 -o P000_passed.json.bz2 \\
-        --rejected P000_rejected.json.bz2 --scale 0.5
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -47,14 +14,12 @@ import numpy as np
 from ase import Atoms
 from ase.data import atomic_numbers as ASE_Z
 
-# Reuse the core filter.
+# reuse the core filter
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pyykko_filter import build_min_distance_matrix, find_close_contacts
 
 
-# -----------------------------------------------------------------------------
-# I/O helpers: transparent bz2 / gzip / plain JSON
-# -----------------------------------------------------------------------------
+# I/O helpers transparent bz2 / gzip / plain JSON
 def _open_read(path: str) -> io.BufferedReader:
     p = str(path)
     if p.endswith(".bz2"):
@@ -74,11 +39,6 @@ def _open_write(path: str) -> io.BufferedWriter:
 
 
 def load_alexandria(path: str) -> tuple[list[dict], dict]:
-    """
-    Load an Alexandria-style file. Returns (entries, top_level_meta) where
-    top_level_meta is anything other than 'entries' that we want to preserve
-    on output (e.g. metadata fields). For bare-list inputs, meta is {}.
-    """
     with _open_read(path) as f:
         data = json.load(f)
     if isinstance(data, list):
@@ -93,22 +53,14 @@ def load_alexandria(path: str) -> tuple[list[dict], dict]:
 
 
 def save_alexandria(path: str, entries: list[dict], meta: dict | None = None) -> None:
-    """Write entries in Alexandria layout. Preserves top-level meta if given."""
     payload: dict = dict(meta) if meta else {}
     payload["entries"] = entries
     with _open_write(path) as f:
         f.write(json.dumps(payload).encode("utf-8"))
 
 
-# -----------------------------------------------------------------------------
-# Structure extraction
-# -----------------------------------------------------------------------------
+# structure extraction
 def _entry_to_atoms(entry: dict) -> Atoms:
-    """
-    Convert one Alexandria entry to an ASE Atoms. Reads the pymatgen-style
-    structure dict; supports both 'xyz' (Cartesian) and 'abc' (fractional)
-    site coordinates.
-    """
     s = entry.get("structure")
     if s is None:
         raise KeyError("entry has no 'structure' field")
@@ -131,8 +83,7 @@ def _entry_to_atoms(entry: dict) -> Atoms:
         species = site.get("species")
         if not species:
             raise KeyError(f"site {k} has no species")
-        # Take the dominant (first-listed) element. Disordered sites with
-        # mixed occupancies use the same logic as pymatgen.Structure.species.
+        # mixed occupancies use the same logic as pymatgen.Structure.species
         elem = species[0].get("element")
         if elem is None:
             raise KeyError(f"site {k} species[0] has no 'element'")
@@ -146,9 +97,7 @@ def _entry_to_atoms(entry: dict) -> Atoms:
     return Atoms(numbers=Z, positions=pos, cell=cell, pbc=True)
 
 
-# -----------------------------------------------------------------------------
-# Filter driver
-# -----------------------------------------------------------------------------
+# filter driver
 def filter_alexandria(
     in_path: str,
     out_path: str,
@@ -158,12 +107,6 @@ def filter_alexandria(
     verbose: bool = False,
     log_every: int = 10000,
 ) -> dict:
-    """
-    Filter an Alexandria-format JSON file.
-
-    Returns dict with: passed, rejected, total, rejection_pairs (Counter),
-    skipped (entries that couldn't be parsed into Atoms).
-    """
     print(f"Loading {in_path} ...", flush=True)
     t0 = time.time()
     entries, meta = load_alexandria(in_path)
@@ -209,9 +152,7 @@ def filter_alexandria(
                       flush=True)
 
             if rejected_path is not None:
-                # Add diagnostic info under a single "_rejection" key so it's
-                # easy to strip back out and doesn't collide with Alexandria's
-                # own field names.
+                # add diagnostic info under a single _rejection key so it's
                 rec = dict(entry)
                 rec["_rejection"] = {
                     "bad_i":            int(i[k]),
@@ -235,7 +176,7 @@ def filter_alexandria(
                   + (f" | top: {top_str}" if top else ""),
                   flush=True)
 
-    # Write outputs.
+    # write outputs
     print(f"Writing {len(passed_entries):,} passed entries to {out_path} ...",
           flush=True)
     save_alexandria(out_path, passed_entries, meta=meta)
@@ -266,9 +207,7 @@ def filter_alexandria(
     }
 
 
-# -----------------------------------------------------------------------------
 # CLI
-# -----------------------------------------------------------------------------
 if __name__ == "__main__":
     p = argparse.ArgumentParser(
         description="Filter an Alexandria-format JSON dataset using Pyykko "

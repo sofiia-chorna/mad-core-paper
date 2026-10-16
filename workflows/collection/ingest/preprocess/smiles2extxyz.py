@@ -7,23 +7,19 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 
 def process_smiles_to_exyz(line_data):
-    """
-    Worker function: Converts SMILES to Extended XYZ block.
-    """
     if not line_data:
         return None
 
-    # Handle "SMILES" or "SMILES ID" input format
+    # handle SMILES or SMILES ID input format
     parts = line_data.strip().split()
     if not parts:
         return None
     
     smiles = parts[0]
-    # If there is an ID, you might want to save it too. 
-    # For now, we focus on the requested smiles_string property.
+    # if there is an ID, you might want to save it too
     
     try:
-        # --- 1. RDKit Geometry Generation ---
+        # 1. RDKit Geometry Generation
         mol = Chem.MolFromSmiles(smiles)
         if mol is None: return None
 
@@ -34,41 +30,36 @@ def process_smiles_to_exyz(line_data):
         params.randomSeed = 0xf00d
         res = AllChem.EmbedMolecule(mol, params)
         
-        # Fallback to random coordinates if embedding fails
+        # fallback to random coordinates if embedding fails
         if res == -1:
             res = AllChem.EmbedMolecule(mol, AllChem.ETKDG())
             if res == -1: return None 
 
-        # Force Field Optimization
+        # force Field Optimization
         try:
             AllChem.MMFFOptimizeMolecule(mol)
         except:
             pass 
 
-        # --- 2. Extended XYZ Formatting ---
-        # Get standard XYZ block from RDKit
+        # 2. Extended XYZ Formatting
         xyz_block = Chem.MolToXYZBlock(mol)
         lines = xyz_block.split('\n')
         
-        # lines[0] is the atom count (N)
-        # lines[1] is the comment line. 
-        # We replace lines[1] with the Extended XYZ Key-Value string.
+        # lines 0 is the atom count (N)
         
-        # The 'Properties' flag defines the columns: 
-        # species (String, 1 col) and pos (Real, 3 cols).
-        # This matches RDKit's standard output: "Symbol X Y Z"
+        # the 'Properties' flag defines the columns
         header = f"Properties=species:S:1:pos:R:3 entry_id={smiles}"
         
         lines[1] = header
         
-        # Rejoin and ensure distinct newline at the end
+        # rejoin and ensure distinct newline at the end
         return "\n".join(lines).strip() + "\n"
 
     except Exception:
         return None
 
 def main():
-    # --- Argument Parsing ---
+    # argument Parsing
     parser = argparse.ArgumentParser(
         description="Convert SMILES to Extended XYZ format (compatible with ASE/quippy)."
     )
@@ -79,7 +70,7 @@ def main():
 
     args = parser.parse_args()
 
-    # Setup Output Filename
+    # setup Output Filename
     if args.output is None:
         base = os.path.splitext(args.input_file)[0]
         output_file = f"{base}.xyz"
@@ -90,7 +81,7 @@ def main():
         print(f"Error: File {args.input_file} not found.")
         sys.exit(1)
 
-    # --- Processing ---
+    # processing
     print(f"--- Processing GDB11 to Extended XYZ ---")
     print(f"Input: {args.input_file}")
     print(f"Output: {output_file}")

@@ -26,8 +26,6 @@ if [ -n "${LIMIT:-}" ]; then
     EXTRA="--limit $LIMIT"
 fi
 
-echo "STARTING $* $EXTRA $(date) on $(hostname)"
-
 for MODEL in "$@"; do
     case $MODEL in
         phace-atomic)
@@ -60,10 +58,7 @@ for MODEL in "$@"; do
             ;;
     esac
 
-    echo "=== $MODEL $(date)"
     cd $HERE
     $PY -u $SCRIPT $MODEL $EXTRA
-    echo "=== $MODEL exit $? $(date)"
 done
 
-echo "ENDING $(date)"

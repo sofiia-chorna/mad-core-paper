@@ -1,0 +1,3 @@
+mad_1.5 filtered mad_1.5 ${DEV_ROOT}/mad-core/data/mad-1.5/mad-1.5-r2scan-train.xyz ${DEV_ROOT}/mad-core/data/mad-1.5/mad-1.5-r2scan-val.xyz ${DEV_ROOT}/mad-core/data/mad-1.5/mad-1.5-r2scan-test.xyz
+mad_next filtered mad_next ${DEV_ROOT}/mad-core/data/mad-next/MAD_next_r2scan_pbc_corrected_cleaned.xyz
+mad_sol filtered mad_sol ${DEV_ROOT}/mad-core/data/mad-next/mad-sol_no_monomers.xyz

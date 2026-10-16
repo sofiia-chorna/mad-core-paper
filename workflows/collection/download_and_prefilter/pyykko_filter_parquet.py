@@ -1,30 +1,3 @@
-"""
-Apply the Pyykko covalent-radius distance filter to a ColabFit-style parquet
-dataset. Streams in batches via pyarrow; preserves the input schema on
-the passed output and adds diagnostic columns to the rejected output.
-
-ColabFit schema convention (defaults assumed by this module):
-    atomic_numbers : list[int]              length N
-    positions      : list[float]            length 3*N (flat) OR list[list[float]] (Nx3)
-    cell           : list[float]            length 9    (flat) OR list[list[float]] (3x3)
-    pbc            : list[bool]             length 3, OR scalar bool
-
-Shape detection is automatic. Override column names via the `columns` dict
-if your dataset uses different names (e.g. "numbers" instead of "atomic_numbers").
-
-Typical use:
-
-    from pyykko_filter_parquet import filter_parquet
-    stats = filter_parquet(
-        "in.parquet", "passed.parquet", rejected_path="rejected.parquet",
-        scale=0.5, batch_size=1000,
-    )
-
-Or:
-
-    python pyykko_filter_parquet.py in.parquet passed.parquet --rejected rejected.parquet
-"""
-
 from __future__ import annotations
 
 import glob
@@ -39,12 +12,12 @@ import pyarrow.dataset as pa_ds
 import pyarrow.parquet as pq
 from ase import Atoms
 
-# Reuse the core filter logic.
+# reuse the core filter logic
 sys.path.insert(0, ".")
 from pyykko_filter import build_min_distance_matrix, find_close_contacts
 
 
-# Default ColabFit-style column names
+# default ColabFit-style column names
 DEFAULT_COLUMNS = {
     "numbers":   "atomic_numbers",
     "positions": "positions",
@@ -54,15 +27,6 @@ DEFAULT_COLUMNS = {
 
 
 def _maybe_decode_string(value):
-    """
-    Some upstream ColabFit ingestion bugs serialize array columns as Python
-    `repr()` or JSON strings rather than as native list/array types. E.g.
-    `atomic_numbers` may arrive as the literal string '[81, 43, 43, 79, 8]'.
-
-    This helper detects bytes/str inputs and decodes them into Python lists.
-    Returns the original value unchanged if it's already a list / array /
-    None / scalar.
-    """
     if value is None:
         return None
     if isinstance(value, (bytes, bytearray)):
@@ -72,19 +36,18 @@ def _maybe_decode_string(value):
     s = value.strip()
     if not s:
         return None
-    # Try JSON first (handles 'true'/'false' for pbc and standard arrays)
+    # try JSON first (handles 'true'/'false' for pbc and standard arrays)
     try:
         import json as _json
         return _json.loads(s)
     except (ValueError, TypeError):
         pass
-    # Fallback: Python literal_eval (handles 'True'/'False', tuples, etc.)
+    # fallback Python literal_eval (handles 'True'/'False', tuples, etc.)
     import ast as _ast
     try:
         return _ast.literal_eval(s)
     except (ValueError, SyntaxError):
-        # Last resort: numpy fromstring on a whitespace-separated list
-        # (handles bare '81 43 43 79 8' format).
+        # last resort numpy fromstring on a whitespace-separated list
         try:
             return np.fromstring(s.strip("[]() "), sep=" ").tolist()
         except Exception:
@@ -94,10 +57,6 @@ def _maybe_decode_string(value):
 
 
 def _to_2d(arr, n_atoms: int | None = None) -> np.ndarray:
-    """
-    Coerce a parquet-stored coordinate array into shape (N, 3).
-    Accepts flat list (length 3N) or nested list (Nx3).
-    """
     a = np.asarray(arr, dtype=np.float64)
     if a.ndim == 2 and a.shape[1] == 3:
         return a
@@ -109,7 +68,6 @@ def _to_2d(arr, n_atoms: int | None = None) -> np.ndarray:
 
 
 def _to_cell(arr) -> np.ndarray | None:
-    """Coerce a parquet cell into (3, 3). None if missing or all-zero."""
     if arr is None:
         return None
     a = np.asarray(arr, dtype=np.float64)
@@ -127,7 +85,6 @@ def _to_cell(arr) -> np.ndarray | None:
 
 
 def _to_pbc(val) -> np.ndarray:
-    """Coerce pbc to a length-3 bool array."""
     if val is None:
         return np.zeros(3, dtype=bool)
     if np.isscalar(val):
@@ -142,20 +99,7 @@ def _to_pbc(val) -> np.ndarray:
 
 def _row_to_atoms(row: dict, cols: dict,
                    positions_format: str = "cartesian") -> Atoms:
-    """
-    Reconstruct an ASE Atoms from a parquet row dict.
-
-    Parameters
-    ----------
-    positions_format : {"cartesian", "fractional"}
-        How to interpret the positions column. Default "cartesian" matches
-        the extxyz spec and the ColabFit standard. Use "fractional" for
-        the few datasets where positions were stored as fractional
-        coordinates (in [0, 1] with periodic cell). Conversion: Cartesian
-        = fractional @ cell.
-    """
-    # Decode string-encoded columns (some ColabFit dumps store arrays as
-    # Python repr or JSON strings). No-op for properly-typed columns.
+    # decode string-encoded columns (some ColabFit dumps store arrays as
     raw_numbers   = _maybe_decode_string(row[cols["numbers"]])
     raw_positions = _maybe_decode_string(row[cols["positions"]])
     raw_cell      = _maybe_decode_string(row.get(cols["cell"]))
@@ -192,12 +136,6 @@ def _row_to_atoms(row: dict, cols: dict,
 
 
 class _LazyParquetWriter:
-    """
-    Wraps pq.ParquetWriter so the file is not created until the first
-    write_table call. Solves the problem of empty/footer-less parquet files
-    when a shard has zero rows to write to a given output (e.g. zero
-    rejections). On close-without-writes, no file is created at all.
-    """
     def __init__(self, path: str, schema: pa.Schema, compression: str):
         self.path = path
         self.schema = schema
@@ -218,19 +156,10 @@ class _LazyParquetWriter:
 
     @property
     def created(self) -> bool:
-        """Has anything been written? (i.e. does the on-disk file exist)"""
         return self._writer is not None or Path(self.path).exists()
 
 
 def _resolve_inputs(in_paths) -> list[str]:
-    """
-    Expand the user's input into a flat list of parquet files.
-
-    Accepts a single path (str/Path) or an iterable of paths. Each entry can be:
-        - a single .parquet file
-        - a directory (we glob *.parquet inside it)
-        - a glob pattern (we expand it)
-    """
     if isinstance(in_paths, (str, Path)):
         in_paths = [in_paths]
     out: list[str] = []
@@ -244,7 +173,7 @@ def _resolve_inputs(in_paths) -> list[str]:
         elif p.is_file():
             out.append(str(p))
         else:
-            # Treat as glob pattern.
+            # treat as glob pattern
             matched = sorted(glob.glob(str(entry)))
             if not matched:
                 raise FileNotFoundError(f"no files match {entry}")
@@ -255,7 +184,6 @@ def _resolve_inputs(in_paths) -> list[str]:
 
 
 def _make_rejected_schema(input_schema: pa.Schema) -> pa.Schema:
-    """Add diagnostic columns to a copy of the input schema."""
     extra = [
         pa.field("bad_i",            pa.int64()),
         pa.field("bad_j",            pa.int64()),
@@ -270,7 +198,6 @@ def _make_rejected_schema(input_schema: pa.Schema) -> pa.Schema:
 
 
 def _rows_to_table(rows: list[dict], schema: pa.Schema) -> pa.Table:
-    """Build a pa.Table from a list of dicts, conforming to schema."""
     if not rows:
         return schema.empty_table()
     return pa.Table.from_pylist(rows, schema=schema)
@@ -290,40 +217,13 @@ def filter_parquet(
     quiet: bool = False,
     positions_format: str = "cartesian",
 ) -> dict:
-    """
-    Stream-filter a parquet dataset.
-
-    Parameters
-    ----------
-    in_paths : str | Path | list
-        Single file, directory containing parquet files, glob pattern,
-        or list of any of the above.
-    out_path : str
-        Output parquet for passing structures.
-    rejected_path : str | None
-        If given, rejected rows are written here with extra diagnostic columns.
-    scale : float
-        Covalent-radius scale factor (0.5 default).
-    batch_size : int
-        Rows per pyarrow batch. Memory ~ batch_size * (avg row size).
-    backend : {"auto", "vesin", "ase"}
-        Neighbor-list backend.
-    columns : dict
-        Override column names. Keys: numbers, positions, cell, pbc.
-    compression : str
-        Parquet compression for outputs ("snappy", "zstd", "gzip", or None).
-
-    Returns
-    -------
-    dict with: passed, rejected, total, rejection_pairs (Counter).
-    """
     cols = dict(DEFAULT_COLUMNS)
     if columns:
         cols.update(columns)
 
     mdm = build_min_distance_matrix(scale=scale)
 
-    # Resolve inputs: single file, directory, glob, or list.
+    # resolve inputs single file, directory, glob, or list
     files = _resolve_inputs(in_paths)
     if not quiet:
         print(f"Reading {len(files)} parquet file{'s' if len(files) > 1 else ''}: "
@@ -331,13 +231,11 @@ def filter_parquet(
     dataset = pa_ds.dataset(files, format="parquet")
     in_schema = dataset.schema
 
-    # Sanity-check that required columns exist, with diagnostic hints for
-    # common ColabFit-schema confusions.
+    # common ColabFit-schema confusions
     have = set(in_schema.names)
     missing = [c for k, c in cols.items() if c not in have and k != "pbc"]
     if missing:
-        # Detect: ColabFit datasets metadata table (has dataset-level summary
-        # columns but no per-structure positions / atomic_numbers).
+        # detect ColabFit datasets metadata table (has dataset-level summary
         meta_signals = {"nconfigurations", "authors", "doi",
                         "publication_year", "energy_mean", "nelements"}
         if len(meta_signals & have) >= 3 and "positions" not in have:
@@ -349,7 +247,7 @@ def filter_parquet(
                 "'configurations', 'pos', or similar that contains "
                 "atomic_numbers + positions + cell + pbc."
             )
-        # Detect: property_objects table (has energy/forces but no structures).
+        # detect property_objects table (has energy/forces but no structures)
         prop_signals = {"energy", "forces", "stress", "configuration_id",
                         "property_id"}
         if len(prop_signals & have) >= 2 and "positions" not in have:
@@ -361,7 +259,7 @@ def filter_parquet(
                 "by ID; filter the configurations file, then join afterwards "
                 "if you need per-structure properties."
             )
-        # Generic case.
+        # generic case
         raise ValueError(
             f"input parquet missing columns: {missing}. "
             f"Available: {sorted(have)}. Pass columns={{...}} to override names."
@@ -391,10 +289,7 @@ def filter_parquet(
             for row in rows:
                 n_total += 1
 
-                # Per-row error isolation: a single bad row (NaN positions,
-                # singular cell, Z>103, etc.) must NOT take out the whole
-                # shard. Skipped rows are counted in error_counter for
-                # diagnostics and reported in the final summary.
+                # per-row error isolation a single bad row (NaN positions
                 try:
                     atoms = _row_to_atoms(row, cols, positions_format)
                 except Exception as e:
@@ -490,11 +385,8 @@ def filter_parquet(
     }
 
 
-# -----------------------------------------------------------------------------
-# Parallel driver (one worker per input shard)
-# -----------------------------------------------------------------------------
+# parallel driver (one worker per input shard)
 def _shard_worker(args):
-    """Worker entry for ProcessPoolExecutor. Filters a single shard."""
     shard_path, out_file, rej_file, kwargs = args
     return filter_parquet(
         [shard_path], out_file,
@@ -517,32 +409,6 @@ def filter_parquet_parallel(
     compression: str = "snappy",
     positions_format: str = "cartesian",
 ) -> dict:
-    """
-    Parallel parquet filter: one worker process per input shard.
-
-    Each shard is filtered independently. Outputs are written to a directory
-    with one parquet file per input shard, named `passed_<shard_stem>.parquet`
-    (and `rejected_<shard_stem>.parquet` if rejected_dir is given).
-
-    The output directory is a valid pyarrow.dataset, so downstream readers
-    treat it as a single logical table.
-
-    Parameters
-    ----------
-    in_paths : str | Path | list
-        Same as filter_parquet -- file, directory, glob, or list.
-    out_dir : str
-        Output directory (created if missing). One file per input shard.
-    rejected_dir : str | None
-        If given, rejected rows go here, one file per input shard.
-    n_workers : int
-        Worker processes to spawn. Saturating cores is the usual choice.
-
-    Returns
-    -------
-    dict with combined stats: passed, rejected, total, rejection_pairs (Counter),
-    plus per_shard (list of stats dicts).
-    """
     from concurrent.futures import ProcessPoolExecutor, as_completed
     import time
 
@@ -554,8 +420,7 @@ def filter_parquet_parallel(
         rej_dir_p = Path(rejected_dir)
         rej_dir_p.mkdir(parents=True, exist_ok=True)
 
-    # One task per shard. Skip shards whose output already exists (idempotent
-    # restart -- useful on HPC where jobs can be killed and resumed).
+    # one task per shard. Skip shards whose output already exists (idempotent
     tasks = []
     skipped = 0
     for shard in files:
@@ -599,9 +464,7 @@ def filter_parquet_parallel(
             top_str = ", ".join(f"{a}-{b}:{c}" for (a, b), c in top) or "-"
             rate_total = sum(s[1]["total"] for s in per_shard) / max(time.time() - t0, 1e-9)
 
-            # Flag silent skipping prominently: if more rows were skipped
-            # than passed, something is wrong (e.g. stringified-array bug,
-            # all-NaN positions, schema mismatch).
+            # flag silent skipping prominently if more rows were skipped
             n_skip = stats.get("skipped", 0)
             warn = ""
             if n_skip > stats["passed"] and n_skip > 0:
@@ -617,7 +480,7 @@ def filter_parquet_parallel(
                   f"top: {top_str}  ({rate_total:.0f} struct/s overall){warn}",
                   flush=True)
 
-    # Aggregate.
+    # aggregate
     total_passed   = sum(s["passed"]   for _, s in per_shard)
     total_rejected = sum(s["rejected"] for _, s in per_shard)
     total_skipped  = sum(s.get("skipped", 0) for _, s in per_shard)
@@ -660,9 +523,7 @@ def filter_parquet_parallel(
     }
 
 
-# -----------------------------------------------------------------------------
 # CLI
-# -----------------------------------------------------------------------------
 if __name__ == "__main__":
     import argparse
 

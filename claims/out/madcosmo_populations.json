@@ -1,6 +1,6 @@
 {
  "claim": "populations behind the MAD-COSMO counts, filters, duplicates, coverage and cell statistics",
- "release": "/capstor/store/cscs/swissai/aa002/mad-core/release",
+ "release": "${STORE_ROOT}/mad-core/release",
  "folders": {
   "collection": 454,
   "with_anchor": 455

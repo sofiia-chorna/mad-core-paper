@@ -36,7 +36,6 @@ DT_PS = 0.00025
 FRAME_PS = DT_PS * STRIDE
 WINDOW_START_PS = 5.0
 
-# a supplementary later window, added after the block analysis showed the LDA-corrected structure relaxing through 5 to 20 ps
 LATE_WINDOW_START_PS = 20.0
 DISCARDED = (0.0, 5.0)
 BLOCKS = ((5.0, 20.0), (20.0, 35.0), (35.0, 50.0))
@@ -107,13 +106,11 @@ def longest_true_run(flags):
     return best
 
 
-# frames in a time block of the analysed trajectory, the last production block includes its end
 def block_mask(time_ps, analysed, lo, hi):
     upper = time_ps <= hi if hi == BLOCKS[-1][1] else time_ps < hi
     return analysed & (time_ps >= lo) & upper
 
 
-# g of r, O-H distance distributions and O-O shell measures over the frames selected by a mask
 def structure(frames, mask, volume):
     selected = [f for f, keep in zip(frames, mask) if keep]
     if not selected:
@@ -150,7 +147,6 @@ def bookkeeping(completion):
     }
 
 
-# frames that cross a threshold, reported with their first time and never used to cut the trajectory
 def threshold_crossings(frames, temperatures, time_ps, end):
     measures = {
         "min_pair_distance": (np.array([f["min_pair_distance_A"] for f in frames[:end]]), "below", THRESHOLDS["min_pair_distance_A"]),
@@ -172,7 +168,6 @@ def threshold_crossings(frames, temperatures, time_ps, end):
     return crossings
 
 
-# coordination changes, each H belongs to its nearest O, a change is a possible proton-transfer event
 def coordination_changes(frames, time_ps):
     changed = np.array([f["non_water_oxygens"] > 0 for f in frames])
     owners = np.array([f["owner"] for f in frames])
@@ -232,7 +227,6 @@ def analyse_run(run):
     frames = [frame_analysis(p, c, f, symbols) for p, c, f in zip(traj["positions"], traj["cells"], traj["forces"])]
     temperatures = kinetic_temperatures(masses, traj["velocities"], symbols)
 
-    # a confirmed numerical failure is a non-finite value or a crash, only a non-finite frame ends the analysed trajectory
     finite = np.array([f["finite"] for f in frames]) & np.isfinite(temperatures["all"])
     end = len(frames) if finite.all() else int(np.argmin(finite))
     exits = rec["completion"]["ipi_exits"]
@@ -259,7 +253,6 @@ def analyse_run(run):
     props_analysed = (props["step"] <= (traj["steps"][end - 1] if end else -1)) & np.isfinite(props["potential"])
     props_window = props_analysed & (props["time"] >= WINDOW_START_PS)
 
-    # thermodynamics over the analysis window, the conserved quantity over the whole analysed run
     if in_window.any():
         rec.update(
             analysis_frames=int(in_window.sum()),
@@ -359,13 +352,11 @@ def write_tsv(path, columns, rows):
             fh.write("\t".join(f"{v:.6g}" if isinstance(v, float) else str(v) for v in row) + "\n")
 
 
-# integral of the absolute difference of two g of r beyond the covalent O-H peak, in angstrom
 def integrated_difference(a, b):
     sel = RDF_CENTRES >= CONVERGENCE_RMIN_A
     return float(np.abs(a[sel] - b[sel]).sum() * RDF_BIN)
 
 
-# block-to-block changes within each run against seed-to-seed differences within the same block
 def rdf_convergence(rows, curves):
     keys = [block_key(*b) for b in (DISCARDED,) + BLOCKS]
     result = {}

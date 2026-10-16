@@ -33,7 +33,6 @@ CORRECTIONS = {
 }
 
 
-# one model, one energy output, conservative forces as the negative energy gradient, one structure per call
 class Potential:
     def __init__(self, path, output, device):
         self.model = mta.load_atomistic_model(str(path)).to(device)

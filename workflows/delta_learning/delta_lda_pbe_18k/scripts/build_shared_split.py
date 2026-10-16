@@ -88,7 +88,6 @@ def main():
     summary["sources"]["r2scan"] = {k: str(v[0]) for k, v in lookup.items()}
     summary["sources"]["lda_pbe_final"] = str(B.FINAL)
 
-    # both pairings of one structure under the existing rules, the entry carries all three functionals
     def resolve(cid, frozen_cid, origin, r2scan_source=None, r2scan_frame=None):
         have = labels.get(cid, {})
         if "lda" not in have or "pbe" not in have:
@@ -127,7 +126,6 @@ def main():
                  "fmax_r2scan": B.fmax(r2scan_frame), "fmax_lda": B.fmax(lda), "fmax_pbe": B.fmax(pbe)}
         return entry, None
 
-    # the pool, old training 18,774 plus the 232 eligible of the old MAD-CORE validation 250 plus the old MAD-CORE test 1,875
     old = {name: B.read_tsv(OLD / f"{name}.tsv") for name in ("train", "val", "test_madcore")}
     pool, failures, source_changes = [], Counter(), 0
     for origin, rows in (("old_train", old["train"]), ("old_val_250", B.read_tsv(B.VAL_MADCORE)), ("old_test", old["test_madcore"])):

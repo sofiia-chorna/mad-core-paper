@@ -90,7 +90,6 @@ step_of() {{
   fi
 }}
 
-# a checkpoint cut by a kill cannot be parsed and is set aside, the other one is used instead
 for f in RESTART sim.chk; do
   if [ -s "$f" ] && ! $VENV/python -c "import sys, xml.etree.ElementTree as E; E.parse(sys.argv[1])" "$f" 2>/dev/null; then
     mv "$f" "$f.unreadable.$(date +%s)"
@@ -152,7 +151,6 @@ DRIVER_LINE = (
 )
 
 
-# momenta in atomic units from velocities in ASE units, the conversion verified in the LiPS experiment
 def momenta_au(atoms):
     velocities_m_per_s = atoms.get_velocities() * units.fs * 1.0e5
     masses_au = atoms.get_masses()[:, None] * unit_to_internal("mass", "dalton", 1.0)
@@ -247,7 +245,6 @@ def make_run(phase, condition, seed):
 
 
 # usage make_inputs.py phase, every condition and every seed of the phase
-# the baseline runs of the 1.0 g/cm3 experiment are reused through symlinks, only the two corrected conditions get new inputs
 REUSED = {"baseline"}
 
 

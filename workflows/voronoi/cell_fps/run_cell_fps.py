@@ -244,8 +244,6 @@ def verify(d24, rank_out, eps_out, unique_cells, boundaries, order, cell_center_
                     problems["max_radius_rel_diff"] = max(problems["max_radius_rel_diff"],
                                                           round(rel, 6))
                     # both sides are f32 squared distances reached by different
-                    # routes; near-degenerate cells (radius ~1e-2) carry ~1e-5 of
-                    # absolute noise, which is >5% relative at that scale.
                     if rel > 0.05 and difference > 1e-4:
                         problems["radius_mismatch_cells"] += 1
 

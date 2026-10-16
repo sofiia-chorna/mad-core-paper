@@ -11,12 +11,7 @@ from matplotlib.colors import LogNorm  # noqa: E402
 
 from maps_common import ARM_LABEL, B, FIGURE_SETS, LIBRARY_XY, MANIFESTS, MAPS, P, POPULATION_FILE, S, SET_LABEL, SETS, SIZES, make_logger, read_tsv  # noqa: E402
 
-# error maps of the scratch models on the union of the two frozen tests, with the grid, smoothing (error sums and
-# counts smoothed separately, then divided), support mask, density contours and colour conventions of the earlier maps
 # best validation checkpoints only
-# usage: make_maps.py [scaling|voronoi|atoms] [--round DIR] [--prefix scratch-s] [--sizes 5k,10k,20k]
-# another round (same frozen tests, same grid and bins as round 1) is drawn with --round; runs whose evaluation is
-# not available yet are left blank and marked pending
 parser = argparse.ArgumentParser()
 parser.add_argument("figure_set", nargs="?", default="scaling")
 parser.add_argument("--round", default=str(S))
@@ -113,7 +108,7 @@ def map_figure(kind, values, keep, coverage, density, grid, say):
                 ax.set_title(size if FIGURE_SET != "atoms" else f"atom budget of MAD-CORE {size}\n({TRAIN_SETS[f'madcore_{size}']['atoms']:,} atoms)", fontsize=16)
             if c == 0:
                 ax.set_ylabel(ARM_LABEL[arm].replace(" training", "").upper(), fontsize=16)
-    # context column: library density and evaluation coverage
+    # context column library density and evaluation coverage
     grey = plt.get_cmap(P.DENSITY_CMAP).copy()
     grey.set_bad("white")
     last = len(SIZES)
@@ -153,7 +148,6 @@ def map_figure(kind, values, keep, coverage, density, grid, say):
 MARKER = {"random": "o", "madcore": "s", "voronoi": "^", "random_atoms": "o", "voronoi_atoms": "^"}
 
 
-# selected checkpoint metrics against the training set size; x is the structure count or the atom count
 def learning_curves(say, arms, axis, name):
     rows = {(r["test"], r["model"]): r for r in read_tsv(REPORTS / "selected_checkpoints" / "metrics_mtt.tsv")}
     fig, axes = plt.subplots(2, 2, figsize=(9, 7))

@@ -12,8 +12,7 @@ def featurize(frames, writer, model_name):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     predictor = load_predict_unit(CHECKPOINTS[model_name], device=device)
 
-    # the same two hooks as the expose_feat fairchem fork used for the MAD-NEXT features,
-    # ll_feat is the input of the last linear layer of the energy head
+    # the same two hooks as the expose_feat fairchem fork used for the MAD-NEXT features
     captured = {}
     energy_block = predictor.model.module.output_heads.energyandforcehead.head.energy_block
     energy_block.register_forward_hook(

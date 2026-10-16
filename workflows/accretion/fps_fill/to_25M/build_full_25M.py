@@ -134,9 +134,7 @@ def main():
         family_of_cid[configuration_id] = sorted(external)[0] if external else "mad-union"
     del external_families
 
-    # Anchor picks are walked in ACCRETE-hierarchy order (accrete.parquet fps_order + its
-    # per-level separation), not the raw coreset seed order (arbitrary pool-row order).
-    # Fill picks keep their FPS-continuation fps_order/epsilon. Matches build_full_10M.
+    # anchor picks are walked in ACCRETE-hierarchy order (accrete.parquet fps_order + its
     pick_metadata = {}
     unresolved = 0
     for configuration_id, (fps_order, epsilon_sq, dataset_id) in pick_info.items():
@@ -169,10 +167,7 @@ def main():
                 yield (shard, [(row_index, configuration_id, pick_metadata[configuration_id])
                                for row_index, configuration_id in chunk if configuration_id in pick_metadata])
 
-    # Bounded sliding window: keep at most `window` tasks in flight so the single
-    # zstd writer paces the workers and the result backlog cannot grow unbounded
-    # (an unbounded imap_unordered backlog of feature-laden tables is what OOM-killed
-    # the first attempt at 16M/25M).
+    # bounded sliding window keep at most window tasks in flight so the single
     from collections import deque
     window = num_processes * 2
     parquet_writer = pq.ParquetWriter(output_path, output_schema, compression="zstd")

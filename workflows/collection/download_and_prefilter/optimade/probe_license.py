@@ -1,31 +1,4 @@
 #!/usr/bin/env python3
-"""
-Probe OPTIMADE providers for license metadata.
-
-For each provider (and each of its sub-databases), hits:
-  - <base_url>/v1/info                  -> attributes.license,
-                                           available_licenses,
-                                           available_licenses_for_entries
-  - <base_url>/v1/structures?page_limit=1
-                                        -> meta.license (sometimes present
-                                           even when /info isn't updated)
-
-Provider list is auto-discovered from the central registry, OR taken from
-filenames in an optimade_data/ directory (matching the format produced by
-the bulk downloader: <provider>__<database>.jsonl).
-
-Usage
------
-    pip install requests
-    python optimade_license_probe.py                       # probe all registry providers
-    python optimade_license_probe.py --dir optimade_data/  # probe only providers we have data for
-    python optimade_license_probe.py --json out.json       # also dump raw JSON results
-
-Output is a table to stdout. SPDX-identifier columns are most useful for
-deciding redistribution compatibility (e.g. CC-BY-4.0 is fine to redistribute
-under the same; CC-BY-NC-* prevents commercial use; proprietary databases
-will show 'unknown' or be missing entirely).
-"""
 
 import argparse
 import json
@@ -62,7 +35,6 @@ def discover_providers() -> list[dict]:
 
 
 def discover_sub_databases(provider: dict) -> list[dict]:
-    """Return list of {provider_id, db_id, base_url} dicts."""
     pid = provider["id"]
     pattrs = provider.get("attributes", {})
     base_url = (pattrs.get("base_url") or "").rstrip("/")
@@ -84,7 +56,7 @@ def discover_sub_databases(provider: dict) -> list[dict]:
                     "base_url": db_base,
                 })
     if not out:
-        # Provider serves structures directly (no sub-databases)
+        # provider serves structures directly (no sub-databases)
         out.append({
             "provider_id": pid,
             "db_id": pid,
@@ -94,7 +66,6 @@ def discover_sub_databases(provider: dict) -> list[dict]:
 
 
 def extract_license_info(base_url: str) -> dict:
-    """Probe one base_url for license fields. Returns a dict of findings."""
     result: dict = {
         "base_url": base_url,
         "info_license": None,
@@ -109,7 +80,7 @@ def extract_license_info(base_url: str) -> dict:
     if info:
         result["info_reachable"] = True
         attrs = (info.get("data", {}) or {}).get("attributes", {}) or {}
-        # `license` may be either a string URL or a JSON API link object {href, ...}
+        # license may be either a string URL or a JSON API link object href
         lic = attrs.get("license")
         if isinstance(lic, dict):
             lic = lic.get("href")
@@ -129,7 +100,6 @@ def extract_license_info(base_url: str) -> dict:
 
 
 def parse_optimade_dir(path: Path) -> set[str]:
-    """Return set of provider_ids based on jsonl filenames."""
     pids = set()
     for f in path.glob("*.jsonl"):
         m = re.match(r"^([^_]+)__", f.name)
@@ -139,7 +109,6 @@ def parse_optimade_dir(path: Path) -> set[str]:
 
 
 def fmt_license(result: dict) -> str:
-    """One-line license summary for table display."""
     spdx = result.get("info_available_licenses_for_entries")
     if spdx:
         return ", ".join(spdx) + " (entries)"
@@ -178,7 +147,7 @@ def main():
         print(f"Restricting to {len(restrict)} provider IDs from {args.dir}: "
               f"{', '.join(sorted(restrict))}")
 
-    # Expand to (provider, sub-database) pairs
+    # expand to (provider, sub-database) pairs
     targets: list[dict] = []
     for prov in providers:
         if restrict is not None and prov["id"] not in restrict:
@@ -203,10 +172,10 @@ def main():
             lic.update({"provider_id": t["provider_id"], "db_id": t["db_id"]})
             results.append(lic)
 
-    # Sort for stable table output
+    # sort for stable table output
     results.sort(key=lambda r: (r.get("provider_id", ""), r.get("db_id", "")))
 
-    # Pretty table
+    # pretty table
     pid_w = max((len(r.get("provider_id", "")) for r in results), default=8)
     db_w = max((len(r.get("db_id", "")) for r in results), default=8)
     pid_w = max(pid_w, 8)
@@ -221,7 +190,7 @@ def main():
             f"{fmt_license(r)}"
         )
 
-    # Quick summary by category
+    # quick summary by category
     n_total = len(results)
     n_spdx_entries = sum(
         1 for r in results if r.get("info_available_licenses_for_entries")

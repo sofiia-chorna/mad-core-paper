@@ -13,5 +13,4 @@
 set -euo pipefail
 cd ${DEV_ROOT}/phace-atomic/skmatter-run/sketchmap/src
 source ${HOME}/venv-phace/bin/activate
-export PYTHONUNBUFFERED=1
 python train_projector.py --tag p20d8_silu --embedding-tag p20d8 --d 8 --activation silu

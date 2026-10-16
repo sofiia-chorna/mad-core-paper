@@ -26,7 +26,6 @@ def clean(value):
     return str(value).replace("\t", " ").replace("\r", " ").replace("\n", " ").strip()
 
 
-# NOMAD stores two 2015 datasets under short DOIs, the bib uses the DOIs they resolve to
 SHORT_DOI = {"10/F2696T": "10.17172/NOMAD/PBVEIBCA390AP80E7N8DX5IFZSAHZ8Q3RU8ZIVXT6KPPIMS",
              "10/Z9C": "10.17172/NOMAD/2O4HTSZH38W7JVZEK9E1RD8CVUBA6541K6T8V3DLQFAMJMS"}
 
@@ -47,7 +46,6 @@ def main():
             entry, upload, _ = line.rstrip("\n").split("\t")
             upload_of[entry] = upload
 
-    # per-entry credit fields from nomad_credit.py, all values kept, stored as an index into the distinct
     # credit variants (upload, authors, references, comment, external_db) to keep memory small
     variant_index, variant_keys = {}, []
     credit, uploads_meta = {}, {}
@@ -66,7 +64,6 @@ def main():
                 display.setdefault(d.upper(), d)
                 entry_dois[entry].add(d.upper())
 
-    # dataset DOIs of each entry: today's datasets from the credit sweep, plus the download-era DOI sweep
     for d, result in json.load(gzip.open(f"{CLAIMS}/out/nomad_doi_entries.json.gz", "rt")).items():
         display.setdefault(d.upper(), d)
         for entry in result["entries"]:
@@ -84,7 +81,7 @@ def main():
             doi_entries[d].add(entry)
     rows_per_entry = Counter(ids)
 
-    # first pass: rows per variant, so that the variants of each upload can be numbered by size
+    # first pass rows per variant, so that the variants of each upload can be numbered by size
     missing_key = {}
     variant_rows = Counter()
     for entry in ids:
@@ -161,7 +158,6 @@ def main():
                                "; ".join(f"{k} ({v})" for k, v in p["external_db"].most_common()),
                                str(len(by_upload[upload])), UPLOAD_URL.format(upload)]) + "\n")
 
-    # every DOI that holds released records, cited, nested in another cited DOI, or new since the download
     with open(f"{DIR}/nomad_dois.tsv", "w") as f:
         f.write("dataset_doi\tstatus\tbib_key\tprevious_bib_key\treleased_entries\treleased_records\t"
                 "contained_in_doi\tcontained_in_bib_key\tidentical_released_entries\ttitle\tauthors\tyear\tmetadata_source\n")

@@ -9,34 +9,20 @@ import numpy as np
 
 
 def _fit_energy_baseline(structures, energies, energy_key: str) -> dict:
-    """Fit per-element reference energies via least squares.
-
-    Solves  A @ x ≈ e  (unconstrained), where A[i, z] = number of atoms of
-    element z in structure i, and e[i] is the total energy of structure i.
-
-    DFT/ML total energies are large negative numbers, so per-element reference
-    energies must also be negative — a non-negativity constraint (NNLS) would
-    return all-zero coefficients and is therefore not used here.
-
-    :param structures: List of ``ase.Atoms`` objects.
-    :param energies: 1-D numpy array of total energies, length ``len(structures)``.
-    :param energy_key: Key used for energy (stored in JSON for reference).
-    :returns: Dict with fit metadata and per-element reference energies.
-    """
     from ase.data import chemical_symbols
 
-    # Collect all element symbols in sorted order
+    # collect all element symbols in sorted order
     all_z = sorted({int(z) for s in structures for z in s.numbers})
     z_to_col = {z: j for j, z in enumerate(all_z)}
     n_elem = len(all_z)
 
-    # Build composition matrix  A  (ns × n_elem)
+    # build composition matrix A (ns × n_elem)
     A = np.zeros((len(structures), n_elem), dtype=np.float64)
     for i, s in enumerate(structures):
         for z in s.numbers:
             A[i, z_to_col[int(z)]] += 1.0
 
-    # Unconstrained least squares: allows negative reference energies
+    # unconstrained least squares allows negative reference energies
     coeffs, _, _, _ = np.linalg.lstsq(A, energies.astype(np.float64), rcond=None)
 
     residuals_per_atom = (A @ coeffs - energies) / A.sum(axis=1)
@@ -52,13 +38,6 @@ def _fit_energy_baseline(structures, energies, energy_key: str) -> dict:
     return result
 
 def apply_energy_baseline(structures, energies, baseline: dict) -> np.ndarray:
-    """Subtract the per-element baseline from each structure energy.
-
-    :param structures: List of ``ase.Atoms`` objects.
-    :param energies: 1-D numpy array of total energies.
-    :param baseline: Dict as returned by ``fit_energy_baseline`` or loaded from JSON.
-    :returns: Array of residual energies (same shape as ``energies``).
-    """
     from ase.data import atomic_numbers
 
     ref = baseline["reference_energies"]  # {symbol: eV}
@@ -84,25 +63,6 @@ def extxyz_to_memmap(
     fit_energy_baseline: bool = False,
     apply_baseline_from: str | None = None,
 ) -> None:
-    """Convert an .extxyz file to a directory of MemmapDataset binary files.
-
-    :param input_path: Path to the input .extxyz file.
-    :param output_dir: Path to the output directory (created if needed).
-    :param index: ASE index string, e.g. ``":"`` for all frames.
-    :param energy_key: Key for energy in ``atoms.info`` (also the .bin filename).
-    :param forces_key: Key for forces in ``atoms.arrays`` (also the .bin filename).
-    :param stress_key: Key for stress in ``atoms.info`` (also the .bin filename).
-    :param magmoms_key: Key for magnetic moments in ``atoms.arrays`` (also .bin filename).
-    :param has_forces: Whether to write a forces file.
-    :param has_stress: Whether to write a stress file.
-    :param has_magmoms: Whether to write an initial_magnetic_moments file.
-    :param fit_energy_baseline: If ``True``, fit per-element reference energies via NNLS,
-        subtract them from the stored energies, and write the fit to
-        ``<output_dir>/energy_baseline.json``.
-    :param apply_baseline_from: Path to a JSON file produced by a previous run with
-        ``fit_energy_baseline=True``.  The stored coefficients are subtracted from
-        energies (use this for validation/test splits).
-    """
     if fit_energy_baseline and apply_baseline_from is not None:
         raise ValueError(
             "--fit-energy-baseline and --apply-energy-baseline are mutually exclusive."
@@ -119,15 +79,13 @@ def extxyz_to_memmap(
     ns = len(structures)
     print(f"  {ns} structures found")
 
-    # Cumulative atom counts: na[0]=0, na[i+1]-na[i] = n_atoms in structure i
+    # cumulative atom counts na 0 0, na i+1 -na i n_atoms in structure i
     atom_counts = [len(s) for s in structures]
     na = np.zeros(ns + 1, dtype=np.int64)
     na[1:] = np.cumsum(atom_counts)
     total_atoms = int(na[-1])
 
-    # -----------------------------------------------------------------------
-    # Read all energies up front (needed for baseline fitting)
-    # -----------------------------------------------------------------------
+    # read all energies up front (needed for baseline fitting)
     raw_energies = np.zeros(ns, dtype=np.float64)
     for i, atoms in enumerate(structures):
         if energy_key in atoms.info:
@@ -141,9 +99,7 @@ def extxyz_to_memmap(
                     f"in atoms.info and no calculator attached."
                 )
 
-    # -----------------------------------------------------------------------
-    # Energy baseline
-    # -----------------------------------------------------------------------
+    # energy baseline
     baseline_info: dict | None = None
 
     if fit_energy_baseline:
@@ -212,15 +168,15 @@ def extxyz_to_memmap(
     for i, atoms in enumerate(structures):
         start, end = int(na[i]), int(na[i + 1])
 
-        # Structural
+        # structural
         a_mm[start:end] = atoms.numbers.astype(np.int32)
         x_mm[start:end] = atoms.get_positions().astype(np.float32)
         c_mm[i] = atoms.get_cell()[:].astype(np.float32)
 
-        # Energy (baseline already subtracted above)
+        # energy (baseline already subtracted above)
         e_mm[i, 0] = float(energies[i])
 
-        # Forces: raw forces (positive); MemmapDataset negates on read
+        # forces raw forces (positive) MemmapDataset negates on read
         if f_mm is not None:
             if forces_key in atoms.arrays:
                 f_mm[start:end] = atoms.arrays[forces_key].astype(np.float32)
@@ -233,9 +189,7 @@ def extxyz_to_memmap(
                     warn_forces += 1
                     f_mm[start:end] = 0.0
 
-        # Stress: stored as stress tensor (eV/Å³).
-        # MemmapDataset reads: strain_gradient = stress_stored * V
-        # Convention: stress_stored = -virial / V  so  strain_gradient = -virial
+        # stress stored as stress tensor (eV/Å³)
         if s_mm is not None:
             stress_3x3 = _get_stress_3x3(atoms, stress_key)
             if stress_3x3 is not None:
@@ -244,7 +198,7 @@ def extxyz_to_memmap(
                 warn_stress += 1
                 s_mm[i] = 0.0
 
-        # Initial magnetic moments: per-atom scalar
+        # initial magnetic moments per-atom scalar
         if m_mm is not None:
             if magmoms_key in atoms.arrays:
                 m_mm[start:end, 0] = atoms.arrays[magmoms_key].astype(np.float32)
@@ -293,13 +247,6 @@ def extxyz_to_memmap(
 
 
 def _get_stress_3x3(atoms, stress_key: str):
-    """Return a (3, 3) stress tensor (eV/Å³) or None if unavailable.
-
-    Priority:
-    1. ``atoms.info[stress_key]`` — 6-element Voigt or (3,3) array
-    2. ``atoms.info["virial"]`` — converted via  stress = -virial / volume
-    3. Calculator ``results["stress"]`` — Voigt 6-vector
-    """
     if stress_key in atoms.info:
         raw = np.asarray(atoms.info[stress_key], dtype=float)
         if raw.shape == (6,):
@@ -330,8 +277,7 @@ def _get_stress_3x3(atoms, stress_key: str):
 
 
 def _voigt6_to_3x3(v):
-    """Convert a Voigt 6-vector (xx, yy, zz, yz, xz, xy) to a (3,3) matrix."""
-    # ASE Voigt order: xx, yy, zz, yz, xz, xy
+    # ASE Voigt order xx, yy, zz, yz, xz, xy
     return np.array(
         [
             [v[0], v[5], v[4]],

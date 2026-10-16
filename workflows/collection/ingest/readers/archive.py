@@ -18,7 +18,7 @@ def _emit(atoms, src_file, idx):
 
 
 def read(path):
-    # path is a directory holding the extracted archive members.
+    # path is a directory holding the extracted archive members
     for dp, _, fns in os.walk(path):
         if "__MACOSX" in dp:
             continue

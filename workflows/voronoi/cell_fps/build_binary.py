@@ -30,13 +30,6 @@ def load_rowid(part_dir):
 
 
 def load_orders(name, is_cell_dir):
-    """(cell, configuration_id) -> (fps_order_in_cell, epsilon_sq) from the FPS output.
-
-    Keyed by cell as well as id: a duplicated row carries ~1e-7 of featurisation
-    jitter and can land in a different cell from its twin. Keying on the id alone
-    lets such a row inherit its twin's rank, which is a position in another cell
-    and meaningless here — FORMAT.md specifies -1 for that case.
-    """
     path = f"{FPS}/cell_{name}.parquet" if is_cell_dir else f"{FPS}/{name}.parquet"
     if not os.path.exists(path):
         return {}
@@ -67,8 +60,6 @@ def process(part_dir, name, is_cell_dir, offsets, dir_offsets, targets,
     local = (row_id - dir_offsets[directory]).astype(np.int32)
 
     # sources deleted from the release keep their plan entry (row_id offsets stay
-    # valid) but ship no rows; shift directory indices past them so they match
-    # release_directory_names.npy, which omits them
     for dead in sorted(deleted_sources):
         if (directory == dead).any():
             raise RuntimeError(f"row references deleted source {dead}")

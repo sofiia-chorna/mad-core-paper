@@ -1,27 +1,3 @@
-"""
-Count structures across a set of FAIRChem-style ASE LMDB (.aselmdb) files.
-
-Each .aselmdb file is opened via ase.db.connect() and queried for its row
-count. Counts are gathered in parallel across files (I/O-bound, threads
-are fine). Outputs a per-file count if requested and a grand total.
-
-Usage:
-    # Count all .aselmdb files under one directory
-    python count_lmdb.py omol/train/
-
-    # Multiple inputs (dirs, files, globs all accepted)
-    python count_lmdb.py omol/train/ omol/val/ omol/test/
-
-    # Show per-file count alongside the total
-    python count_lmdb.py omol/train/ --per-file
-
-    # Recurse into subdirs
-    python count_lmdb.py omol/ --recursive
-
-    # Adjust worker count (default: min(16, #files))
-    python count_lmdb.py omol/train/ --workers 32
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -34,7 +10,6 @@ from ase.db import connect
 
 
 def _discover(inputs: list[str], recursive: bool) -> list[Path]:
-    """Expand a mix of files / dirs / globs to a deduplicated sorted file list."""
     found: list[Path] = []
     seen: set[Path] = set()
     for inp in inputs:
@@ -50,7 +25,7 @@ def _discover(inputs: list[str], recursive: bool) -> list[Path]:
                 found.append(p)
                 seen.add(p)
         else:
-            # Try glob expansion from cwd
+            # try glob expansion from cwd
             for f in sorted(Path(".").glob(inp)):
                 if f.is_file() and f.suffix == ".aselmdb" and f not in seen:
                     found.append(f)
@@ -59,11 +34,9 @@ def _discover(inputs: list[str], recursive: bool) -> list[Path]:
 
 
 def _count_one(path: Path) -> tuple[Path, int, str | None]:
-    """Open one LMDB and return (path, count, error). Doesn't raise."""
     try:
         db = connect(str(path))
-        # ase.db.connect doesn't expose a uniform .count() for every backend,
-        # but len(db) works on the ASE LMDB backend used by FAIRChem.
+        # ase.db.connect doesn't expose a uniform .count() for every backend
         n = len(db)
         return path, int(n), None
     except Exception as e:
@@ -101,7 +74,7 @@ def main():
         for fut in as_completed(futs):
             results.append(fut.result())
 
-    # Sort for display
+    # sort for display
     if args.sort == "count":
         results.sort(key=lambda r: -r[1])
     elif args.sort == "size":

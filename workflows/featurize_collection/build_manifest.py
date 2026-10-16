@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 MANIFEST = os.path.join(HERE, "feat_manifest.txt")
 
 EXCLUDE_TOP = {"gdb13"}  # treated separately later
-# big-molecule datasets -> small batch (avoid OOM); matched as substring of the top-level dir
+# big-molecule datasets to small batch (avoid OOM) matched as substring of the top-level dir
 HEAVY = ("ODAC", "OMol25", "OC20", "OC22", "OC25", "solvated_protein",
          "Chig-AIMD", "OrbNet_Denali", "OMC25", "Open_Molecular_Crystals")
 KEEP_COLS = ("configuration_id,structure_hash,dataset_id,names,atomic_numbers,positions,"

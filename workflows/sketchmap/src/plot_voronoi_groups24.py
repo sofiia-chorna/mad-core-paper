@@ -1,18 +1,3 @@
-"""Production figure v2: level-24 tessellation on the projected 2^24 coreset.
-
-Differences to plot_voronoi_groups.py (level-20 landmarks), following MC's review:
-- points are the 2^24 coreset centers (projected map), sized by their LEVEL-24
-  Voronoi populations, so the 115M GDB-13 cell is visible as one gigantic point
-  and the MAD centers no longer inherit the population of the whole molecular blob
-- shown points are a population-weighted random sample (weight = pop^gamma,
-  Efraimidis-Spirakis keys, without replacement) plus the --always-top biggest
-  cells, so the heavy tail is picked up with certainty
-- one palette of five contrasting CVD-safe colors reused in every panel
-- within a panel all member datasets are pooled and drawn in a single scatter
-  sorted by population, so large points sit on top and datasets mix in z-order
-- points smaller and more transparent overall
-"""
-
 import argparse
 import collections
 
@@ -43,12 +28,10 @@ RENAME = {"Open_Molecular_Crystals_2025_OMC25": "OMC25",
           "Finding_new_crystal_compounds_using_chemical_similarity": "Chem. similarity"}
 
 # contrasting colors reused in every panel, drawn from the paper's palette (the red
-# is the fig-6 MAD rosy red); panels use at most the first three, checked for normal
-# + protan/deutan pair separation: min dE 27.8 / 19.9 / 12.8
 PALETTE5 = ["#C94E3F", "#00A79F", "#F0C93B", "#4B4A86", "#403C3A"]
 OTHER_COLOUR = "#7E7368"
 
-# members listed in the color order of PALETTE5 (first member = rosy red, ...)
+# members listed in the color order of PALETTE5 (first member rosy red, ...)
 GROUPS = [
     ("MAD-NEXT", [MAD_LABEL]),
     ("Bulk materials", ["OMat24", "Alexandria", "JARVIS"]),
@@ -57,10 +40,7 @@ GROUPS = [
     ("Catalysis and interfaces", ["Open Catalyst", "ODAC"]),
 ]
 # datasets drawn in a second pass above the panel's population order, so their many
-# small cells are not buried under the big high-throughput cells of other members
-# drawn in listed order above the panel's population z-order (last = very top)
 PANEL_TOP = {"Bulk materials": ["OMat24"]}
-# per panel, also lift the N biggest shown cells of a member into the top pass, so a
 # few of its landmark cells stay visible above the lifted dataset
 PANEL_TOP_BIGGEST = {"Bulk materials": {"JARVIS": 10000}}
 
@@ -130,8 +110,7 @@ def label_of(name):
 
 family = np.asarray([label_of(name) for name in source], dtype=object)
 
-# population-weighted sample without replacement (Efraimidis-Spirakis: smallest
-# -log(u)/w keys win), forced union with the --always-top biggest cells
+# population-weighted sample without replacement (Efraimidis-Spirakis smallest
 generator = np.random.default_rng(args.seed)
 weight = population ** args.gamma
 keys = -np.log(generator.random(N_CORESET)) / weight
@@ -149,10 +128,8 @@ full_counts = collections.Counter(family.tolist())
 size_fraction = (np.log10(population) / np.log10(population.max())) ** args.size_power
 marker_size = args.smin + (args.smax - args.smin) * size_fraction
 # opacity grows with cell size, so the big cells on top keep their true color
-# instead of alpha-blending with whatever sits underneath
 point_alpha = args.alpha_min + (args.alpha_max - args.alpha_min) * size_fraction
-# edge stroke also grows with cell size: the mass of tiny points carries almost no
-# outline (a dense edge layer darkens the pdf render), landmark cells keep theirs
+# edge stroke also grows with cell size the mass of tiny points carries almost no
 point_edge = args.edge_width * (0.15 + 0.85 * size_fraction)
 
 named = {name for _, members in GROUPS for name in members}
@@ -184,8 +161,7 @@ for index, (title, members) in enumerate(panels):
         in_panel = shown[mask]
         point_colour = np.asarray([colour_of[f] for f in shown_family[mask]],
                                   dtype=object)
-    # one scatter per panel, sorted by population: datasets mix in z-order and
-    # the biggest cells land on top; PANEL_TOP members get a second pass above
+    # the biggest cells land on top PANEL_TOP members get a second pass above
     priority = PANEL_TOP.get(title, [])
     panel_fam = shown_family[np.searchsorted(shown, in_panel)]
     lifted = np.full(in_panel.size, -1)

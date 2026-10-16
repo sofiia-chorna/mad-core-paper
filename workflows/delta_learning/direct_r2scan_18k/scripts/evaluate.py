@@ -38,7 +38,6 @@ def run_dir(stage):
     return runs[0]
 
 
-# standalone r2scan predictions of the validation best model, no DFT energy or force is added
 def evaluate(stage):
     run = run_dir(stage)
     exported = run / "model_best.pt"

@@ -16,9 +16,6 @@ big_families = ["OC20-IS2RES", "Open_Molecular_Crystals_2025_OMC25", "ANI-1", "A
 
 
 def dedup_shards(task):
-    """Keep first occurrence of each configuration_id across a shard list (in place).
-    cid-first: only the cid column is read to find dups; full rows are read only for
-    shards that actually contain duplicates (so 256 G of features aren't re-read)."""
     kind, fam, shards = task
     seen = set()
     raw = kept = 0
@@ -67,7 +64,7 @@ print("families changed (top 25):", flush=True)
 for dup, raw, kind, fam in sorted(changed, reverse=True)[:25]:
     print(f"  {kind:5} {fam:42s} -{dup:>9,} / {raw:>10,}  ({100 * dup / raw:.0f}%)", flush=True)
 
-# ---- rebuild manifest (deduped big + deduped small) ----
+# rebuild manifest (deduped big + deduped small)
 pool_shards = []
 for fam in big_families:
     pool_shards += sorted(glob.glob(f"{fps_root}/{fam}/with_features/*.parquet"))

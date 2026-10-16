@@ -14,6 +14,4 @@ set -euo pipefail
 cd ${DEV_ROOT}/phace-atomic/accrete/runs/madcore_10M
 source ${HOME}/venv-phace/bin/activate
 
-echo "start $(date -Is)"
 python build_full_10M.py
-echo "finish $(date -Is)"

@@ -43,9 +43,6 @@ def read(path):
         d = e.get("data", {})
         stress = np.asarray(d["stress"], float) if "stress" in d else None
         # mat_id is NOT globally unique for the pressure set (same material at
-        # multiple pressures, one per file) -> prefix the source-file stem so
-        # configuration_id stays unique per row. (pbesol mat_ids are already unique;
-        # the prefix is harmless there.)
         native = e.get("entry_id") or d.get("mat_id")
         stem = base.split(".")[0]
         source_id = f"{stem}:{native}" if native else None

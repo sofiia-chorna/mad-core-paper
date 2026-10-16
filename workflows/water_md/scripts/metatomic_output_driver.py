@@ -10,7 +10,6 @@ __DRIVER_NAME__ = "metatomic_output"
 __DRIVER_CLASS__ = "MetatomicOutputDriver"
 
 
-# the i-PI metatomic driver with a selectable energy output, conservative forces only, and a log of the geometries it receives
 class MetatomicOutputDriver(MetatomicDriver):
     def __init__(self, template, model, output="energy", geometry_log="", log_calls=0, *args, **kwargs):
         self.output = str(output)

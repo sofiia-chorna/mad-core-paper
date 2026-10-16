@@ -7,4 +7,4 @@ then 25 M structures (submit_fps_continue.sh, submit_fps_25M.sh). cut_2pow24 cut
 NOMAD entry ids.
 
 The raw FPS parquets and the enriched ones number fps_order differently, join on
-configuration_id. The run logs with the timings quoted in the SI table were deleted.
+configuration_id. The run logs of the accretion were not kept.

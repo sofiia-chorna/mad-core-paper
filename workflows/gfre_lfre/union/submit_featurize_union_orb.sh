@@ -17,6 +17,4 @@ source "$ROOT/venv-orb/bin/activate"
 export CACHED_PATH_CACHE_ROOT=$ROOT/orb_ckpt_cache
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-echo "STARTING $(date)"
 python -u "$ROOT/paper/figures/mad1.5_gfre_lfre_compare/featurize_orb_union_test.py"
-echo "ENDING $(date)"

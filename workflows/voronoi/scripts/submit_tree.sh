@@ -15,6 +15,4 @@ set -euo pipefail
 cd ${DEV_ROOT}/phace-atomic/voronoi/scripts
 source ${HOME}/venv-phace/bin/activate
 
-echo "start $(date -Is)"
 python build_center_tree.py
-echo "finish $(date -Is)"

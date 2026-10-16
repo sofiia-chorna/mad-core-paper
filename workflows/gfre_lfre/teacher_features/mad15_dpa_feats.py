@@ -29,7 +29,7 @@ if VARIANT not in ["LL", "BB"]:
     print(f"Error: unknown variant '{VARIANT}'. Available: ['LL', 'BB']")
     sys.exit(1)
 
-# optional: pass start/end indices to split work across multiple gpu jobs, then merge outputs
+# optional pass start/end indices to split work across multiple gpu jobs, then merge outputs
 START = int(sys.argv[3]) if len(sys.argv) > 3 else None
 END = int(sys.argv[4]) if len(sys.argv) > 4 else None
 
@@ -54,13 +54,11 @@ def extract_deepmd_features(structures, model_path, variant, device="cpu"):
     from collections import defaultdict
 
     dp = DeepPot(model_path)
-    # type_map gives the global element ordering the model was trained with (e.g. ['H','He','Li',...])
     # we must use these indices, not local per-structure ones
     type_map = dp.get_type_map()
     print(f"model type map ({len(type_map)} elements): {type_map[:10]}...")
 
-    # group by (natoms, is_periodic) — deepmd can't batch structures of different sizes,
-    # and mixing periodic/non-periodic in one call gives wrong neighbor lists
+    # group by (natoms, is_periodic) — deepmd can't batch structures of different sizes
     groups = defaultdict(list)
     for i, s in enumerate(structures):
         groups[(len(s), s.get_pbc().all())].append(i)
@@ -85,7 +83,7 @@ def extract_deepmd_features(structures, model_path, variant, device="cpu"):
 
             coords = np.stack([s.get_positions() for s in batch]).reshape(nframes, -1)
             cells = np.stack([s.get_cell().array for s in batch]).reshape(nframes, -1)
-            # mixed_type=True: each row of atom_types is the type indices for one frame
+            # mixed_type True each row of atom_types is the type indices for one frame
             atom_types = np.array(
                 [
                     [type_map.index(sym) for sym in s.get_chemical_symbols()]

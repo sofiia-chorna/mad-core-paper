@@ -1,12 +1,3 @@
-"""MAD-NEXT reader: one extended-XYZ file, many frames, mixed periodicity.
-
-Comment line carries Lattice= (periodic frames only), pbc=,
-Properties=species:S:1:pos:R:3:forces:R:3, corrected_energy= (the r2scan energy
-label we keep), plus raw energy/free_energy/stress/frame_id/subset (ignored).
-No native unique id -> source_id=None -> configuration_id is minted (unique per
-frame via frame_idx). Carries energy (corrected_energy) + forces; stress dropped
-(nan for the non-periodic half).
-"""
 from __future__ import annotations
 import os
 import re
@@ -17,8 +8,7 @@ from ase.data import atomic_numbers as ASE_Z
 from ..records import make_record
 from ._extxyz_common import iter_frames, parse_comment, parse_block_columns
 
-# capture the whole token (handles scientific notation incl. signed exponents,
-# e.g. 7.5e-05); float() does the parsing, so no float-format char-class to get wrong.
+# capture the whole token (handles scientific notation incl. signed exponents
 _CORR_E = re.compile(r'(?:^|\s)corrected_energy=(\S+)')
 
 

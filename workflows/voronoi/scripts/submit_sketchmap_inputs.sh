@@ -13,6 +13,4 @@
 set -euo pipefail
 cd ${DEV_ROOT}/phace-atomic/voronoi/scripts
 source ${HOME}/venv-phace/bin/activate
-echo "start $(date -Is)"
 python make_sketchmap_inputs.py
-echo "finish $(date -Is)"

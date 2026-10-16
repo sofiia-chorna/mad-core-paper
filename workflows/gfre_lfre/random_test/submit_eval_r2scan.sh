@@ -17,7 +17,5 @@ HERE=$ROOT/paper/figures/mad1.5_gfre_lfre_compare/random_test
 
 export OMP_NUM_THREADS=8
 
-echo "STARTING $(date) on $(hostname)"
 cd $HERE
 $ROOT/phace-atomic/huggingface/ecumetric_work/venv-ecumetric/bin/python -u eval_r2scan.py
-echo "ENDING $(date)"

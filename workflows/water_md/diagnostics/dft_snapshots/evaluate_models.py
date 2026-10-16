@@ -46,7 +46,6 @@ def main():
         arrays[f"snapshots/{path.stem}/md_forces"] = md
         arrays[f"snapshots/{path.stem}/symbols"] = np.array(atoms.get_chemical_symbols())
 
-        # the forces the trajectory saw must equal baseline minus correction for the run's own potential
         condition = atoms.info["run"].rsplit("_seed", 1)[0]
         combined = values["baseline"]["forces"].copy()
         if condition != "baseline":

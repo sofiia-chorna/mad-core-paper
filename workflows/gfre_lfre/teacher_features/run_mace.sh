@@ -11,12 +11,9 @@
 #SBATCH --account=cosmo
 #SBATCH --partition=h100
 
-echo STARTING AT `date`
-
 cd ${KUMA_WORK_ROOT}
 
 source ~/.bashrc
 conda activate mace
 python3 scripts/feats/mad15/mad15_mace_feats.py mace-omat-0-medium LL
 
-echo FINISHED at `date`

@@ -7,11 +7,6 @@ import numpy as np
 sys.path.insert(0, "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/voronoi_weighted/pbe_20k/audit/batchdep")
 from common_bd import XYZ, load_predictions, read_truth  # noqa: E402
 
-# test metrics with metatrain's definitions, from the prediction files already written by the evaluations (no new
-# inference): energy error per structure = |dE| / atoms (meV/atom), statistics over structures; force errors pooled over
-# all force components (x, y, z of every atom) of the test set (meV/A), as metatrain's force MAE and RMSE; p8 and SUP use
-# the same pooling; per structure caches for the maps hold the mean absolute force component error of each structure
-# usage: metatrain_metrics.py --round DIR --prefix scratch-s
 parser = argparse.ArgumentParser()
 parser.add_argument("--round", required=True)
 parser.add_argument("--prefix", required=True)

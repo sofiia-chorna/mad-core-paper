@@ -22,7 +22,6 @@ def featurize(frames, writer, model_name):
     supported = set(type_map[:n_supported] if n_supported else type_map)
 
     # DPA3-Omol-Large takes charge and spin multiplicity per frame, its model card
-    # uses charge 0 and multiplicity 1 when nothing is specified
     charge_spin = [0.0, 1.0] if dp.has_chg_spin_ebd() else None
     print(f"{model_name} type map {len(type_map)}, supported {len(supported)}, "
           f"charge_spin {charge_spin}", flush=True)

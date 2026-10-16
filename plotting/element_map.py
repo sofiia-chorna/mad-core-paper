@@ -57,10 +57,9 @@ def parse_args():
     return p.parse_args()
 
 
-# ---------------------------- enrichment ----------------------------
+# enrichment
 
 def _bitmask_from_atomic_numbers(arr: np.ndarray, offsets: np.ndarray) -> np.ndarray:
-    """Vectorized (n, MAX_Z+1) bool mask from a flat atomic_numbers array + row offsets."""
     n = len(offsets) - 1
     mask = np.zeros((n, MAX_Z + 1), dtype=bool)
     for i in range(n):
@@ -71,11 +70,6 @@ def _bitmask_from_atomic_numbers(arr: np.ndarray, offsets: np.ndarray) -> np.nda
 
 def enrich(fps_path: str, manifest_path: str, enriched_path: Path,
            source_bitmask_path: Path):
-    """Build:
-      enriched_path        — (fps_order, element_mask) per pick, parquet
-      source_bitmask_path  — (MAX_Z+1,) int64 counts of structures per element in
-                              the FULL source (needed for ratio/percent modes), npz
-    """
     print(f"reading picks from {fps_path} ...")
     picks = pq.read_table(fps_path, columns=["fps_order", "configuration_id"])
     fo = picks.column("fps_order").to_numpy()
@@ -121,11 +115,10 @@ def enrich(fps_path: str, manifest_path: str, enriched_path: Path,
     })
     pq.write_table(out_tbl, enriched_path, compression="zstd")
     np.savez(source_bitmask_path, full_counts=full_counts, K=K, n_total=int(sum(
-        # n_total isn't strictly recoverable without extra scan; estimate from full_counts
+        # n_total isn't strictly recoverable without extra scan estimate from full_counts
         [full_counts.max()]
     )))
-    # the "n_total" stored above is a hack; recompute exactly by reading shard sizes
-    # cheap (parquet metadata, no row read):
+    # recompute n_total exactly by reading the shard sizes
     n_total = 0
     for sh in shards:
         n_total += pq.ParquetFile(sh).metadata.num_rows
@@ -134,7 +127,7 @@ def enrich(fps_path: str, manifest_path: str, enriched_path: Path,
     print(f"wrote {source_bitmask_path}  (n_total={n_total:,})")
 
 
-# ---------------------------- plotting ----------------------------
+# plotting
 
 def _text_color(rgba):
     r, g, b = rgba[0], rgba[1], rgba[2]
@@ -142,13 +135,11 @@ def _text_color(rgba):
 
 
 def _fmt_count(v) -> str:
-    """Plain round-number label: 200, 1k, 20k (matches the per-cell labels)."""
     v = int(round(v))
     return f"{v:,}" if v < 1000 else f"{v // 1000}k"
 
 
 def _nice_log_ticks(vmin: float, vmax: float) -> list[int]:
-    """Round 1/2/3/5/7 x 10^n values within [vmin, vmax], for a log colorbar."""
     if vmax <= vmin:
         return [int(round(vmin))]
     lo = int(math.floor(math.log10(vmin)))
@@ -160,14 +151,18 @@ def _nice_log_ticks(vmin: float, vmax: float) -> list[int]:
 
 
 def _add_colorbar(ax, cmap, norm, label, ticks=None, tick_labels=None):
-    x_min, x_max = ax.get_xlim(); y_min, y_max = ax.get_ylim()
-    ax_w = x_max - x_min; ax_h = y_max - y_min
+    x_min, x_max = ax.get_xlim()
+    y_min, y_max = ax.get_ylim()
+    ax_w = x_max - x_min
+    ax_h = y_max - y_min
     cb_data_w = 8.0
     cb_x0 = (7.0 - cb_data_w / 2 - x_min) / ax_w
     cb_y0 = (8.0 - y_min) / ax_h
-    cb_w = cb_data_w / ax_w; cb_h = 0.35 / ax_h
+    cb_w = cb_data_w / ax_w
+    cb_h = 0.35 / ax_h
     cax = ax.inset_axes([cb_x0, cb_y0, cb_w, cb_h])
-    sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm); sm.set_array([])
+    sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+    sm.set_array([])
     cbar = ax.figure.colorbar(sm, cax=cax, orientation="horizontal")
     if ticks is not None:
         cbar.set_ticks(ticks)
@@ -182,8 +177,7 @@ def _add_colorbar(ax, cmap, norm, label, ticks=None, tick_labels=None):
 def draw_pt(ax, el_counts: dict, title: str, mode: str, vmax_percent: float,
             vmax_counts: int | None = None, vmin_counts: int | None = None):
     if mode == "counts":
-        # Use shared vmin/vmax across panels if provided (so colormaps are
-        # comparable); otherwise auto-fit to this panel's data.
+        # comparable) otherwise auto-fit to this panel's data
         if vmax_counts is None:
             vmax_counts = max(el_counts.values()) if el_counts else 1
         if vmin_counts is None:
@@ -228,14 +222,16 @@ def draw_pt(ax, el_counts: dict, title: str, mode: str, vmax_percent: float,
             ax.text(x + 0.475, y + 0.22, label, ha="center", va="center",
                     fontsize=7, color=fc, alpha=0.9)
 
-    ax.set_xlim(-0.3, N_COLS + 0.3); ax.set_ylim(-0.5, N_ROWS + 0.5)
-    ax.set_aspect("equal"); ax.axis("off")
+    ax.set_xlim(-0.3, N_COLS + 0.3)
+    ax.set_ylim(-0.5, N_ROWS + 0.5)
+    ax.set_aspect("equal")
+    ax.axis("off")
     ax.set_title(title, fontsize=13, pad=2)
     _add_colorbar(ax, cmap, norm, cbar_label, ticks=cbar_ticks,
                   tick_labels=cbar_tick_labels)
 
 
-# ---------------------------- main ----------------------------
+# main
 
 def main():
     args = parse_args()
@@ -268,7 +264,6 @@ def main():
         raise SystemExit(f"no K in --ks <= {K_total}")
     print(f"plotting K = {ks}")
 
-    # broadcast --vmax-percent (1 → all panels, or one per panel)
     vps = list(args.vmax_percent)
     if len(vps) == 1:
         vps = vps * len(ks)

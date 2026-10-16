@@ -12,43 +12,23 @@
 #SBATCH --view=default
 #SBATCH --output=${DEV_ROOT}/phace-atomic/logs/%x_%j.out
 
-set -euo pipefail
-
-PROJ=${DEV_ROOT}/phace-atomic
-MAD_CORE=${DEV_ROOT}/mad-core
-VENV_PY=${HOME}/venv-phace/bin/python
-DATA_DIR=${DATA_DIR:-$PROJ/data/atomic_combined}
-OPTS=${OPTS:-$PROJ/options.yaml}
-
-mkdir -p "$PROJ/logs" "$PROJ/wandb"
+# the data is copied to the local disk of the node first, options.yaml reads it from /tmp/train
+cd ${DEV_ROOT}/phace-atomic
+source ${HOME}/venv-phace/bin/activate
 
 export MASTER_ADDR=$(hostname)
 export MASTER_PORT=25678
 export WORLD_SIZE=$SLURM_NPROCS
-export TORCH_NCCL_ASYNC_ERROR_HANDLING=1
 export OMP_NUM_THREADS=8
-export MPICH_GPU_SUPPORT_ENABLED=0
-export TRITON_HOME=/dev/shm/
-export CUDA_CACHE_DISABLE=1
-export WANDB_DIR=$PROJ/wandb
-export WANDB_MODE=${WANDB_MODE:-online}
+export WANDB_DIR=$PWD/wandb
 
-echo "start: $(date -Is)  data=$DATA_DIR  opts=$OPTS"
-
-srun -ul --ntasks=$SLURM_NTASKS --ntasks-per-node=$SLURM_NTASKS_PER_NODE --gpus-per-task=1 bash -c '
-    set -euo pipefail
-    if [[ $SLURM_LOCALID -eq 0 ]]; then
-        echo "[$(hostname)] local rank 0: copying '"$DATA_DIR"' -> /tmp/train"
-        rm -f /tmp/finish-signal
-        rm -rf /tmp/train
-        cp -rL "'"$DATA_DIR"'" /tmp/train
-        echo "[$(hostname)] local rank 0: copy done"
-        touch /tmp/finish-signal
+srun -ul --ntasks=$SLURM_NTASKS --gpus-per-task=1 bash -c '
+    if [ $SLURM_LOCALID = 0 ]; then
+        cp -rL data/atomic_combined /tmp/train
+        touch /tmp/copied
     fi
-    while [[ ! -f /tmp/finish-signal ]]; do sleep 1; done
-
-    source ${HOME}/venv-phace/bin/activate
-    cd "'"$PROJ"'"
-    "'"$VENV_PY"'" -m metatrain train "'"$OPTS"'" --restart auto
+    while [ ! -f /tmp/copied ]; do
+        sleep 1
+    done
+    python -m metatrain train options.yaml --restart auto
 '
-echo "finish: $(date -Is)"

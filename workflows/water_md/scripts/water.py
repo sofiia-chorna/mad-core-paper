@@ -20,7 +20,6 @@ SOURCE_PAGE = "https://atomistic-cookbook.org/examples/thermostats/thermostats.h
 SOURCE_ZIP = D / "source" / "thermostats.zip"
 SOURCE_PDB = D / "source" / "water_32.pdb"
 
-# the Cookbook start with its molecular centres scaled into the cubic cell of 1.0 g/cm3, copied byte for byte from the 1.0 g/cm3 experiment
 START = D / "source" / "water_32_1gcm3.extxyz"
 TARGET_DENSITY_G_CM3 = 1.0
 
@@ -32,7 +31,6 @@ BASELINE_OUTPUT = "energy"
 DELTA_OUTPUT = "mtt::delta_energy"
 DRIVER = D / "scripts" / "metatomic_output_driver.py"
 
-# the sha256 values, source, baseline and driver as verified in the LiPS experiment, the corrections from the shared split runs (best epochs 102 and 101)
 EXPECTED_SHA256 = {
     "source zip": "9a5aa16afcb5f5a61c84aff653b1abd93e1e8407c0fa49dc847841b5e30a9fdd",
     "source pdb": "6e87ba4bbb9df6aa330890c95d4573713f7003bee0c182ed8f6ecdb95aa0ee6b",
@@ -96,7 +94,6 @@ def sha256(path):
     return h.hexdigest()
 
 
-# one model, one energy output, conservative forces as the negative energy gradient, one structure per call
 class Potential:
     def __init__(self, path, output, device):
         self.model = mta.load_atomistic_model(str(path)).to(device)
@@ -140,7 +137,6 @@ def source_atoms():
     return atoms
 
 
-# the same positions for every seed, Maxwell-Boltzmann velocities at 300 K with the centre-of-mass momentum removed
 def water_start(seed):
     atoms = source_atoms()
     rng = np.random.default_rng(VELOCITY_SEED_BASE + seed)
@@ -164,7 +160,6 @@ def segments(run, name):
     return backups + current
 
 
-# frames of an i-PI extxyz output keyed by step, a later occurrence of a step replaces an earlier one
 def read_ipi_xyz(paths, columns):
     frames = {}
     occurrences = 0
@@ -204,7 +199,6 @@ def read_ipi_xyz(paths, columns):
     return frames, symbols, {"occurrences": occurrences, "unique_steps": len(frames), "damaged_frames": damaged}
 
 
-# property rows keyed by step, a later occurrence replaces an earlier one, rows cut by a kill are skipped
 def read_properties(run):
     rows = {}
     names = None

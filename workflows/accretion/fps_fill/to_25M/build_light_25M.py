@@ -105,10 +105,7 @@ def main():
         family_of_cid[configuration_id] = sorted(external)[0] if external else "mad-union"
     del external_families
 
-    # Anchor picks are walked in ACCRETE-hierarchy order (accrete.parquet fps_order),
-    # not the raw coreset seed order (which is arbitrary pool-row order). Fill picks keep
-    # their FPS-continuation fps_order. This matches build_full_10M and is what makes the
-    # decomposition-vs-K plots meaningful (otherwise the anchor's pool-row order fakes a wall).
+    # anchor picks are walked in ACCRETE-hierarchy order (accrete.parquet fps_order)
     pick_metadata = {}
     unresolved = 0
     for configuration_id, (fps_order, epsilon_sq, dataset_id) in pick_info.items():

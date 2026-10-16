@@ -51,9 +51,6 @@ def parse_args():
 
 
 def _as_numbers(v):
-    """Some colabfit exports (Materials_Project, Alexandria_*_PBE_3D) store
-    atomic_numbers as a STRING repr "[11, 11, 6, ...]" (arrow type string)
-    instead of list<int64>. Parse defensively so those datasets can featurize."""
     if isinstance(v, str):
         return [int(x) for x in ast.literal_eval(v)]
     return v
@@ -90,21 +87,21 @@ def build_phace_columns(energies, feats_mean, forces_flat, natoms_per_row, pa_dt
 
     energy_arr = pa.array(energies, type=pa_dtype)
 
-    # phace_features_bb_mean: list<f> with every row of length D
+    # phace_features_bb_mean list f with every row of length D
     feat_values = pa.array(feats_mean.reshape(-1), type=pa_dtype)
     feat_offsets = pa.array(np.arange(n + 1, dtype=np.int32) * D, type=pa.int32())
     feat_arr = pa.ListArray.from_arrays(feat_offsets, feat_values)
 
-    # phace_non_conservative_forces: list<list<f>>, outer = natoms, inner = 3
+    # phace_non_conservative_forces list list f , outer natoms, inner 3
     natoms = np.asarray(natoms_per_row, dtype=np.int64)
     total_atoms = int(natoms.sum())
 
-    # inner: every triplet is one (x,y,z); inner_offsets has length total_atoms+1
+    # inner every triplet is one (x,y,z) inner_offsets has length total_atoms+1
     inner_values = pa.array(forces_flat.reshape(-1), type=pa_dtype)
     inner_offsets = pa.array(np.arange(total_atoms + 1, dtype=np.int32) * 3, type=pa.int32())
     inner_arr = pa.ListArray.from_arrays(inner_offsets, inner_values)
 
-    # outer: row i has natoms[i] triplets
+    # outer row i has natoms i triplets
     outer_offsets = pa.array(
         np.concatenate(([0], np.cumsum(natoms))).astype(np.int32),
         type=pa.int32(),
@@ -135,7 +132,7 @@ def build_context(args):
         nl_calculators = vesin_metatomic.neighbor_lists_for_model(length_unit, model)
         requested_nls = None
     else:
-        # ase backend: route NL through vesin.ase_neighbor_list (correct on vesin 0.5.3)
+        # ase backend route NL through vesin.ase_neighbor_list (correct on vesin 0.5.3)
         import vesin
         import nl_ase
         nl_calculators = None
@@ -183,7 +180,7 @@ def featurize_file(args, ctx, parquet, output, batch_size):
     n_total = pf.metadata.num_rows
     log(f"source: {n_total} rows in {pf.num_row_groups} row group(s)")
 
-    # Output schema = kept input columns + 3 phace columns (built once, used for the writer)
+    # output schema kept input columns + 3 phace columns (built once, used for the writer)
     src_schema = pf.schema_arrow
     keep_cols = None
     if args.keep_cols:
@@ -220,7 +217,7 @@ def featurize_file(args, ctx, parquet, output, batch_size):
             src_table = pa.Table.from_batches([src_batch])
             n_src_total += src_table.num_rows
 
-            # row pre-filter (before inference): drop oversized structures
+            # row pre-filter (before inference) drop oversized structures
             if args.max_nsites is not None and "nsites" in src_table.schema.names:
                 before = src_table.num_rows
                 src_table = src_table.filter(pc.less_equal(src_table.column("nsites"), args.max_nsites))
@@ -233,7 +230,7 @@ def featurize_file(args, ctx, parquet, output, batch_size):
             systems = systems_from_table(src_table)
             t_build_total += time.time() - t
 
-            # ---- per-chunk inference accumulators ----
+            # per-chunk inference accumulators
             energies = np.empty((n_chunk,), dtype=np_dtype)
             feats_mean = None  # allocated on first batch once we know D
             natoms_per_row = np.empty((n_chunk,), dtype=np.int64)
@@ -285,7 +282,7 @@ def featurize_file(args, ctx, parquet, output, batch_size):
 
             t_inf_total += time.time() - t_inf
 
-            # ---- build chunk's phace columns + write ----
+            # build chunk's phace columns + write
             t = time.time()
             forces_flat = np.concatenate(forces_chunks, axis=0)
             del forces_chunks

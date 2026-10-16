@@ -1,11 +1,3 @@
-"""Multi-node tiled sketch-map fit.
-
-Every rank runs the identical scipy L-BFGS. Each evaluation a rank computes only
-its own row block, then all_reduce sums the stress and gradient -- so every rank
-sees identical values, takes identical optimiser steps and stays in lockstep
-without any master/worker signalling. Only rank 0 writes output.
-"""
-
 import argparse
 import json
 import os

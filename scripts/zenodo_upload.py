@@ -5,8 +5,6 @@ import sys
 import urllib.request
 
 # uploads the release files to an existing Zenodo draft and sets its met
-# usage  python scripts/zenodo_upload.py <deposition id> dist/1.0.0 docs
-# the token is read from the ZENODO_TOKEN variable or from ~/.zenodo_tok
 
 API = "https://zenodo.org/api"
 
@@ -32,6 +30,9 @@ def request(method, url, data=None, content_type="application/json"):
     if data is not None:
         headers["Content-Type"] = content_type
 
+    if hasattr(data, "read"):
+        headers["Content-Length"] = str(os.fstat(data.fileno()).st_size)
+
     req = urllib.request.Request(url, data=data, method=method, headers=headers)
 
     with urllib.request.urlopen(req) as reply:
@@ -53,13 +54,8 @@ def main():
         sys.exit("this deposition is already published, make a new version first")
 
     bucket = draft["links"]["bucket"]
-    present = {f["filename"] for f in draft.get("files", [])}
 
     for name in sorted(os.listdir(args.folder)):
-        if name in present:
-            print("already there", name)
-            continue
-
         path = os.path.join(args.folder, name)
         print("uploading", name, os.path.getsize(path), "bytes")
 

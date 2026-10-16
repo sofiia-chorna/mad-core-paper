@@ -34,7 +34,6 @@ def post(payload, tries=8):
 
 
 def fetch_upload(task):
-    # every entry of one upload, page by page, keeping the released ones, all credit fields uncapped
     upload, wanted = task
     path = f"{CREDIT}/{upload}.json.gz"
     if os.path.exists(path):
@@ -126,7 +125,6 @@ def main():
             entry, upload, _ = line.rstrip("\n").split("\t")
             by_upload[upload].add(entry)
     tasks = sorted(by_upload.items(), key=lambda t: -len(t[1]))
-    # --small-first works from the smallest uploads up, so a second worker can run next to the first
     order = tasks[::-1] if "--small-first" in sys.argv else tasks
     todo = [t for t in order if not os.path.exists(f"{CREDIT}/{t[0]}.json.gz")]
     print(f"{len(tasks)} uploads, {len(todo)} to fetch", flush=True)
@@ -134,7 +132,6 @@ def main():
     failed = []
     threads = int(sys.argv[sys.argv.index("--threads") + 1]) if "--threads" in sys.argv else THREADS
 
-    # --batched: uploads below SMALL released entries go in groups of at most 200 uploads and BATCH entries
     if "--batched" in sys.argv:
         SMALL, BATCH = 5000, 20000
         small = [t for t in todo if len(t[1]) < SMALL][::-1]

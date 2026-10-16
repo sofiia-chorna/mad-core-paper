@@ -16,10 +16,6 @@ BATCH_SIZE = 128
 
 
 def filter_structures(structures, type_map):
-    """Keep only structures with elements supported by the model.
-    
-    DPA3-Omol-Large was trained on 83 elements; type_map may contain padding.
-    """
     supported_elements = set(type_map[:83])
     kept, kept_ids = [], []
     for i, s in enumerate(structures):
@@ -38,8 +34,6 @@ def extract_features(structures, dp):
     type_map = dp.get_type_map()
 
     # group by (natoms, is_periodic) — batches must have uniform natoms AND uniform
-    # periodicity, because cells is either None (non-PBC) or a full array (PBC) for
-    # the whole batch. Mixing them in one call would require fake cells.
     groups = defaultdict(list)
     for i, s in enumerate(structures):
         is_periodic = bool(s.get_pbc().all())

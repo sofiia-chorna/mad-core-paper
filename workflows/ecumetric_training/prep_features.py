@@ -111,7 +111,7 @@ def write_teacher_raw(teacher, dim, na_list, out_bin):
         if raw.shape[1] != dim:
             raise SystemExit(f"{subset}/{teacher}: dim {raw.shape[1]} != {dim}")
         if ids is None:
-            # full teacher (no ids): rows = atoms of structs 0..n_struct-1, in order
+            # full teacher (no ids) rows atoms of structs 0..n_struct-1, in order
             dst[aoff:aoff + n_at] = raw[:n_at]
             n_nan = 0
         else:

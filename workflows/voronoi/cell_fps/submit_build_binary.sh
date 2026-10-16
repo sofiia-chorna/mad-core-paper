@@ -15,7 +15,6 @@ source ${HOME}/venv-phace/bin/activate
 export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-16}"
 OUT=${DEV_ROOT}/phace-atomic/voronoi/out/cell_fps/binary
 total_tasks=$((SLURM_NNODES * 16))
-echo "start $(date -Is) apply=${APPLY:-0}"
 if [ "${APPLY:-0}" = "1" ]; then
   srun -ul --ntasks="$total_tasks" bash -c \
     "python build_binary.py --task-id \$SLURM_PROCID --num-tasks $total_tasks --out $OUT --apply"
@@ -23,4 +22,3 @@ else
   srun -ul --ntasks="$total_tasks" bash -c \
     "python build_binary.py --task-id \$SLURM_PROCID --num-tasks $total_tasks --out $OUT"
 fi
-echo "finish $(date -Is)"

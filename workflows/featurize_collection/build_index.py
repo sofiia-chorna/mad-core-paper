@@ -86,13 +86,13 @@ PhACE features (checkpoint **phace_atomic_ep92.pt**, md5 `{md5}`) for every stru
 - Layout mirrors the source tree; one parquet per source file (the 3.6M mcloudarchive__jk-9v file
   is split into `part_0000__pNN.parquet`).
 
-## Columns
+# # Columns
 - Provenance: `configuration_id` (+ `structure_hash`, `dataset_id`, `names` where present)
 - Geometry: `atomic_numbers`, `positions`, `cell`, `pbc`, `nsites`
 - ZBL: `zbl_max_force`, `zbl_energy_per_atom`, `zbl_max_atomic_energy`
 - PhACE (ep92): `phace_energy`, `phace_features_bb_mean` (mean+std, 512), `phace_non_conservative_forces`
 
-## Policy
+# # Policy
 - No DFT labels, no `passed`. No ZBL filter at storage (apply zbl/nsites thresholds at FPS time).
 - Only filter: `nsites > 1000` skipped (featurizer OOM). gdb13 excluded from the zbl source tree and
   featurized separately from its full source.

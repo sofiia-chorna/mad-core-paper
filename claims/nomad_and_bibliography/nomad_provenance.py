@@ -43,7 +43,6 @@ def post(endpoint, payload, tries=8):
 
 
 def row_entry_ids():
-    # one NOMAD entry id per released row, from the source reference or, without one, from the source file
     offsets = np.load(f"{NOMAD}/source_reference_offsets.npy")
     blob = np.fromfile(f"{NOMAD}/source_reference_bytes.bin", dtype=np.uint8).tobytes()
     ids, pending = [], defaultdict(dict)
@@ -108,7 +107,6 @@ def main():
     distinct = sorted(set(ids))
     entries, uploads = load_cache()
 
-    # --offline writes the tables from the caches alone, upload columns stay empty for entries not fetched yet
     offline = "--offline" in sys.argv
     missing = [e for e in distinct if e not in entries]
     if missing and not offline:
@@ -149,7 +147,6 @@ def main():
     # bib keys of the cited NOMAD DOIs
     bib = dict((d.upper(), k) for k, d in re.findall(r"@misc\{(\d+),\n\s*doi = \{([^}]*)\}", open(f"{PAPER}/biblio/nomad.bib").read()))
 
-    # dataset DOIs of each entry from the DOI sweep of nomad_citations.py, which needs no per-entry query
     entry_dois = defaultdict(set)
     for doi, result in json.load(gzip.open(f"{CLAIMS}/out/nomad_doi_entries.json.gz", "rt")).items():
         for entry in result["entries"]:

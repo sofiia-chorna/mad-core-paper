@@ -1,4 +1,3 @@
-# versions of the level 2 and 3 workflows as recorded in the sources, not rerun
 torch==2.9.1
 metatrain==2026.4
 metatomic-torch==0.1.17

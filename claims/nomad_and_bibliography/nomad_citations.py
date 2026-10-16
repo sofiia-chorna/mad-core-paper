@@ -18,8 +18,6 @@ CLAIMS = f"{PAPER}/claims"
 OUT = f"{CLAIMS}/out/nomad_citations.json"
 CACHE = f"{CLAIMS}/out/nomad_doi_entries.json.gz"
 
-# bib keys kept whatever their overlap: the descriptive title of each identical pair, and graphene and defective
-# graphene, which would otherwise be credited only through the dataset titled "Test-22.08.2018-3" (key 112)
 ALWAYS_KEEP = ["0", "1", "52", "96", "157", "175", "462"]
 
 API = "https://nomad-lab.eu/prod/v1/api/v1"
@@ -41,7 +39,6 @@ def post(endpoint, payload, tries=6):
 
 
 def fetch_doi(doi):
-    # every entry carrying this dataset DOI, with the dataset records of the first page for names and ids
     entries, after, datasets = [], None, {}
     while True:
         pagination = {"page_size": PAGE}
@@ -97,7 +94,7 @@ def bib_entries(path):
     text = open(path).read()
     out = []
     for key, body in re.findall(r"@\w+\{([^,]+),(.*?)\n\}", text, re.S):
-        # NOMAD datasets have numeric keys; the original sources kept in the same file do not
+        # NOMAD datasets have numeric keys the original sources kept in the same file do not
         if not key.strip().isdigit():
             continue
         fields = dict((k.lower(), v.strip()) for k, v in re.findall(r"(\w+)\s*=\s*\{(.*?)\}\s*,?\s*$", body, re.M))
@@ -154,7 +151,6 @@ def main():
         for info in per_doi[d]["datasets"].values():
             names[info["dataset_name"]].append(d)
 
-    # minimal citation set: largest DOIs first, a DOI is kept unless one kept DOI already holds all its released entries
     keys = {e["doi"]: e["key"] for e in bib}
     if os.path.exists(f"{CLAIMS}/out/nomad_bib_keys_before_dedup.json"):
         keys.update(json.load(open(f"{CLAIMS}/out/nomad_bib_keys_before_dedup.json")))

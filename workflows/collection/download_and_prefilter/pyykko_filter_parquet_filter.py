@@ -1,34 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run the Pyykko covalent-radius filter on every ColabFit dataset under a
-parent directory. Each dataset has the standard layout:
-
-    colabfit_<name>/
-        ds.parquet              # dataset metadata
-        co/co_*.parquet         # configurations  <- this is what we filter
-        po/po_*.parquet         # property_objects (optional)
-
-Output mirrors the input layout under --out-root:
-
-    out_root/
-        colabfit_<name>/
-            co_passed/co_*.parquet
-            co_rejected/co_*.parquet   (only when there are rejections)
-            stats.json
-
-A combined audit CSV at out_root/audit.csv records per-dataset pass/reject
-counts and top rejection causes. Idempotent: datasets with an existing
-stats.json are skipped on rerun.
-
-Usage:
-    python run_filter_all.py colabfit_data/ out_filtered/ --workers 16
-
-The --workers flag is for *within-dataset* parallelism (one process per
-co/ shard inside each dataset). Datasets are processed sequentially in
-the outer loop because most of them have only a few shards; if you have
-hundreds of single-shard datasets you'd want outer-loop parallelism
-instead, but that's a different driver.
-"""
 
 from __future__ import annotations
 
@@ -40,14 +10,13 @@ import time
 import traceback
 from pathlib import Path
 
-# Reuse our existing modules.
+# reuse our existing modules
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pyykko_filter_parquet import filter_parquet, filter_parquet_parallel
 
 
 def find_datasets(root: Path, pattern: str = "colabfit_*",
                    input_subdir: str = "co") -> list[Path]:
-    """Find every <root>/<pattern>/<input_subdir>/ subdirectory."""
     out = []
     for d in sorted(root.iterdir()):
         if not d.is_dir():
@@ -61,7 +30,6 @@ def find_datasets(root: Path, pattern: str = "colabfit_*",
 
 
 def already_done(out_dataset_dir: Path) -> bool:
-    """A dataset is considered done if its stats.json exists."""
     return (out_dataset_dir / "stats.json").exists()
 
 
@@ -73,7 +41,6 @@ def filter_one_dataset(
     backend: str,
     input_subdir: str = "co",
 ) -> dict:
-    """Filter a single dataset directory. Returns a stats dict."""
     co_dir   = in_ds_dir / input_subdir
     out_pass = out_ds_dir / "co_passed"
     out_rej  = out_ds_dir / "co_rejected"
@@ -87,7 +54,7 @@ def filter_one_dataset(
             scale=scale,
             backend=backend,
         )
-        # per_shard contains tuples (shard_path, stats); strip down for JSON.
+        # per_shard contains tuples (shard_path, stats) strip down for JSON
         stats["per_shard"] = [
             {"shard": Path(p).name,
              "passed": s["passed"],
@@ -96,7 +63,7 @@ def filter_one_dataset(
         ]
     else:
         out_pass.mkdir(parents=True, exist_ok=True)
-        # Single output file when serial.
+        # single output file when serial
         out_file = out_pass / "passed.parquet"
         rej_file = out_rej / "rejected.parquet"
         out_rej.mkdir(parents=True, exist_ok=True)
@@ -108,7 +75,7 @@ def filter_one_dataset(
             quiet=True,
         )
 
-    # Convert Counter to plain dict for JSON.
+    # convert Counter to plain dict for JSON
     stats["rejection_pairs"] = {
         f"{a}-{b}": c for (a, b), c in stats["rejection_pairs"].most_common()
     }
@@ -116,7 +83,6 @@ def filter_one_dataset(
 
 
 def write_audit_csv(audit_path: Path, rows: list[dict]) -> None:
-    """Write/overwrite a CSV summary of all processed datasets."""
     if not rows:
         return
     fields = ["dataset", "status", "total", "passed", "rejected",
@@ -129,7 +95,6 @@ def write_audit_csv(audit_path: Path, rows: list[dict]) -> None:
 
 
 def load_existing_audit(audit_path: Path) -> list[dict]:
-    """Read existing audit rows so that a rerun preserves prior dataset entries."""
     if not audit_path.exists():
         return []
     rows = []
@@ -196,7 +161,7 @@ def main():
             print(f"  {tag} {d.name}")
         sys.exit(0)
 
-    # Load existing audit so reruns preserve earlier entries for skipped sets.
+    # load existing audit so reruns preserve earlier entries for skipped sets
     existing = {r["dataset"]: r for r in load_existing_audit(audit_path)}
     audit_rows: list[dict] = list(existing.values())
 
@@ -225,11 +190,11 @@ def main():
             stats["elapsed_s"] = round(elapsed, 2)
             stats["scale"] = args.scale
 
-            # Persist per-dataset stats.
+            # persist per-dataset stats
             with (out_ds_dir / "stats.json").open("w") as f:
                 json.dump(stats, f, indent=2)
 
-            # Append to in-memory audit list (overwriting any earlier entry).
+            # append to in-memory audit list (overwriting any earlier entry)
             top = list(stats["rejection_pairs"].items())[:3]
             top_str = "; ".join(f"{p}:{c}" for p, c in top)
             pct = 100 * stats["rejected"] / max(stats["total"], 1)
@@ -267,7 +232,7 @@ def main():
             }
             n_fail += 1
 
-        # Re-write audit after every dataset so progress is durable.
+        # re-write audit after every dataset so progress is durable
         write_audit_csv(audit_path, list(existing.values()))
 
     dt = time.time() - t_overall

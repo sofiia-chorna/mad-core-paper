@@ -1,12 +1,3 @@
-"""
-Extract DPA-3.1 per-atom features from the MAD-1.5 dataset.
-Handles both periodic and non-periodic structures (cells=None for molecules).
-
-Usage:
-    python3 scripts/feats/mad15/mad15_dpa31_feats.py <TASK> [LL|BB]
-    e.g. python3 scripts/feats/mad15/mad15_dpa31_feats.py Omat24 LL
-"""
-
 import os
 import sys
 from collections import defaultdict

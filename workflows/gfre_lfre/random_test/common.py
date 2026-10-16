@@ -113,7 +113,6 @@ class Writer:
               f"excluded {counts or 'none'}", flush=True)
 
 
-# embed maps a list of atoms to the stacked per atom features, failed batches retry one by one
 def run_batched(frames, writer, embed, batch, groups=None):
     if groups is None:
         groups = [list(range(len(frames)))]

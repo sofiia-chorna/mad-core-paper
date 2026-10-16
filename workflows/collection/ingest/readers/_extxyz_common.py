@@ -1,10 +1,3 @@
-"""Shared, fast (ASE-free) extended-XYZ parsing for the OC20 and nomad readers.
-
-ASE's extxyz reader is unusably slow here (~tens of seconds/frame) and these
-files hold thousands of frames each, so we parse the blocks by hand: a frame is
-`natoms\\n<comment>\\n<natoms atom lines>`. The comment line carries
-`Lattice="..."`, `pbc="..."`, optional `energy=`, `Properties=...`, `entry_id=`.
-"""
 from __future__ import annotations
 import re
 import numpy as np
@@ -18,7 +11,6 @@ _STRUCTID = re.compile(r'structure_id=(\S+)')   # OPTIMADE xyz (mcloud/oqmd/...)
 
 
 def parse_properties(props_str):
-    """'species:S:1:pos:R:3:forces:R:3' -> {name: (start_col, count)}."""
     toks = props_str.split(":")
     cols = {}
     start = 0
@@ -47,7 +39,6 @@ def parse_comment(comment):
 
 
 def iter_frames(stream):
-    """Yield (natoms, comment, atom_lines) per frame from a text stream."""
     while True:
         first = stream.readline()
         if not first:
@@ -62,11 +53,6 @@ def iter_frames(stream):
 
 
 def parse_block_columns(block, natoms, col_specs):
-    """Extract requested columns from atom lines.
-
-    col_specs: list of (key, start_col, ncol). Returns dict key -> ndarray.
-    'species' (S, 1 col) is returned as a list[str]; numeric cols as float arrays.
-    """
     out = {k: (np.empty((natoms, n)) if k != "species" else [None] * natoms)
            for k, _s, n in col_specs}
     for i in range(natoms):

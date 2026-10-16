@@ -15,8 +15,5 @@ cd ${DEV_ROOT}/phace-atomic/voronoi/scripts/record_populations
 
 export OPENBLAS_NUM_THREADS=1
 export OMP_NUM_THREADS=1
-export PYTHONUNBUFFERED=1
-export PYTHONDONTWRITEBYTECODE=1
-export HDF5_USE_FILE_LOCKING=FALSE
 
 srun --ntasks=1 --cpus-per-task=288 /usr/bin/python3.11 populations_level20_record.py

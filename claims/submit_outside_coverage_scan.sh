@@ -15,8 +15,5 @@ set -euo pipefail
 
 cd ${DEV_ROOT}/paper/claims
 source ${HOME}/venv-phace/bin/activate
-export UENV_WARN_MIGRATE=1
 
-echo "start $(date -Is) on $(hostname)"
 python outside_coverage_scan.py 48
-echo "finish $(date -Is)"

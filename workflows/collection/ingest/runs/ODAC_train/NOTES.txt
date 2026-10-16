@@ -1,1 +1,0 @@
-ODAC (odac25) train_passed: 160 aselmdb (1.1T), periodic MOF+adsorbate, E+F. native id=row.unique_id. out=model_292/filtered/ODAC_train/.

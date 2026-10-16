@@ -16,8 +16,6 @@ STAGES = {
 def options(stage):
     text = TEMPLATE.read_text()
 
-    # the target is named apart from the pretrained energy so that metatrain prunes the pretrained head and starts a fresh one,
-    # the same head replacement the delta runs get through their mtt::delta_energy target; labels stay r2scan atomization energies and forces
     assert text.count("    energy:\n      key: atomization_energy\n") == 2
     text = text.replace("    energy:\n      key: atomization_energy\n", '    "mtt::r2scan_energy":\n      quantity: energy\n      key: atomization_energy\n')
     text = text.replace("direct-r2scan, full, delta-experiment", "direct-r2scan, full, direct-shared-split, fresh-head, corrected-attention-mask")

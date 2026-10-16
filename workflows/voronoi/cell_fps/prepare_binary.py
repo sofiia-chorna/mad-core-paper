@@ -43,7 +43,6 @@ def main():
     print(f"wrote center_configuration_id.npy  {centre.dtype}  {centre.shape}")
 
     # directory names in index order, omitting sources deleted from the release
-    # (build_binary shifts the per-row indices past them to match)
     with open(f"{OUT_ROOT}/plan.json") as fh:
         plan = json.load(fh)
     dead = set(plan.get("deleted_sources", {}).get("indices", ()))
@@ -63,7 +62,6 @@ def main():
         print(f"dry-run: per-row arrays would need ~{estimate / 1e9:.1f} GB")
         return
 
-    # real .npy files (header + data) so the format matches the spec and the
     # parallel builders can memmap them read-write
     for name, dtype in [("fps_order_in_cell", np.int32), ("epsilon_sq", np.float32),
                         ("release_directory", np.int16),

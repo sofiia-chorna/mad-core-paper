@@ -1,20 +1,3 @@
-"""
-Compute mean-pooled (per-structure) features from per-atom features.
-
-Usage:
-    python compute_mean_feats.py <DATASET_PATH> <FEATS_NPY> <OUTPUT_NPY> [--ids IDS_NPZ] [--splits SPLITS_JSON]
-
-Examples:
-    # Full dataset
-    python compute_mean_feats.py data/matpes/matpes_pbe.xyz data/matpes/mace/mace_ll.npy data/matpes/mace/mace_ll_mean.npy
-
-    # With filtered IDs (from MACE)
-    python compute_mean_feats.py data/matpes/matpes_pbe.xyz data/matpes/mace/mace_ll.npy data/matpes/mace/mace_ll_mean.npy --ids data/matpes/mace/mace_ids.npz
-
-    # Validation split only
-    python compute_mean_feats.py data/matpes/matpes_pbe.xyz data/matpes/mace/mace_ll_val.npy data/matpes/mace/mace_ll_val_mean.npy --splits data/matpes/MatPES-PBE-split.json.gz
-"""
-
 import os
 import sys
 import gzip
@@ -93,13 +76,13 @@ def main():
     print(f"  {n_structs_total} structures, {natoms_all.sum()} atoms total")
 
     if splits_path:
-        # Use validation split
+        # use validation split
         with gzip.open(splits_path, 'rt') as f:
             splits = json.load(f)
         kept = np.array(splits["valid"], dtype=np.int64)
         print(f"  Using validation split: {len(kept)} structures")
     elif ids_path:
-        # Use filtered IDs (e.g., from MACE)
+        # use filtered IDs (e.g., from MACE)
         kept = np.load(ids_path)["kept"]
         print(f"  Using filtered IDs: {len(kept)} structures")
     else:
@@ -119,12 +102,12 @@ def main():
 
     print("Mean-pooling per-atom → per-structure...")
     if nrows == total_atoms:
-        # full per-atom file: index by kept (works for any kept ordering)
+        # full per-atom file index by kept (works for any kept ordering)
         cum_all = np.concatenate(([0], np.cumsum(natoms_all)))
         starts = cum_all[kept]
         struct_feats = mean_pool(atom_feats, natoms_kept, starts)
     elif nrows == kept_atoms:
-        # pre-filtered file with rows already in `kept` order
+        # pre-filtered file with rows already in kept order
         struct_feats = mean_pool(atom_feats, natoms_kept)
     else:
         print(f"ERROR: atom count mismatch: file has {nrows} rows; "

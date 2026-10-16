@@ -1,23 +1,4 @@
 #!/usr/bin/env python3
-"""
-Bulk download structural data from OPTIMADE providers.
-
-Excludes: mc3d, alexandria, aflow, materials project, mpds, gnome.
-Fetches only structural fields. Uses async I/O for speed.
-Supports restart/resume via a state file.
-
-Output: one JSON-Lines file per (provider, database) pair under ./optimade_data/
-Each line is a JSON object with the OPTIMADE structure attributes.
-
-Usage:
-    pip install aiohttp tqdm
-    python optimade_bulk_download.py
-
-    # To force a fresh start (ignoring previous state):
-    python optimade_bulk_download.py --fresh
-
-Tune concurrency with MAX_CONCURRENT_TOTAL.
-"""
 
 import argparse
 import asyncio
@@ -32,13 +13,11 @@ from typing import Optional
 import aiohttp
 from tqdm import tqdm
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
+# config
 
 PROVIDERS_URL = "https://providers.optimade.org/v1/links"
 
-# Provider IDs to skip entirely
+# provider IDs to skip entirely
 EXCLUDE_PROVIDER_IDS = {
     "aflow",
     "mp",
@@ -50,8 +29,7 @@ EXCLUDE_PROVIDER_IDS = {
     "nmd",
 }
 
-# Sub-database URL / ID patterns to skip (matched against base_url AND db_id)
-# Catches providers that appear as sub-databases of umbrella providers
+# sub-database URL / ID patterns to skip (matched against base_url AND db_id)
 EXCLUDE_DB_PATTERNS = [
     re.compile(r"alexandria", re.IGNORECASE),
     re.compile(r"mc3d", re.IGNORECASE),
@@ -62,7 +40,7 @@ EXCLUDE_DB_PATTERNS = [
     re.compile(r"google[-_]?deepmind", re.IGNORECASE),
 ]
 
-# Only request these OPTIMADE-standard structural properties
+# only request these OPTIMADE-standard structural properties
 STRUCTURAL_FIELDS = [
     "lattice_vectors",
     "cartesian_site_positions",
@@ -95,27 +73,13 @@ logging.basicConfig(
 log = logging.getLogger("optimade_dl")
 
 
-# ---------------------------------------------------------------------------
-# State management for restart/resume
-# ---------------------------------------------------------------------------
+# state management for restart/resume
 
 def db_key(provider_id: str, db_id: str) -> str:
-    """Canonical key for a (provider, database) pair in the state file."""
     return f"{provider_id}::{db_id}"
 
 
 def load_state() -> dict:
-    """Load state from disk. Returns empty dict if no state file exists.
-
-    State format per database:
-    {
-        "status": "done" | "in_progress",
-        "n_downloaded": int,
-        "n_skipped": int,
-        "next_url": str | null,      # pagination cursor to resume from
-        "base_url": str,
-    }
-    """
     if STATE_FILE.exists():
         try:
             with open(STATE_FILE) as f:
@@ -126,16 +90,13 @@ def load_state() -> dict:
 
 
 def save_state(state: dict) -> None:
-    """Atomically write state to disk (write-then-rename)."""
     tmp = STATE_FILE.with_suffix(".tmp")
     with open(tmp, "w") as f:
         json.dump(state, f, indent=2)
     tmp.rename(STATE_FILE)
 
 
-# ---------------------------------------------------------------------------
-# Data classes
-# ---------------------------------------------------------------------------
+# data classes
 
 @dataclass
 class DatabaseInfo:
@@ -157,12 +118,9 @@ class DownloadStats:
     elapsed: float = 0.0
 
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
+# helpers
 
 def should_exclude(url: str, db_id: str = "") -> bool:
-    """Check if a base_url or db_id matches any exclusion pattern."""
     text = f"{url} {db_id}"
     return any(p.search(text) for p in EXCLUDE_DB_PATTERNS)
 
@@ -172,11 +130,6 @@ def safe_filename(s: str) -> str:
 
 
 def has_structural_data(attrs: dict) -> bool:
-    """Check if an entry actually contains usable structural data.
-
-    Rejects entries where the provider omits lattice/positions behind a
-    paywall (e.g. MPDS) or where the data is genuinely missing.
-    """
     lv = attrs.get("lattice_vectors")
     pos = attrs.get("cartesian_site_positions")
     if not lv and not pos:
@@ -185,7 +138,6 @@ def has_structural_data(attrs: dict) -> bool:
 
 
 def extract_next_url(page_data: dict) -> Optional[str]:
-    """Extract the next pagination URL from an OPTIMADE response."""
     links = page_data.get("links", {})
     nxt = links.get("next")
     if isinstance(nxt, str) and nxt:
@@ -201,7 +153,6 @@ async def fetch_json(
     semaphore: asyncio.Semaphore,
     retries: int = MAX_RETRIES,
 ) -> Optional[dict]:
-    """GET a URL and return parsed JSON, with retries + exponential backoff."""
     for attempt in range(retries):
         try:
             async with semaphore:
@@ -239,12 +190,9 @@ async def fetch_json(
     return None
 
 
-# ---------------------------------------------------------------------------
-# Provider / database discovery
-# ---------------------------------------------------------------------------
+# provider / database discovery
 
 async def discover_providers(session, sem) -> list[dict]:
-    """Fetch the OPTIMADE providers list."""
     data = await fetch_json(session, PROVIDERS_URL, sem)
     if data is None:
         raise RuntimeError("Cannot fetch providers list from " + PROVIDERS_URL)
@@ -256,7 +204,6 @@ async def discover_sub_databases(
     sem: asyncio.Semaphore,
     provider: dict,
 ) -> list[DatabaseInfo]:
-    """Given a provider entry, discover its sub-databases via the index meta-db."""
     pid = provider["id"]
     attrs = provider.get("attributes", {})
     pname = attrs.get("name", pid)
@@ -266,13 +213,13 @@ async def discover_sub_databases(
         log.info("Provider %s has no base_url, skipping", pid)
         return []
 
-    # The index meta-database lists sub-databases at /v1/links
+    # the index meta-database lists sub-databases at /v1/links
     links_url = f"{base_url}/v1/links"
     data = await fetch_json(session, links_url, sem)
 
     databases = []
     if data is None:
-        # Maybe this provider serves structures directly (no sub-databases)
+        # maybe this provider serves structures directly (no sub-databases)
         test_url = f"{base_url}/v1/structures?page_limit=1"
         test = await fetch_json(session, test_url, sem)
         if test and "data" in test:
@@ -320,7 +267,6 @@ async def discover_all_databases(
     session: aiohttp.ClientSession,
     sem: asyncio.Semaphore,
 ) -> list[DatabaseInfo]:
-    """Discover all databases from all non-excluded providers."""
     providers = await discover_providers(session, sem)
     log.info("Found %d providers in the OPTIMADE registry", len(providers))
 
@@ -352,12 +298,9 @@ async def discover_all_databases(
     return databases
 
 
-# ---------------------------------------------------------------------------
-# Structures download (with resume support)
-# ---------------------------------------------------------------------------
+# structures download (with resume support)
 
 def build_structures_url(base_url: str, page_offset: int = 0) -> str:
-    """Build a paginated structures URL requesting only structural fields."""
     fields = ",".join(STRUCTURAL_FIELDS)
     url = (
         f"{base_url}/v1/structures"
@@ -376,7 +319,6 @@ async def download_database(
     state: dict,
     pbar: tqdm,
 ) -> DownloadStats:
-    """Download all structures from one database, with resume support."""
     stats = DownloadStats(db=db)
     t0 = time.monotonic()
     key = db_key(db.provider_id, db.db_id)
@@ -384,7 +326,7 @@ async def download_database(
 
     db_state = state.get(key, {})
 
-    # --- Already completed in a previous run ---
+    # already completed in a previous run
     if db_state.get("status") == "done":
         stats.n_downloaded = db_state.get("n_downloaded", 0)
         stats.n_skipped = db_state.get("n_skipped", 0)
@@ -397,7 +339,7 @@ async def download_database(
         )
         return stats
 
-    # --- Resume from where we left off ---
+    # resume from where we left off
     resume_url = db_state.get("next_url")
     previously_downloaded = db_state.get("n_downloaded", 0)
     previously_skipped = db_state.get("n_skipped", 0)
@@ -417,11 +359,11 @@ async def download_database(
         first_url = build_structures_url(db.base_url)
         file_mode = "w"
 
-    # --- First page (or resume page) ---
+    # first page (or resume page)
     page_data = await fetch_json(session, first_url, global_sem)
     if page_data is None:
         log.warning("Cannot reach %s, saving state for retry", db.base_url)
-        # Preserve existing in-progress state so next run retries
+        # preserve existing in-progress state so next run retries
         if resume_url:
             state[key] = {
                 "status": "in_progress",
@@ -456,7 +398,7 @@ async def download_database(
         stats.elapsed = time.monotonic() - t0
         return stats
 
-    # --- Paginate and write ---
+    # paginate and write
     page_num = 0
     save_interval = 5  # persist state every N pages
 
@@ -469,7 +411,7 @@ async def download_database(
             for entry in entries:
                 attrs = entry.get("attributes", {})
 
-                # Skip hollow entries (no actual structural data)
+                # skip hollow entries (no actual structural data)
                 if not has_structural_data(attrs):
                     stats.n_skipped += 1
                     continue
@@ -481,10 +423,10 @@ async def download_database(
                 stats.n_downloaded += 1
                 pbar.update(1)
 
-            # Get next page URL
+            # get next page URL
             next_url = extract_next_url(page_data)
 
-            # Periodically save state for resumability
+            # periodically save state for resumability
             page_num += 1
             if page_num % save_interval == 0:
                 fh.flush()
@@ -511,7 +453,7 @@ async def download_database(
                     "Pagination error at page %d for %s/%s, will retry on restart",
                     page_num, db.provider_id, db.db_id,
                 )
-                # Save state pointing at the failed page so next run retries it
+                # save state pointing at the failed page so next run retries it
                 fh.flush()
                 state[key] = {
                     "status": "in_progress",
@@ -523,7 +465,7 @@ async def download_database(
                 save_state(state)
                 break
 
-    # Mark as done only if we exhausted pagination without errors
+    # mark as done only if we exhausted pagination without errors
     if stats.n_errors == 0:
         state[key] = {
             "status": "done",
@@ -538,9 +480,7 @@ async def download_database(
     return stats
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
+# main
 
 async def main():
     parser = argparse.ArgumentParser(description="OPTIMADE bulk structure downloader")

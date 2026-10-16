@@ -1,29 +1,3 @@
-"""
-Filter ASE LMDB databases (.aselmdb files) using Pyykko covalent-radius
-distance cutoffs.
-
-The .aselmdb format is ASE's native LMDB-backed db backend used by FAIRChem,
-OMat24, OMol25, etc. It stores rows as ASE-JSON encoded dicts where numpy
-arrays appear as {"__ndarray__": ...} and energy/forces/stress are stored
-as calculator results on the row.
-
-This filter reads + writes via ase.db.connect(), so all row metadata --
-key-value pairs, calculator results (energy/forces/stress), and the
-per-row `data` dict (charges, spins, custom per-atom arrays, etc.) -- is
-preserved through filtering. Only the close-contact-failing rows are
-dropped from the passed output.
-
-We do NOT import fairchem. The ASE LMDB backend must be registered (either
-via a recent ASE version or via a plugin installed in the environment;
-on Daint with the fireworks env, `from ase.db import connect` on a .aselmdb
-path works out of the box).
-
-Usage:
-    python ase_lmdb_filter.py data0001.aselmdb \\
-        -o data0001_passed.aselmdb --rejected data0001_rejected.aselmdb \\
-        --scale 0.5
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -42,23 +16,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pyykko_filter import build_min_distance_matrix, find_close_contacts
 
 
-# -----------------------------------------------------------------------------
-# Row -> Atoms (robust to ASE's __ndarray__ JSON encoding)
-# -----------------------------------------------------------------------------
+# row to Atoms (robust to ASE's __ndarray__ JSON encoding)
 def _maybe_decode(x):
-    """Decode ASE's __ndarray__ dict-encoded numpy arrays in place."""
     if isinstance(x, dict) and "__ndarray__" in x:
         return decode(x)
     return x
 
 
 def _row_to_atoms(row) -> Atoms:
-    """
-    Build the lightweight Atoms used for the filter check. Only fields
-    needed for distance evaluation; the full atoms (with calculator
-    results) is fetched separately via row.toatoms() when we actually
-    write to output.
-    """
     numbers = _maybe_decode(row.numbers)
     positions = _maybe_decode(row.positions)
     cell = _maybe_decode(getattr(row, "cell", None))
@@ -72,9 +37,7 @@ def _row_to_atoms(row) -> Atoms:
     return Atoms(numbers=numbers, positions=positions, cell=cell, pbc=pbc)
 
 
-# -----------------------------------------------------------------------------
-# Filter driver
-# -----------------------------------------------------------------------------
+# filter driver
 def filter_aselmdb(
     in_path: str,
     out_path: str,
@@ -84,22 +47,11 @@ def filter_aselmdb(
     verbose: bool = False,
     log_every: int = 10000,
 ) -> dict:
-    """
-    Filter an ASE LMDB database. Reads via ase.db.connect; writes outputs
-    with the same backend so calculator results and all custom data
-    fields are preserved on passed (and optionally rejected) outputs.
-
-    Per-row errors (parse failure, superheavy Z, singular cell, etc.)
-    are categorized into a separate error_counter and counted as
-    `skipped` -- they never kill the run.
-    """
-    # If outputs exist, overwrite them (don't append). This matches the
     # idempotent rerun semantics of the bash driver, which deletes
-    # partial outputs on failure.
     for p in (out_path, rejected_path):
         if p is not None and os.path.exists(p):
             os.remove(p)
-            # ASE LMDB backends usually create a `<path>-lock` sidecar too.
+            # ASE LMDB backends usually create a path -lock sidecar too
             lock = p + "-lock"
             if os.path.exists(lock):
                 os.remove(lock)
@@ -118,7 +70,7 @@ def filter_aselmdb(
     for row in db_in.select():
         total += 1
 
-        # Build the structural Atoms used for the filter.
+        # build the structural Atoms used for the filter
         try:
             atoms = _row_to_atoms(row)
         except Exception as e:
@@ -129,7 +81,7 @@ def filter_aselmdb(
                       flush=True)
             continue
 
-        # Run the distance filter, catching per-row errors.
+        # run the distance filter, catching per-row errors
         try:
             i, j, d, S = find_close_contacts(atoms, mdm, backend=backend)
         except Exception as e:
@@ -145,14 +97,13 @@ def filter_aselmdb(
                 print(f"  SKIP id={row.id}: filter error: {e}", flush=True)
             continue
 
-        # For the write path, fetch the full atoms which carries the
-        # SinglePointCalculator (energy/forces/stress) when present.
+        # singlePointCalculator (energy/forces/stress) when present
         kvp  = dict(row.key_value_pairs) if row.key_value_pairs else {}
         data = dict(row.data) if row.data else None
         try:
             full_atoms = row.toatoms()
         except Exception:
-            # Fallback: write the structural atoms only (loses calc results).
+            # fallback write the structural atoms only (loses calc results)
             full_atoms = atoms
 
         if i.size == 0:
@@ -188,7 +139,7 @@ def filter_aselmdb(
                   + (f" | top: {top_str}" if top else ""),
                   flush=True)
 
-    # Final summary.
+    # final summary
     if rejected > 0:
         print(f"\nRejection causes by element pair "
               f"(unique pairs: {len(pair_counter)}):")
@@ -213,9 +164,7 @@ def filter_aselmdb(
     }
 
 
-# -----------------------------------------------------------------------------
 # CLI
-# -----------------------------------------------------------------------------
 if __name__ == "__main__":
     p = argparse.ArgumentParser(
         description="Filter an ASE LMDB database (.aselmdb) using Pyykko "

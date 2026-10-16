@@ -172,9 +172,7 @@ def fps_dense_sharded(X_local, n_to_select, *, seed=None, checkpoint_path=None,
                 print(f"fps_dense_sharded: checkpoint already at K={n_prev:,}")
             return selected, torch.from_numpy(epsilons_np)
 
-        # a snapshot is only reusable if EVERY rank has one matching its shard;
-        # a changed world_size or file split makes them stale, so fall back to
-        # the rebuild rather than failing the run.
+        # a snapshot is only reusable if EVERY rank has one matching its shard
         hausdorff_file = f"{resume_from}_k{step:010d}_h{rank:03d}.npy"
         reuse = os.path.exists(hausdorff_file)
         if reuse:

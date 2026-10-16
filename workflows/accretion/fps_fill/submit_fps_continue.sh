@@ -13,11 +13,8 @@ proj=${DEV_ROOT}/phace-atomic
 run=$proj/accrete/runs/madcore_10M
 
 source ${HOME}/venv-phace/bin/activate
-export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-32}" MPICH_GPU_SUPPORT_ENABLED=0 TRITON_HOME=/dev/shm/ CUDA_CACHE_DISABLE=1
-export TORCH_NCCL_ENABLE_MONITORING=0 TORCH_NCCL_HEARTBEAT_TIMEOUT_SEC=3600 CORESETS_FILL_CHUNK=256
+export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-32}"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
-
-echo "start $(date -Is) nodes=$SLURM_NNODES K=$K_TARGET"
 
 srun -ul --ntasks="$((SLURM_NNODES * SLURM_NTASKS_PER_NODE))" --gpus-per-task=1 \
     python "$proj/fps/run_fps_continue.py" \
@@ -29,4 +26,3 @@ srun -ul --ntasks="$((SLURM_NNODES * SLURM_NTASKS_PER_NODE))" --gpus-per-task=1 
         --checkpoint-every 50000 \
         --output         "$run/out/coreset_10M.parquet"
 
-echo "finish $(date -Is)"

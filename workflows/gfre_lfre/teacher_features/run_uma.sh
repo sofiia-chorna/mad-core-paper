@@ -11,12 +11,9 @@
 #SBATCH --account=cosmo
 #SBATCH --partition=h100
 
-echo STARTING AT `date`
-
 cd ${KUMA_WORK_ROOT}
 
 source ~/.bashrc
 conda activate uma
 python3 scripts/feats/mad15/mad15_uma_feats.py omat LL
 
-echo FINISHED at `date`

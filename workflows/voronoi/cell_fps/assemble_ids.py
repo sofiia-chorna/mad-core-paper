@@ -6,7 +6,6 @@ import numpy as np
 
 
 def part_spans(cell, offsets):
-    """(global_start, local_start, count) for each whole cell inside a part."""
     boundaries = np.concatenate([[0], np.where(np.diff(cell) != 0)[0] + 1, [len(cell)]])
     for lo, hi in zip(boundaries[:-1], boundaries[1:]):
         c = int(cell[lo])
@@ -59,7 +58,6 @@ def main():
 
     byte_offsets = np.load(f"{args.out}/configuration_id_offsets.npy", mmap_mode="r")
     mine = parts[args.task_id::args.num_tasks]
-    # per-PART markers: id parts are very uneven (largest ~4.6 GB), so a task that
     # runs out of walltime on a big one must not redo the parts it already wrote
     done_dir = f"{args.out}/logs/parts"
     os.makedirs(done_dir, exist_ok=True)
@@ -76,15 +74,12 @@ def main():
             local_offsets = np.concatenate([[0], np.cumsum(part_lengths)])
 
             spans = list(part_spans(cell, offsets))
-            # ONE vectorised gather instead of a scalar memmap read per cell: a
-            # bucket part covers ~131k cells, and per-cell scalar reads into the
             # 13.6 GB offsets memmap page-fault individually and dominate runtime
             row_starts = np.fromiter((s for s, _, _ in spans), dtype=np.int64,
                                      count=len(spans))
             file_starts = np.asarray(byte_offsets[row_starts])
 
             # spans are already in increasing global position, so writes move
-            # forward through the file
             for (start, local, count), where in zip(spans, file_starts):
                 lo = int(local_offsets[local])
                 hi = int(local_offsets[local + count])

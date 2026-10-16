@@ -14,4 +14,3 @@ Submitted figure files, md5 in MD5SUMS. Never overwritten, the scripts write to 
     si_train_curves_balanced_parts.pdf   SI Fig. 2, the build of 2026-10-14, assumed to be the submitted one
     si_rdf_water_20_50ps.pdf             SI Fig. 3
 
-dev_builds/ and superseded/ hold earlier builds of the training figures and the water figure.

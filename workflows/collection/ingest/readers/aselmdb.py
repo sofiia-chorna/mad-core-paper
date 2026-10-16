@@ -34,9 +34,7 @@ def read(path):
                 forces = np.asarray(r["forces"], dtype=float)
             if "stress" in r:
                 stress = _voigt_to_3x3(r["stress"])
-        # row.unique_id is the per-row hash (genuinely unique + stable in the db).
-        # data["data_id"] is the OMol SUB-dataset name (e.g. "elytes") -> NOT unique,
-        # keep it only as a provenance tag in `names`.
+        # row.unique_id is the per-row hash (genuinely unique + stable in the db)
         data = getattr(row, "data", None) or {}
         source_id = getattr(row, "unique_id", None)
         subset = data.get("data_id") or data.get("source")

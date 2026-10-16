@@ -25,8 +25,6 @@ def ids(rows):
     return [r["configuration_id"] for r in rows]
 
 
-# the 102 isolated atom reference frames: the monomer calculations the atomization energies were built from, rewritten
-# with the training targets (atomization_energy 0, forces 0), non periodic, no cell, traceable by their free energy
 def build_references():
     frames, rows = [], []
     with open(MONOMERS) as fh:
@@ -100,7 +98,6 @@ def main():
                                     "ordering": v2_split["sets"][f"{arm}_{size}" if size != "2k" else f"{arm}_5k"].get("ordering", "round 2 ordering"), "prefix_of": f"{arm}_20k (round 2)",
                                     "manifest_sha256": sha256(OUT / f"{name}_aug.tsv"), "xyz_sha256": sha256(XYZ / f"{name}_aug.xyz"), "ordinary_manifest_sha256": sha256(OUT / f"{name}_ordinary.tsv")}
             print(f"{name:12s} ordinary {n:6d} ({atoms_ordinary:7d} atoms) + 102 references, elements {len(species_before):3d} -> 102, steps/epoch {(n + 102) // 64}, isolated duplicates {dup}")
-    # smoke set: the first ordinary structures of madcore_2k plus the references, so every batch mixes both
     smoke_rows = read_tsv(V2 / "madcore_5k.tsv")[:SMOKE_ORDINARY]
     index = index_xyz(V2 / "xyz" / "madcore_5k.xyz")
     source = (V2 / "xyz" / "madcore_5k.xyz").read_bytes()

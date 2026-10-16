@@ -70,7 +70,6 @@ def main():
         tests[name] = sorted(read_tsv(path), key=lambda r: int(r["rank"]))
     assert len(tests["test_random"]) == 5847 and len(tests["test_madcore"]) == 2000
 
-    # balanced draw from the random test by position in rank order only, no prediction is read here
     rng = np.random.default_rng(SEED)
     picked = np.sort(rng.choice(len(tests["test_random"]), size=BALANCED_RANDOM, replace=False))
     random_subset = [tests["test_random"][i] for i in picked]
@@ -116,7 +115,6 @@ def main():
                 "mean_atoms_per_structure": round(c["atoms"] / c["structures"], 2),
             }
 
-        # disjointness of the two parts, uniqueness inside the population, and no overlap with training or validation
         entry["checks"]["test_random_x_test_madcore"] = overlaps(parts["test_random"], parts["test_madcore"])
         entry["checks"]["unique_configuration_id"] = len({r["configuration_id"] for r in rows}) == len(rows)
         entry["checks"]["unique_geom_hash"] = len({r["geom_hash"] for r in rows}) == len(rows)

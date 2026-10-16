@@ -16,7 +16,6 @@ big_families = ["OC20-IS2RES", "Open_Molecular_Crystals_2025_OMC25", "ANI-1", "A
 
 
 def dedup_family(fam_dir):
-    """Keep first occurrence of each configuration_id across a family's shards (in place)."""
     shards = sorted(glob.glob(f"{fam_dir}/*.parquet"))
     seen = set()
     raw = kept = 0
@@ -58,7 +57,7 @@ print("families changed (top 25 by rows removed):", flush=True)
 for dup, raw, fam in sorted(changed, reverse=True)[:25]:
     print(f"  {fam:44s} -{dup:>9,} / {raw:>10,}  ({100 * dup / raw:.0f}%)", flush=True)
 
-# ---- rebuild the pool manifest (big coresets + deduped small; mad-1.5/mad-next already deleted) ----
+# rebuild the pool manifest (big coresets + deduped small mad-1.5/mad-next already deleted)
 pool_shards = []
 for fam in big_families:
     pool_shards += sorted(glob.glob(f"{fps_root}/{fam}/with_features/*.parquet"))

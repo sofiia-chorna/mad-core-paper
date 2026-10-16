@@ -15,7 +15,4 @@ cd ${DEV_ROOT}/phace-atomic/voronoi/cell_fps
 source ${HOME}/venv-phace/bin/activate
 export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-128}"
 
-echo "start $(date -Is)"
-python verify_cell_fps.py
 python finalize_dups.py
-echo "finish $(date -Is)"

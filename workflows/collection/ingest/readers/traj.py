@@ -21,7 +21,7 @@ def read(path):
         positions = a.positions
         cell = np.asarray(a.cell.array, dtype=float)
         pbc = np.asarray(a.pbc, dtype=bool)
-        # geometry-only in the filtered passed trajs; carry E/F only if actually present
+        # geometry-only in the filtered passed trajs carry E/F only if actually present
         energy = _try(a.get_potential_energy)
         forces = _try(a.get_forces)
         yield make_record(

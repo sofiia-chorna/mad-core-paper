@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""
-Bulk download ColabFit datasets from HuggingFace.
-
-Usage:
-    # 1. Install dependencies
-    pip install huggingface_hub
-
-    # 2. List all available datasets (dry run)
-    python download_colabfit.py --list
-
-    # 3. Download everything (WARNING: very large, 100s of GB+)
-    python download_colabfit.py --download-all --output ./colabfit_data
-
-    # 4. Download only specific families (recommended)
-    python download_colabfit.py --download-all --output ./colabfit_data \
-        --filter Alexandria,MAD,OMat24,MPTrj
-
-    # 5. Download a single dataset by full name
-    python download_colabfit.py --download colabfit/Alexandria_PBE_set1 \
-        --output ./colabfit_data
-"""
 
 import argparse
 import sys
@@ -39,7 +18,6 @@ def log(msg):
 
 
 def list_datasets(filter_str=None, exclude_str=None):
-    """List all colabfit datasets, optionally filtering/excluding by substring."""
     api = HfApi()
     datasets = list(api.list_datasets(author="colabfit"))
     if filter_str:
@@ -59,7 +37,6 @@ def list_datasets(filter_str=None, exclude_str=None):
 
 
 def download_dataset(repo_id, output_dir, max_retries=3, label=""):
-    """Download a single dataset with retries."""
     local_dir = Path(output_dir) / repo_id.replace("/", "_")
     for attempt in range(max_retries):
         try:

@@ -12,7 +12,6 @@ DATASET_PATH = "data/mad-1.5/mad-1.5-r2scan-all.xyz"
 OUTPUT_DIR = "data/mad-1.5/uma"
 MODEL_NAME = "uma-s-1p2"
 
-# oc20=catalysis, omat=inorganic materials, omol=molecules, odac=MOFs, omc=molecular crystals
 AVAILABLE_TASKS = ["oc20", "omat", "omol", "odac", "omc"]
 
 if len(sys.argv) < 2:
@@ -42,9 +41,7 @@ print(f"Output directory: {OUTPUT_DIR}")
 
 
 def get_uma_features_batched(data_list, task, predictor, batch_size=BATCH_SIZE):
-    # UMA backbone asserts pbc must be all-True or all-False within each batch.
-    # Process periodic and non-periodic in completely separate loops to avoid
-    # any boundary batch that would mix the two groups.
+    # UMA backbone asserts pbc must be all-True or all-False within each batch
     periodic_local = [i for i, d in enumerate(data_list) if d.pbc.all().item()]
     nonperiodic_local = [i for i, d in enumerate(data_list) if not d.pbc.all().item()]
     print(f"periodic: {len(periodic_local)}, non-periodic: {len(nonperiodic_local)}")
@@ -99,9 +96,9 @@ if __name__ == "__main__":
     structures = read(DATASET_PATH, ":")
     print(f"Loaded {len(structures)} structures")
 
-    # --- only filter what causes a hard crash ---
+    # only filter what causes a hard crash
 
-    # unsupported elements: embedding index out of bounds, O(N) to check
+    # unsupported elements embedding index out of bounds, O(N) to check
     unsupported_ids = []
     surviving = []
     for i, s in enumerate(structures):
@@ -112,8 +109,7 @@ if __name__ == "__main__":
             surviving.append(i)
     print(f"filtered out {len(unsupported_ids)} structures with unsupported elements")
 
-    # convert to AtomicData with try-except:
-    # single atoms and no-close-atoms are handled internally by add_n_empty_edges
+    # convert to AtomicData with try-except
     data_list = []
     converted_ids = []    # original structure indices that converted successfully
     mixed_pbc_ids = []    # original structure indices with mixed pbc (e.g. [T,T,F] slabs)

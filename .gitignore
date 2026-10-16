@@ -1,10 +1,10 @@
-# outputs of the reproduction commands and the packaged archives
 build/
 dist/
 __pycache__/
 *.pyc
+
 # the supporting-results and model archives are assembled from these folders, not committed
 results_archive/
 models_archive/
 docs/
-CLAUDE.md
+provenance/

@@ -2,7 +2,7 @@ from huggingface_hub import HfApi
 
 api = HfApi()
 
-# Option 1: from tags (lightweight, no full=True needed)
+# option 1 from tags (lightweight, no full True needed)
 datasets = list(api.list_datasets(
     author="colabfit",
     expand=["tags", "description", "downloads"],
@@ -13,7 +13,7 @@ for ds in datasets:
     print(f"{ds.id:50s}  {license_str:20s}  {ds.downloads} downloads")
 
 licenses = {}
-# Option 2: from card_data (richer, needs full=True)
+# option 2 from card_data (richer, needs full True)
 datasets = list(api.list_datasets(author="colabfit", full=True))
 for ds in datasets:
     license_str = "not specified"

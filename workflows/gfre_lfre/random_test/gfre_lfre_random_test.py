@@ -98,7 +98,6 @@ def digest(payload):
     return hashlib.sha256(payload).hexdigest()
 
 
-# everything a stored result depends on, a resumed run may only reuse results with the same fingerprint
 def fingerprint(aligned, keep, test_idx, args):
     estimator = {
         key: value.tolist() if isinstance(value, np.ndarray) else value
@@ -128,7 +127,6 @@ def fingerprint(aligned, keep, test_idx, args):
     }
 
 
-# move outputs whose provenance does not match the current inputs aside instead of resuming from them
 def check_provenance(current, outputs, path):
     existing = [output for output in outputs if os.path.exists(output)]
     if not existing:

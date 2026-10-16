@@ -22,8 +22,6 @@ STRING_COLS = ("configuration_id", "dataset_group", "dataset_id")
 
 
 def widen_strings(table):
-    """Cast id columns to large_string: `take` concatenates chunks internally and
-    int32 offsets overflow past 2 GB of string data (~100M ids)."""
     for name in STRING_COLS:
         index = table.schema.get_field_index(name)
         table = table.set_column(index, name, table.column(name).cast(pa.large_string()))
@@ -52,14 +50,6 @@ def init_dist(rank, world_size):
 
 
 def split_files(paths, world_size):
-    """Contiguous row-balanced file runs, one per rank, none empty.
-
-    Runs must stay contiguous in sorted-path order: a row's global index is its
-    position in the concatenation of the parts in that order. Assigning purely by
-    cumulative position can hand a rank zero files when one part dominates (which
-    then launches kernels with zero blocks -> cudaErrorInvalidConfiguration), so
-    each rank is guaranteed at least one part.
-    """
     counts = [pq.read_metadata(p).num_rows for p in paths]
     total = sum(counts)
     if len(paths) < world_size:
@@ -212,8 +202,7 @@ def main():
             "radius_rel_diff": abs(float(eps_np[1]) - radius_sq) / radius_sq,
         }
 
-        # take/write in slices: a single `string` array caps at 2 GB of data
-        # (int32 offsets), which 100M+ ids overflow.
+        # take/write in slices a single string array caps at 2 GB of data
         os.makedirs(args.out_dir, exist_ok=True)
         out_path = f"{args.out_dir}/cell_{cell_name}.parquet"
         wide = widen_strings(ids)

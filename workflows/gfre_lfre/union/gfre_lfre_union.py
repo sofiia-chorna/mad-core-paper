@@ -105,9 +105,6 @@ def stratified(labels, n, seed=0):
 
 
 def stratified_target(pool_labels, weights, n, seed=0):
-    """Draw n items from a pool, allocating each subset a share of n proportional
-    to `weights` (the candidate-pool counts) renormalized over the subsets that
-    survive the descriptor filters, capped by availability, remainders largest-first."""
     rng = np.random.default_rng(seed)
     labels = np.unique(pool_labels)
     members = {label: np.where(pool_labels == label)[0] for label in labels}

@@ -19,10 +19,8 @@ export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-64}"
 
 OUT=${DEV_ROOT}/phace-atomic/voronoi/out/cell_fps
 
-echo "start $(date -Is) array=$SLURM_ARRAY_TASK_ID"
 srun -ul --ntasks=4 --gpus-per-task=1 bash -c "
     bucket=\$((SLURM_ARRAY_TASK_ID * 4 + SLURM_PROCID))
     printf -v bname 'b%03d' \$bucket
     python run_cell_fps.py --bucket-dir $OUT/shuffle/buckets/\$bname --out-dir $OUT/fps
 "
-echo "finish $(date -Is)"

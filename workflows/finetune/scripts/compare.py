@@ -45,7 +45,6 @@ def stats(values):
     return {"mae": float(a.mean()), "rmse": float(np.sqrt((a ** 2).mean())), "p8": float(((a ** 8).mean()) ** 0.125), "sup": float(a.max())}
 
 
-# checkpoint, exported model and predictions of one model, checked against the recorded provenance
 def identity(name, model, checks):
     run = model["run"]
     ckpt = torch.load(run / "model.ckpt", map_location="cpu", weights_only=False)
@@ -98,7 +97,6 @@ def main():
     manifest = read_tsv(MANIFEST)
     records = {name: identity(name, model, checks) for name, model in MODELS.items()}
 
-    # per structure errors, every prediction aligned to its test file by atom count and positions
     truths = {t: read_truth(XYZ / f"{t}.xyz") for t in TESTS}
     selection = {}
     for t in TESTS:

@@ -11,11 +11,9 @@ sys.path.insert(0, "${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/voronoi_
 import common_bd  # noqa: E402
 from common_bd import TESTS, XYZ, errors, load_predictions, metrics, read_truth, run_mtt_eval, sha256  # noqa: E402
 
-# the shared helper defaults to the original environment, every evaluation here must use the corrected one
 common_bd.MTT = "${HOME}/venv-metatrain-fix/bin/mtt"
 from metatrain.utils.io import model_from_checkpoint  # noqa: E402
 
-# diagnostic evaluation of the FINAL checkpoint of every finished run (last epoch, not the selected one)
 S = Path(__file__).resolve().parent.parent
 RUNS = S / "runs"
 OUT = S / "reports" / "final_checkpoints"

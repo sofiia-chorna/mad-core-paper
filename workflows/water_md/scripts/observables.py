@@ -3,17 +3,14 @@ import numpy as np
 
 KB_EV = 8.617333262e-5
 
-# one radial grid for every pair and condition, up to half the 9.8555 A cell width of 4.928 A
 RDF_RMAX = 4.92
 RDF_BIN = 0.02
 RDF_EDGES = np.arange(0.0, RDF_RMAX + 0.5 * RDF_BIN, RDF_BIN)
 RDF_CENTRES = 0.5 * (RDF_EDGES[1:] + RDF_EDGES[:-1])
 
-# per H, the distance to its nearest O and to its second-nearest O, wide enough for shared protons
 NEAREST_OH_EDGES = np.arange(0.6, 1.8 + 1e-9, 0.0025)
 SECOND_OH_EDGES = np.arange(0.9, 4.5 + 1e-9, 0.01)
 
-# threshold crossings, frozen before production and reported apart from confirmed numerical failures
 # the force limit is five times the largest pilot force at 1.0 g/cm3, 7.14 eV/A, rounded up
 THRESHOLDS = {
     "min_pair_distance_A": 0.6,
@@ -21,7 +18,6 @@ THRESHOLDS = {
     "kinetic_temperature_K": 600.0,
 }
 
-# a conserved-quantity drift ten times the largest NVE pilot drift is reported as an integration warning
 INTEGRATION_WARNING_MEV_PER_ATOM_PER_PS = 0.05
 
 # structural events, reported and never used to truncate a trajectory
@@ -39,7 +35,6 @@ def mic_distances(a, b, cell):
     return np.linalg.norm(mic_vectors(a, b, cell), axis=-1)
 
 
-# kinetic temperature of a subset over its share of 3N minus 3, so that every subset averages to the bath temperature
 def kinetic_temperatures(masses, velocities, symbols):
     kinetic = 0.5 * (masses[None, :, None] * velocities**2).sum(-1)
     total_mass = masses.sum()
@@ -103,7 +98,6 @@ def frame_analysis(positions, cell, forces, symbols):
     }
 
 
-# g of r from summed histograms, ideal-gas normalisation at the cell density of each pair type
 def rdf(hist_sum, frames, pairs, volume):
     shell = 4.0 / 3.0 * np.pi * (RDF_EDGES[1:] ** 3 - RDF_EDGES[:-1] ** 3)
     return hist_sum / (frames * pairs / volume * shell)

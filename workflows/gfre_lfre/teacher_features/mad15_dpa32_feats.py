@@ -1,15 +1,3 @@
-"""
-Extract DPA-3.2-5M per-atom features from the MAD-1.5 dataset.
-
-DPA-3.2-5M is a multi-task checkpoint. Each branch must be frozen first:
-    dp --pt freeze -c data/models/dpa/DPA-3.2-5M.pt -o data/models/dpa/DPA-3.2-5M-OMat24.pth --model-branch OMat24
-    dp --pt freeze -c data/models/dpa/DPA-3.2-5M.pt -o data/models/dpa/DPA-3.2-5M-OMol25.pth --model-branch OMol25
-
-Usage:
-    python3 scripts/feats/mad15/mad15_dpa32_feats.py <TASK> [LL|BB]
-    e.g. python3 scripts/feats/mad15/mad15_dpa32_feats.py OMat24 LL
-"""
-
 import os
 import sys
 
@@ -54,8 +42,6 @@ BATCH_SIZE = 64
 
 
 def filter_structures(structures, type_map):
-    """Only filter unsupported elements. Non-periodic structures are kept —
-    DPA-3.2 handles both periodic and non-periodic (cells=None for molecules)."""
     type_map_set = set(type_map)
     kept, kept_ids, unsupported_ids = [], [], []
 

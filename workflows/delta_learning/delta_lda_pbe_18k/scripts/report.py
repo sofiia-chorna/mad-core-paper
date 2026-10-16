@@ -62,14 +62,12 @@ def metrics(e_pred, f_pred, truth):
     return {"E": dict(R10.stats(de), bias=float(de.mean())), "F": R10.stats(df)}
 
 
-# how the new run was initialised and how many optimizer updates it made, read from its checkpoint and log
 def init_record(run_dir, train, checks, functional):
     log = (run_dir / "train.log").read_text()
     ckpt = torch.load(run_dir / "model.ckpt", map_location="cpu", weights_only=False)
     state = ckpt["best_model_state_dict"]
     steps = sorted({int(m) for m in re.findall(r"grad-clip diagnostics: steps (\d+)", log)})
     epochs = len(re.findall(r"grad-clip diagnostics: steps", log))
-    # a debug chain resumes from the newest checkpoint, so the log may also hold epochs trained after it in an earlier allocation and redone
     trained = ckpt["epoch"] + 1
     record = {"epoch": ckpt["epoch"], "best_epoch": ckpt["best_epoch"], "best_metric_mae_prod": ckpt["best_metric"],
               "steps_per_epoch": steps, "epochs_logged": epochs, "epochs_redone_after_restart": epochs - trained,

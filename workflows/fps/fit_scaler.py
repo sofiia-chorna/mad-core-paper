@@ -1,6 +1,3 @@
-"""Fit a StandardFlexibleScaler on phace_features_bb_mean and save it as the
-{mean_, scale_} dict that run_fps.py expects."""
-
 import argparse
 import pickle
 

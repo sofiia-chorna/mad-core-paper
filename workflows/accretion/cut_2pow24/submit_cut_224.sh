@@ -15,7 +15,5 @@ set -euo pipefail
 cd ${DEV_ROOT}/phace-atomic/accrete/runs/coreset224/scripts
 source ${HOME}/venv-phace/bin/activate
 
-echo "start $(date -Is)"
 python cut_coreset224.py
-echo "finish $(date -Is)"
 

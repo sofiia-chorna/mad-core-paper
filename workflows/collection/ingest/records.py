@@ -1,17 +1,7 @@
 from __future__ import annotations
 import numpy as np
 
-# Required + optional keys of a record dict:
-#   numbers    : np.ndarray[int64]   (n_atoms,)
-#   positions  : np.ndarray[float64] (n_atoms, 3)   cartesian, Angstrom
-#   cell       : np.ndarray[float64] (3, 3)         zeros if non-periodic
-#   pbc        : np.ndarray[bool]    (3,)
-#   energy     : float | None
-#   forces     : np.ndarray[float64] (n_atoms, 3) | None
-#   stress     : np.ndarray[float64] (3, 3) | None
-#   src_file   : str                 basename of the source file
-#   frame_idx  : int                 0-based index within src_file
-#   source_id  : str | None          native unique id from the source, if any
+# required + optional keys of a record dict
 
 
 def make_record(numbers, positions, cell, pbc, *, src_file, frame_idx,

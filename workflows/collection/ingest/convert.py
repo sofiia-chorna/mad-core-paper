@@ -78,7 +78,6 @@ _MCLOUD_TIERC = [
 for _mc in _MCLOUD_TIERC:
     DATASETS[f"mcloudarchive__{_mc}"] = ("archive", f"mcloudarchive__{_mc}")
 
-# MC archive records the title-keyword filter had skipped; re-scan (2026-06-19) found these contain structures.
 _MCLOUD_RESCAN = [
     "00s2s-xre47", "02rcd-nc341", "06329-0n866", "07wfy-shs16", "08a12-p4a37", "08gsg-gpd20", "0db0e-t6d44",
     "0gg37-qvg37", "0hb0h-40r37", "0m9r0-g3486", "0p5ya-w1n45", "16jd7-0zz18", "1ap7q-cn115", "1bymd-by722",

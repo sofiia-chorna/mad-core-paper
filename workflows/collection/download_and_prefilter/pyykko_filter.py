@@ -1,26 +1,3 @@
-"""
-Covalent-radius distance filter for unphysical structures in MLIP training data.
-
-Pure scaled covalent radii: for each pair (Zi, Zj),
-    d_min = scale * (r_cov[Zi] + r_cov[Zj])
-PBC-aware via ase.neighborlist. No special handling of any element pair.
-
-Reference for radii:
-    Pyykko & Atsumi, Chem. Eur. J. 15, 186-197 (2009).
-    DOI: 10.1002/chem.200800987
-
-Typical use:
-
-    from pyykko_filter import build_min_distance_matrix, has_close_contacts
-    mdm = build_min_distance_matrix(scale=0.5)
-    if not has_close_contacts(atoms, mdm):
-        keep(atoms)
-
-Or stream-filter a whole shard:
-
-    python pyykko_filter.py shard.xyz passed.xyz --rejected rejected.xyz
-"""
-
 from __future__ import annotations
 
 import numpy as np
@@ -33,10 +10,7 @@ try:
 except ImportError:
     _HAS_VESIN = False
 
-# -----------------------------------------------------------------------------
-# Pyykko 2009 single-bond covalent radii in Angstrom (Z -> r_cov).
-# Source: Pyykko & Atsumi, Chem. Eur. J. 15, 186 (2009), Table 2.
-# -----------------------------------------------------------------------------
+# pyykko 2009 single-bond covalent radii in Angstrom (Z to r_cov)
 PYYKKO_COVALENT_RADII: dict[int, float] = {
     1: 0.32,  2: 0.46,
     3: 1.33,  4: 1.02,  5: 0.85,  6: 0.75,  7: 0.71,  8: 0.63,  9: 0.64, 10: 0.67,
@@ -64,28 +38,6 @@ PYYKKO_COVALENT_RADII: dict[int, float] = {
 
 
 def build_min_distance_matrix(scale: float = 0.5, max_z: int = 103) -> np.ndarray:
-    """
-    Build a (max_z+1, max_z+1) lookup of minimum allowed pair distances in A.
-
-        d_min[Zi, Zj] = scale * (r_cov[Zi] + r_cov[Zj])
-
-    Entries for Z without a tabulated radius are NaN; find_close_contacts
-    will raise ValueError if such an element appears in a structure.
-
-    Parameters
-    ----------
-    scale : float
-        Multiplier on summed covalent radii.
-            0.50 - permissive (preserves repulsive-wall data; default)
-            0.60-0.65 - common in OMat24, MACE-MP-0
-            0.75 - conservative
-    max_z : int
-        Highest Z to support. 103 covers all of PYYKKO_COVALENT_RADII.
-
-    Returns
-    -------
-    np.ndarray, shape (max_z+1, max_z+1), float64.
-    """
     radii = np.full(max_z + 1, np.nan, dtype=np.float64)
     for z, r in PYYKKO_COVALENT_RADII.items():
         if z <= max_z:
@@ -94,35 +46,23 @@ def build_min_distance_matrix(scale: float = 0.5, max_z: int = 103) -> np.ndarra
 
 
 def supported_elements() -> set[int]:
-    """Z values with tabulated Pyykko radii."""
     return set(PYYKKO_COVALENT_RADII.keys())
 
 
 def _neighbor_pairs_ase(atoms: Atoms, cutoff: float):
-    """Returns (i, j, d, S) using ASE's neighbor_list. Each pair appears twice."""
     return neighbor_list("ijdS", atoms, cutoff=cutoff, self_interaction=False)
 
 
 def _neighbor_pairs_vesin(atoms: Atoms, cutoff: float):
-    """
-    Returns (i, j, d, S) using vesin. With full_list=False, each pair appears
-    once in canonical (i<j) form, so no dedup needed downstream.
-
-    Vesin needs a non-singular cell. For non-PBC structures (or axes), pad the
-    relevant cell axes so they're larger than 2*cutoff (the bounding box must
-    contain all points + cutoff sphere; pads avoid edge artifacts).
-    """
     box = np.asarray(atoms.cell.array, dtype=np.float64).copy()
     pbc = np.asarray(atoms.pbc, dtype=bool)
 
-    # For non-periodic axes, vesin still needs a sensible bounding box.
-    # If an axis has zero length (typical for non-PBC, no cell set), pad it
-    # to fit all atoms + 2*cutoff margin so no spurious wrap-around happens.
+    # for non-periodic axes, vesin still needs a sensible bounding box
     if not pbc.all():
         pos = atoms.positions
         for ax in range(3):
             if not pbc[ax] and np.linalg.norm(box[ax]) < 2 * cutoff:
-                # Replace with axis-aligned vector spanning the data + margin.
+                # replace with axis-aligned vector spanning the data + margin
                 span = float(pos[:, ax].max() - pos[:, ax].min()) if len(pos) else 0.0
                 v = np.zeros(3)
                 v[ax] = span + 4 * cutoff
@@ -140,27 +80,6 @@ def find_close_contacts(
     min_dist_matrix: np.ndarray,
     backend: str = "auto",
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
-    """
-    Return all atom-pair contacts that violate the minimum distance.
-
-    PBC-aware. Returns (i, j, d, S):
-        i, j : atom indices into `atoms` of each violating pair (canonical form)
-        d    : distance in Angstrom
-        S    : periodic shift vector (3 ints) -- offset of atom j's image
-               relative to its home cell. (0,0,0) is an in-cell contact;
-               nonzero S indicates a cross-image contact (including i == j
-               for self-image collisions in too-small cells).
-
-    Each physical pair is reported once.
-
-    Parameters
-    ----------
-    backend : {"auto", "vesin", "ase"}
-        Neighbor-list implementation. "auto" prefers vesin if installed
-        (typically 3-10x faster), falling back to ASE.
-
-    Raises ValueError if any element in atoms has no tabulated radius.
-    """
     Z = atoms.numbers
     if Z.size == 0:
         e_i = np.array([], dtype=int)
@@ -185,7 +104,7 @@ def find_close_contacts(
         e_i = np.array([], dtype=int)
         return e_i, e_i, e_i.astype(float), np.zeros((0, 3), dtype=int)
 
-    # Backend dispatch.
+    # backend dispatch
     use_vesin = (backend == "vesin") or (backend == "auto" and _HAS_VESIN)
     if backend == "vesin" and not _HAS_VESIN:
         raise ImportError("vesin is not installed; pip install vesin")
@@ -193,8 +112,7 @@ def find_close_contacts(
     if use_vesin:
         i, j, d, S = _neighbor_pairs_vesin(atoms, nl_cutoff)
     else:
-        # ASE path: returns each pair twice, dedup to canonical (i<j or
-        # self-image with first-nonzero-S > 0).
+        # self-image with first-nonzero-S 0)
         i, j, d, S = _neighbor_pairs_ase(atoms, nl_cutoff)
         S = S.astype(int)
         if i.size > 0:
@@ -208,7 +126,7 @@ def find_close_contacts(
     if i.size == 0:
         return i, j, d, S
 
-    # Filter to violations.
+    # filter to violations
     pair_min = min_dist_matrix[Z[i], Z[j]]
     bad = d < pair_min
     return i[bad], j[bad], d[bad], S[bad]
@@ -217,7 +135,6 @@ def find_close_contacts(
 def has_close_contacts(
     atoms: Atoms, min_dist_matrix: np.ndarray, backend: str = "auto",
 ) -> bool:
-    """True if the structure contains at least one unphysical close contact."""
     i, _, _, _ = find_close_contacts(atoms, min_dist_matrix, backend=backend)
     return i.size > 0
 
@@ -227,11 +144,6 @@ def describe_violations(
     min_dist_matrix: np.ndarray,
     backend: str = "auto",
 ) -> list[dict]:
-    """
-    Human-readable record of every violating pair, sorted by distance ascending
-    (worst first). Each dict has: i, j, elements, distance, cutoff, offset,
-    is_self_image.
-    """
     i, j, d, S = find_close_contacts(atoms, min_dist_matrix, backend=backend)
     syms = atoms.get_chemical_symbols()
     Z = atoms.numbers
@@ -251,9 +163,7 @@ def describe_violations(
     return out
 
 
-# -----------------------------------------------------------------------------
-# Stream filter for extxyz shards
-# -----------------------------------------------------------------------------
+# stream filter for extxyz shards
 def filter_extxyz(
     in_path: str,
     out_path: str,
@@ -263,18 +173,6 @@ def filter_extxyz(
     verbose: bool = False,
     backend: str = "auto",
 ) -> dict:
-    """
-    Stream-filter an extxyz file frame-by-frame. One structure in memory at a time.
-
-    Returns a dict with: passed, rejected, total, and rejection_pairs
-    (Counter mapping element-pair tuples to count of rejections caused).
-
-    Parameters
-    ----------
-    verbose : bool
-        If True, print one line per rejection with the worst pair details.
-        Off by default to keep output sane on million-structure shards.
-    """
     from ase.io import iread, write
     from collections import Counter
     import time
@@ -294,12 +192,12 @@ def filter_extxyz(
                 write(out_fh, atoms, format="extxyz", append=True)
             else:
                 rejected += 1
-                # Worst pair = smallest distance.
+                # worst pair smallest distance
                 k = int(np.argmin(d))
                 syms = atoms.get_chemical_symbols()
                 Zi = int(atoms.numbers[i[k]])
                 Zj = int(atoms.numbers[j[k]])
-                # Canonical element-pair key (alphabetical, so C-O and O-C aggregate)
+                # canonical element-pair key (alphabetical, so C-O and O-C aggregate)
                 pair_key = tuple(sorted([syms[i[k]], syms[j[k]]]))
                 pair_counter[pair_key] += 1
 
@@ -338,7 +236,7 @@ def filter_extxyz(
         if rej_fh is not None:
             rej_fh.close()
 
-    # End-of-run summary of which element pairs caused rejections.
+    # end-of-run summary of which element pairs caused rejections
     if rejected > 0:
         print(f"\nRejection causes by element pair "
               f"(unique pairs: {len(pair_counter)}):")
@@ -354,9 +252,7 @@ def filter_extxyz(
     }
 
 
-# -----------------------------------------------------------------------------
 # CLI
-# -----------------------------------------------------------------------------
 if __name__ == "__main__":
     import argparse
 

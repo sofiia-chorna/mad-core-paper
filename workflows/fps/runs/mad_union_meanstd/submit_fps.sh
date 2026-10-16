@@ -10,7 +10,7 @@
 #SBATCH --uenv=pytorch/v2.9.1:v2
 #SBATCH --view=default
 #SBATCH --output=${DEV_ROOT}/phace-atomic/fps/runs/mad_union_meanstd/logs/%x_%j.out
-# Full FPS over the MAD union with the [mean, std] (512-d) phace-atomic descriptor.
+# full FPS over the MAD union with the mean, std (512-d) phace-atomic descriptor
 set -euo pipefail
 
 PROJ=${DEV_ROOT}/phace-atomic
@@ -18,9 +18,8 @@ RUN=$PROJ/fps/runs/mad_union_meanstd
 VENV_PY=${HOME}/venv-phace/bin/python
 mkdir -p "$RUN/logs" "$RUN/checkpoints"
 source ${HOME}/venv-phace/bin/activate
-export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK" MPICH_GPU_SUPPORT_ENABLED=0 TRITON_HOME=/dev/shm/ CUDA_CACHE_DISABLE=1
+export OMP_NUM_THREADS="$SLURM_CPUS_PER_TASK"
 
-echo "start $(date -Is)"
 srun -ul --ntasks="$SLURM_NTASKS_PER_NODE" --gpus-per-task=1 \
     "$VENV_PY" "$PROJ/fps/run_fps.py" \
         --manifest         "$PROJ/fps/manifests/mad_union_meanstd.txt" \
@@ -30,4 +29,3 @@ srun -ul --ntasks="$SLURM_NTASKS_PER_NODE" --gpus-per-task=1 \
         --checkpoint-dir   "$RUN/checkpoints/ckpt" \
         --checkpoint-every 100000 \
         --notes            "mad_union_meanstd_full"
-echo "finish $(date -Is)"

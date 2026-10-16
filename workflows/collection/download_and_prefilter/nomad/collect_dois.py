@@ -1,62 +1,4 @@
 #!/usr/bin/env python3
-"""
-download_nomad_structures.py
-=============================
-Bulk-download ALL atomic structures from the NOMAD Repository via the v1 REST API.
-
-Only structural information is retrieved (positions, lattice vectors, species, PBC).
-No energies, electronic structure, or other properties are downloaded.
-
-Strategy
---------
-We use the `entries/archive/query` endpoint with `page_after_value`-based pagination
-(cursor pagination), which has no depth limit — unlike page-number pagination or the
-OPTIMADE endpoint, both of which cap out at ~10k results.
-
-We request only `run.system[-1].atoms` (the last/final structure in each entry) plus
-minimal metadata for bookkeeping. Results are written incrementally to disk as
-compressed extxyz (.xyz.gz) shards to keep memory bounded.
-
-The script is idempotent: it tracks progress in a simple JSON checkpoint file so it
-can be resumed after interruptions.
-
-Requirements
-------------
-    pip install requests ase tqdm
-
-Usage
------
-    # Download everything EXCEPT large external databases (recommended!)
-    python download_nomad_structures.py --exclude-large-dbs --output-dir nomad_native
-
-    # Download everything (will take days for 12M+ entries)
-    python download_nomad_structures.py --output-dir nomad_structures
-
-    # Filter by DFT code
-    python download_nomad_structures.py --program-name VASP --output-dir nomad_vasp
-
-    # Filter by elements
-    python download_nomad_structures.py --elements Ti O --output-dir nomad_TiO
-
-    # Filter by structural type
-    python download_nomad_structures.py --structural-type bulk --output-dir nomad_bulk
-
-    # Exclude specific external databases by name
-    python download_nomad_structures.py --exclude-external-db AFLOW "The Materials Project" OQMD
-
-    # Exclude entries referencing a specific URL in their comment (e.g. Alexandria)
-    python download_nomad_structures.py --exclude-comment "https://alexandria.icams.rub.de/"
-
-    # Dry run: just count how many entries match
-    python download_nomad_structures.py --dry-run
-
-    # Resume an interrupted download
-    python download_nomad_structures.py --output-dir nomad_structures --resume
-
-    # Control parallelism and batch sizes
-    python download_nomad_structures.py --output-dir nomad_structures \
-        --page-size 100 --shard-size 50000 --max-workers 4
-"""
 
 from __future__ import annotations
 
@@ -78,11 +20,9 @@ import numpy as np
 import requests
 from tqdm import tqdm
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
+# configuration
 
-# All valid element symbols (Z=1..118)
+# all valid element symbols (Z 1..118)
 _VALID_ELEMENTS = {
     "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne",
     "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca",
@@ -100,7 +40,7 @@ _VALID_ELEMENTS = {
 
 NOMAD_API_BASE = "https://nomad-lab.eu/prod/v1/api/v1"
 
-# What we request from each entry's archive
+# what we request from each entry's archive
 ARCHIVE_REQUIRED = {
     "run": {
         "system[-1]": {
@@ -115,7 +55,7 @@ ARCHIVE_REQUIRED = {
     }
 }
 
-# Metadata fields we always request alongside the archive
+# metadata fields we always request alongside the archive
 METADATA_INCLUDE = [
     "entry_id",
     "upload_id",
@@ -126,7 +66,7 @@ METADATA_INCLUDE = [
     "results.method.simulation.program_name",
 ]
 
-# Logging
+# logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -135,13 +75,10 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
-# Checkpoint management
-# ---------------------------------------------------------------------------
+# checkpoint management
 
 @dataclass
 class Checkpoint:
-    """Tracks download progress for resumability."""
     total_downloaded: int = 0
     total_failed: int = 0
     total_skipped: int = 0
@@ -161,12 +98,9 @@ class Checkpoint:
         return cls()
 
 
-# ---------------------------------------------------------------------------
 # API interaction
-# ---------------------------------------------------------------------------
 
 class NomadClient:
-    """Thin wrapper around the NOMAD v1 API with retry logic."""
 
     def __init__(
         self,
@@ -186,7 +120,6 @@ class NomadClient:
         })
 
     def _post_with_retry(self, endpoint: str, payload: dict) -> dict:
-        """POST with exponential backoff on 429/503/5xx."""
         url = f"{self.base_url}/{endpoint}"
         for attempt in range(self.max_retries):
             try:
@@ -228,7 +161,6 @@ class NomadClient:
         raise RuntimeError(f"Failed after {self.max_retries} retries: {url}")
 
     def count_entries(self, query: dict) -> int:
-        """Return total number of entries matching query."""
         payload = {
             "query": query,
             "pagination": {"page_size": 0},
@@ -244,7 +176,6 @@ class NomadClient:
         page_size: int = 100,
         page_after_value: Optional[str] = None,
     ) -> dict:
-        """Fetch one page of archive data."""
         pagination: dict[str, Any] = {
             "page_size": page_size,
             "order_by": "entry_id",
@@ -266,11 +197,6 @@ class NomadClient:
         page_size: int = 100,
         page_after_value: Optional[str] = None,
     ) -> Optional[str]:
-        """
-        Lightweight metadata-only request to advance the pagination cursor
-        past a problematic page. Returns the next_page_after_value, or None
-        if pagination is exhausted.
-        """
         pagination: dict[str, Any] = {
             "page_size": page_size,
             "order_by": "entry_id",
@@ -288,12 +214,6 @@ class NomadClient:
         return result.get("pagination", {}).get("next_page_after_value")
 
     def collect_dataset_dois(self, query: dict, max_dois: int = 10000) -> list[dict]:
-        """
-        Collect all unique dataset DOIs for entries matching the query
-        using a single aggregation request.
-
-        Returns a list of {"doi": str, "count": int} dicts.
-        """
         payload = {
             "query": query,
             "pagination": {"page_size": 0},
@@ -318,33 +238,23 @@ class NomadClient:
         ]
 
 
-# ---------------------------------------------------------------------------
-# Structure extraction → extxyz lines
-# ---------------------------------------------------------------------------
+# structure extraction → extxyz lines
 
 def _clean_element_label(label: str) -> Optional[str]:
-    """
-    Extract a valid element symbol from a NOMAD site label.
-
-    Handles: "Sr1" → "Sr", "Fe_sv" → "Fe", "FE" → "Fe", "o" → "O",
-             "Ca_pv" → "Ca", "r" → None (not a valid element).
-
-    Returns the cleaned symbol or None if no valid element can be extracted.
-    """
-    # Extract the alphabetic prefix (before digits, underscores, +, etc.)
+    # extract the alphabetic prefix (before digits, underscores, +, etc.)
     m = re.match(r'([A-Za-z]{1,2})', label)
     if not m:
         return None
 
     prefix = m.group(1)
 
-    # Try as 2-letter element first (title-cased): "FE" → "Fe", "sr" → "Sr"
+    # try as 2-letter element first (title-cased) FE → Fe , sr → Sr
     if len(prefix) >= 2:
         candidate2 = prefix[:2].capitalize()
         if candidate2 in _VALID_ELEMENTS:
             return candidate2
 
-    # Fall back to 1-letter element: "O2" → "O", "H" → "H"
+    # fall back to 1-letter element O2 → O , H → H
     candidate1 = prefix[0].upper()
     if candidate1 in _VALID_ELEMENTS:
         return candidate1
@@ -357,48 +267,35 @@ def compute_min_distance(
     lattice: Optional[np.ndarray] = None,
     pbc: Optional[list[bool]] = None,
 ) -> float:
-    """
-    Compute the minimum interatomic distance in a structure.
-
-    Parameters
-    ----------
-    positions : (N, 3) array in Angstrom
-    lattice : (3, 3) array in Angstrom, or None for non-periodic
-    pbc : list of 3 bools, or None (assumed all True if lattice given)
-
-    Returns
-    -------
-    Minimum pairwise distance in Angstrom. Returns inf if < 2 atoms.
-    """
     n = len(positions)
     if n < 2:
         return float("inf")
 
     if lattice is not None:
-        # Minimum image convention for periodic systems
+        # minimum image convention for periodic systems
         if pbc is None:
             pbc = [True, True, True]
 
         inv_lat = np.linalg.inv(lattice)
         frac = positions @ inv_lat
 
-        # Pairwise fractional differences: (N, N, 3)
+        # pairwise fractional differences (N, N, 3)
         delta_frac = frac[:, None, :] - frac[None, :, :]
 
-        # Apply minimum image convention only along periodic directions
+        # apply minimum image convention only along periodic directions
         for dim in range(3):
             if pbc[dim]:
                 delta_frac[:, :, dim] -= np.round(delta_frac[:, :, dim])
 
-        # Convert back to Cartesian
+        # convert back to Cartesian
         delta_cart = delta_frac @ lattice
     else:
         delta_cart = positions[:, None, :] - positions[None, :, :]
 
-    # Squared distances
+    # squared distances
     dist_sq = np.sum(delta_cart ** 2, axis=-1)
 
-    # Mask diagonal (self-distances)
+    # mask diagonal (self-distances)
     np.fill_diagonal(dist_sq, float("inf"))
 
     return float(np.sqrt(dist_sq.min()))
@@ -408,29 +305,13 @@ def extract_structure_extxyz(
     entry: dict,
     min_dist: Optional[float] = None,
 ) -> tuple[Optional[str], list[str]]:
-    """
-    Convert a single NOMAD archive entry dict into an extxyz-format string.
-
-    Returns (xyz_string, dataset_dois) where xyz_string is None if the entry
-    has no parseable structure or fails validation, and dataset_dois is a list
-    of DOI strings from the entry's datasets.
-
-    Parameters
-    ----------
-    entry : dict
-        Single entry from the NOMAD archive query response.
-    min_dist : float, optional
-        If set, skip structures where any two atoms are closer than this
-        distance (in Angstrom). Uses minimum image convention for periodic
-        systems.
-    """
     try:
         archive = entry.get("archive", {})
         runs = archive.get("run", [])
         if not runs:
             return None, []
 
-        # Get the last run's last system (we requested system[-1])
+        # get the last run's last system (we requested system -1 )
         systems = runs[-1].get("system", []) if runs else []
         if not systems:
             return None, []
@@ -440,7 +321,7 @@ def extract_structure_extxyz(
         if not atoms:
             return None, []
 
-        # Positions: NOMAD stores in SI (metres), convert to Angstrom
+        # positions NOMAD stores in SI (metres), convert to Angstrom
         positions = atoms.get("positions")
         if positions is None:
             return None, []
@@ -450,13 +331,10 @@ def extract_structure_extxyz(
         if n_atoms == 0:
             return None, []
 
-        # Labels (element symbols)
-        # NOMAD labels can be site labels ("Sr1", "O2"), POTCAR names
-        # ("Ca_sv", "Fe_pv"), or even lowercase ("r", "o"). We extract
-        # the element symbol and validate it.
+        # labels (element symbols)
         labels = atoms.get("labels")
         if labels is None:
-            # Fall back to species
+            # fall back to species
             species = atoms.get("species")
             if species is not None:
                 labels = [sp.get("name", "X") if isinstance(sp, dict) else str(sp)
@@ -464,7 +342,7 @@ def extract_structure_extxyz(
             else:
                 return None, []
 
-        # Clean labels: "Sr1" → "Sr", "Ca_sv" → "Ca", "FE" → "Fe", "o" → "O"
+        # clean labels Sr1 → Sr , Ca_sv → Ca , FE → Fe , o → O
         cleaned_labels = []
         for lbl in labels:
             sym = _clean_element_label(lbl)
@@ -478,16 +356,16 @@ def extract_structure_extxyz(
         if len(labels) != n_atoms:
             return None, []
 
-        # Lattice vectors: NOMAD stores in SI (metres) → Angstrom
+        # lattice vectors NOMAD stores in SI (metres) → Angstrom
         lattice = atoms.get("lattice_vectors")
         pbc = atoms.get("periodic")
 
-        # Convert lattice to Angstrom for distance check and extxyz output
+        # convert lattice to Angstrom for distance check and extxyz output
         lat_angstrom = None
         if lattice is not None:
             lat_angstrom = np.array(lattice, dtype=np.float64) * 1e10
 
-        # Minimum distance check: skip structures with unreasonably close atoms
+        # minimum distance check skip structures with unreasonably close atoms
         if min_dist is not None and n_atoms >= 2:
             pbc_list = pbc if pbc is not None else (
                 [True, True, True] if lat_angstrom is not None else None
@@ -500,10 +378,10 @@ def extract_structure_extxyz(
                 )
                 return None, []
 
-        # Build the comment/properties line
+        # build the comment/properties line
         entry_id = entry.get("entry_id", "unknown")
 
-        # Get metadata from the entry-level fields
+        # get metadata from the entry-level fields
         formula = ""
         material_id = ""
         program = ""
@@ -518,7 +396,7 @@ def extract_structure_extxyz(
             sim = method.get("simulation", {})
             program = sim.get("program_name", "") or ""
 
-        # Extract dataset DOIs
+        # extract dataset DOIs
         datasets = entry.get("datasets", [])
         if datasets:
             for ds in datasets:
@@ -528,10 +406,10 @@ def extract_structure_extxyz(
 
         lines = io.StringIO()
 
-        # Line 1: atom count
+        # line 1 atom count
         lines.write(f"{n_atoms}\n")
 
-        # Line 2: comment line with properties
+        # line 2 comment line with properties
         comment_parts = []
 
         if lat_angstrom is not None:
@@ -542,7 +420,7 @@ def extract_structure_extxyz(
             pbc_str = " ".join("T" if p else "F" for p in pbc)
             comment_parts.append(f'pbc="{pbc_str}"')
         elif lat_angstrom is not None:
-            # If lattice is given but PBC is not, assume periodic
+            # if lattice is given but PBC is not, assume periodic
             comment_parts.append('pbc="T T T"')
 
         comment_parts.append('Properties=species:S:1:pos:R:3')
@@ -556,13 +434,13 @@ def extract_structure_extxyz(
         if structural_type:
             comment_parts.append(f'structural_type={structural_type}')
         if dataset_dois:
-            # Join multiple DOIs with semicolons (no spaces, safe for extxyz)
+            # join multiple DOIs with semicolons (no spaces, safe for extxyz)
             doi_str = ";".join(dataset_dois)
             comment_parts.append(f'doi="{doi_str}"')
 
         lines.write(" ".join(comment_parts) + "\n")
 
-        # Atom lines
+        # atom lines
         for i in range(n_atoms):
             symbol = labels[i]
             x, y, z = positions[i]
@@ -575,12 +453,9 @@ def extract_structure_extxyz(
         return None, []
 
 
-# ---------------------------------------------------------------------------
-# Shard writer
-# ---------------------------------------------------------------------------
+# shard writer
 
 class ShardWriter:
-    """Writes structures to compressed extxyz shard files."""
 
     def __init__(self, output_dir: Path, shard_size: int, start_shard: int = 0):
         self.output_dir = output_dir
@@ -612,28 +487,22 @@ class ShardWriter:
             self._fh = None
 
 
-# ---------------------------------------------------------------------------
-# Query builder
-# ---------------------------------------------------------------------------
+# query builder
 
-# Known large external databases imported into NOMAD.
-# These are the values of the `external_db` metadata field.
+# known large external databases imported into NOMAD
 KNOWN_EXTERNAL_DBS = [
     "AFLOW",
     "The Materials Project",
     "OQMD",
 ]
 
-# Known reference URLs for large databases that are uploaded as regular
-# NOMAD entries (not tagged via external_db). Entries whose `comment`
-# metadata field contains any of these strings will be excluded.
+# known reference URLs for large databases that are uploaded as regular
 KNOWN_LARGE_DB_COMMENTS = [
     "https://alexandria.icams.rub.de/",
 ]
 
 
 def build_query(args: argparse.Namespace) -> dict:
-    """Build NOMAD query dict from CLI arguments."""
     query: dict[str, Any] = {}
 
     if args.program_name:
@@ -653,13 +522,10 @@ def build_query(args: argparse.Namespace) -> dict:
             nel_q["lte"] = args.n_elements_max
         query["results.material.n_elements"] = nel_q
 
-    # ---- Exclusions ----
-    # Collect all NOT clauses; we'll AND them together at the end.
+    # exclusions
     not_clauses: list[dict] = []
 
-    # --exclude-large-dbs: convenience flag that excludes all known large
-    # external databases (AFLOW, Materials Project, OQMD) AND known large
-    # database uploads (Alexandria via its comment field).
+    # exclude-large-dbs convenience flag that excludes all known large
     exclude_ext = []
     exclude_comments = []
 
@@ -667,34 +533,30 @@ def build_query(args: argparse.Namespace) -> dict:
         exclude_ext = list(KNOWN_EXTERNAL_DBS)
         exclude_comments = list(KNOWN_LARGE_DB_COMMENTS)
 
-    # --exclude-external-db: explicit list of external_db values to exclude
+    # exclude-external-db explicit list of external_db values to exclude
     if args.exclude_external_db:
         for db_name in args.exclude_external_db:
             if db_name not in exclude_ext:
                 exclude_ext.append(db_name)
 
-    # --exclude-comment: exclude entries whose `comment` metadata
-    # matches any of these strings (exact match).
+    # exclude-comment exclude entries whose comment metadata
     if args.exclude_comment:
         for cmt in args.exclude_comment:
             if cmt not in exclude_comments:
                 exclude_comments.append(cmt)
 
-    # Build NOT clauses for external_db exclusion.
-    # The external_db field is a simple string field on entries.
-    # We exclude each value individually with NOT clauses.
+    # build NOT clauses for external_db exclusion
     for db_name in exclude_ext:
         not_clauses.append({"not": {"external_db": db_name}})
 
-    # Build NOT clauses for comment exclusion.
-    # The `comment` field is a string on each entry's metadata.
+    # build NOT clauses for comment exclusion
     for cmt in exclude_comments:
         not_clauses.append({"not": {"comment": cmt}})
 
-    # Merge NOT clauses into the query using AND
+    # merge NOT clauses into the query using AND
     if not_clauses:
         if query:
-            # Wrap existing query + not_clauses in an AND
+            # wrap existing query + not_clauses in an AND
             query = {"and": [query] + not_clauses}
         elif len(not_clauses) == 1:
             query = not_clauses[0]
@@ -704,9 +566,7 @@ def build_query(args: argparse.Namespace) -> dict:
     return query
 
 
-# ---------------------------------------------------------------------------
-# Main download loop
-# ---------------------------------------------------------------------------
+# main download loop
 
 def download_all(
     client: NomadClient,
@@ -719,9 +579,6 @@ def download_all(
     delay: float = 0.1,
     min_dist: Optional[float] = None,
 ):
-    """
-    Main download loop with checkpoint-based resumability.
-    """
     output_dir.mkdir(parents=True, exist_ok=True)
     ckpt_path = output_dir / "checkpoint.json"
 
@@ -731,7 +588,7 @@ def download_all(
         log.info("Download already completed (checkpoint says so). Use --no-resume to restart.")
         return
 
-    # Count total
+    # count total
     if ckpt.query_total is None:
         log.info("Counting total entries matching query...")
         ckpt.query_total = client.count_entries(query)
@@ -749,7 +606,7 @@ def download_all(
     writer = ShardWriter(output_dir, shard_size, start_shard=ckpt.shard_index)
     doi_path = output_dir / "dataset_dois.txt"
     all_dois: set[str] = set()
-    # Load previously collected DOIs if resuming
+    # load previously collected DOIs if resuming
     if doi_path.exists():
         all_dois = set(doi_path.read_text().strip().splitlines())
 
@@ -762,19 +619,18 @@ def download_all(
 
     page_after = ckpt.last_page_after_value
 
-    # We request the archive + metadata together using entries/archive/query.
-    # This endpoint returns archive data alongside entry metadata.
+    # we request the archive + metadata together using entries/archive/query
     required = ARCHIVE_REQUIRED
 
     try:
         while True:
-            # Check if we've hit the user-specified max
+            # check if we've hit the user-specified max
             n_processed = ckpt.total_downloaded + ckpt.total_skipped + ckpt.total_failed
             if max_entries is not None and n_processed >= max_entries:
                 log.info(f"Reached max_entries={max_entries}, stopping.")
                 break
 
-            # Fetch one page of archive data
+            # fetch one page of archive data
             try:
                 result = client.query_archives_page(
                     query=query,
@@ -783,9 +639,7 @@ def download_all(
                     page_after_value=page_after,
                 )
             except RuntimeError:
-                # The archive endpoint failed for this page (e.g. 500 on a
                 # bad entry). Use the lightweight metadata endpoint to skip
-                # past this page and continue.
                 log.warning(
                     f"Archive request failed at cursor={page_after}. "
                     f"Skipping {page_size} entries via metadata fallback..."
@@ -818,7 +672,7 @@ def download_all(
                 ckpt.completed = True
                 break
 
-            # Process entries
+            # process entries
             for entry in data:
                 xyz, dois = extract_structure_extxyz(entry, min_dist=min_dist)
                 if xyz is not None:
@@ -829,7 +683,7 @@ def download_all(
                 all_dois.update(dois)
                 pbar.update(1)
 
-            # Update pagination cursor
+            # update pagination cursor
             pagination = result.get("pagination", {})
             next_after = pagination.get("next_page_after_value")
 
@@ -842,10 +696,10 @@ def download_all(
             ckpt.last_page_after_value = page_after
             ckpt.shard_index = writer.current_shard
 
-            # Save checkpoint every page
+            # save checkpoint every page
             ckpt.save(ckpt_path)
 
-            # Be a good citizen: small delay between pages
+            # be a good citizen small delay between pages
             time.sleep(delay)
 
     except KeyboardInterrupt:
@@ -855,11 +709,10 @@ def download_all(
         ckpt.shard_index = writer.current_shard
         ckpt.save(ckpt_path)
         pbar.close()
-        # Save any DOIs collected entry-by-entry (partial, best-effort)
+        # save any DOIs collected entry-by-entry (partial, best-effort)
         if all_dois:
             doi_path.write_text("\n".join(sorted(all_dois)) + "\n")
 
-    # After download completes (or on resume with --collect-dois),
     # do an authoritative aggregation query to get ALL dataset DOIs
     if ckpt.completed:
         _collect_and_save_dois(client, query, doi_path)
@@ -871,9 +724,7 @@ def download_all(
     )
 
 
-# ---------------------------------------------------------------------------
-# Alternative: parallel archive download using entry IDs
-# ---------------------------------------------------------------------------
+# alternative parallel archive download using entry IDs
 
 def download_parallel(
     client: NomadClient,
@@ -887,16 +738,6 @@ def download_parallel(
     delay: float = 0.05,
     min_dist: Optional[float] = None,
 ):
-    """
-    Two-phase parallel download:
-      1. Paginate through entries/query to collect all entry_ids (fast, metadata only)
-      2. Fetch archives in parallel batches using entries/archive/query with
-         entry_id filters
-
-    This is faster for very large downloads but uses more memory for the ID list.
-    For 12M+ entries, phase 1 alone will take a while. Consider the sequential
-    approach (download_all) for simplicity.
-    """
     output_dir.mkdir(parents=True, exist_ok=True)
     ckpt_path = output_dir / "checkpoint.json"
     ids_path = output_dir / "entry_ids.json"
@@ -907,7 +748,7 @@ def download_parallel(
         log.info("Download already completed.")
         return
 
-    # Phase 1: collect entry IDs
+    # phase 1 collect entry IDs
     if ids_path.exists() and resume:
         log.info("Loading cached entry IDs...")
         entry_ids = json.loads(ids_path.read_text())
@@ -958,7 +799,7 @@ def download_parallel(
         ids_path.write_text(json.dumps(entry_ids))
         log.info(f"Collected {len(entry_ids):,} entry IDs.")
 
-    # Phase 2: fetch archives in parallel batches
+    # phase 2 fetch archives in parallel batches
     start_idx = ckpt.total_downloaded + ckpt.total_skipped + ckpt.total_failed
     remaining_ids = entry_ids[start_idx:]
     log.info(f"Phase 2: Downloading archives for {len(remaining_ids):,} entries...")
@@ -974,7 +815,6 @@ def download_parallel(
     batch_size = page_size
 
     def fetch_batch(batch_ids: list[str]) -> list[dict]:
-        """Fetch archive data for a batch of entry IDs."""
         result = client._post_with_retry("entries/archive/query", {
             "query": {"entry_id:any": batch_ids},
             "required": ARCHIVE_REQUIRED,
@@ -983,19 +823,19 @@ def download_parallel(
         return result.get("data", [])
 
     try:
-        # Split into batches
+        # split into batches
         batches = [
             remaining_ids[i:i + batch_size]
             for i in range(0, len(remaining_ids), batch_size)
         ]
 
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            # Submit batches with controlled concurrency
+            # submit batches with controlled concurrency
             future_map = {}
             submitted = 0
             batch_iter = iter(batches)
 
-            # Initial submission
+            # initial submission
             for _ in range(min(max_workers * 2, len(batches))):
                 try:
                     batch = next(batch_iter)
@@ -1024,7 +864,7 @@ def download_parallel(
                         ckpt.total_failed += len(batch)
                         pbar.update(len(batch))
 
-                    # Submit next batch
+                    # submit next batch
                     try:
                         next_batch = next(batch_iter)
                         new_future = executor.submit(fetch_batch, next_batch)
@@ -1032,7 +872,7 @@ def download_parallel(
                     except StopIteration:
                         pass
 
-                    # Checkpoint periodically
+                    # checkpoint periodically
                     if (ckpt.total_downloaded + ckpt.total_skipped) % (batch_size * 10) == 0:
                         ckpt.shard_index = writer.current_shard
                         ckpt.save(ckpt_path)
@@ -1062,7 +902,6 @@ def download_parallel(
 
 
 def _collect_and_save_dois(client: NomadClient, query: dict, doi_path: Path):
-    """Collect all dataset DOIs via aggregation and save to file."""
     log.info("Collecting all dataset DOIs via aggregation query...")
     try:
         doi_records = client.collect_dataset_dois(query)
@@ -1080,9 +919,7 @@ def _collect_and_save_dois(client: NomadClient, query: dict, doi_path: Path):
         log.warning(f"Failed to collect DOIs via aggregation: {e}")
 
 
-# ---------------------------------------------------------------------------
 # CLI
-# ---------------------------------------------------------------------------
 
 def main():
     parser = argparse.ArgumentParser(
@@ -1091,13 +928,13 @@ def main():
         epilog=__doc__,
     )
 
-    # Output
+    # output
     parser.add_argument(
         "--output-dir", "-o", type=Path, default=Path("nomad_structures"),
         help="Output directory for shard files and checkpoint (default: nomad_structures)",
     )
 
-    # Filters
+    # filters
     parser.add_argument(
         "--program-name", type=str, default=None,
         help="Filter by simulation code, e.g. VASP, 'Quantum Espresso', FHI-aims",
@@ -1120,7 +957,7 @@ def main():
         help="Maximum number of distinct elements",
     )
 
-    # Exclusion filters
+    # exclusion filters
     parser.add_argument(
         "--exclude-large-dbs", action="store_true",
         help=(
@@ -1148,7 +985,7 @@ def main():
         ),
     )
 
-    # Download params
+    # download params
     parser.add_argument(
         "--page-size", type=int, default=100,
         help="Entries per API request (default: 100). Don't go above ~200.",
@@ -1174,7 +1011,7 @@ def main():
         help="HTTP request timeout in seconds (default: 120)",
     )
 
-    # Modes
+    # modes
     parser.add_argument(
         "--resume", action="store_true",
         help="Resume from checkpoint if one exists",
@@ -1196,7 +1033,7 @@ def main():
         ),
     )
 
-    # Validation
+    # validation
     parser.add_argument(
         "--min-distance", type=float, default=None,
         metavar="ANGSTROM",

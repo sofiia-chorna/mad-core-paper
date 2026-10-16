@@ -1,23 +1,3 @@
-"""
-Per rank:
-  - read assigned feature parquets (round-robin from manifest)
-  - apply StandardFlexibleScaler on CPU (mean_/scale_ pickle; no PCA — m292 features are 256-D directly)
-  - move to GPU
-  - call coresets.fps_sharded(X_local, K)
-  - gather selected IDs to rank 0
-Rank 0:
-  - write output parquet (locked schema)
-  - write meta.json sidecar
-  - append a row to timings.csv
-
-Locked schema (6 columns):
-  fps_order          int64    FPS pick order 0..K-1   (filter `fps_order < K'` for top-K' coreset)
-  epsilon_sq         float32  squared coverage radius at moment of pick (monotonic-decreasing)
-  input_row          int64    row index in the manifest's concat order   (internal reproducibility)
-  configuration_id   string   globally-unique   (universal pointer to the structure)
-  dataset_id         string   per-row source dataset
-  names              list<str>  optional/nullable (human-readable labels, colabfit only)
-"""
 from __future__ import annotations
 
 import argparse
@@ -146,17 +126,6 @@ def load_shard(path: str, scaler: dict, max_force: float = None,
                max_energy_per_atom: float = None, max_atomic_energy: float = None,
                exclude_cids: set = None, keep_raw: bool = False,
                feature_col: str = "phace_features_bb_mean"):
-    """
-    Read one *_with_phace.parquet, return
-    (X_scaled_f32, id_table_dict, n_rows, n_nonfinite, n_maxforce, n_energy).
-
-    Projects only the feature/id (and the filter) columns, so it stays light on the wide
-    47-col zbl shards. Fills any missing ID column with None, tolerating both the full
-    colabfit schema and the lean non-colabfit one (which lacks names). Drops rows with
-    non-finite features; if max_force is set, rows with max_force >= it; and if either
-    energy threshold is set, rows with zbl_energy_per_atom > it or zbl_max_atomic_energy
-    > it (NaN included in every cut). The three drop reasons are counted separately.
-    """
     names = pq.ParquetFile(path).schema_arrow.names
     cols = [feature_col] + [c for c in ID_COLS if c in names]
     force_col = "zbl_max_force" if "zbl_max_force" in names else ("max_force" if "max_force" in names else None)
@@ -378,8 +347,7 @@ def main():
     for c in ID_COLS:
         part[c] = [id_tables[c][i] for i in my_local_idx]
 
-    # self-contained coreset features: each rank writes its own selected rows' RAW features
-    # so the accrete reads them directly (no gather / pool re-scan).
+    # self-contained coreset features each rank writes its own selected rows' RAW features
     if args.emit_features:
         wf_dir = Path(args.output).parent / "with_features"
         wf_dir.mkdir(parents=True, exist_ok=True)

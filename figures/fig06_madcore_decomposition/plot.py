@@ -143,7 +143,7 @@ def main():
     axb = fig.add_subplot(gs[1, 0])
     axc = fig.add_subplot(gs[1, 1])
 
-    # ---- a
+    # a
     bars(axa, fkeys, fcum, fcol, ks)
     axa.set_xticklabels([f"$2^{{{e + 1}}}$" for e in range(len(ks))], fontsize=17.5)
     axa.tick_params(axis="x", pad=10, length=0)
@@ -157,7 +157,7 @@ def main():
                handlelength=1.0, handletextpad=0.35, labelspacing=0.34,
                columnspacing=0.8)
 
-    # ---- b
+    # b
     etot = sum(elfam[f] for f in ELFAM_ORDER)
     x = np.arange(len(ks), dtype=float)
     bottom = np.zeros(len(ks))
@@ -183,7 +183,7 @@ def main():
                handlelength=1.0, handletextpad=0.35, labelspacing=0.34,
                columnspacing=0.8)
 
-    # ---- c
+    # c
     for k in ckeys:
         y = list(ccum[k])
         axc.plot(ks, y, marker=CAT_MARKER[k], ms=6.0, lw=2.8, color=CAT_COLOR[k],

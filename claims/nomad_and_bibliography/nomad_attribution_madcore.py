@@ -13,7 +13,6 @@ OUT = f"{CLAIMS}/out/nomad_attribution_madcore.json"
 
 
 def main():
-    # the NOMAD structures of MAD-CORE, cut from the MAD-COSMO tables written by nomad_attribution.py
     csv.field_size_limit(10**9)
     os.makedirs(SUB, exist_ok=True)
     names = [n.decode() for n in np.load(f"{MAD_CORE}/release_directory_names.npy")]

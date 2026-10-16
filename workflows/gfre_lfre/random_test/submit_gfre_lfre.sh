@@ -18,11 +18,9 @@ HERE=$ROOT/paper/figures/mad1.5_gfre_lfre_compare/random_test
 source ${HOME}/venv-phace/bin/activate
 export OMP_NUM_THREADS=4
 
-echo "STARTING $(date)"
 cd $HERE
 python -u gfre_lfre_random_test.py \
     --with-lfre \
     --lfre-n-jobs 32 \
     --pair-workers 7 \
     "$@"
-echo "ENDING $(date)"

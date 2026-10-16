@@ -1,48 +1,4 @@
 #!/usr/bin/env python3
-"""
-Convert OPTIMADE-format JSONL (one structure per line) to extended XYZ.
-
-Streams input and output line-by-line; safe for files of any size.
-
-Usage
------
-Single file:
-    python jsonl_to_extxyz.py input.jsonl output.xyz
-    python jsonl_to_extxyz.py input.jsonl              # output defaults to input.xyz
-
-Whole directory of .jsonl files:
-    python jsonl_to_extxyz.py optimade_data/                       # .xyz alongside each .jsonl
-    python jsonl_to_extxyz.py optimade_data/ --output-dir xyz/     # separate output directory
-
-Common flags:
-    --max-atoms 200          drop oversize structures
-    --skip-disordered        drop mixed-occupancy structures
-    --overwrite              reprocess files whose .xyz already exists (directory mode)
-    --strict                 abort on first malformed structure (default: skip)
-
-extxyz format
--------------
-Single multi-frame file (the standard for ASE / MACE / metatrain / PET):
-
-    <N_atoms>
-    Lattice="a1 a2 a3 b1 b2 b3 c1 c2 c3" Properties=species:S:1:pos:R:3 \
-        pbc="T T T" structure_id=mv-12345 formula=AB2O4
-    El1 x y z
-    El2 x y z
-    ...
-
-Skip policies
--------------
-A structure is skipped (counted in the final summary) if any of the following
-hold; pass --strict to abort on the first failure instead:
-
-  * `lattice_vectors` is null and the structure is meant to be periodic
-  * `cartesian_site_positions` length != `nsites`
-  * `species_at_sites` references a species name not in `species`
-  * a species has multiple chemical_symbols and --skip-disordered is set
-  * a species has chemical_symbols == ["vacancy"] (always skipped)
-  * --max-atoms is set and nsites exceeds it
-"""
 
 import argparse
 import json
@@ -57,11 +13,6 @@ except ImportError:
 
 
 def chemical_symbol_for_species(sp: dict, skip_disordered: bool) -> Optional[str]:
-    """Resolve an OPTIMADE species dict to a single XYZ element symbol.
-
-    Returns None if the site should be skipped (vacancy, disordered when
-    --skip-disordered is set).
-    """
     syms = sp.get("chemical_symbols") or []
     if not syms:
         return None
@@ -70,7 +21,7 @@ def chemical_symbol_for_species(sp: dict, skip_disordered: bool) -> Optional[str
     if len(syms) > 1:
         if skip_disordered:
             return None
-        # Take the highest-concentration component; fall back to first.
+        # take the highest-concentration component fall back to first
         concs = sp.get("concentration") or []
         if concs and len(concs) == len(syms):
             return syms[concs.index(max(concs))]
@@ -89,7 +40,7 @@ def jsonl_to_extxyz(
     n_in = n_out = 0
     n_skip_atoms = n_skip_disorder = n_skip_invalid = 0
 
-    # Pre-count lines for the progress bar (cheap on a local file)
+    # pre-count lines for the progress bar (cheap on a local file)
     total = None
     if progress and tqdm is not None:
         with open(input_path, "rb") as f:
@@ -115,7 +66,7 @@ def jsonl_to_extxyz(
                 continue
 
             try:
-                # ----- nsites filter ----------
+                # nsites filter
                 nsites = entry["nsites"]
                 if max_atoms is not None and nsites > max_atoms:
                     n_skip_atoms += 1
@@ -127,10 +78,7 @@ def jsonl_to_extxyz(
                         f"position/nsites mismatch: {len(positions)} vs {nsites}"
                     )
 
-                # ----- species lookup ----------
-                # OPTIMADE spec: if `species` is null/missing, the entries in
-                # `species_at_sites` are taken to be element symbols directly.
-                # Several providers (OMDB at least) use this shorthand.
+                # species lookup
                 species_list = entry.get("species")
                 site_names = entry["species_at_sites"]
 
@@ -143,7 +91,7 @@ def jsonl_to_extxyz(
                 symbols = []
                 for name in site_names:
                     if species_lookup is None:
-                        # Direct element symbol mode
+                        # direct element symbol mode
                         if name == "vacancy":
                             disordered_hit = True
                             break
@@ -162,7 +110,7 @@ def jsonl_to_extxyz(
                     n_skip_disorder += 1
                     continue
 
-                # ----- PBC and lattice ----------
+                # PBC and lattice
                 dim_types = entry.get("dimension_types") or [1, 1, 1]
                 pbc_str = " ".join("T" if d else "F" for d in dim_types)
 
@@ -173,7 +121,7 @@ def jsonl_to_extxyz(
                     lat = [[0.0, 0.0, 0.0]] * 3
                 lat_str = " ".join(f"{x:.10f}" for vec in lat for x in vec)
 
-                # ----- comment line metadata ----------
+                # comment line metadata
                 sid = entry.get("_optimade_id", "")
                 formula = entry.get("chemical_formula_reduced", "")
                 meta_kv = []
@@ -183,7 +131,7 @@ def jsonl_to_extxyz(
                     meta_kv.append(f"formula={formula}")
                 meta_str = (" " + " ".join(meta_kv)) if meta_kv else ""
 
-                # ----- write frame ----------
+                # write frame
                 fout.write(f"{nsites}\n")
                 fout.write(
                     f'Lattice="{lat_str}" '
@@ -214,7 +162,6 @@ def jsonl_to_extxyz(
 
 
 def print_summary(stats: dict, output_path: Path) -> None:
-    """Print a per-file conversion summary."""
     print(f"  Read:    {stats['n_in']:>10d} structures")
     print(f"  Wrote:   {stats['n_out']:>10d} structures")
     if stats["skip_atoms"]:
@@ -236,11 +183,6 @@ def process_directory(
     strict: bool,
     progress: bool,
 ) -> None:
-    """Convert every *.jsonl in input_dir to a sibling .xyz file.
-
-    If output_dir is given, .xyz files are placed there with the same basename;
-    otherwise each .xyz sits beside its source .jsonl.
-    """
     files = sorted(input_dir.glob("*.jsonl"))
     if not files:
         sys.exit(f"No .jsonl files found in {input_dir}")
@@ -285,7 +227,7 @@ def process_directory(
             totals[k] += stats[k]
         n_done += 1
 
-    # Aggregate footer
+    # aggregate footer
     print("=" * 60)
     print("AGGREGATE")
     print("=" * 60)
@@ -330,7 +272,7 @@ def main():
     if not args.input.exists():
         sys.exit(f"Input does not exist: {args.input}")
 
-    # ----- directory mode --------------------------------------
+    # directory mode
     if args.input.is_dir():
         if args.output is not None:
             sys.exit(
@@ -348,7 +290,7 @@ def main():
         )
         return
 
-    # ----- single file mode ------------------------------------
+    # single file mode
     if args.output_dir is not None:
         sys.exit("--output-dir only applies to directory input.")
 

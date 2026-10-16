@@ -11,10 +11,6 @@ MAX_SNAPSHOTS = 480
 NODES = {"a": ["scratchv3-s--madcore_2k--s42", "scratchv3-s--madcore_5k--s42", "scratchv3-s--madcore_10k--s42", "scratchv3-s--madcore_20k--s42"],
          "b": ["scratchv3-s--random_2k--s42", "scratchv3-s--random_5k--s42", "scratchv3-s--random_10k--s42", "scratchv3-s--random_20k--s42"]}
 
-# isolated atom reference round: the round 2 protocol (seed 42, batch 64, lr 3e-4, warm up 0.01, cosine, metatrain
-# default clipping and float32, unweighted mse, about 187,200 updates, combined 1250 validation set with native
-# mae_prod selection) with the 102 isolated atom references appended to every training set; epochs follow from the
-# augmented set size, the snapshot interval only bounds the checkpoints kept on disk (at most 480 per run)
 OPTIONS = """seed: 42
 device: cuda
 base_precision: 32
@@ -83,18 +79,7 @@ wandb:
 """
 
 SUBMIT = """#!/bin/bash
-#SBATCH --account=ab010
-#SBATCH --partition=normal
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=288
-#SBATCH --time=12:00:00
-#SBATCH --job-name=ssv3-node_{node}
-#SBATCH --nice=2000
-#SBATCH --output={runs}/%x-%j.out
 set -uo pipefail
-# every allocation queues its successor at start (afterany) while a run of this node is unfinished, and resumes
-# every unfinished run from its newest checkpoint; per run locks keep two allocations off the same run
 G={runs}
 unfinished=0
 for run in {run_list}; do
@@ -107,14 +92,6 @@ fi
 """
 
 SMOKE = """#!/bin/bash
-#SBATCH --account=ab010
-#SBATCH --partition=debug
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-task=72
-#SBATCH --time=00:30:00
-#SBATCH --job-name=ssv3-smoke
-#SBATCH --output={runs}/smoke/%x-%j.out
 set -uo pipefail
 export UENV_WARN_MIGRATE=1
 cd {exp}
@@ -125,7 +102,6 @@ uenv run pytorch/v2.9.1:v2 --view=default -- ${HOME}/venv-metatrain-fix/bin/pyth
 """
 
 
-# existing run directories, node scripts and provenance entries are never rewritten, runs may be training
 def main():
     sets = json.load(open(MANIFESTS / "SETS.json"))
     atomic_types = "[" + ", ".join(str(z) for z in sets["atomic_types"]) + "]"

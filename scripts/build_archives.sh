@@ -1,9 +1,8 @@
 #!/bin/bash
-# packs the release from the current commit into dist/<version>
-# usage  bash scripts/build_archives.sh 1.0.0
+# packs the release from the current commit into dist/ version
 
 cd "$(dirname "$0")/.."
-version=${1:?give a version, for example 1.0.0}
+version=$1
 name=mad-core-paper-$version
 out=dist/$version
 

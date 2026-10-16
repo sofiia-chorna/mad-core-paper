@@ -163,7 +163,6 @@ train_loader = torch_geometric.dataloader.DataLoader(
 
 def get_mace_descriptors(model, node_feats, invariants_only=True):
     # node_feats from LLPRModel is all interaction layers concatenated
-    # we slice out only the l=0 (invariant) part from each layer
     irreps_out = model.products[0].linear.irreps_out
     l_max = irreps_out.lmax
 
@@ -220,12 +219,12 @@ with torch.no_grad():
         outputs = mace_llpr(batch, compute_force=False, compute_stress=False)
 
         if VARIANT == "BB":
-            # backbone: invariant features from each interaction layer
+            # backbone invariant features from each interaction layer
             feats = get_mace_descriptors(
                 model=model, node_feats=outputs["node_feats"], invariants_only=True
             )
         else:
-            # last layer: features after the readout MLP
+            # last layer features after the readout MLP
             feats = aggregate_features(mace_llpr, outputs["node_feats"])
 
         all_feats.append(feats.detach().cpu())

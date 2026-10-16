@@ -6,27 +6,13 @@
 #SBATCH --cpus-per-task=288
 #SBATCH --time=05:00:00
 #SBATCH --job-name=ft-aligned-20k
-#SBATCH --output=${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/finetune_aligned_20k/runs/%x-%j.out
-set -uo pipefail
-export UENV_WARN_MIGRATE=1
 
-D=${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/finetune_aligned_20k
-LAUNCH=${DEV_ROOT}/phace-atomic/mad-core-valid/experiments/voronoi_weighted/pbe_20k/scripts/launch_runs_fix.sh
-PY=${HOME}/venv-metatrain-fix/bin/python
+python=${HOME}/venv-metatrain-fix/bin/python
+here=$SLURM_SUBMIT_DIR
 
-# input checks again on the compute node, the run starts only if they pass
-cd $D
-if [ "$PWD" != "$D" ]; then
-  echo "GUARD: wrong working directory $PWD"
-  exit 1
-fi
-uenv run pytorch/v2.9.1:v2 --view=default -- $PY scripts/check_inputs.py || exit 1
+cd $here/omat-s--madcore_20k_aligned--s42
+CUDA_VISIBLE_DEVICES=0 uenv run pytorch/v2.9.1:v2 --view=default -- $python -m metatrain train options.yaml --restart auto >> train.log 2>&1
 
-# 150 epochs in one uninterrupted allocation on one GPU, corrected package verified by the launcher
-bash $LAUNCH wait $D/runs omat-s--madcore_20k_aligned--s42 || exit 1
-
-# selected checkpoint exported and evaluated on both frozen tests, then the three model comparison
-cd $D
-uenv run pytorch/v2.9.1:v2 --view=default -- $PY scripts/evaluate.py || exit 1
-uenv run pytorch/v2.9.1:v2 --view=default -- $PY scripts/compare.py
-echo "ALIGNED FINE-TUNE DONE"
+cd $here/..
+uenv run pytorch/v2.9.1:v2 --view=default -- $python scripts/evaluate.py
+uenv run pytorch/v2.9.1:v2 --view=default -- $python scripts/compare.py

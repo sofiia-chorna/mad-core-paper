@@ -27,8 +27,6 @@ EPFL = {
     "perle":     "#CAC7C7",
 }
 
-# Palette used by figures/accrete.pdf (recovered from its fill operators). Close to
-# MAIN but not identical -- keep the two apart so figures stay internally consistent.
 ACCRETE = {
     "charcoal": "#413C3A",
     "petrol":   "#42707D",
@@ -38,13 +36,10 @@ ACCRETE = {
 }
 
 RAMPS = {
-    # multi-hue sequential ramp over the whole ACCRETE palette, dark -> bright, which
-    # is the order its luminances already fall in (~61, 82, 100, 115, 169). Runs
-    # viridis-style (low = dark) so the light "absent" gray can't be mistaken for a
-    # low count, and so skewed data still separates across the dark half.
+    # is the order its luminances already fall in ( 61, 82, 100, 115, 169). Runs
     "accrete_seq": [ACCRETE["charcoal"], ACCRETE["indigo"], ACCRETE["petrol"],
                     ACCRETE["brick"], ACCRETE["apricot"]],
-    # MAIN-palette families (dark -> base -> light), for shaded same-family categories
+    # MAIN-palette families (dark to base to light), for shaded same-family categories
     "copper": ["#7f2c21", MAIN["rosy_copper"], "#e3a89e"],
     "teal":   ["#22545e", MAIN["stormy_teal"], MAIN["tropical_teal"], "#a6d4d1"],
     "gray":   ["#6c6665", MAIN["mid_gray"], MAIN["silver"], "#e9e7e7"],
