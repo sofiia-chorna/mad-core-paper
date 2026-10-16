@@ -1,4 +1,3 @@
-
 import sys
 from pathlib import Path
 
@@ -57,18 +56,15 @@ def run_fps(X, n_select, seed_idx=0):
         separations.append(sel_d.min())
     return selected, np.array(coverages), np.array(separations)
 
-
 max_k = 4
-n_select = 2 ** max_k + 1          # one extra: the "next pick" of the last panel
+n_select = 2 ** max_k + 1  # one extra, the "next pick" of the last panel
 seed_idx = int(np.argmin(np.linalg.norm(pts - pts.mean(axis=0), axis=1)))
 fps_order, coverages, separations = run_fps(pts, n_select, seed_idx)
 all_dists = np.sqrt(((pts[:, None] - pts[None, :]) ** 2).sum(axis=2))
 
 
 def entry_level(i):
-    """Level at which ordering position i (0-based) enters the hierarchy."""
     return 0 if i < 2 else int(np.ceil(np.log2(i + 1))) - 1
-
 
 # %%
 show_ks = [1, 2, 3, 4]
@@ -83,13 +79,12 @@ xlim, ylim = (cx - half, cx + half), (cy - half, cy + half)
 
 
 def label_offset(pt, avoid=None, mag=13):
-    """Pick a label direction that stays inside the axes and points away
-    from any arrows attached to this point (avoid = list of unit vectors)."""
     best, best_score = None, -1e9
     for dx in (-1, 0, 1):
         for dy in (-1, 0, 1):
             if dx == 0 and dy == 0:
                 continue
+
             # keep the label inside the panel
             if dx > 0 and pt[0] + 1.6 > xlim[1]:
                 continue
@@ -110,9 +105,9 @@ def label_offset(pt, avoid=None, mag=13):
                 score = min(float(np.arccos(np.clip(v @ a, -1.0, 1.0)))
                             for a in avoid)
             if dx and dy:
-                score += 0.05        # slight preference for diagonal placement
+                score += 0.05  # slight preference for diagonal placement
             if dx > 0 and dy > 0:
-                score += 0.03        # tie-break: up-right
+                score += 0.03  # tie-break, up-right
             if score > best_score:
                 best_score, best = score, (dx, dy)
     dx, dy = best if best else (1, 1)
@@ -120,14 +115,11 @@ def label_offset(pt, avoid=None, mag=13):
     va = {1: 'bottom', 0: 'center', -1: 'top'}[dy]
     return (mag * dx, mag * dy), ha, va
 
-
-# size the figure so each square (aspect='equal') panel fills its grid slot:
-# slot width == top-row height, otherwise equal-aspect panels get centred in
-# wider slots and phantom gaps appear between them no matter the wspace.
+# size the figure so each square panel fills its grid slot
 FIG_H = 5.0
 HSPACE, WSPACE = 0.15, 0.015
 top, bottom, left, right = 0.9, 0.04, 0.015, 0.985
-row_units = 5.0 + 2.5 * HSPACE                      # 4 + 1 + hspace*mean
+row_units = 5.0 + 2.5 * HSPACE  # 4 + 1 + hspace mean
 panel_h = (top - bottom) * FIG_H * 4.0 / row_units  # top-row height (inches)
 FIG_W = panel_h * (n_panels + (n_panels - 1) * WSPACE) / (right - left)
 
@@ -157,13 +149,12 @@ for panel_idx, k in enumerate(show_ks):
     ax.scatter(*pts[fps_order[0]], s=110, c=LEVEL_COLORS[0], edgecolors='none',
                zorder=12)
 
-    # the next pick = the point realizing the current coverage (open marker)
+    # the next pick is the point realizing the current coverage (open marker)
     nxt = fps_order[size]
     ax.scatter(*pts[nxt], s=130, facecolors='none', edgecolors='black',
                linewidths=2.0, zorder=14)
 
-    # Delta_1 = separation (closest selected pair),
-    # Delta_2 = coverage (next pick <-> its nearest selected point)
+    # delta_1 is separation (closest selected pair)
     sel = np.array(selected)
     sel_d = all_dists[np.ix_(sel, sel)].copy()
     np.fill_diagonal(sel_d, np.inf)
@@ -184,6 +175,7 @@ for panel_idx, k in enumerate(show_ks):
         perp = np.array([-u[1], u[0]])
         if np.dot(perp, np.array([cx, cy]) - mid) < 0:
             perp = -perp
+
         # short arrows (late panels) need the label pushed further out
         lab_off = 0.42 if np.linalg.norm(dv) > 1.5 else 0.68
         ax.text(*(mid + perp * lab_off), lab, fontsize=18, fontweight='bold',
@@ -216,7 +208,6 @@ for panel_idx, k in enumerate(show_ks):
                  color='black', pad=8)
 
 # %%
-# Ordering strip: the single FPS ordering with nested brackets = the hierarchy.
 ax = fig.add_subplot(gs[1, :])
 n_dots = 2 ** max_k
 y_dots = 1.0

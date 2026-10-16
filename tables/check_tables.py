@@ -1,7 +1,3 @@
-# re-derives every value of the four SI tables and the stated numbers that come from these
-# files, and compares them with the submitted text. inputs are the source files in data/
-# (copied from the experiment reports, see provenance/extracted_files.tsv); nothing is
-# recomputed from predictions here, that is level 2 (workflows/)
 import argparse
 import gzip
 import json
@@ -9,17 +5,19 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 
-# SI Table training-set sizes, structures and ordinary atoms, as printed in si.tex
+# SI table training-set sizes, structures and ordinary atoms, as printed in si.tex
 TRAINING_SET_SIZE = {
     ("MAD-CORE", 5000): 32973, ("MAD-CORE", 10000): 63653, ("MAD-CORE", 20000): 120468,
     ("RANDOM", 5000): 186211, ("RANDOM", 10000): 369718, ("RANDOM", 20000): 730646,
 }
-# SI Table finetune, balanced 4,000 test, energy meV/atom and force meV/A, as printed
+
+# SI table finetune, balanced 4,000 test, energy meV/atom and force meV/A, as printed
 FINETUNE = {
     "scratch": {"E_mae": 176.7, "E_rmse": 262.8, "F_mae": 583, "F_rmse": 1008, "E_p8": 1079.6, "F_p8": 5253, "E_sup": 3007.2, "F_sup": 22173},
     "finetune_aligned": {"E_mae": 90.0, "E_rmse": 143.7, "F_mae": 191, "F_rmse": 360, "E_p8": 585.9, "F_p8": 5717, "E_sup": 1464.7, "F_sup": 24924},
 }
-# SI Table delta-learning, test_madcore and test_random, as printed
+
+# SI table delta-learning, test_madcore and test_random, as printed
 DELTA = {
     ("test_madcore", "direct"): (143.2, 209.0, 382, 903, 629.6, 5905, 1483.3, 17858),
     ("test_madcore", "lda"): (28.5, 58.8, 62, 153, 479.5, 1308, 1227.8, 4281),
@@ -28,11 +26,12 @@ DELTA = {
     ("test_random", "lda"): (20.3, 24.1, 41, 60, 80.6, 252, 174.0, 1028),
     ("test_random", "pbe"): (6.2, 12.9, 24, 36, 70.6, 220, 159.4, 889),
 }
-# SI Table accrete-levels: size, from MAD-NEXT, coverage. the margin and time columns of the
-# printed table come from the deleted run log and have no source file
+
+# SI table accrete-levels, the margin and time columns have no source file
 ACCRETE = {16: (1, 9.186), 256: (8, 3.833), 4096: (224, 1.939), 65536: (11785, 0.941),
            262144: (38355, 0.710), 524288: (62967, 0.617), 856012: (86910, 0.556)}
-# Table I of the main text, DFT label counts of the MAD-CORE record
+
+# table I of the main text, DFT label counts of the MAD-CORE record
 RECORD_DFT_COUNTS = {"lda": 79241, "pbe": 77383, "r2scan": 21854}
 
 
@@ -66,8 +65,8 @@ def check_finetune(data, failures):
 
 
 def check_delta(data, failures):
-    # both metrics files hold results[test view][model row]{E, F}{mae, rmse, p8, sup}; the
-    # corrected rows are in the delta file, the direct row in the direct file
+
+    # both metrics files hold results per test view and model row
     corrections = json.load(open(data / "delta_lda_pbe_18k_metrics.json"))["results"]
     direct = json.load(open(data / "direct_r2scan_18k_metrics.json"))["results"]
     rows = {"direct": (direct, "direct r2SCAN (standalone)"),
@@ -100,8 +99,8 @@ def check_accrete(data, failures):
 
 
 def check_record(data, failures, record_dir=None):
-    # the frame counts of the three DFT label files of the MAD-CORE record; counted from the
-    # extxyz files themselves when --record-dir points at a copy of the record
+
+    # structures in the three DFT label files of the record, counted when a record folder is given
     index = json.load(open(data / "madcore_record_index.json"))["files"]
     for functional, count in RECORD_DFT_COUNTS.items():
         name = f"dft_{functional}.extxyz.gz"
@@ -128,7 +127,7 @@ def check_record(data, failures, record_dir=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description="see the README")
     parser.add_argument("--data", default=str(HERE / "data"))
     parser.add_argument("--record-dir", default=None, help="folder holding the dft_*.extxyz.gz files of the MAD-CORE record, to count their structures")
     args = parser.parse_args()
@@ -142,7 +141,6 @@ def main():
     if failures:
         raise SystemExit("FAILED: " + "; ".join(failures))
     print("all table values agree with their source files")
-
 
 if __name__ == "__main__":
     main()

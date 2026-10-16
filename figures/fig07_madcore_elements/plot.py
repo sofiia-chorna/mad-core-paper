@@ -98,7 +98,8 @@ def draw_ptable(ax, el_counts, cbar_in_gap=True):
 
 
 def main():
-    # structures containing each element over the full 2^24 coreset, from prepare_data.py
+
+    # structures containing each element over the full 2 24 coreset, from prepare_data.py
     lines = (HERE / "data" / "element_structure_counts.tsv").read_text().splitlines()
     el_counts = {line.split("\t")[0]: int(line.split("\t")[1]) for line in lines[1:]}
 
@@ -111,7 +112,6 @@ def main():
     hi = max(el_counts, key=el_counts.get)
     print(f"wrote {OUT}: {len(el_counts)} elements, {lo}={el_counts[lo]:,} .. "
           f"{hi}={el_counts[hi]:,}")
-
 
 if __name__ == "__main__":
     sys.exit(main())

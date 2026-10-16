@@ -1,8 +1,9 @@
 #!/bin/bash
-# copies every file of archive_files.tsv into results_archive and models_archive
-root=$(cd "$(dirname "$0")/.." && pwd)
+# copies every file listed in archive_files.csv into results_archive and models_archive
 
-tail -n +2 $root/provenance/archive_files.tsv | while IFS=$'\t' read -r dst src rest; do
-    mkdir -p $root/$(dirname $dst)
-    cp -p $src $root/$dst
+cd "$(dirname "$0")/.."
+
+tail -n +2 provenance/archive_files.csv | while IFS=, read -r destination source rest; do
+    mkdir -p "$(dirname "$destination")"
+    cp -p "$source" "$destination"
 done

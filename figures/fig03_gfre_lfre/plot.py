@@ -10,7 +10,7 @@ from gfre_heatmap import PRETTY_LABELS, _draw, build_matrix, load_results  # noq
 
 
 def main():
-    p = argparse.ArgumentParser(description=__doc__)
+    p = argparse.ArgumentParser(description="see the README")
     p.add_argument("output", nargs="?",
                    default=os.path.join(HERE, os.pardir, os.pardir, "build", "figures", "gfre_lfre_heatmap_union.pdf"))
     p.add_argument("--gfre", default=os.path.join(HERE, "data", "union_gfre_seed0.json"),
@@ -62,7 +62,6 @@ def main():
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     plt.savefig(out, dpi=300, bbox_inches='tight')
     print(f"\nsaved => {out}")
-
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -1,7 +1,3 @@
-"""Sketch-map figure of MAD-CORE (fig:smap), drawn from data/smap_points.npz.
-
-The data file is written by prepare_data.py from the released MAD-CORE files.
-"""
 import argparse
 import json
 from pathlib import Path

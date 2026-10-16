@@ -4,7 +4,7 @@ The code and small records of every computational step behind the paper, by scie
 purpose. These are level-2 and level-3 workflows in the sense of `docs/reproduction.md`: they
 are documented and their inputs, outputs and resources recorded, but they were **not rerun**
 for this release. The original analysis code is copied as it was (one file per original,
-see `provenance/extracted_files.tsv` for the source path, revision and hash), with two
+see `provenance/extracted_files.csv` for the source path, revision and hash), with two
 mechanical changes applied by `provenance/scrub.sh`: site- and user-specific path prefixes
 were replaced by the placeholders below, and the private identifiers of the unpublished
 Materials Cloud drafts by `${MC_DRAFT_MADCORE}` and `${MC_DRAFT_MADCOSMO}`. Slurm scripts
@@ -25,7 +25,7 @@ scripts and notes.
 ## collection/
 
 How the 1.7 billion structures of MAD-COSMO were gathered. Two parts, both from unversioned
-trees (hashes in `provenance/extracted_files.tsv` are the only provenance):
+trees (hashes in `provenance/extracted_files.csv` are the only provenance):
 
 - `download_and_prefilter/`: bulk downloads from ColabFit (Hugging Face mirror,
   `download_colabfit.py`, `download_oc20.py`), NOMAD (`nomad/download_nomad_2.py`, REST API

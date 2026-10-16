@@ -6,3 +6,4 @@ __pycache__/
 # the supporting-results and model archives are assembled from these folders, not committed
 results_archive/
 models_archive/
+docs/

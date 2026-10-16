@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, os.pardir, os.pardir, "plotting"))
-# the drawing helpers of the main figure keep model order, labels and colour scale identical
+
+# the helpers of the main figure keep model order, labels and colour scale identical
 import gfre_heatmap as union_plot  # noqa: E402
 
 
@@ -54,7 +55,6 @@ def main():
     os.makedirs(os.path.dirname(args.output) or ".", exist_ok=True)
     plt.savefig(args.output, dpi=300, bbox_inches="tight")
     print(f"saved {args.output}")
-
 
 if __name__ == "__main__":
     main()

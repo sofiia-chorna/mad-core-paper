@@ -16,15 +16,16 @@ paper, and the code of the workflows behind them.
 | `reference_figures/` | the submitted figure files, never overwritten |
 | `plotting/`, `data/` | shared plotting code, the scaler of the metric and the sketch-map projector |
 | `workflows/` | the upstream code and run records, by purpose, with a README |
-| `docs/` | `reproduction.md` (every figure, table and number with its inputs, command, check and status), `verification.md`, `zenodo.json`, the audit |
 | `provenance/` | source commits and the original path and hash of every copied file |
-| `scripts/` | `check_figures.sh` (every figure against the submitted PDF), `build_archives.sh` |
+| `scripts/` | `check_figures.sh` (every figure against the submitted PDF), `build_archives.sh`, `zenodo_upload.py` |
 | `environment/` | tested plotting environment, recorded ML environment |
 
 ```
 pip install -r environment/plot-requirements.txt
-bash scripts/check_figures.sh python
-python tables/check_tables.py
+bash scripts/check_figures.sh python          every figure against the submitted pdf
+python tables/check_tables.py                  every table value against its source file
+bash scripts/build_archives.sh 1.0.0           the release archives into dist/
+python scripts/zenodo_upload.py <id> dist/1.0.0 docs/zenodo.json   files and metadata to a Zenodo draft
 ```
 
 The release files are the source archive of this repository, a supporting-results archive

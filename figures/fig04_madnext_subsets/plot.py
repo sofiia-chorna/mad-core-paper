@@ -11,7 +11,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.patches import Patch
 
-
 DATA = HERE / "data" / "subset_counts.tsv"
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE.parent.parent / "build" / "figures" / "mad-kset-1col.pdf"
 OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -55,8 +54,8 @@ COLOR = {
     "mad_sol:solvents_interface": "#EE9AC6",
 }
 
+
 def load():
-    """cumulative count of each subset at every k-set size, from prepare_data.py"""
     lines = DATA.read_text().splitlines()
     names = lines[0].split("\t")[1:]
     rows = [[int(v) for v in line.split("\t")] for line in lines[1:]]
@@ -109,7 +108,6 @@ def main():
     counts, ks = load()
     plot(counts, ks)
     print("wrote mad-kset-1col.pdf")
-
 
 if __name__ == "__main__":
     main()

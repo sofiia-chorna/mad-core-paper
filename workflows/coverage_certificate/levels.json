@@ -1,10 +1,4 @@
 {
- "definition": {
-  "epsilon_sq": "epsilon_sq[i] = min_{j<i} ||s_i - s_j||^2 with s = (ecumetric_features - mean)/scale of the released rows; float64 direct differences; epsilon_sq[0] = +inf",
-  "separation": "sep(S_n) = sqrt(min(epsilon_sq[1:n])), the minimum pairwise distance of the first n rows",
-  "coverage": "cov_X(S) = max over the accrete pool X of the distance to the nearest member of S; not derivable from this column",
-  "numerical_uncertainty": "float64 arithmetic on the released float32 inputs (mean cancels in differences, scale applied once in float64); the expanded-form values agree with direct differences at every level's argmin pair to 2.6e-13 relative; selection-time and released features differ by featurizer rerun noise (scaled shift <= 1.8e-5 per row)"
- },
  "continuation_float32_vs_exact": {
   "rows": [
    856012,

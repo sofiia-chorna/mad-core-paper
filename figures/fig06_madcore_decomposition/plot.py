@@ -21,7 +21,7 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 N_TOP = 15
 OTHER_COLOR = "#B8B2AB"
 
-# size-ordered stack: strong hues for the big families, no two similar hues adjacent
+# size-ordered stack, strong hues for the big families, no two similar hues adjacent
 FAMILY_COLOR_LIST = [
     "#2E6DB4",  # OMat24            blue
     "#DE7E20",  # Alexandria        burnt orange
@@ -85,7 +85,6 @@ def read_tsv(name):
 
 
 def by_level(name):
-    """columns of a k_set_size x quantity table, the values at k = 2^1 .. 2^24"""
     header, rows = read_tsv(name)
     return {h: np.asarray([float(r[i]) if h == "epsilon" else int(r[i]) for r in rows])
             for i, h in enumerate(header)}
@@ -138,7 +137,7 @@ def main():
     axb = fig.add_subplot(gs[1, 0])
     axc = fig.add_subplot(gs[1, 1])
 
-    # ---- a: dataset families
+    # ---- a, dataset families
     bars(axa, fkeys, fcum, fcol, ks)
     axa.set_xticklabels([f"$2^{{{e + 1}}}$" for e in range(len(ks))], fontsize=17.5)
     axa.tick_params(axis="x", pad=10, length=0)
@@ -151,7 +150,7 @@ def main():
                handlelength=1.0, handletextpad=0.35, labelspacing=0.34,
                columnspacing=0.8)
 
-    # ---- b: chemical families of the elements
+    # ---- b, chemical families of the elements
     etot = sum(elfam[f] for f in ELFAM_ORDER)
     x = np.arange(len(ks), dtype=float)
     bottom = np.zeros(len(ks))
@@ -175,7 +174,7 @@ def main():
                handlelength=1.0, handletextpad=0.35, labelspacing=0.34,
                columnspacing=0.8)
 
-    # ---- c: category growth, log-log
+    # ---- c, category growth, log-log
     for k in ckeys:
         y = list(ccum[k])
         axc.plot(ks, y, marker=CAT_MARKER[k], ms=6.0, lw=2.8, color=CAT_COLOR[k],
@@ -218,7 +217,6 @@ def main():
 
     fig.savefig(OUT, dpi=200, bbox_inches="tight", facecolor="white")
     print(f"wrote {OUT}")
-
 
 if __name__ == "__main__":
     sys.exit(main())

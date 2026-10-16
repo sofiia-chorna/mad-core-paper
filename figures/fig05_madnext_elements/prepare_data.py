@@ -1,11 +1,3 @@
-"""Data of the MAD-NEXT elemental decomposition (fig:mad-coreset-counts).
-
-Writes, from the MAD-NEXT FPS ordering,
-  data/element_family_counts.tsv   element counts of each chemical family in every
-                                   power-of-two prefix and the full ordering (panel a)
-  data/element_structure_counts.tsv  number of structures containing each element over
-                                   the full ordering (panel b)
-"""
 from pathlib import Path
 
 import numpy as np
@@ -71,7 +63,6 @@ def main():
             if 0 < z <= MAX_Z:
                 fh.write(f"{chemical_symbols[z]}\t{counts[z]}\n")
     print(f"wrote data/element_family_counts.tsv and data/element_structure_counts.tsv, {n:,} structures")
-
 
 if __name__ == "__main__":
     main()

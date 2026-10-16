@@ -1,5 +1,3 @@
-# GFRE/LFRE heat-map helpers shared by figures/fig03_gfre_lfre and figures/siS1_gfre_lfre_random,
-# extracted unchanged from the union figure script of the papers repository
 import json
 
 import matplotlib.pyplot as plt
@@ -9,7 +7,6 @@ from matplotlib import rcParams
 from matplotlib.patches import Rectangle
 
 HEATMAP_CMAP = plt.colormaps["viridis"]
-
 
 rcParams.update({
     'font.family': 'sans-serif',

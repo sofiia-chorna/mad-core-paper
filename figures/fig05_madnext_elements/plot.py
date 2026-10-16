@@ -21,7 +21,8 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 
 FAM_ORDER = ["hydrogen", "s-block metals", "p-block elements", "transition metals",
              "lanthanides/actinides"]
-# accrete.pdf palette; ordered so no two adjacent stack segments share a hue
+
+# accrete.pdf palette, ordered so no two adjacent stack segments share a hue
 FAM_COLOR = {
     "hydrogen": epfl.ACCRETE["charcoal"],
     "s-block metals": epfl.ACCRETE["apricot"],
@@ -30,18 +31,18 @@ FAM_COLOR = {
     "lanthanides/actinides": epfl.ACCRETE["indigo"],
 }
 
-# Lanthanide/actinide rows pulled up (PT_LAYOUT parks them at rows 8-9, leaving a wide gap).
+# lanthanide/actinide rows pulled up (PT_LAYOUT parks them at rows 8-9, leaving a wide gap)
 LN_SHIFT = 0.55
 X_LO, X_HI = -0.10, 18.05
 Y_LO, Y_HI = 0.45, 10.05
 
-FS_SYM = 16.5       # element symbol
-FS_TICK = 15.5      # k-set tick labels
-FS_LABEL = 21.0     # axis labels
+FS_SYM = 16.5  # element symbol
+FS_TICK = 15.5  # k-set tick labels
+FS_LABEL = 21.0  # axis labels
 FS_LEGEND = 18.0
 FS_CBAR = 17.0
 FS_PANEL = 20.0
-FS_COUNT = 12.0     # per-cell count; short "16k" form survives the downscale
+FS_COUNT = 12.0  # per-cell count, short "16k" form survives the downscale
 
 
 def row_y(row):
@@ -54,7 +55,6 @@ def read_tsv(name):
 
 
 def load():
-    """element counts per family at every k-set size, and structures per element"""
     header, rows = read_tsv("element_family_counts.tsv")
     assert header[1:] == FAM_ORDER, header
     ks = [int(row[0]) for row in rows]
@@ -66,9 +66,8 @@ def load():
 
 def draw_ptable(ax, el_counts):
     vals = [v for v in el_counts.values() if v > 0]
-    # Deliberately NOT the ACCRETE palette used by panel a: those are categorical
-    # there, and reusing them here would imply a shared meaning (orange = s-block
-    # vs orange = abundant). A standard perceptual ramp reads as a scale instead.
+
+    # not the palette of panel a, a perceptual ramp reads as a scale
     cmap = plt.colormaps["viridis"]
     norm = mcolors.LogNorm(vmin=min(vals), vmax=max(vals))
 
@@ -109,8 +108,8 @@ def draw_ptable(ax, el_counts):
 
 
 def main():
-    # panel a: each distinct element of a structure contributes one count to its family,
-    # panel b: structures containing each element over the full ordering
+
+    # panel a, each distinct element of a structure contributes one count to its family
     ks, cum, el_counts = load()
     fam_idx = {f: i for i, f in enumerate(FAM_ORDER)}
 
@@ -152,7 +151,6 @@ def main():
     lo, hi = min(el_counts.values()), max(el_counts.values())
     print(f"wrote {OUT}")
     print(f"panel b: full ordering, {len(el_counts)} elements, {lo:,}-{hi:,}")
-
 
 if __name__ == "__main__":
     sys.exit(main())

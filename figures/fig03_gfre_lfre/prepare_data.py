@@ -1,10 +1,3 @@
-"""Data of the GFRE/LFRE heatmap (fig:gfre_lfre).
-
-The two JSON files in data/ are the GFRE and LFRE results over the MAD-NEXT test split,
-computed by workflows/gfre_lfre/union/gfre_lfre_union.py (featurization and the error
-computation run as Slurm jobs, see the submit scripts in that folder). This script copies
-the current results into data/.
-"""
 import shutil
 from pathlib import Path
 

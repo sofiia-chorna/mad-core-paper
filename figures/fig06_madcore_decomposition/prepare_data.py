@@ -1,16 +1,3 @@
-"""Data of the 2^24 decomposition figure (fig:coreset224-kset).
-
-Reads the store copy of the 2^24 accretion run and writes, for every power-of-two prefix
-of the ordering,
-  data/group_counts.tsv            structures of each dataset group (panel a)
-  data/element_family_counts.tsv   element counts of each chemical family (panel b)
-  data/category_counts.tsv         structures of each structural category (panel c)
-  data/coverage_radius.tsv         distance of the last pick to the earlier ones (inset)
-
-The dataset groups are those of the released dataset_group.npy, whose rows are in the
-same order. --labels run takes the group labels of the run instead, which differ for the
-7,492 structures relabelled in the release on 2026-10-09.
-"""
 import argparse
 import json
 from pathlib import Path
@@ -52,7 +39,8 @@ def main():
     parser.add_argument("--labels", choices=["run", "release"], default="release")
     args = parser.parse_args()
     run = f"{args.store_root}/accrete/phace_atomic_ep92/coreset224/out"
-    # the 341 MB coreset_224_light.parquet carries the same non-feature columns as the 37 GB full file
+
+    # the light parquet carries the same non-feature columns as the full filell file
     info = f"{run}/coreset_224_light.parquet"
     categories = f"{run}/picks_category_map_224.json"
     release_groups = f"{args.store_root}/release/mad-core/dataset_group.npy"
@@ -95,6 +83,7 @@ def main():
     z_of = {s: z for z, s in enumerate(chemical_symbols)}
     fam_of_z = {z_of[s]: FAM_ORDER.index(f) for f, syms in FAMILIES.items() for s in syms
                 if s in z_of}
+
     # each distinct element of a structure contributes one count to its family
     per = np.zeros((n, len(FAM_ORDER)), dtype=np.int32)
     for i, e in enumerate(els):
@@ -108,7 +97,6 @@ def main():
 
     write("coverage_radius.tsv", ["k_set_size", "epsilon"],
           [(k, repr(float(eps[k - 1]))) for k in ks])
-
 
 if __name__ == "__main__":
     main()

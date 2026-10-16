@@ -10,7 +10,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 CERTIFICATE_IN_RELEASE = os.path.join(HERE, os.pardir, "workflows", "coverage_certificate", "out", "stageB", "coverage_exact.json")
 
-parser = argparse.ArgumentParser(description=__doc__)
+parser = argparse.ArgumentParser(description="see the README")
 parser.add_argument("--release-root", required=True, help="the aa002 mad-core release directory (internal layout, see workflows/data_records/FORMAT.md)")
 parser.add_argument("--out", default=None, help="output JSON (default: out/<script name>.json next to this script)")
 ARGS = parser.parse_args()
@@ -102,7 +102,7 @@ def main():
     assert hi - lo == int(population[largest]), (hi - lo, int(population[largest]))
     assert text(np.load(f"{CELL_FPS}/center_configuration_id.npy", mmap_mode="r")[largest]) == centre["configuration_id"]
 
-    # within-cell FPS: -1 marks rows without an ordering of their own (filtered rows), duplicates repeat their twin's rank
+    # within-cell FPS, -1 marks rows without an ordering of their own (filtered rows), duplicates repeat their twin's rank
     order_in_cell = np.asarray(np.load(f"{CELL_FPS}/fps_order_in_cell.npy", mmap_mode="r")[lo:hi])
     ordered = order_in_cell[order_in_cell >= 0]
     distinct_ordered = int(np.unique(ordered).size)
@@ -151,7 +151,6 @@ def main():
     with open(OUT, "w") as f:
         json.dump(report, f, indent=1)
     print(json.dumps(report, indent=1))
-
 
 if __name__ == "__main__":
     main()

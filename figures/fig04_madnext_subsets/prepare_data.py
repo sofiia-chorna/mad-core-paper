@@ -1,9 +1,3 @@
-"""Data of the MAD-NEXT subset decomposition (fig:mad-coreset).
-
-Counts, for every power-of-two prefix of the MAD-NEXT FPS ordering and for the full
-ordering, how many structures of each MAD-NEXT subset it contains, and writes
-data/subset_counts.tsv, which plot.py reads.
-"""
 from pathlib import Path
 
 import numpy as np
@@ -36,7 +30,6 @@ def main():
         for k in ks:
             fh.write(f"{k}\t" + "\t".join(str(int(cum[name][k - 1])) for name in names) + "\n")
     print(f"wrote {out}: {len(ks)} k-sets, {len(names)} subsets, {n:,} structures")
-
 
 if __name__ == "__main__":
     main()

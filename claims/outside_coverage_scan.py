@@ -10,7 +10,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 CERTIFICATE_IN_RELEASE = os.path.join(HERE, os.pardir, "workflows", "coverage_certificate", "out", "stageB", "coverage_exact.json")
 
-parser = argparse.ArgumentParser(description=__doc__)
+parser = argparse.ArgumentParser(description="see the README")
 parser.add_argument("--release-root", required=True, help="the aa002 mad-core release directory (internal layout, see workflows/data_records/FORMAT.md)")
 parser.add_argument("--out", default=None, help="output JSON (default: out/<script name>.json next to this script)")
 parser.add_argument("--coverage-cert", required=True, help="the out/ folder of the coverage certificate with its per-folder population/ arrays (2.9 GB, development tree, not part of this release)")
@@ -242,7 +242,6 @@ def main():
         json.dump(scan, f, indent=1)
 
     print(json.dumps({key: value for key, value in scan.items() if key != "folders"}, indent=1))
-
 
 if __name__ == "__main__":
     main()

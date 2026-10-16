@@ -8,11 +8,9 @@ from matplotlib.text import Text
 from matplotlib.transforms import Bbox
 from matplotlib.ticker import MaxNLocator, MultipleLocator
 
-
 import sys
 
-# the three radial distribution function tables of data/ are the mean and the five seeds of every
-# potential over 20 to 50 ps, written by workflows/water_md/scripts/analyse.py
+# data/ holds the mean and the five seeds of every potential over 20 to 50 ps
 HERE = Path(__file__).resolve().parent
 CURVES = HERE / "data"
 FIGURES = Path(sys.argv[1]).parent if len(sys.argv) > 1 else HERE.parent.parent / "build" / "figures"
@@ -132,7 +130,6 @@ def main():
 
     smallest = min(t.get_fontsize() for t in fig.findobj(Text) if t.get_visible() and t.get_text().strip())
     print(f"{box.width:.2f} x {box.height:.2f} in, smallest font {smallest:.1f} pt")
-
 
 if __name__ == "__main__":
     main()

@@ -1,9 +1,3 @@
-"""Data of the sketch-map figure, from the MAD-CORE files of the release and the record.
-
-Projects the 2^24 MAD-CORE structures with the sketch-map projector, draws the
-population-weighted sample and the gray background, orders the points of every panel for
-drawing and writes data/smap_points.npz, which plot.py reads. About two minutes.
-"""
 import argparse
 import collections
 import json
@@ -15,11 +9,8 @@ import torch.nn as nn
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
-# the projector refitted on 2026-10-11 with the populations of the record (in the release
-# since then), and those populations, the release without the 67,975 rows with non-finite
-# descriptors. the populations file is in the results archive of this release (unpacked as
-# results_archive/ next to the repository, see README.md), data/ holds the projector; the
-# release features (34 GB) are read from the store
+
+# the projector of the release and the level 24 populations of the record
 PROJECTOR = str(ROOT / "data" / "models" / "ecumetric_sketchmap_projector_p20d8_rec_silu.pt")
 POPULATIONS = str(ROOT / "results_archive" / "data" / "voronoi_population_record_level24.npy")
 N_CORESET = 2 ** 24
@@ -40,7 +31,7 @@ OTHER_COLOUR = "#7E7368"
 COLOURS = PALETTE5 + [OTHER_COLOUR]
 Z_BOOST = {"OMat24": 1.0, "JARVIS": 1.0, "Alexandria": -0.5}
 
-# members listed in the color order of PALETTE5 (first member = rosy red, ...)
+# members listed in the color order of PALETTE5 (first member is rosy red, ...)
 GROUPS = [
     ("MAD-NEXT", [MAD_LABEL]),
     ("Bulk materials", ["OMat24", "Alexandria", "JARVIS"]),
@@ -136,7 +127,6 @@ def label_of(name):
         return "Materials Cloud"
     return RENAME.get(name, name)
 
-
 coordinates = project()
 
 if args.populations.endswith(".npz"):
@@ -157,8 +147,7 @@ else:
 assert source.shape == (N_CORESET,), source.shape
 family = np.asarray([label_of(name) for name in source], dtype=object)
 
-# population-weighted sample without replacement (Efraimidis-Spirakis: smallest
-# -log(u)/w keys win), forced union with the --always-top biggest cells
+# population-weighted sample without replacement, Efraimidis-Spirakis keys
 generator = np.random.default_rng(args.seed)
 weight = population ** args.gamma
 keys = -np.log(generator.random(N_CORESET)) / weight
@@ -196,10 +185,8 @@ for index, (title, members) in enumerate(panels):
         in_panel = shown[mask]
         panel_family = shown_family[mask]
         point_colour = np.asarray([colour_of[f] for f in panel_family], dtype=np.int8)
-    # z-order: continuous key = log10(population) + a per-dataset Z_BOOST (in
-    # decades) + jitter, so cells still land roughly biggest-on-top but a boosted
-    # dataset's key is shifted enough to actually cross into a bigger dataset's
-    # population range instead of only reshuffling within it
+
+    # z-order, log10 population plus a per-dataset boost and jitter
     log_pop = np.log10(np.maximum(population[in_panel], 1.0))
     boost = np.asarray([Z_BOOST.get(f, 0.0) for f in panel_family])
     jitter = (generator.random(in_panel.size) - 0.5) * 0.5

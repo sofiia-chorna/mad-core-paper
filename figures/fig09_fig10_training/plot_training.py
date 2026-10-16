@@ -1,9 +1,3 @@
-# learning curves (Fig. 9), force-error maps (Fig. 10) and the SI learning curves by test
-# part, drawn from data/. the drawing code is that of scripts/paper_figure.py of the
-# scratch_scaling_v3 experiment (kept next to this file as paper_figure_original.py); the
-# helpers it imported from two other experiment folders are inlined below unchanged, the
-# unused drawings (combined page, energy map, separate frozen tests) are dropped and the
-# inputs and outputs are arguments instead of the experiment tree
 import argparse
 import csv
 import json
@@ -82,8 +76,9 @@ def log_padding(low, high, fraction=0.12):
     factor = (high / low) ** fraction
     return low / factor, high * factor
 
-
 # the bins of the map that hold evaluated structures, with a one-bin margin
+
+
 def occupied_window(keep, x_edges, y_edges, margin=1):
     i, j = np.nonzero(keep)
     lo_i, hi_i = max(i.min() - margin, 0), min(i.max() + 1 + margin, len(x_edges) - 1)
@@ -108,8 +103,9 @@ def bare(axis, extent):
     axis.set_xticks([])
     axis.set_yticks([])
 
+# log y axis with labelled powers of ten, plain labels at 2, 3 and 5 when no power of ten falls insidend 5 times a power of ten
 
-# log y axis with labelled powers of ten, a panel without a power of ten gets plain labels at 2, 3 and 5 times a power of ten
+
 def log_y_ticks(ax, limits, x_margin=0.09, every_decade=False):
     ax.margins(x=x_margin)
     ax.autoscale_view()
@@ -125,8 +121,9 @@ def log_y_ticks(ax, limits, x_margin=0.09, every_decade=False):
     else:
         ax.yaxis.set_minor_formatter(FuncFormatter(lambda v, _: f"{v:g}" if round(v / 10 ** math.floor(math.log10(v)), 6) in (2.0, 3.0, 5.0) else ""))
 
+# row labels of the first column on one vertical linelumn
 
-# row labels of the first column on one vertical line, just left of the widest tick label of that column
+
 def align_row_labels(fig, pad_pt=4.0):
     axes = [ax for ax in fig.axes if ax.get_ylabel()]
     fig.canvas.draw()
@@ -136,8 +133,9 @@ def align_row_labels(fig, pad_pt=4.0):
         x = ax.transAxes.inverted().transform((left - pad_pt * fig.dpi / 72, 0))[0]
         ax.yaxis.set_label_coords(x, 0.5)
 
-
 # an axes box placed in inches, measured from the top left corner of the figure
+
+
 def axes_at(fig, left, top, width, height):
     fig_width, fig_height = fig.get_size_inches()
     return fig.add_axes([left / fig_width, (fig_height - top - height) / fig_height, width / fig_width, height / fig_height])
@@ -163,8 +161,9 @@ def style_curve_axis(ax, limits, show_x, font=1.0, tick_pad=3.5, x_margin=0.09, 
     ax.tick_params(which="major", length=3.5 * font, width=LINE, labelsize=7.5 * font, pad=tick_pad)
     ax.tick_params(which="minor", length=2 * font, width=0.6)
 
+# rows energy and force, columns the four metrics, one line per training sets and markers
 
-# rows energy and force, columns the four metrics, one line per training set, font scales text, lines and markers
+
 def draw_curves(fig, value, limits, left, top, width, height, gap, font=1.0, shared_x=False, tick_pad=3.5, label_pad=4.0, x_margin=0.09, every_decade=False, mark=None):
     for r, kind in enumerate(KINDS):
         unit, _ = KINDS[kind]
@@ -206,25 +205,31 @@ def legend(fig, handles, title, centre, top, handlelength=3.0, columnspacing=2.0
 def arm_handles(font=1.0, mark=None):
     return [plt.Line2D([], [], color=colour, marker=marker, lw=1.6 * (mark or font), ms=5 * (mark or font), label=name) for name, colour, marker in ARMS.values()]
 
+# plotted values and the frozen y range of each panel.tsv
 
-# plotted values, and the y range of each panel from the data range frozen in learning_curve_ylimits.tsv
+
 def curve_values(data, fraction=0.12):
     source = read_tsv(data / f"learning_curves_source_{POPULATION}.tsv")
     value = {(r["quantity"], r["metric"], r["training_set"], r["size"]): float(r["value"]) for r in source}
     limits = {(r["quantity"], r["metric"]): log_padding(float(r["data_min"]), float(r["data_max"]), fraction) for r in read_tsv(data / "learning_curve_ylimits.tsv")}
     return value, limits
 
+# bins, crop window, density contours and colour scales shared by every map
 
-# bins, crop window, density contours and colour scales shared by every map. the crop window comes
-# from the union of the two frozen tests (7,847 structures), whose supported bins are the keep array
-# of sketchmap_panels_union_7847_round3.npz, see data/README.md
-def map_context(data):
+
+def map_context(data, window):
     panels = np.load(data / f"sketchmap_panels_{POPULATION}.npz")
-    union = np.load(data / "sketchmap_panels_union_7847_round3.npz")
     info = json.loads((data / "MAPS.json").read_text())
     x_edges, y_edges = panels["x_edges"], panels["y_edges"]
-    assert np.array_equal(union["x_edges"], x_edges) and np.array_equal(union["y_edges"], y_edges), "the two panel files use different grids"
-    rows, columns, extent = occupied_window(union["keep"], x_edges, y_edges)
+
+    if window == "union":
+        union = np.load(data / "sketchmap_panels_union_7847_round3.npz")
+        assert np.array_equal(union["x_edges"], x_edges) and np.array_equal(union["y_edges"], y_edges)
+        keep = union["keep"]
+    else:
+        keep = panels["keep"]
+
+    rows, columns, extent = occupied_window(keep, x_edges, y_edges)
     density = panels["density"]
     body = drop_specks(np.isfinite(density) & (density > 0))
     cropped = np.where(body, density, np.nan)[rows, columns]
@@ -258,8 +263,9 @@ def draw_error(ax, ctx, kind, arm, size):
     finish_map(ax, ctx)
     return image
 
-
 # library structures per bin on a log scale, the same image as the log10 density on a linear scale
+
+
 def draw_library(ax, ctx):
     counts = 10.0 ** ctx["cropped"]
     finite = counts[np.isfinite(counts)]
@@ -288,13 +294,15 @@ def colour_bar(fig, image, left, top, width, height, label, orientation, ticks=N
         bar.set_ticklabels([f"{t:g}" for t in inside])
     return bar
 
-
 # right edge of an axes with its tick and axis labels, in inches
+
+
 def right_edge(fig, ax):
     return ax.get_tightbbox(fig.canvas.get_renderer()).x1 / fig.dpi
 
+# room a vertical colour bar with its labels takes right of its paneld on a scratch figure
 
-# room a vertical library colour bar with its tick and axis labels takes right of its panel, measured on a scratch figure
+
 def bar_extent(ctx, bars):
     fig = plt.figure(figsize=(SPLIT_WIDTH, 3))
     ax = axes_at(fig, 0.3, 0.3, 2.0, 2.0)
@@ -304,8 +312,9 @@ def bar_extent(ctx, bars):
     plt.close(fig)
     return extent
 
-
 # main text figure one, the pooled learning curves at the split width
+
+
 def curves_figure(value, limits, out_dir, name):
     font = CURVE_FONT
     left, gap = 1.0, 0.44
@@ -320,9 +329,9 @@ def curves_figure(value, limits, out_dir, name):
     legend(fig, arm_handles(font, CURVE_MARK), "training set", 0.5, 0.04, font=font)
     save(fig, out_dir, name)
 
+# the force maps, a context row then one row per training seteach with its
 
-# main text figure two (forces): a first row with the library density and the evaluated structures, each with its
-# colour bar, then rows training sets and columns training sizes with one error colour bar for both rows
+
 def map_figure(kind, ctx, out_dir, name):
     unit, _ = KINDS[kind]
     font = 1.5
@@ -331,8 +340,7 @@ def map_figure(kind, ctx, out_dir, name):
     height = width / 1.1
     bars = {"pad": 1.5, "labelpad": 2.0, "font": font}
 
-    # the first row spans the same width as the map columns, the gap after the first colour bar label is measured from
-    # the label box, which has some white space beyond the ink
+    # the first row spans the same width as the map columnsl is measured from
     columns_right = left + 3 * width + 2 * gap
     label_gap = 0.028
     context_width = (columns_right - left - bar_extent(ctx, bars) - label_gap) / 2
@@ -364,9 +372,9 @@ def map_figure(kind, ctx, out_dir, name):
     colour_bar(fig, image, columns_right + 0.06, maps_top, 0.1, 2 * height + gap, f"mean {kind} error, {unit}", "vertical", BAR_TICKS[kind], **bars)
     save(fig, out_dir, name)
 
+# learning curves on two test sets drawn separatelyts of KINDS
 
-# learning curves on two test sets drawn separately, value(test, arm, kind, metric, size) in the units of KINDS,
-# font scales text, lines and markers, one x label under the bottom row, each legend in one row, two-column width
+
 def separate_figure(value, tests, out_dir, name, font=1.0, mark=None, dpi=400):
     fig_width, left, gap, top, bottom, tick_pad, label_pad = WIDTH, 0.8, 0.42, 0.06 + 0.48 + 0.24, 0.48, 1.5, 1.5
     y_pad, x_margin, row_gap = CURVE_Y_PAD, CURVE_X_MARGIN, 0.16
@@ -401,8 +409,9 @@ def separate_figure(value, tests, out_dir, name, font=1.0, mark=None, dpi=400):
     save(fig, out_dir, name, dpi)
     return rows
 
-
 # the two 2,000-structure parts of balanced_4000, from the per-part table in meV/atom and eV/A
+
+
 def separate_parts_figure(data, out_dir, name):
     table = {(r["part"], r["training_set"], r["size"]): r for r in read_tsv(data / f"metrics_by_part_{POPULATION}.tsv") if r["population"] == POPULATION}
     column = {"energy": "E_{}_meV_per_atom", "force": "F_{}_eV_per_A"}
@@ -423,6 +432,7 @@ def main():
     parser.add_argument("drawing", choices=DRAWINGS, help="curves (Fig. 9), force_map (Fig. 10) or separate_parts (SI)")
     parser.add_argument("output", nargs="?", help="output PDF; a PNG is written next to it (default build/figures/<standard name>.pdf)")
     parser.add_argument("--data", default=str(HERE / "data"), help="folder with the TSV, JSON and npz inputs")
+    parser.add_argument("--window", choices=("union", "balanced"), default="union", help="crop window of the maps, the submitted figure uses the union of the two full tests")
     args = parser.parse_args()
     data = Path(args.data)
     standard = {"curves": f"train_curves_{POPULATION}", "force_map": f"train_force_map_{POPULATION}", "separate_parts": "si_train_curves_balanced_parts"}
@@ -435,10 +445,9 @@ def main():
         value, _ = curve_values(data)
         curves_figure(value, curve_values(data, CURVE_Y_PAD)[1], out_dir, name)
     if args.drawing == "force_map":
-        map_figure("force", map_context(data), out_dir, name)
+        map_figure("force", map_context(data, args.window), out_dir, name)
     if args.drawing == "separate_parts":
         separate_parts_figure(data, out_dir, name)
-
 
 if __name__ == "__main__":
     main()
