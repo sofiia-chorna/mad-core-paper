@@ -58,6 +58,7 @@ for index, panel in enumerate(panels):
               fontsize=10.0, fontweight="normal")
     dataset_legend_loc = "center right" if index == 0 else "lower right"
     axis.legend(handles=[Patch(facecolor=colour, edgecolor="0.15", linewidth=0.4, label=label)
+
                          for label, colour in panel["entries"]],
                 loc=dataset_legend_loc, frameon=False, fontsize=9.0, handlelength=0.9,
                 handletextpad=0.35, labelspacing=0.35, borderpad=0.2,
@@ -69,6 +70,7 @@ for index, panel in enumerate(panels):
         keys_legend = [Line2D([], [], marker="o", ls="", color="0.35",
                               ms=np.sqrt(size),
                               label=f"$10^{{{int(np.log10(value))}}}$")
+
                        for value, size in zip(args.reference, reference_size)]
         size_legend = axis.legend(handles=keys_legend, loc="lower left",
                                   frameon=False, fontsize=8.5, ncol=2,
@@ -83,6 +85,7 @@ for index, panel in enumerate(panels):
     axis.set_ylim(low[1] - MARGIN * span[1], high[1] + 0.22 * span[1])
     axis.set_xticks([])
     axis.set_yticks([])
+
     for spine in axis.spines.values():
         spine.set_linewidth(0.5)
         spine.set_color("black")
@@ -92,8 +95,10 @@ for axis in axes[n_panels:]:
 
 for column in range(args.columns):
     lowest = [i for i in range(n_panels) if i % args.columns == column]
+
     if lowest:
         axes[lowest[-1]].set_xlabel("SMAP 1", fontsize=10.0, labelpad=2.5)
+
 for index in range(0, n_panels, args.columns):
     axes[index].set_ylabel("SMAP 2", fontsize=10.0, labelpad=2.5)
 

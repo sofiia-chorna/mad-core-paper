@@ -45,6 +45,7 @@ def run_fps(X, n_select, seed_idx=0):
     min_dist[seed_idx] = 0.0
     coverages = [min_dist.max()]
     separations = [np.inf]
+
     for _ in range(n_select - 1):
         next_idx = int(np.argmax(min_dist))
         selected.append(next_idx)
@@ -54,7 +55,9 @@ def run_fps(X, n_select, seed_idx=0):
         sel_d = dists[np.ix_(selected, selected)]
         np.fill_diagonal(sel_d, np.inf)
         separations.append(sel_d.min())
+
     return selected, np.array(coverages), np.array(separations)
+
 
 max_k = 4
 n_select = 2 ** max_k + 1  # one extra, the "next pick" of the last panel
@@ -65,6 +68,7 @@ all_dists = np.sqrt(((pts[:, None] - pts[None, :]) ** 2).sum(axis=2))
 
 def entry_level(i):
     return 0 if i < 2 else int(np.ceil(np.log2(i + 1))) - 1
+
 
 # %%
 show_ks = [1, 2, 3, 4]
@@ -80,6 +84,7 @@ xlim, ylim = (cx - half, cx + half), (cy - half, cy + half)
 
 def label_offset(pt, avoid=None, mag=13):
     best, best_score = None, -1e9
+
     for dx in (-1, 0, 1):
         for dy in (-1, 0, 1):
             if dx == 0 and dy == 0:
@@ -88,32 +93,44 @@ def label_offset(pt, avoid=None, mag=13):
             # keep the label inside the panel
             if dx > 0 and pt[0] + 1.6 > xlim[1]:
                 continue
+
             if dx < 0 and pt[0] - 1.6 < xlim[0]:
                 continue
+
             if dx == 0 and (pt[0] - 0.8 < xlim[0] or pt[0] + 0.8 > xlim[1]):
                 continue
+
             if dy > 0 and pt[1] + 1.0 > ylim[1]:
                 continue
+
             if dy < 0 and pt[1] - 1.0 < ylim[0]:
                 continue
+
             if dy == 0 and (pt[1] - 0.5 < ylim[0] or pt[1] + 0.5 > ylim[1]):
                 continue
             v = np.array([dx, dy], float)
             v /= np.linalg.norm(v)
             score = 0.0
+
             if avoid:
                 score = min(float(np.arccos(np.clip(v @ a, -1.0, 1.0)))
+
                             for a in avoid)
+
             if dx and dy:
                 score += 0.05  # slight preference for diagonal placement
+
             if dx > 0 and dy > 0:
                 score += 0.03  # tie-break, up-right
+
             if score > best_score:
                 best_score, best = score, (dx, dy)
     dx, dy = best if best else (1, 1)
     ha = {1: 'left', 0: 'center', -1: 'right'}[dx]
     va = {1: 'bottom', 0: 'center', -1: 'top'}[dy]
+
     return (mag * dx, mag * dy), ha, va
+
 
 # size the figure so each square panel fills its grid slot
 FIG_H = 5.0
@@ -149,7 +166,7 @@ for panel_idx, k in enumerate(show_ks):
     ax.scatter(*pts[fps_order[0]], s=110, c=LEVEL_COLORS[0], edgecolors='none',
                zorder=12)
 
-    # the next pick is the point realizing the current coverage (open marker)
+    # the next pick is the open marker
     nxt = fps_order[size]
     ax.scatter(*pts[nxt], s=130, facecolors='none', edgecolors='black',
                linewidths=2.0, zorder=14)
@@ -162,6 +179,7 @@ for panel_idx, k in enumerate(show_ks):
     near = sel[int(np.argmin(all_dists[nxt, sel]))]
 
     arrow_dirs = {}
+
     for (a, b), lab in [((int(sel[i0]), int(sel[j0])), '$\\Delta_1$'),
                         ((int(nxt), int(near)), '$\\Delta_2$')]:
         ax.annotate('', xy=pts[a], xytext=pts[b],
@@ -173,10 +191,11 @@ for panel_idx, k in enumerate(show_ks):
         arrow_dirs.setdefault(b, []).append(-u)
         mid = (pts[a] + pts[b]) / 2
         perp = np.array([-u[1], u[0]])
+
         if np.dot(perp, np.array([cx, cy]) - mid) < 0:
             perp = -perp
 
-        # short arrows (late panels) need the label pushed further out
+        # short arrows need the label pushed further out
         lab_off = 0.42 if np.linalg.norm(dv) > 1.5 else 0.68
         ax.text(*(mid + perp * lab_off), lab, fontsize=18, fontweight='bold',
                 ha='center', va='center', color='black', zorder=16)
@@ -200,6 +219,7 @@ for panel_idx, k in enumerate(show_ks):
     ax.set_aspect('equal')
     ax.set_xticks([])
     ax.set_yticks([])
+
     for spine in ax.spines.values():
         spine.set_color('black')
         spine.set_linewidth(0.8)
@@ -221,6 +241,7 @@ ax.text(0.25, y_dots, 'FPS order', fontsize=16, ha='right', va='center',
 
 # nested brackets under the dots
 tick = 0.28
+
 for b, k in enumerate(range(1, max_k + 1)):
     size = 2 ** k
     y = 0.15 - 0.62 * b

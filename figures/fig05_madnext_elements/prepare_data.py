@@ -40,29 +40,37 @@ def main():
     fz = {z_of[s]: fam for fam, syms in FAMILIES.items() for s in syms if s in z_of}
     fam_idx = {f: i for i, f in enumerate(FAM_ORDER)}
 
-    # each DISTINCT element of a structure contributes one count to its family
+    # each distinct element of a structure counts once for its family
     per = np.zeros((n, len(FAM_ORDER)), dtype=np.int32)
+
     for i, e in enumerate(els):
         for z in e:
             f = fz.get(int(z))
+
             if f is not None:
                 per[i, fam_idx[f]] += 1
     cum = np.cumsum(per, axis=0)
+
     with open(HERE / "data" / "element_family_counts.tsv", "w") as fh:
         fh.write("k_set_size\t" + "\t".join(FAM_ORDER) + "\n")
+
         for k in ks:
             fh.write(f"{k}\t" + "\t".join(str(int(v)) for v in cum[k - 1]) + "\n")
 
     counts = {}
+
     for e in els:
         for z in set(int(x) for x in e):
             counts[z] = counts.get(z, 0) + 1
+
     with open(HERE / "data" / "element_structure_counts.tsv", "w") as fh:
         fh.write("element\tstructures\n")
+
         for z in sorted(counts):
             if 0 < z <= MAX_Z:
                 fh.write(f"{chemical_symbols[z]}\t{counts[z]}\n")
     print(f"wrote data/element_family_counts.tsv and data/element_structure_counts.tsv, {n:,} structures")
+
 
 if __name__ == "__main__":
     main()

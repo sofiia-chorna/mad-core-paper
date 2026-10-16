@@ -5,7 +5,6 @@ from collections import Counter
 import numpy as np
 
 import argparse
-import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CERTIFICATE_IN_RELEASE = os.path.join(HERE, os.pardir, "workflows", "coverage_certificate", "out", "stageB", "coverage_exact.json")
@@ -39,6 +38,7 @@ def formula(numbers):
     counts = Counter(int(z) for z in numbers)
     order = [6, 1] if 6 in counts else []
     order += sorted(z for z in counts if z not in order)
+
     return "".join(SYMBOLS[z] + (str(counts[z]) if counts[z] > 1 else "") for z in order)
 
 
@@ -75,7 +75,7 @@ def main():
     total = int(population.sum())
     assert total == RELEASED_ROWS, total
 
-    # smallest number of cells that together hold at least half of all released records
+    # smallest number of cells holding half of the records
     descending = np.sort(population)[::-1]
     cumulative = np.cumsum(descending)
     half_cells = int(np.searchsorted(cumulative, total / 2) + 1)
@@ -96,13 +96,13 @@ def main():
     centre["inside_mad_next_anchor_block"] = largest < 856012
     assert centre["mad_core_configuration_id"] == centre["configuration_id"]
 
-    # members of the largest cell, contiguous in the cell-major cell_fps files
+    # members of the largest cell
     offsets = np.load(f"{CELL_FPS}/center_offsets.npy", mmap_mode="r")
     lo, hi = int(offsets[largest]), int(offsets[largest + 1])
     assert hi - lo == int(population[largest]), (hi - lo, int(population[largest]))
     assert text(np.load(f"{CELL_FPS}/center_configuration_id.npy", mmap_mode="r")[largest]) == centre["configuration_id"]
 
-    # within-cell FPS, -1 marks rows without an ordering of their own (filtered rows), duplicates repeat their twin's rank
+    # within-cell FPS
     order_in_cell = np.asarray(np.load(f"{CELL_FPS}/fps_order_in_cell.npy", mmap_mode="r")[lo:hi])
     ordered = order_in_cell[order_in_cell >= 0]
     distinct_ordered = int(np.unique(ordered).size)
@@ -148,9 +148,11 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+
     with open(OUT, "w") as f:
         json.dump(report, f, indent=1)
     print(json.dumps(report, indent=1))
+
 
 if __name__ == "__main__":
     main()

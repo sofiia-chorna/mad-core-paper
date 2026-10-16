@@ -5,7 +5,6 @@ from multiprocessing import Pool
 import numpy as np
 
 import argparse
-import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CERTIFICATE_IN_RELEASE = os.path.join(HERE, os.pardir, "workflows", "coverage_certificate", "out", "stageB", "coverage_exact.json")
@@ -58,6 +57,7 @@ def add_counts(total, counts):
         total = np.pad(total, (0, counts.size - total.size))
 
     total[:counts.size] += counts
+
     return total
 
 
@@ -67,9 +67,11 @@ def add_dataset_counts(counts, column, values):
 
     if (values == values[0]).all():
         counts.setdefault(values[0].decode(), [0, 0, 0])[column] += int(values.size)
+
         return
 
     keys, sizes = np.unique(values, return_counts=True)
+
     for key, size in zip(keys, sizes):
         counts.setdefault(key.decode(), [0, 0, 0])[column] += int(size)
 
@@ -83,7 +85,7 @@ def scan_folder(folder):
     atom_offsets = np.load(f"{folder}/na.npy", mmap_mode="r")
     dataset_ids = np.load(f"{folder}/dataset_id.npy", mmap_mode="r")
 
-    # the anchor tier carries no filter or duplicate files and is the pool by construction
+    # the anchor tier has no filter or duplicate files
     if is_anchor:
         filter_codes = np.zeros(n_rows, dtype=np.int8)
         duplicates = np.zeros(n_rows, dtype=bool)
@@ -166,6 +168,7 @@ def scan_folder(folder):
     }
 
     print(f"{name} rows {n_rows} outside {summary['outside_finite']} nonfinite {summary['nonfinite']}", flush=True)
+
     return name, summary, all_atoms, arrays
 
 
@@ -177,6 +180,7 @@ def main():
     folders.sort(key=folder_rows, reverse=True)
 
     workers = ARGS.workers
+
     with Pool(workers) as pool:
         results = list(pool.imap_unordered(scan_folder, folders, chunksize=1))
 
@@ -196,11 +200,13 @@ def main():
 
     atom_bins = max(result[2].size for result in results)
     atoms_all = np.zeros((len(results), atom_bins), dtype=np.int64)
+
     for index, result in enumerate(results):
         atoms_all[index, :result[2].size] = result[2]
 
     folder_index = np.concatenate([
         np.full(result[3]["row"].size, index, dtype=np.int16)
+
         for index, result in enumerate(results)
     ])
 
@@ -242,6 +248,7 @@ def main():
         json.dump(scan, f, indent=1)
 
     print(json.dumps({key: value for key, value in scan.items() if key != "folders"}, indent=1))
+
 
 if __name__ == "__main__":
     main()

@@ -4,9 +4,9 @@ import os
 import sys
 import urllib.request
 
-# uploads the release files to an existing Zenodo draft and sets its metadata, it never publishes
-# usage  python scripts/zenodo_upload.py <deposition id> dist/1.0.0 docs/zenodo.json
-# the token is read from the ZENODO_TOKEN variable or from ~/.zenodo_token
+# uploads the release files to an existing Zenodo draft and sets its met
+# usage  python scripts/zenodo_upload.py <deposition id> dist/1.0.0 docs
+# the token is read from the ZENODO_TOKEN variable or from ~/.zenodo_tok
 
 API = "https://zenodo.org/api"
 
@@ -16,6 +16,7 @@ def token():
 
     if not value:
         path = os.path.expanduser("~/.zenodo_token")
+
         if os.path.exists(path):
             value = open(path).read().strip()
 

@@ -44,10 +44,12 @@ def ratio_summary(ratio):
         return {"n": 0}
 
     summary = {"n": int(ratio.size)}
+
     for value, level in zip(np.percentile(ratio, PERCENTILES), PERCENTILES):
         summary[f"p{level}"] = float(value)
 
     summary["max"] = float(ratio.max())
+
     return summary
 
 
@@ -63,6 +65,7 @@ def ratio_bins(ratio):
 
 def histogram_percentile(histogram, level):
     cumulative = np.cumsum(histogram)
+
     return int(np.searchsorted(cumulative, level / 100.0 * cumulative[-1]))
 
 
@@ -102,8 +105,6 @@ def main():
     in_pool = rows["in_pool"]
     n_atoms = rows["n_atoms"]
     image_flag = rows["image_flag"]
-    dataset_names = rows["dataset_names"].astype(str)
-    dataset_index = rows["dataset_index"]
     atoms_all_rows = rows["atoms_all_rows"]
     folders = scan["folders"]
 
@@ -140,6 +141,7 @@ def main():
 
     # item 2 contributing folders and their dataset ids
     folder_table = []
+
     for name, folder in folders.items():
         not_within = folder["outside_finite"] + folder["nonfinite"]
         folder_table.append({
@@ -156,11 +158,13 @@ def main():
     folder_table.sort(key=lambda entry: entry["not_within"], reverse=True)
 
     cumulative = 0
+
     for entry in folder_table:
         cumulative += entry["not_within"]
         entry["cumulative_share_percent"] = percent(cumulative, n_not_within)
 
     position = {name: index for index, name in enumerate(folder_names)}
+
     for entry in folder_table[:TOP_FOLDERS]:
         in_folder = folder_index == position[entry["folder"]]
         entry["ratio"] = ratio_summary(ratio[in_folder])
@@ -174,6 +178,7 @@ def main():
                 "share_of_folder_not_within_percent": percent(counts[1] + counts[2], entry["not_within"]),
                 "dataset_not_within_percent": percent(counts[1] + counts[2], counts[0]),
             }
+
             for dataset, counts in datasets.items()
         ]
         dataset_table.sort(key=lambda item: item["not_within"], reverse=True)
@@ -191,6 +196,7 @@ def main():
     with_nonfinite = np.concatenate([ratio, np.full(n_nonfinite, np.inf)])
     report["ratio_nonfinite_as_infinite"] = {
         f"p{level}": float(np.percentile(with_nonfinite, level, method="lower"))
+
         for level in PERCENTILES
     }
 
@@ -211,7 +217,9 @@ def main():
             "outside_finite_percent_of_category": percent(int(category_counts[index]), int(category_all[index])),
             "ratio": ratio_summary(ratio[category == index]),
         }
+
         for index, name in enumerate(names)
+
         if category_all[index]
     }
 
@@ -250,6 +258,7 @@ def main():
 
     # composition of the tail beyond each ratio
     tail = {}
+
     for threshold in TAIL_RATIOS:
         beyond = ratio > threshold
         n_beyond = int(beyond.sum())
@@ -271,6 +280,7 @@ def main():
     # bound from the per-family FPS prefix that entered the pool
     radii = family_fps_radii()
     bound_check = {}
+
     for family, family_radius in radii.items():
         in_family = (folder_index == position[family]) & ~flagged & ~in_pool
         bound = 1.0 + family_radius["radius_release_scaler"] / radius
@@ -299,6 +309,7 @@ def main():
         json.dump(report, f, indent=1)
 
     print(json.dumps(report, indent=1))
+
 
 if __name__ == "__main__":
     main()

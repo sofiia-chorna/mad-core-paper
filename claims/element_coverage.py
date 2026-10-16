@@ -8,7 +8,7 @@ import pyarrow.parquet as pq
 HERE = os.path.dirname(os.path.abspath(__file__))
 N_ELEMENTS = 102
 
-# the ordering is the fps_order column, the first prefix that holds all elements
+# the ordering is the fps_order column
 
 
 def first_prefix_with_all_elements(parquet):
@@ -16,10 +16,13 @@ def first_prefix_with_all_elements(parquet):
     order = np.argsort(table.column("fps_order").to_numpy())
     elements = table.column("elements").to_pylist()
     seen = set()
+
     for position, row in enumerate(order):
         seen.update(int(z) for z in elements[row])
+
         if len(seen) >= N_ELEMENTS:
             return position + 1, len(elements)
+
     raise SystemExit(f"{parquet}: only {len(seen)} elements in the whole ordering")
 
 
@@ -32,15 +35,18 @@ def main():
     madcore = f"{args.store_root}/accrete/phace_atomic_ep92/coreset224/out/coreset_224_light.parquet"
     madnext = f"{args.store_root}/mad_union/mad_union_full.parquet"
     result = {}
+
     for name, path in (("mad-core", madcore), ("mad-next", madnext)):
         prefix, rows = first_prefix_with_all_elements(path)
         result[name] = {"source": os.path.basename(path), "rows": rows, "first_prefix_with_all_102_elements": prefix}
         print(f"{name}: all {N_ELEMENTS} elements within the first {prefix} picks of {rows:,}")
 
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
+
     with open(args.out, "w") as f:
         json.dump(result, f, indent=1)
     print("wrote", args.out)
+
 
 if __name__ == "__main__":
     main()

@@ -36,6 +36,7 @@ def folder_path(name):
 
 def formula(numbers):
     counts = Counter(chemical_symbols[number] for number in numbers)
+
     return "".join(f"{symbol}{count if count > 1 else ''}" for symbol, count in sorted(counts.items()))
 
 
@@ -58,7 +59,7 @@ def describe(name, row, rows, index):
     periodic = bool(pbc.any()) and abs(float(np.linalg.det(cell.astype(np.float64)))) > 1e-6
     min_distance_periodic = float(atoms.get_all_distances(mic=True)[pairs].min()) if periodic and len(atoms) > 1 else None
 
-    # recompute the stored float32 distance in float64 from the released features
+    # recompute the stored distance in float64
     scaler = np.load(f"{RELEASE}/ecumetric_scaler.npz")
     center = int(np.memmap(f"{folder}/voronoi_a.bin", dtype=np.int32, mode="r", shape=(n_rows, LEVELS))[row, LEVEL])
     features = np.memmap(f"{folder}/ecumetric_features.bin", dtype=np.float32, mode="r", shape=(n_rows, FEATURES))[row]
@@ -68,6 +69,7 @@ def describe(name, row, rows, index):
     filter_code = int(rows["filter_code"][index])
     zbl = {
         key: float(np.load(f"{folder}/{key}.npy", mmap_mode="r")[row])
+
         for key in ("zbl_max_force", "zbl_energy_per_atom", "zbl_max_atomic_energy")
     }
 
@@ -104,6 +106,7 @@ def group_maximum(rows, folder_names, mask):
 
     return [
         describe(folder_names[rows["folder_index"][index]], int(rows["row"][index]), rows, int(index))
+
         for index in tied
     ]
 
@@ -120,7 +123,9 @@ def main():
     unflagged = rows["distance"][passed].astype(np.float64)
     nonfinite = {
         name: folder["categories_nonfinite"]
+
         for name, folder in scan["folders"].items()
+
         if folder["nonfinite"]
     }
 
@@ -144,7 +149,7 @@ def main():
         },
     }
 
-    # level-24 distance of the outside rows against the level-23 coverage radius
+    # level 24 distance of the outside rows against the level 23 radius
     radius_previous = json.load(open(CERTIFICATE))["release"][str(LEVEL - 1)]["cov_exact_direct"]
     within_previous = rows["distance"].astype(np.float64) <= radius_previous
 
@@ -157,6 +162,7 @@ def main():
     }
 
     report["within_level_23_radius"] = {"radius_level_23": radius_previous}
+
     for name, (mask, extra) in groups.items():
         count = int((within_previous & mask).sum())
         total = int(mask.sum()) + extra
@@ -170,6 +176,7 @@ def main():
         json.dump(report, f, indent=1)
 
     print(json.dumps(report, indent=1))
+
 
 if __name__ == "__main__":
     main()

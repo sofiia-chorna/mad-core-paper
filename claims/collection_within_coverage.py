@@ -5,7 +5,6 @@ from multiprocessing import Pool
 import numpy as np
 
 import argparse
-import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CERTIFICATE_IN_RELEASE = os.path.join(HERE, os.pardir, "workflows", "coverage_certificate", "out", "stageB", "coverage_exact.json")
@@ -71,6 +70,7 @@ def main():
     folders.append(f"{RELEASE}/mad-next-coreset")
 
     workers = ARGS.workers
+
     with Pool(workers) as pool:
         results = pool.map(count_folder, folders)
 
@@ -94,10 +94,12 @@ def main():
         report["within"][name] = {"count": count, "percent": 100.0 * count / total_rows}
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+
     with open(OUT, "w") as f:
         json.dump(report, f, indent=1)
 
     print(json.dumps(report, indent=1))
+
 
 if __name__ == "__main__":
     main()

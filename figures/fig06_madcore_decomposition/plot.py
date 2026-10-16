@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 import sys
@@ -21,7 +20,7 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 N_TOP = 15
 OTHER_COLOR = "#B8B2AB"
 
-# size-ordered stack, strong hues for the big families, no two similar hues adjacent
+# size-ordered stack
 FAMILY_COLOR_LIST = [
     "#2E6DB4",  # OMat24            blue
     "#DE7E20",  # Alexandria        burnt orange
@@ -81,18 +80,22 @@ FS_PANEL = 20.0
 
 def read_tsv(name):
     lines = (HERE / "data" / name).read_text().splitlines()
+
     return lines[0].split("\t"), [line.split("\t") for line in lines[1:]]
 
 
 def by_level(name):
     header, rows = read_tsv(name)
+
     return {h: np.asarray([float(r[i]) if h == "epsilon" else int(r[i]) for r in rows])
+
             for i, h in enumerate(header)}
 
 
 def bars(ax, keys, cum, colors, ks, xlab=True):
     x = np.arange(len(ks), dtype=float)
     bottom = np.zeros(len(ks))
+
     for k in keys:
         row = np.asarray([cum[k][i] / kk for i, kk in enumerate(ks)])
         ax.bar(x, row, bottom=bottom, width=0.90, color=colors[k], linewidth=0)
@@ -101,6 +104,7 @@ def bars(ax, keys, cum, colors, ks, xlab=True):
     ax.set_xticklabels([f"$2^{{{e + 1}}}$" for e in range(len(ks))], fontsize=FS_TICK)
     ax.tick_params(axis="x", pad=5, length=0)
     ax.tick_params(axis="y", labelsize=FS_TICK)
+
     if xlab:
         ax.set_xlabel("$k$-set size", fontsize=FS_LABEL)
     ax.set_ylim(0, 1)
@@ -110,9 +114,10 @@ def bars(ax, keys, cum, colors, ks, xlab=True):
 def main():
     ks = [1 << e for e in range(1, 25)]
 
-    # structures of each dataset group in every k-set, the largest N_TOP drawn by name
+    # structures of each dataset group in every k-set
     _, rows = read_tsv("group_counts.tsv")
     gcum = {}
+
     for k, group, count in rows:
         gcum.setdefault(group, {})[int(k)] = int(count)
     gcum = {g: np.asarray([v[k] for k in ks]) for g, v in gcum.items()}
@@ -123,6 +128,7 @@ def main():
     fcum = {g: gcum[g] for g in top}
     fcum["other"] = sum(v for g, v in gcum.items() if g not in top)
     fcol = {k: (FAMILY_COLOR_LIST[i] if k != "other" else OTHER_COLOR)
+
             for i, k in enumerate(fkeys)}
 
     ccum = by_level("category_counts.tsv")
@@ -137,12 +143,13 @@ def main():
     axb = fig.add_subplot(gs[1, 0])
     axc = fig.add_subplot(gs[1, 1])
 
-    # ---- a, dataset families
+    # ---- a
     bars(axa, fkeys, fcum, fcol, ks)
     axa.set_xticklabels([f"$2^{{{e + 1}}}$" for e in range(len(ks))], fontsize=17.5)
     axa.tick_params(axis="x", pad=10, length=0)
     axa.set_ylabel("fraction of $k$-set", fontsize=FS_LABEL)
     la = [DISPLAY.get(k, k) if k != "other" else f"other ({n_groups - N_TOP} datasets)"
+
           for k in fkeys]
     h = [Patch(facecolor=fcol[k], edgecolor="0.15", linewidth=0.4) for k in fkeys]
     axa.legend(h, la, loc="lower left", bbox_to_anchor=(0.0, 1.02, 1.0, 0.0),
@@ -150,10 +157,11 @@ def main():
                handlelength=1.0, handletextpad=0.35, labelspacing=0.34,
                columnspacing=0.8)
 
-    # ---- b, chemical families of the elements
+    # ---- b
     etot = sum(elfam[f] for f in ELFAM_ORDER)
     x = np.arange(len(ks), dtype=float)
     bottom = np.zeros(len(ks))
+
     for f in ELFAM_ORDER:
         row = np.asarray([elfam[f][i] / etot[i] for i in range(len(ks))])
         axb.bar(x, row, bottom=bottom, width=0.90, color=ELFAM_COLOR[f], linewidth=0)
@@ -168,13 +176,14 @@ def main():
     axb.set_ylim(0, 1)
     axb.margins(x=0.0)
     h = [Patch(facecolor=ELFAM_COLOR[f], edgecolor="0.15", linewidth=0.4)
+
          for f in ELFAM_ORDER]
     axb.legend(h, ELFAM_ORDER, loc="lower left", bbox_to_anchor=(0.0, 1.02, 1.0, 0.0),
                mode="expand", ncol=2, fontsize=FS_LEGEND, frameon=False,
                handlelength=1.0, handletextpad=0.35, labelspacing=0.34,
                columnspacing=0.8)
 
-    # ---- c, category growth, log-log
+    # ---- c
     for k in ckeys:
         y = list(ccum[k])
         axc.plot(ks, y, marker=CAT_MARKER[k], ms=6.0, lw=2.8, color=CAT_COLOR[k],
@@ -208,6 +217,7 @@ def main():
     axi.set_xlabel("$k$-set size", fontsize=12.0, labelpad=1)
     axi.set_ylabel("$\\epsilon(k)$", fontsize=12.0, labelpad=1)
     axi.set_title("coverage radius", fontsize=12.5, pad=3)
+
     for s in axi.spines.values():
         s.set_linewidth(0.7)
 
@@ -217,6 +227,7 @@ def main():
 
     fig.savefig(OUT, dpi=200, bbox_inches="tight", facecolor="white")
     print(f"wrote {OUT}")
+
 
 if __name__ == "__main__":
     sys.exit(main())

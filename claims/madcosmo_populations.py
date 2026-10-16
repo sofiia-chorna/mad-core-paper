@@ -6,7 +6,6 @@ from multiprocessing import Pool
 import numpy as np
 
 import argparse
-import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CERTIFICATE_IN_RELEASE = os.path.join(HERE, os.pardir, "workflows", "coverage_certificate", "out", "stageB", "coverage_exact.json")
@@ -41,7 +40,7 @@ ZBL_ATOMIC_ENERGY = 100.0
 RELEASED_ROWS = 1694502355
 COLLECTION_ROWS = 1693646343
 
-# category of a collection row is filter_code times two plus is_duplicate, the anchor tier is category 8
+# category is filter_code times two plus is_duplicate
 CATEGORY_NAMES = [
     "passed",
     "passed_duplicate",
@@ -123,7 +122,7 @@ def hash_keys(path, n_rows):
         block = np.ascontiguousarray(ids[start:start + ID_BLOCK_ROWS])
         raw = np.frombuffer(block.tobytes(), dtype=np.uint8).reshape(len(block), width)
 
-        # every id in a folder is prefix plus 32 hex digits, so there is no padding
+        # every id in a folder is prefix plus 32 hex digits
         assert (raw[:, -1] != 0).all(), path
         assert (raw[:, -33] == ord(":")).all(), path
 
@@ -147,8 +146,10 @@ def dataset_codes(path, n_rows):
 
     same_as_first = all(
         bool((np.asarray(dataset_ids[start:start + ID_BLOCK_ROWS]) == first).all())
+
         for start in range(0, n_rows, ID_BLOCK_ROWS)
     )
+
     if same_as_first:
         return np.zeros(n_rows, dtype=np.int32), 1
 
@@ -192,6 +193,7 @@ def duplicate_scope(task):
 
     if not len(duplicate_rows):
         result.update(same_folder_same_dataset_id=0, same_folder_other_dataset_id=0, other_folder=0)
+
         return index, result
 
     if len(sorted_high):
@@ -222,6 +224,7 @@ def find_twin_folders(task):
         return index, np.zeros(0, dtype=np.int64)
 
     position = np.minimum(np.searchsorted(original, unmatched), len(original) - 1)
+
     return index, np.flatnonzero(original[position] == unmatched)
 
 
@@ -268,7 +271,7 @@ def population_arrays():
         "n_effective": float(1.0 / (weights ** 2).sum()),
     }
 
-    # distinct structures with a within-cell ordering, one per eligible structure, per level-24 cell
+    # distinct structures with a within-cell ordering
     cell_fps = f"{RELEASE}/mad-core/cell_fps"
     center_offsets = np.load(f"{cell_fps}/center_offsets.npy")
     order_in_cell = np.load(f"{cell_fps}/fps_order_in_cell.npy")
@@ -300,23 +303,28 @@ def main():
     shutil.rmtree(WORK, ignore_errors=True)
     os.makedirs(WORK)
 
-    # pass one, per row tallies over every release row
+    # pass one
     chunks = [
         (folder, start, min(start + CHUNK_ROWS, sizes[folder]), radius)
+
         for folder in sorted(folders, key=lambda name: -sizes[name])
+
         for start in range(0, sizes[folder], CHUNK_ROWS)
     ]
 
     per_folder = {folder: {} for folder in folders}
+
     with Pool(workers) as pool:
         for done, (folder, tallies) in enumerate(pool.imap_unordered(tally_chunk, chunks)):
             for name, values in tallies.items():
                 current = per_folder[folder].setdefault(name, [0] * N_CATEGORIES)
                 per_folder[folder][name] = [a + b for a, b in zip(current, values)]
+
             if (done + 1) % 100 == 0:
                 print(f"tallies {done + 1}/{len(chunks)}", flush=True)
 
     totals = {}
+
     for tallies in per_folder.values():
         for name, values in tallies.items():
             current = totals.setdefault(name, [0] * N_CATEGORIES)
@@ -325,18 +333,21 @@ def main():
     assert sum(totals["rows"]) == RELEASED_ROWS
     assert sum(totals["rows"][:8]) == COLLECTION_ROWS
 
-    # pass two, duplicate scope within each collection folder
+    # pass two
     indexed = sorted(enumerate(folders[:-1]), key=lambda item: -sizes[item[1]])
     scope = {}
+
     with Pool(max(1, workers // 2)) as pool:
         for index, result in pool.imap_unordered(duplicate_scope, indexed):
             scope[index] = result
             print(f"scope {len(scope)}/{len(indexed)} {result['folder']}", flush=True)
 
-    # pass three, the folder that holds the original of every duplicate not matched in its own folder
+    # pass three
     unmatched_parts = []
+
     for index in sorted(scope):
         path = f"{WORK}/unmatched_{index:04d}.npy"
+
         if os.path.exists(path):
             keys = np.load(path)
             unmatched_parts.append((keys, np.full(len(keys), index, dtype=np.int32)))
@@ -350,11 +361,12 @@ def main():
 
     twin_folder = np.full(len(unmatched_keys), -1, dtype=np.int32)
     tasks = [(index, f"{WORK}/unmatched_all.npy") for index, _ in indexed]
+
     with Pool(max(1, workers // 2)) as pool:
         for index, hits in pool.imap_unordered(find_twin_folders, tasks):
             twin_folder[hits] = index
 
-    # pair key is duplicate folder times ten thousand plus original folder plus one, zero means no original
+    # pair key from the two folder indices
     pairs, pair_counts = np.unique(
         unmatched_folder.astype(np.int64) * 10000 + twin_folder.astype(np.int64) + 1,
         return_counts=True,
@@ -366,6 +378,7 @@ def main():
             "original_folder": folders[int(pairs[i] % 10000) - 1] if pairs[i] % 10000 else None,
             "rows": int(pair_counts[i]),
         }
+
         for i in pair_order[:40]
     ]
 
@@ -379,6 +392,7 @@ def main():
 
     by_category = {
         name: {CATEGORY_NAMES[c]: totals[name][c] for c in range(N_CATEGORIES)}
+
         for name in totals
     }
 
@@ -386,6 +400,7 @@ def main():
     draw_population = totals["natoms_below_300"][0] + totals["rows"][8]
 
     folder_table = {}
+
     for folder in folders:
         rows = per_folder[folder]["rows"]
         folder_table[folder] = {
@@ -398,6 +413,7 @@ def main():
 
     scope_totals = {
         key: sum(result[key] for result in scope.values())
+
         for key in (
             "duplicates",
             "same_folder_same_dataset_id",
@@ -438,12 +454,14 @@ def main():
     }
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+
     with open(OUT, "w") as f:
         json.dump(report, f, indent=1)
 
     summary = {key: report[key] for key in report if key not in ("per_folder", "duplicate_scope")}
     summary["duplicate_scope"] = {key: value for key, value in report["duplicate_scope"].items() if key != "per_folder"}
     print(json.dumps(summary, indent=1))
+
 
 if __name__ == "__main__":
     main()

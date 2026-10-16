@@ -1,4 +1,3 @@
-import os
 import sys
 from pathlib import Path
 
@@ -22,7 +21,7 @@ OUT.parent.mkdir(parents=True, exist_ok=True)
 FAM_ORDER = ["hydrogen", "s-block metals", "p-block elements", "transition metals",
              "lanthanides/actinides"]
 
-# accrete.pdf palette, ordered so no two adjacent stack segments share a hue
+# accrete.pdf palette
 FAM_COLOR = {
     "hydrogen": epfl.ACCRETE["charcoal"],
     "s-block metals": epfl.ACCRETE["apricot"],
@@ -31,7 +30,7 @@ FAM_COLOR = {
     "lanthanides/actinides": epfl.ACCRETE["indigo"],
 }
 
-# lanthanide/actinide rows pulled up (PT_LAYOUT parks them at rows 8-9, leaving a wide gap)
+# lanthanide and actinide rows pulled up
 LN_SHIFT = 0.55
 X_LO, X_HI = -0.10, 18.05
 Y_LO, Y_HI = 0.45, 10.05
@@ -51,6 +50,7 @@ def row_y(row):
 
 def read_tsv(name):
     lines = (HERE / "data" / name).read_text().splitlines()
+
     return lines[0].split("\t"), [line.split("\t") for line in lines[1:]]
 
 
@@ -61,13 +61,14 @@ def load():
     cum = np.asarray([[int(v) for v in row[1:]] for row in rows])
     _, rows = read_tsv("element_structure_counts.tsv")
     el_counts = {row[0]: int(row[1]) for row in rows}
+
     return ks, cum, el_counts
 
 
 def draw_ptable(ax, el_counts):
     vals = [v for v in el_counts.values() if v > 0]
 
-    # not the palette of panel a, a perceptual ramp reads as a scale
+    # not the palette of panel a
     cmap = plt.colormaps["viridis"]
     norm = mcolors.LogNorm(vmin=min(vals), vmax=max(vals))
 
@@ -80,6 +81,7 @@ def draw_ptable(ax, el_counts):
         fc = em._text_color(rgba) if v else "#aaaaaa"
         ax.text(x + 0.475, y + 0.60, el, ha="center", va="center", fontsize=FS_SYM,
                 fontweight="bold", color=fc)
+
         if v:
             ax.text(x + 0.475, y + 0.22, em._fmt_count(v), ha="center", va="center",
                     fontsize=FS_COUNT, color=fc, alpha=0.9)
@@ -89,7 +91,7 @@ def draw_ptable(ax, el_counts):
     ax.set_aspect("equal")
     ax.axis("off")
 
-    # colorbar into the empty top-middle block (label above, ticks below)
+    # colorbar into the empty top-middle block (label above
     xw, yh = X_HI - X_LO, Y_HI - Y_LO
     x0, y0, w, h = 3.2, 8.30, 8.2, 0.34
     cax = ax.inset_axes([(x0 - X_LO) / xw, (y0 - Y_LO) / yh, w / xw, h / yh])
@@ -99,6 +101,7 @@ def draw_ptable(ax, el_counts):
     ticks = [min(vals), 100_000, max(vals)]
     cbar.set_ticks(ticks)
     cbar.set_ticklabels([f"{v / 1000:.1f}k" if v < 10_000 else em._fmt_count(v)
+
                          for v in ticks])
     cbar.ax.minorticks_off()
     cbar.set_label("# structures containing the element", fontsize=FS_CBAR, labelpad=7)
@@ -109,7 +112,7 @@ def draw_ptable(ax, el_counts):
 
 def main():
 
-    # panel a, each distinct element of a structure contributes one count to its family
+    # panel a
     ks, cum, el_counts = load()
     fam_idx = {f: i for i, f in enumerate(FAM_ORDER)}
 
@@ -122,6 +125,7 @@ def main():
     # ---- panel a
     x = np.arange(len(ks), dtype=float)
     bottom = np.zeros(len(ks))
+
     for f in FAM_ORDER:
         row = np.asarray([cum[i, fam_idx[f]] / cum[i].sum() for i in range(len(ks))])
         axa.bar(x, row, bottom=bottom, width=0.90, color=FAM_COLOR[f], linewidth=0)
@@ -151,6 +155,7 @@ def main():
     lo, hi = min(el_counts.values()), max(el_counts.values())
     print(f"wrote {OUT}")
     print(f"panel b: full ordering, {len(el_counts)} elements, {lo:,}-{hi:,}")
+
 
 if __name__ == "__main__":
     sys.exit(main())

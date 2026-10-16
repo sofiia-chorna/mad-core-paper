@@ -20,16 +20,20 @@ def main():
     subset = np.asarray(t.column("subset").to_pylist())[order]
     n = len(subset)
     ks = [1 << k for k in range(1, int(np.floor(np.log2(n))) + 1)]
+
     if ks[-1] != n:
         ks.append(n)
     names = sorted(set(subset.tolist()))
     cum = {name: np.cumsum(subset == name) for name in names}
     out = HERE / "data" / "subset_counts.tsv"
+
     with open(out, "w") as fh:
         fh.write("k_set_size\t" + "\t".join(names) + "\n")
+
         for k in ks:
             fh.write(f"{k}\t" + "\t".join(str(int(cum[name][k - 1])) for name in names) + "\n")
     print(f"wrote {out}: {len(ks)} k-sets, {len(names)} subsets, {n:,} structures")
+
 
 if __name__ == "__main__":
     main()

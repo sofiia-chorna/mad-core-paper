@@ -1,4 +1,3 @@
-import os
 from pathlib import Path
 
 import sys
@@ -9,8 +8,6 @@ matplotlib.use("Agg")
 
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.patches import Patch
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent.parent / "plotting"))
@@ -46,6 +43,7 @@ FS_COUNT = 13.0
 def fmt(v):
     if v >= 1_000_000:
         return f"{v / 1e6:.1f}M" if v < 10_000_000 else f"{v / 1e6:.0f}M"
+
     return em._fmt_count(v)
 
 
@@ -67,6 +65,7 @@ def draw_ptable(ax, el_counts, cbar_in_gap=True):
         fc = em._text_color(rgba) if v else "#aaaaaa"
         ax.text(x + 0.475, y + 0.60, el, ha="center", va="center", fontsize=FS_SYM,
                 fontweight="bold", color=fc)
+
         if v:
             ax.text(x + 0.475, y + 0.22, fmt(v), ha="center", va="center",
                     fontsize=FS_COUNT, color=fc, alpha=0.9)
@@ -85,6 +84,7 @@ def draw_ptable(ax, el_counts, cbar_in_gap=True):
         cbar = ax.figure.colorbar(sm, cax=cax, orientation="horizontal")
         ticks = [min(vals), max(vals)]
         mids = [t for t in (1_000, 10_000, 100_000, 1_000_000, 10_000_000)
+
                 if min(vals) * 2.5 < t < max(vals) / 2.5]
         cbar.set_ticks([ticks[0]] + mids + [ticks[1]])
         cbar.set_ticklabels([fmt(v) for v in [ticks[0]] + mids + [ticks[1]]])
@@ -94,12 +94,13 @@ def draw_ptable(ax, el_counts, cbar_in_gap=True):
         cbar.ax.xaxis.set_label_position("top")
         cbar.ax.tick_params(labelsize=FS_CBAR - 2)
         cbar.outline.set_linewidth(0.6)
+
     return el_counts
 
 
 def main():
 
-    # structures containing each element over the full 2 24 coreset, from prepare_data.py
+    # structures containing each element over the full coreset
     lines = (HERE / "data" / "element_structure_counts.tsv").read_text().splitlines()
     el_counts = {line.split("\t")[0]: int(line.split("\t")[1]) for line in lines[1:]}
 
@@ -112,6 +113,7 @@ def main():
     hi = max(el_counts, key=el_counts.get)
     print(f"wrote {OUT}: {len(el_counts)} elements, {lo}={el_counts[lo]:,} .. "
           f"{hi}={el_counts[hi]:,}")
+
 
 if __name__ == "__main__":
     sys.exit(main())

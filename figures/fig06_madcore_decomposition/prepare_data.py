@@ -27,6 +27,7 @@ CAT_ORDER = ["3D bulk", "molecules", "clusters", "surfaces/2D", "molecular cryst
 def write(name, header, rows):
     with open(HERE / "data" / name, "w") as fh:
         fh.write("\t".join(header) + "\n")
+
         for row in rows:
             fh.write("\t".join(str(v) for v in row) + "\n")
     print(f"wrote data/{name}")
@@ -40,7 +41,7 @@ def main():
     args = parser.parse_args()
     run = f"{args.store_root}/accrete/phace_atomic_ep92/coreset224/out"
 
-    # the light parquet carries the same non-feature columns as the full filell file
+    # the light parquet has the same non feature columns as the full one
     info = f"{run}/coreset_224_light.parquet"
     categories = f"{run}/picks_category_map_224.json"
     release_groups = f"{args.store_root}/release/mad-core/dataset_group.npy"
@@ -56,6 +57,7 @@ def main():
     els = t.column("elements").to_pylist()
     els = [els[i] for i in order]
     del t
+
     if args.labels == "release":
         fam = np.load(release_groups).astype(str)
         assert fam.shape == (n,), fam.shape
@@ -64,6 +66,7 @@ def main():
 
     groups, codes = np.unique(fam, return_inverse=True)
     group_rows = []
+
     for g, name in enumerate(groups):
         cum = np.cumsum(codes == g)
         group_rows += [(k, name, int(cum[k - 1])) for k in ks]
@@ -82,13 +85,16 @@ def main():
     print("element families...", flush=True)
     z_of = {s: z for z, s in enumerate(chemical_symbols)}
     fam_of_z = {z_of[s]: FAM_ORDER.index(f) for f, syms in FAMILIES.items() for s in syms
+
                 if s in z_of}
 
-    # each distinct element of a structure contributes one count to its family
+    # each distinct element of a structure counts once for its family
     per = np.zeros((n, len(FAM_ORDER)), dtype=np.int32)
+
     for i, e in enumerate(els):
         for z in set(int(z) for z in e):
             f = fam_of_z.get(z)
+
             if f is not None:
                 per[i, f] += 1
     elfam_cum = np.cumsum(per, axis=0)
@@ -97,6 +103,7 @@ def main():
 
     write("coverage_radius.tsv", ["k_set_size", "epsilon"],
           [(k, repr(float(eps[k - 1]))) for k in ks])
+
 
 if __name__ == "__main__":
     main()

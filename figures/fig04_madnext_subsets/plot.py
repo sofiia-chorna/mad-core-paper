@@ -61,21 +61,25 @@ def load():
     rows = [[int(v) for v in line.split("\t")] for line in lines[1:]]
     ks = np.asarray([row[0] for row in rows])
     counts = {name: np.asarray([row[i + 1] for row in rows]) for i, name in enumerate(names)}
+
     return counts, ks
 
 
 def stacked(ax, keys, counts, colors, ks, xpos=None):
     x = np.arange(len(ks), dtype=float) if xpos is None else xpos
     bottom = np.zeros(len(ks))
+
     for k in keys:
         row = np.asarray([counts[k][i] / kk for i, kk in enumerate(ks)])
         ax.bar(x, row, bottom=bottom, width=0.90, color=colors[k], linewidth=0)
         bottom += row
+
     return x
 
 
 def xtick(ax, ks, x, every=1):
     labels = [f"$2^{{{i + 1}}}$" for i in range(len(ks) - 1)] + ["full"]
+
     if every > 1:
         labels = [lab if (i % every == 0 or i == len(ks) - 1) else "" for i, lab in enumerate(labels)]
     ax.set_xticks(x)
@@ -108,6 +112,7 @@ def main():
     counts, ks = load()
     plot(counts, ks)
     print("wrote mad-kset-1col.pdf")
+
 
 if __name__ == "__main__":
     main()

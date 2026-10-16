@@ -4,7 +4,6 @@ import os
 import numpy as np
 
 import argparse
-import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CERTIFICATE_IN_RELEASE = os.path.join(HERE, os.pardir, "workflows", "coverage_certificate", "out", "stageB", "coverage_exact.json")
@@ -30,11 +29,11 @@ def main():
     na = np.load(f"{NOMAD}/na.npy")
     filter_code = np.load(f"{NOMAD}/filter_code.npy")
 
-    # a row whose descriptors are not finite has a non-finite distance to its level-24 centre
+    # a row with non finite descriptors has a non finite distance
     distance = np.memmap(f"{NOMAD}/voronoi_d.bin", dtype=np.float32, mode="r").reshape(ns, LEVELS)[:, LEVEL]
     nonfinite = ~np.isfinite(np.asarray(distance))
 
-    # rows that came from the source with unwrapped coordinates, original x is x + flags @ cell
+    # rows that came from the source with unwrapped coordinates
     flag_rows = np.load(f"{NOMAD}/image_flag_rows.npy")
     flags = np.memmap(f"{NOMAD}/image_flags.bin", dtype=np.int64, mode="r").reshape(-1, 3)
     cells = np.memmap(f"{NOMAD}/image_flag_cells.bin", dtype=np.float64, mode="r").reshape(-1, 3, 3)
@@ -45,6 +44,7 @@ def main():
     assert flag_offsets[-1] == flags.shape[0], (flag_offsets[-1], flags.shape)
 
     extent = np.empty(len(flag_rows))
+
     for i, row in enumerate(flag_rows):
         folded = np.asarray(x[na[row]:na[row + 1]], dtype=np.float64)
         original = folded + np.asarray(flags[flag_offsets[i]:flag_offsets[i + 1]]) @ np.asarray(cells[i])
@@ -73,13 +73,14 @@ def main():
         "far_rows_with_finite_descriptors": int((far & ~nonfinite).sum()),
     }
 
-    # release-wide totals from the full scan, for the rows outside nomad
+    # release-wide totals from the full scan
     populations = json.load(open(POPULATIONS))
     report["release_nonfinite_rows"] = int(sum(populations["by_category"]["nonfinite_d24"].values()))
     report["release_nonfinite_rows_outside_nomad"] = report["release_nonfinite_rows"] - report["nonfinite_descriptor_rows"]
 
-    # outside nomad every non-finite row is ZBL-rejected (full scan), so only those rows are read
+    # outside nomad every non-finite row is ZBL-rejected (full scan)
     outside = {}
+
     for folder, counts in populations["per_folder"].items():
         if folder == "collection/nomad" or counts["filter_code"][1] == 0:
             continue
@@ -88,6 +89,7 @@ def main():
         n = int(np.load(f"{path}/ns.npy")[0])
         d = np.memmap(f"{path}/voronoi_d.bin", dtype=np.float32, mode="r").reshape(n, LEVELS)
         bad = rows[~np.isfinite(np.asarray(d[rows, LEVEL]))]
+
         if not bad.size:
             continue
         unwrapped = os.path.exists(f"{path}/image_flag_rows.npy")
@@ -96,6 +98,7 @@ def main():
         x_here = np.memmap(f"{path}/x.bin", dtype=np.float32, mode="r").reshape(-1, 3)
         zbl_force = np.asarray(np.load(f"{path}/zbl_max_force.npy", mmap_mode="r")[bad])
         smallest = []
+
         for row in bad:
             positions = np.asarray(x_here[na_here[row]:na_here[row + 1]], dtype=np.float64)
             gaps = np.linalg.norm(positions[:, None] - positions[None], axis=-1)[np.triu_indices(len(positions), 1)]
@@ -111,9 +114,11 @@ def main():
     assert sum(v["nonfinite_rows"] for v in outside.values()) == report["release_nonfinite_rows_outside_nomad"]
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
+
     with open(OUT, "w") as f:
         json.dump(report, f, indent=1)
     print(json.dumps(report, indent=1))
+
 
 if __name__ == "__main__":
     main()

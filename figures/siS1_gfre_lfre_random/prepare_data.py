@@ -11,6 +11,7 @@ FILES = [
 ]
 
 os.makedirs(DATA, exist_ok=True)
+
 for name in FILES:
     shutil.copy2(os.path.join(SOURCE, name), os.path.join(DATA, name))
     print(f"copied {name}")

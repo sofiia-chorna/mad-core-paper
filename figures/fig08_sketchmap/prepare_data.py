@@ -10,7 +10,7 @@ import torch.nn as nn
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 
-# the projector of the release and the level 24 populations of the record
+# the projector of the release and the level 24 populations
 PROJECTOR = str(ROOT / "data" / "models" / "ecumetric_sketchmap_projector_p20d8_rec_silu.pt")
 POPULATIONS = str(ROOT / "results_archive" / "data" / "voronoi_population_record_level24.npy")
 N_CORESET = 2 ** 24
@@ -31,7 +31,7 @@ OTHER_COLOUR = "#7E7368"
 COLOURS = PALETTE5 + [OTHER_COLOUR]
 Z_BOOST = {"OMat24": 1.0, "JARVIS": 1.0, "Alexandria": -0.5}
 
-# members listed in the color order of PALETTE5 (first member is rosy red, ...)
+# members in the colour order of PALETTE5
 GROUPS = [
     ("MAD-NEXT", [MAD_LABEL]),
     ("Bulk materials", ["OMat24", "Alexandria", "JARVIS"]),
@@ -77,6 +77,7 @@ parser.add_argument("--force-top", default="",
 parser.add_argument("--threads", type=int, default=16)
 args = parser.parse_args()
 RELEASE = f"{args.store_root}/release"
+
 if args.labels is None:
     args.labels = f"{RELEASE}/mad-core/dataset_group.npy"
 
@@ -86,6 +87,7 @@ def project():
     checkpoint = torch.load(args.projector, map_location="cpu", weights_only=False)
     activation = {"relu": nn.ReLU, "silu": nn.SiLU}[checkpoint["activation"]]
     layers, width = [], 512
+
     for hidden_width in checkpoint["hidden"]:
         layers += [nn.Linear(width, hidden_width), activation()]
         width = hidden_width
@@ -94,7 +96,7 @@ def project():
     model.load_state_dict(checkpoint["state_dict"])
     model.eval()
 
-    # the released features are raw, the projector expects them in the scaled ecumetric metric
+    # the released features are raw
     scaler = np.load(ROOT / "data" / "ecumetric_scaler.npz")
     scaler_mean = torch.as_tensor(scaler["mean"])
     scaler_scale = float(scaler["scale"])
@@ -103,6 +105,7 @@ def project():
     features = np.memmap(f"{RELEASE}/mad-core/ecumetric_features.bin", dtype=np.float32,
                          mode="r", shape=(N_CORESET, 512))
     projection = np.empty((N_CORESET, checkpoint["d"]), dtype=np.float32)
+
     with torch.no_grad():
         for start in range(0, N_CORESET, 262_144):
             end = min(start + 262_144, N_CORESET)
@@ -111,21 +114,28 @@ def project():
             projection[start:end] = model(block).numpy()
     projection = (projection * np.asarray(checkpoint["projection_scale"], dtype=np.float32)
                   + np.asarray(checkpoint["projection_mean"], dtype=np.float32))
+
     return projection[:, :2].astype(np.float32)
 
 
 def label_of(name):
     if name in MAD_PARTS or name == "mad-union":
         return MAD_LABEL
+
     if name.upper().startswith(CATALYST_PREFIXES):
         return "Open Catalyst"
+
     if name.upper().startswith(ANI_PREFIXES):
         return "ANI"
+
     if name.startswith("JARVIS"):
         return "JARVIS"
+
     if name.startswith(("mcloudarchive", "mcloud__")):
         return "Materials Cloud"
+
     return RENAME.get(name, name)
+
 
 coordinates = project()
 
@@ -147,7 +157,7 @@ else:
 assert source.shape == (N_CORESET,), source.shape
 family = np.asarray([label_of(name) for name in source], dtype=object)
 
-# population-weighted sample without replacement, Efraimidis-Spirakis keys
+# population-weighted sample without replacement
 generator = np.random.default_rng(args.seed)
 weight = population ** args.gamma
 keys = -np.log(generator.random(N_CORESET)) / weight
@@ -173,9 +183,12 @@ data = {"background_xy": coordinates[background],
         "smin": args.smin, "smax": args.smax, "size_power": args.size_power}
 legends = []
 shown_family = family[shown]
+
 for index, (title, members) in enumerate(panels):
     colour_of = {name: (len(PALETTE5) if name == "__other__" else i % len(PALETTE5))
+
                  for i, name in enumerate(members)}
+
     if members == ["__other__"]:
         in_panel = shown[~np.isin(shown_family, list(named))]
         point_colour = np.full(in_panel.size, len(PALETTE5), dtype=np.int8)
@@ -186,11 +199,12 @@ for index, (title, members) in enumerate(panels):
         panel_family = shown_family[mask]
         point_colour = np.asarray([colour_of[f] for f in panel_family], dtype=np.int8)
 
-    # z-order, log10 population plus a per-dataset boost and jitter
+    # z-order
     log_pop = np.log10(np.maximum(population[in_panel], 1.0))
     boost = np.asarray([Z_BOOST.get(f, 0.0) for f in panel_family])
     jitter = (generator.random(in_panel.size) - 0.5) * 0.5
     key = log_pop + boost + jitter
+
     if args.force_top:
         forced = panel_family == args.force_top
         order = np.lexsort((key, forced))
@@ -210,5 +224,6 @@ data["colours"] = np.asarray(COLOURS)
 data["panels"] = np.asarray(json.dumps(legends))
 np.savez_compressed(args.output, **data)
 print("wrote", args.output)
+
 for legend in legends:
     print(f"  {legend['title']}: {', '.join(label for label, _ in legend['entries'])}")

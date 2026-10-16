@@ -10,7 +10,7 @@ from matplotlib.ticker import MaxNLocator, MultipleLocator
 
 import sys
 
-# data/ holds the mean and the five seeds of every potential over 20 to 50 ps
+# data/ holds the mean and the five seeds of every potential
 HERE = Path(__file__).resolve().parent
 CURVES = HERE / "data"
 FIGURES = Path(sys.argv[1]).parent if len(sys.argv) > 1 else HERE.parent.parent / "build" / "figures"
@@ -20,7 +20,7 @@ PANELS = (("rdf_oo_20_50ps.tsv", "O–O", (2.2, 4.9)), ("rdf_oh_20_50ps.tsv", "O
 SEEDS = range(5)
 OH_INSET = (1.3, 4.9)
 
-# sizes in inches and font scale as in the scratch_scaling_v3 learning curve figure, full width of a two column page
+# sizes in inches as in the learning curve figure
 WIDTH = 7.0
 LEFT = 0.62
 RIGHT = 0.1
@@ -79,6 +79,7 @@ def main():
     fig = plt.figure(figsize=(WIDTH, height))
 
     axes = []
+
     for c, (name, title, xlim) in enumerate(PANELS):
         left = LEFT + c * (PANEL + GAP)
         ax = fig.add_axes([left / WIDTH, BOTTOM / height, PANEL / WIDTH, PANEL_HEIGHT / height])
@@ -86,7 +87,7 @@ def main():
 
         data = np.genfromtxt(CURVES / name, names=True, delimiter="\t")
 
-        # in the O-H panel the LDA corrected mean goes on top so its covalent peak is not hidden
+        # in the O-H panel the LDA corrected mean goes on top
         on_top = "lda_corrected" if title == "O–H" else None
         draw(ax, data, xlim, on_top)
 
@@ -119,7 +120,7 @@ def main():
         columnspacing=1.2,
     )
 
-    # trimmed to the drawn content with more room left and right than above and below
+    # trimmed to the drawn content
     fig.canvas.draw()
     ink = fig.get_tightbbox(fig.canvas.get_renderer())
     box = Bbox.from_extents(ink.x0 - SIDE_PAD, ink.y0 - END_PAD, ink.x1 + SIDE_PAD, ink.y1 + END_PAD)
@@ -130,6 +131,7 @@ def main():
 
     smallest = min(t.get_fontsize() for t in fig.findobj(Text) if t.get_visible() and t.get_text().strip())
     print(f"{box.width:.2f} x {box.height:.2f} in, smallest font {smallest:.1f} pt")
+
 
 if __name__ == "__main__":
     main()
